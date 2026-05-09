@@ -29,6 +29,11 @@ jobs:
         run: |
           python scripts/parse_readme.py
 
+      - name: Fetch covers from AniList
+        run: |
+          pip install requests
+          python scripts/fetch_covers.py
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions"
