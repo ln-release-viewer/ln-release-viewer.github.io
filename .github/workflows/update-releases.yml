@@ -67,7 +67,7 @@ jobs:
 
       - name: Copy JSON into your repo
         run: |
-          cp lnrelease-src/releases.json data/releases.json
+          cp lnrelease-src/lnrelease/releases.json data/releases.json
 
       - name: Commit and push changes
         run: |
