@@ -37,6 +37,12 @@ jobs:
         run: |
           python scripts/add_isbns.py
 
+      - name: Debug Open Library cover test
+        run: |
+          curl -I https://covers.openlibrary.org/b/isbn/9798855414288-L.jpg
+          curl -I https://covers.openlibrary.org/b/isbn/9798855433432-L.jpg
+
+
       - name: Fetch covers from Google Books
         run: |
           pip install requests
