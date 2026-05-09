@@ -62,7 +62,7 @@ jobs:
 
       - name: Run LNRelease pipeline
         run: |
-          cd lnrelease-src
+          cd lnrelease-src/lnrelease
           python lnrelease.py
 
       - name: Copy JSON into your repo
