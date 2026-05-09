@@ -41,3 +41,10 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Data Source
+
+This project uses release data generated from the 
+[LNRelease](https://github.com/LNRelease/lnrelease.github.io) project (MIT License).
+All scraping and parsing logic belongs to the original authors.
+
