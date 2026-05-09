@@ -12,7 +12,7 @@ ANILIST_URL = "https://graphql.anilist.co"
 
 QUERY = """
 query ($search: String, $volume: Int) {
-  Media(search: $search, type: NOVEL) {
+  Media(search: $search, type: MANGA) {
     id
     title {
       romaji
