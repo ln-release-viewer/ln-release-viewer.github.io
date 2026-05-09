@@ -46,8 +46,9 @@ jobs:
 
           EOF
 
-          # Insert the call to write_json() right after write_page() in main()
-          sed -i "/write_page(filtered, OUT, f'# Licensed Light Novel Releases', True)/a \    write_json(filtered, Path('releases.json'))" write.py
+          # Insert the call to write_json() after the write_page() call
+          sed -i "/OUT, f'# Licensed Light Novel Releases', True)/a \    write_json([b for b in current if b.format != Format.AUDIOBOOK], Path('releases.json'))" write.py
+
 
 
       - name: Install Python
