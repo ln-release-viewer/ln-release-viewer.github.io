@@ -8,37 +8,44 @@ OUTPUT = Path("data/releases.json")
 COVERS_DIR = Path("public/covers")
 COVERS_DIR.mkdir(parents=True, exist_ok=True)
 
-ANILIST_URL = "https://graphql.anilist.co"
-
-QUERY = """
-query ($search: String, $volume: Int) {
-  Media(search: $search, type: MANGA) {
-    id
-    title {
-      romaji
-      english
-    }
-    coverImage {
-      large
-      extraLarge
-    }
-  }
-}
-"""
+GOOGLE_BOOKS_URL = "https://www.googleapis.com/books/v1/volumes"
 
 def slugify(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
-def fetch_cover(title, volume):
-    variables = {"search": title, "volume": int(float(volume)) if volume.replace(".", "", 1).isdigit() else None}
-    response = requests.post(ANILIST_URL, json={"query": QUERY, "variables": variables})
-    data = response.json()
+def search_google_books(title, volume):
+    # Build a query like: intitle:"Rebuild World" intitle:"8.1"
+    q = f'intitle:"{title}"'
+    if volume:
+        q += f' intitle:"{volume}"'
 
-    media = data.get("data", {}).get("Media")
-    if not media:
+    params = {"q": q, "maxResults": 5}
+
+    try:
+        r = requests.get(GOOGLE_BOOKS_URL, params=params, timeout=10)
+        r.raise_for_status()
+        data = r.json()
+    except Exception:
         return None
 
-    return media["coverImage"]["extraLarge"] or media["coverImage"]["large"]
+    items = data.get("items")
+    if not items:
+        return None
+
+    # Pick the first item with an image
+    for item in items:
+        info = item.get("volumeInfo", {})
+        image_links = info.get("imageLinks")
+        if image_links:
+            # Prefer highest quality available
+            return (
+                image_links.get("extraLarge")
+                or image_links.get("large")
+                or image_links.get("medium")
+                or image_links.get("thumbnail")
+            )
+
+    return None
 
 def main():
     releases = json.loads(RELEASES.read_text())
@@ -47,19 +54,26 @@ def main():
         slug = slugify(f"{r['title']}-vol-{r['volume']}")
         cover_path = COVERS_DIR / f"{slug}.jpg"
 
+        # If already downloaded, reuse it
         if cover_path.exists():
             r["cover"] = f"/covers/{slug}.jpg"
             continue
 
-        url = fetch_cover(r["title"], r["volume"])
+        # Search Google Books
+        url = search_google_books(r["title"], r["volume"])
         if not url:
             continue
 
-        img = requests.get(url).content
-        cover_path.write_bytes(img)
-        r["cover"] = f"/covers/{slug}.jpg"
+        # Download the image
+        try:
+            img = requests.get(url, timeout=10).content
+            cover_path.write_bytes(img)
+            r["cover"] = f"/covers/{slug}.jpg"
+        except Exception:
+            pass
 
     OUTPUT.write_text(json.dumps(releases, indent=2, ensure_ascii=False))
 
 if __name__ == "__main__":
     main()
+
