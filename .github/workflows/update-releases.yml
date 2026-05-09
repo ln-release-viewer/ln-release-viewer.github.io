@@ -21,7 +21,7 @@ jobs:
 
       - name: Apply JSON output patch
         run: |
-          cd lnrelease-src
+          cd lnrelease-src/lnrelease
 
           # Insert "import json" after the existing imports
           sed -i "/from utils import FORMATS, Book, Format, Release, Table/a import json" write.py
