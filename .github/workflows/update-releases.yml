@@ -73,7 +73,7 @@ jobs:
       - name: Debug- show modified write.py
         run: |
           echo "Showing write.py:"
-          sed -n '1,200p' lnrelease-src/write.py
+          sed -n '1,200p' lnrelease-src/lnrelease/write.py
 
 
       - name: Copy JSON into your repo
