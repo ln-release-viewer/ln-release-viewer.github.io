@@ -21,32 +21,34 @@ jobs:
 
       - name: Apply JSON output patch
         run: |
-          patch -d lnrelease-src << 'EOF'
-          *** a/write.py
-          --- b/write.py
-          @@
-           from utils import FORMATS, Book, Format, Release, Table
-           OUT = Path('README.md')
-          +import json
-          +
-          +def write_json(releases, output: Path):
-          +    data = []
-          +    for r in releases:
-          +        data.append({
-          +            "title": r.name,
-          +            "volume": r.volume,
-          +            "date": r.date.isoformat(),
-          +            "publisher": r.publisher,
-          +            "format": str(r.format),
-          +            "link": r.link,
-          +            "isbn": r.isbn,
-          +        })
-          +    with open(output, "w", encoding="utf-8") as f:
-          +        json.dump(data, f, ensure_ascii=False, indent=2)
-          @@ def main() -> None:
-           write_page(filtered, OUT, f'# Licensed Light Novel Releases', True)
-          +write_json(filtered, Path("releases.json"))
+          cd lnrelease-src
+
+          # Insert "import json" after the existing imports
+          sed -i "/from utils import FORMATS, Book, Format, Release, Table/a import json" write.py
+
+          # Append the write_json function to the end of the file
+          cat << 'EOF' >> write.py
+
+          def write_json(releases, output: Path):
+              data = []
+              for r in releases:
+                  data.append({
+                      "title": r.name,
+                      "volume": r.volume,
+                      "date": r.date.isoformat(),
+                      "publisher": r.publisher,
+                      "format": str(r.format),
+                      "link": r.link,
+                      "isbn": r.isbn,
+                  })
+              with open(output, "w", encoding="utf-8") as f:
+                  json.dump(data, f, ensure_ascii=False, indent=2)
+
           EOF
+
+          # Insert the call to write_json() right after write_page() in main()
+          sed -i "/write_page(filtered, OUT, f'# Licensed Light Novel Releases', True)/a \    write_json(filtered, Path('releases.json'))" write.py
+
 
       - name: Install Python
         uses: actions/setup-python@v5
