@@ -8,13 +8,7 @@ OUTPUT = Path("data/releases.json")
 # Regex to match table rows
 ROW_RE = re.compile(
     r"\|(?P<date>[^|]+)\|"
-    r"
-
-\[(?P<title>[^\]
-
-]+)\]
-
-\((?P<link>[^ ]+) \"(?P<publisher>[^\"]+)\"\)\|"
+    r"\[(?P<title>[^\]]+)\]\((?P<link>[^ ]+) \"(?P<publisher>[^\"]+)\"\)\|"
     r"(?P<volume>[^|]+)\|"
     r"(?P<pub2>[^|]+)\|"
     r"(?P<format>[^|]+)\|"
