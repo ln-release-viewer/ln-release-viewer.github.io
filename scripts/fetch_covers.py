@@ -77,12 +77,6 @@ def main():
         slug = slugify(f"{r['title']}-vol-{r['volume']}")
         cover_path = COVERS_DIR / f"{slug}.jpg"
 
-        # Reuse existing cover
-        if cover_path.exists():
-            r["cover"] = f"/covers/{slug}.jpg"
-            print(f"Already have cover for {r['title']} vol {r['volume']}")
-            continue
-
         print(f"Fetching cover for {r['title']} vol {r['volume']} (ISBN {isbn})")
 
         # Try Open Library first
