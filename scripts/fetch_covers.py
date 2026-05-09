@@ -13,11 +13,15 @@ GOOGLE_BOOKS_URL = "https://www.googleapis.com/books/v1/volumes"
 def slugify(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
-def search_google_books(title, volume):
-    # Build a query like: intitle:"Rebuild World" intitle:"8.1"
-    q = f'intitle:"{title}"'
-    if volume:
-        q += f' intitle:"{volume}"'
+def clean_title(title):
+    # Remove punctuation that hurts Google Books search
+    return re.sub(r"[^a-zA-Z0-9 ]+", "", title)
+
+def search_google_books(title, publisher):
+    title_clean = clean_title(title)
+
+    # Best query pattern for LNs
+    q = f'intitle:"{title_clean}" "{publisher}" "light novel"'
 
     params = {"q": q, "maxResults": 5}
 
@@ -37,7 +41,6 @@ def search_google_books(title, volume):
         info = item.get("volumeInfo", {})
         image_links = info.get("imageLinks")
         if image_links:
-            # Prefer highest quality available
             return (
                 image_links.get("extraLarge")
                 or image_links.get("large")
@@ -46,6 +49,7 @@ def search_google_books(title, volume):
             )
 
     return None
+
 
 def main():
     releases = json.loads(RELEASES.read_text())

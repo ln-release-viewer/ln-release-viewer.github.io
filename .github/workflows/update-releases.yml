@@ -29,7 +29,7 @@ jobs:
         run: |
           python scripts/parse_readme.py
 
-      - name: Fetch covers from AniList
+      - name: Fetch covers from Google Books
         run: |
           pip install requests
           python scripts/fetch_covers.py
