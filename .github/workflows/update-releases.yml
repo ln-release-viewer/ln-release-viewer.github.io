@@ -65,6 +65,17 @@ jobs:
           cd lnrelease-src/lnrelease
           python lnrelease.py
 
+      - name: Debug: list files
+        run: |
+          echo "Listing lnrelease-src directory:"
+          ls -R lnrelease-src
+
+      - name: Debug: show modified write.py
+        run: |
+          echo "Showing write.py:"
+          sed -n '1,200p' lnrelease-src/write.py
+
+
       - name: Copy JSON into your repo
         run: |
           cp lnrelease-src/lnrelease/releases.json data/releases.json
