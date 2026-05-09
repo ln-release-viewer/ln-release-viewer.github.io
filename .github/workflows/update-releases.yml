@@ -29,21 +29,11 @@ jobs:
         run: |
           python scripts/parse_readme.py
 
-      - name: Debug- show books.csv header
-        run: |
-          head -n 5 lnrelease-src/books.csv
-
       - name: Add ISBNs from LNRelease CSV
         run: |
           python scripts/add_isbns.py
 
-      - name: Debug Open Library cover test
-        run: |
-          curl -I https://covers.openlibrary.org/b/isbn/9798855414288-L.jpg
-          curl -I https://covers.openlibrary.org/b/isbn/9798855433432-L.jpg
-
-
-      - name: Fetch covers from Google Books
+      - name: Fetch covers from Open Library
         run: |
           pip install requests
           python scripts/fetch_covers.py
