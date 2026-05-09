@@ -33,6 +33,10 @@ jobs:
         run: |
           python scripts/add_isbns.py
 
+      - name: Debug- show books.csv header
+        run: |
+          head -n 5 lnrelease-src/books.csv
+
       - name: Fetch covers from Google Books
         run: |
           pip install requests
