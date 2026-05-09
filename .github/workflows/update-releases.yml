@@ -2,8 +2,8 @@ name: Update LN Releases
 
 on:
   schedule:
-    - cron: "0 6 * * 1"   # Every Monday at 6:00 UTC
-  workflow_dispatch:       # Allow manual runs
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -15,68 +15,19 @@ jobs:
     steps:
       - name: Checkout your repo
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clone LNRelease repo
         run: |
           git clone https://github.com/LNRelease/lnrelease.github.io lnrelease-src
-
-      - name: Apply JSON output patch
-        run: |
-          cd lnrelease-src/lnrelease
-
-          # Insert "import json" after the existing imports
-          sed -i "/from utils import FORMATS, Book, Format, Release, Table/a import json" write.py
-
-          # Append the write_json function to the end of the file
-          cat << 'EOF' >> write.py
-
-          def write_json(releases, output: Path):
-              data = []
-              for r in releases:
-                  data.append({
-                      "title": r.name,
-                      "volume": r.volume,
-                      "date": r.date.isoformat(),
-                      "publisher": r.publisher,
-                      "format": str(r.format),
-                      "link": r.link,
-                      "isbn": r.isbn,
-                  })
-              with open(output, "w", encoding="utf-8") as f:
-                  json.dump(data, f, ensure_ascii=False, indent=2)
-
-          EOF
-
-          # Insert the call to write_json() after the write_page() call
-          sed -i "/OUT, f'# Licensed Light Novel Releases', True)/a \    write_json([b for b in current if b.format != Format.AUDIOBOOK], Path('releases.json'))" write.py
-
-
 
       - name: Install Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install LNRelease dependencies
+      - name: Parse README into JSON
         run: |
-          cd lnrelease-src
-          pip install -r requirements.txt
-
-      - name: Run LNRelease pipeline
-        run: |
-          cd lnrelease-src/lnrelease
-          python lnrelease.py
-
-      - name: Debug- show modified releases.json
-        run: |
-          echo "Showing write.py:"
-          sed -n '1,200p' lnrelease-src/lnrelease/releases.json
-
-      - name: Copy JSON into your repo
-        run: |
-          cp lnrelease-src/lnrelease/releases.json data/releases.json
+          python scripts/parse_readme.py
 
       - name: Commit and push changes
         run: |
@@ -85,3 +36,4 @@ jobs:
           git add data/releases.json
           git commit -m "Update releases.json" || echo "No changes to commit"
           git push
+
