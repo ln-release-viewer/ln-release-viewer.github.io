@@ -29,6 +29,10 @@ jobs:
         run: |
           python scripts/parse_readme.py
 
+      - name: Add ISBNs from LNRelease CSV
+        run: |
+          python scripts/add_isbns.py
+
       - name: Fetch covers from Google Books
         run: |
           pip install requests
