@@ -29,13 +29,13 @@ jobs:
         run: |
           python scripts/parse_readme.py
 
-      - name: Add ISBNs from LNRelease CSV
-        run: |
-          python scripts/add_isbns.py
-
       - name: Debug- show books.csv header
         run: |
           head -n 5 lnrelease-src/books.csv
+
+      - name: Add ISBNs from LNRelease CSV
+        run: |
+          python scripts/add_isbns.py
 
       - name: Fetch covers from Google Books
         run: |
