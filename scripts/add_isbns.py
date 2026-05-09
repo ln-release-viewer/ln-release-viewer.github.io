@@ -7,8 +7,17 @@ RELEASES = Path("data/releases.json")
 BOOKS_CSV = Path("lnrelease-src/books.csv")
 OUTPUT = Path("data/releases.json")
 
+FORMAT_PRIORITY = {
+    "Paperback": 1,
+    "Hardback": 1,
+    "Hardcover": 1,
+    "Physical": 1,
+    "Digital": 2,
+    "Ebook": 2,
+    "Audiobook": 3,
+}
+
 def normalize_title(s):
-    # Lowercase, remove punctuation, collapse spaces
     s = s.lower()
     s = re.sub(r"[^a-z0-9 ]+", "", s)
     s = re.sub(r"\s+", " ", s)
@@ -43,20 +52,24 @@ def main():
         r_title_norm = normalize_title(r["title"])
         r_volume = r["volume"].strip()
 
-        # Find matching book entry
-        match = next(
-            (
-                b for b in books
-                if b["title_norm"] == r_title_norm
-                and b["volume"] == r_volume
-            ),
-            None
-        )
+        # Find all matching entries
+        matches = [
+            b for b in books
+            if b["title_norm"] == r_title_norm
+            and b["volume"] == r_volume
+        ]
 
-        r["isbn"] = match["isbn"] if match else None
+        if matches:
+            # Sort by format priority
+            matches.sort(key=lambda b: FORMAT_PRIORITY.get(b["format"], 99))
+            best = matches[0]
+            r["isbn"] = best["isbn"]
+        else:
+            r["isbn"] = None
 
     OUTPUT.write_text(json.dumps(releases, indent=2, ensure_ascii=False))
 
 if __name__ == "__main__":
     main()
+
 
