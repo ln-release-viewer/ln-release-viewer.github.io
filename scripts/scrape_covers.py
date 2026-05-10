@@ -1,6 +1,7 @@
 import json
 import re
 import requests
+import time
 from bs4 import BeautifulSoup
 
 HEADERS = {
@@ -9,6 +10,7 @@ HEADERS = {
 
 def fetch_html(url):
     try:
+        time.sleep(0.4) # Limit requests
         r = requests.get(url, headers=HEADERS, timeout=10)
         if r.status_code == 200:
             return r.text
