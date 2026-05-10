@@ -10,7 +10,8 @@ class SevenSeasScraper:
         opts.add_argument("--disable-dev-shm-usage")
         opts.add_argument("--window-size=1280,800")
 
-        self.driver = Chrome(options=opts, headless=False)
+        # Force UDC to match GitHub Actions Chrome version
+        self.driver = Chrome(options=opts, headless=False, version_main=147)
 
     def get_cover(self, url: str) -> str | None:
         self.driver.get(url)
@@ -18,7 +19,7 @@ class SevenSeasScraper:
 
         html = self.driver.page_source
 
-        # TODO: extract cover from inline JS once we see real HTML
+        # TODO: extract cover once we see real Seven Seas HTML
         m = re.search(r'cover\s*:\s*"([^"]+)"', html)
         if m:
             return m.group(1)
