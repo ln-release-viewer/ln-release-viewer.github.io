@@ -2,6 +2,8 @@ import time
 import re
 from undetected_chromedriver import Chrome, ChromeOptions
 
+Path("debug").mkdir(exist_ok=True)
+
 class SevenSeasScraper:
     def __init__(self):
         opts = ChromeOptions()
