@@ -19,6 +19,13 @@ class SevenSeasScraper:
 
         html = self.driver.page_source
 
+        # Dump HTML for debugging
+        slug = re.sub(r"[^a-zA-Z0-9-]", "-", url.lower())[:40]
+        debug_path = f"debug/sevenseas_{slug}.html"
+        with open(debug_path, "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"⚠ Seven Seas debug saved to {debug_path}")
+
         # TODO: extract cover once we see real Seven Seas HTML
         m = re.search(r'cover\s*:\s*"([^"]+)"', html)
         if m:
