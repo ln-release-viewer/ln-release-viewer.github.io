@@ -2,7 +2,13 @@ import asyncio
 import json
 import re
 from bs4 import BeautifulSoup
-from fetch_covers import slugify_short
+import re
+import hashlib
+
+def _debug_slug(url: str) -> str:
+    safe = re.sub(r"[^a-zA-Z0-9-]", "-", url.lower())
+    h = hashlib.sha1(url.encode("utf-8")).hexdigest()[:6]
+    return f"{safe[:40]}-{h}"
 
 
 # -------------------------------
