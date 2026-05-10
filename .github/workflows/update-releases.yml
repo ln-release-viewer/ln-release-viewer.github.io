@@ -44,7 +44,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add data/releases.json public/covers
+          git add data/releases.json public/covers /scripts/debug
           git commit -m "Updated releases.json and covers" || echo "No changes to commit"
           git push
 
