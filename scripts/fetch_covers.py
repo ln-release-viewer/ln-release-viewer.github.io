@@ -3,11 +3,10 @@ import io
 import json
 import time
 from pathlib import Path
-
+import hashlib
 import requests
 from PIL import Image
 from playwright.async_api import async_playwright
-
 from scrape_covers import CoverScraper
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,16 +17,15 @@ COVERS_DIR.mkdir(parents=True, exist_ok=True)
 REQUEST_DELAY = 0.4  # polite delay for HTTP APIs
 
 
-def slugify(s: str) -> str:
-    return (
-        s.lower()
-        .replace(" ", "-")
-        .replace("'", "")
-        .replace(":", "")
-        .replace("!", "")
-        .replace("?", "")
-        .replace(",", "")
-    )
+def slugify_short(title: str, volume: str) -> str:
+    # Keep only first ~6 words for readability
+    words = title.lower().split()
+    short = "-".join(words[:6])
+
+    # Hash full title to avoid collisions
+    h = hashlib.sha1(title.encode("utf-8")).hexdigest()[:6]
+
+    return f"{short}-vol-{volume}-{h}"
 
 
 def is_valid_image(content: bytes) -> bool:
@@ -142,7 +140,7 @@ def main():
         title = r["title"]
         vol = r["volume"]
         isbn = r.get("isbn")
-        slug = slugify(f"{title}-vol-{vol}")
+        slug = slugify_short(title, str(vol))
         cover_path = COVERS_DIR / f"{slug}.jpg"
 
         if r.get("cover") and cover_path.exists():
@@ -182,7 +180,7 @@ def main():
         for r, img_url in publisher_results:
             title = r["title"]
             vol = r["volume"]
-            slug = slugify(f"{title}-vol-{vol}")
+            slug = slugify_short(title, str(vol))
             cover_path = COVERS_DIR / f"{slug}.jpg"
 
             if not img_url:
