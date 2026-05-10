@@ -1,3 +1,5 @@
+import json
+import re
 import requests
 from bs4 import BeautifulSoup
 
@@ -21,52 +23,115 @@ def extract_og_image(html):
         return tag["content"]
     return None
 
-def scrape_seven_seas(url):
-    html = fetch_html(url)
-    if not html:
-        return None
-    return extract_og_image(html)
-
+# -------------------------------
+#  YEN PRESS (Next.js)
+# -------------------------------
 def scrape_yen_press(url):
     html = fetch_html(url)
     if not html:
         return None
+
+    soup = BeautifulSoup(html, "html.parser")
+    script = soup.find("script", id="__NEXT_DATA__", type="application/json")
+    if not script:
+        return None
+
+    try:
+        data = json.loads(script.string)
+        queries = data["props"]["pageProps"]["dehydratedState"]["queries"]
+        for q in queries:
+            cover = q["state"]["data"].get("cover")
+            if cover:
+                return cover
+    except Exception:
+        pass
+
     return extract_og_image(html)
 
+# -------------------------------
+#  SEVEN SEAS (Schema.org JSON)
+# -------------------------------
+def scrape_seven_seas(url):
+    html = fetch_html(url)
+    if not html:
+        return None
+
+    soup = BeautifulSoup(html, "html.parser")
+    ld_json = soup.find("script", type="application/ld+json")
+    if ld_json:
+        try:
+            data = json.loads(ld_json.string)
+            if isinstance(data, dict) and "image" in data:
+                return data["image"]
+        except Exception:
+            pass
+
+    return extract_og_image(html)
+
+# -------------------------------
+#  J-NOVEL CLUB (Nuxt.js)
+# -------------------------------
 def scrape_jnovel(url):
     html = fetch_html(url)
     if not html:
         return None
-    soup = BeautifulSoup(html, "html.parser")
 
-    # JNC uses <img class="book-cover">
-    img = soup.find("img", class_="book-cover")
-    if img and img.get("src"):
-        return img["src"]
+    # Try Nuxt.js JSON
+    match = re.search(r"window\.__NUXT__\s*=\s*(\{.*?\});", html, re.DOTALL)
+    if match:
+        try:
+            data = json.loads(match.group(1))
+            volumes = data["state"]["data"].get("volumes", [])
+            for v in volumes:
+                if "cover" in v:
+                    return v["cover"]
+        except Exception:
+            pass
 
-    # fallback to og:image
+    # Fallback: og:image
     return extract_og_image(html)
 
+# -------------------------------
+#  BOOKWALKER (Schema.org JSON)
+# -------------------------------
 def scrape_bookwalker(url):
+    html = fetch_html(url)
+    if not html:
+        return None
+
+    soup = BeautifulSoup(html, "html.parser")
+    ld_json = soup.find("script", type="application/ld+json")
+    if ld_json:
+        try:
+            data = json.loads(ld_json.string)
+            if isinstance(data, dict) and "image" in data:
+                return data["image"]
+        except Exception:
+            pass
+
+    return extract_og_image(html)
+
+# -------------------------------
+#  GENERIC FALLBACK
+# -------------------------------
+def scrape_generic(url):
     html = fetch_html(url)
     if not html:
         return None
     return extract_og_image(html)
 
+# -------------------------------
+#  ROUTER
+# -------------------------------
 def get_publisher_cover(url):
-    """Route to the correct scraper based on domain."""
-    if "sevenseasentertainment.com" in url:
-        return scrape_seven_seas(url)
     if "yenpress.com" in url:
         return scrape_yen_press(url)
+    if "sevenseasentertainment.com" in url:
+        return scrape_seven_seas(url)
     if "j-novel.club" in url:
         return scrape_jnovel(url)
     if "bookwalker.com" in url:
         return scrape_bookwalker(url)
 
-    # generic fallback
-    html = fetch_html(url)
-    if html:
-        return extract_og_image(html)
+    return scrape_generic(url)
 
-    return None
