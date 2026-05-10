@@ -4,6 +4,9 @@ import re
 from bs4 import BeautifulSoup
 import re
 import hashlib
+from pathlib import Path
+Path("debug").mkdir(exist_ok=True)
+
 
 def _debug_slug(url: str) -> str:
     safe = re.sub(r"[^a-zA-Z0-9-]", "-", url.lower())
@@ -144,13 +147,13 @@ class CoverScraper:
                 print(f"⚠ Cloudflare challenge detected for: {url}")
 
                 # Dump HTML for debugging
-                debug_path = f"debug_cloudflare_{_debug_slug(url)}.html"
+                debug_path = f"debug/debug_cloudflare_{_debug_slug(url)}.html"
                 with open(debug_path, "w", encoding="utf-8") as f:
                     f.write(html)
                 print(f"⚠ Saved Cloudflare debug HTML to {debug_path}")
 
             if not html or "cover" not in html:
-                debug_path = f"/debug/debug_{_debug_slug(url)}.html"
+                debug_path = f"debug/debug_{_debug_slug(url)}.html"
                 with open(debug_path, "w", encoding="utf-8") as f:
                     f.write(html or "")
                 print(f"⚠ Saved debug HTML to {debug_path}")
