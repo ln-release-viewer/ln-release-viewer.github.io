@@ -1,6 +1,7 @@
 import asyncio
 import io
 import json
+import re
 import time
 from pathlib import Path
 import hashlib
@@ -18,11 +19,14 @@ REQUEST_DELAY = 0.4  # polite delay for HTTP APIs
 
 
 def slugify_short(title: str, volume: str) -> str:
-    # Keep only first ~6 words for readability
-    words = title.lower().split()
+    # Remove characters Windows can't handle
+    safe = re.sub(r"[^a-zA-Z0-9\s-]", "", title.lower())
+
+    # Keep first 6 words
+    words = safe.split()
     short = "-".join(words[:6])
 
-    # Hash full title to avoid collisions
+    # Hash full title for uniqueness
     h = hashlib.sha1(title.encode("utf-8")).hexdigest()[:6]
 
     return f"{short}-vol-{volume}-{h}"
