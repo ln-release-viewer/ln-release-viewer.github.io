@@ -144,13 +144,13 @@ class CoverScraper:
                 print(f"⚠ Cloudflare challenge detected for: {url}")
 
                 # Dump HTML for debugging
-                debug_path = f"debug_cloudflare_{slugify_short(url, '')}.html"
+                debug_path = f"debug_cloudflare_{_debug_slug(url)}.html"
                 with open(debug_path, "w", encoding="utf-8") as f:
                     f.write(html)
                 print(f"⚠ Saved Cloudflare debug HTML to {debug_path}")
 
             if not html or "cover" not in html:
-                debug_path = f"debug_{slugify_short(url, '')}.html"
+                debug_path = f"debug_{_debug_slug(url)}.html"
                 with open(debug_path, "w", encoding="utf-8") as f:
                     f.write(html or "")
                 print(f"⚠ Saved debug HTML to {debug_path}")
