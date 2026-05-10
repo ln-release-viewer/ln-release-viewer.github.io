@@ -141,6 +141,13 @@ class CoverScraper:
                     f.write(html)
                 print(f"⚠ Saved Cloudflare debug HTML to {debug_path}")
 
+            if not html or "cover" not in html:
+                debug_path = f"debug_{slugify_short(url, '')}.html"
+                with open(debug_path, "w", encoding="utf-8") as f:
+                    f.write(html or "")
+                print(f"⚠ Saved debug HTML to {debug_path}")
+
+
         except Exception as e:
             print(f"⚠ Exception while fetching {url}: {e}")
             html = None
