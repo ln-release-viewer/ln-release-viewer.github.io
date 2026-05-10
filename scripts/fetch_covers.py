@@ -138,10 +138,6 @@ async def scrape_all_publishers(releases: list[dict]) -> list[tuple[dict, str | 
                 "--disable-blink-features=AutomationControlled",
                 "--disable-dev-shm-usage",
                 "--no-sandbox",
-                "--disable-gpu",
-                "--disable-web-security",
-                "--disable-features=IsolateOrigins,site-per-process",
-                "--disable-site-isolation-trials",
             ],
         )
 
