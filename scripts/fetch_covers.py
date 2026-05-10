@@ -152,7 +152,6 @@ async def scrape_all_publishers(releases: list[dict]) -> list[tuple[dict, str | 
             timezone_id="America/New_York",
         )
 
-        # Inject stealth patches
         await context.add_init_script(STEALTH_JS)
 
         scraper = CoverScraper(context)
@@ -170,6 +169,7 @@ async def scrape_all_publishers(releases: list[dict]) -> list[tuple[dict, str | 
         await browser.close()
 
     return results
+
 
 
 def main():
