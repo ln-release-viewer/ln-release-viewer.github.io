@@ -25,6 +25,12 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+
       - name: Parse README into JSON
         run: |
           python scripts/parse_readme.py
@@ -35,7 +41,7 @@ jobs:
 
       - name: Fetch covers with Xvfb
         run: |
-          pip install requests pillow beautifulsoup4 playwright
+          pip install requests pillow beautifulsoup4 playwright undetected-chromedriver selenium
           playwright install --with-deps chromium
           sudo apt-get install -y xvfb
           xvfb-run -a python scripts/fetch_covers.py
