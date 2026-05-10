@@ -25,11 +25,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Playwright
-        run: |
-          pip install playwright
-          playwright install --with-deps chromium
-
       - name: Parse README into JSON
         run: |
           python scripts/parse_readme.py
@@ -40,7 +35,8 @@ jobs:
 
       - name: Fetch covers from Open Library
         run: |
-          pip install requests pillow beautifulsoup4
+          pip install requests pillow beautifulsoup4 playwright
+          playwright install --with-deps chromium
           python scripts/fetch_covers.py
 
       - name: Commit and push changes

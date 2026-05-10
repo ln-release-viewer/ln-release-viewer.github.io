@@ -1,55 +1,49 @@
 import asyncio
 import json
 import re
-import time
-from playwright.async_api import async_playwright
+from bs4 import BeautifulSoup
 
-# polite delay between page loads
-REQUEST_DELAY = 0.5
+# -------------------------------
+#  HTML helpers
+# -------------------------------
 
-async def fetch_page(url):
-    """Load the page in a real browser and return the full HTML."""
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                       "(KHTML, like Gecko) Chrome/123.0 Safari/537.36"
-        )
-        page = await context.new_page()
+def extract_og_image(html: str) -> str | None:
+    soup = BeautifulSoup(html, "html.parser")
+    tag = soup.find("meta", property="og:image")
+    if tag and tag.get("content"):
+        return tag["content"]
+    return None
 
-        await page.goto(url, wait_until="networkidle")
-        await asyncio.sleep(REQUEST_DELAY)
-
-        html = await page.content()
-        await browser.close()
-        return html
-
-def extract_og_image(html):
-    match = re.search(r'<meta property="og:image" content="([^"]+)"', html)
-    return match.group(1) if match else None
-
-def extract_json(script_text):
+def extract_json(text: str):
     try:
-        return json.loads(script_text)
+        return json.loads(text)
     except Exception:
         return None
 
 # -------------------------------
-#  YEN PRESS (Next.js)
+#  PUBLISHER-SPECIFIC PARSERS
 # -------------------------------
-def scrape_yen_press(html):
-    match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.+?)</script>', html, re.DOTALL)
+
+def scrape_yen_press(html: str) -> str | None:
+    # Next.js __NEXT_DATA__
+    match = re.search(
+        r'<script id="__NEXT_DATA__" type="application/json">(.+?)</script>',
+        html,
+        re.DOTALL,
+    )
     if not match:
-        return None
+        return extract_og_image(html)
 
     data = extract_json(match.group(1))
     if not data:
-        return None
+        return extract_og_image(html)
 
     try:
         queries = data["props"]["pageProps"]["dehydratedState"]["queries"]
         for q in queries:
-            cover = q["state"]["data"].get("cover")
+            state = q.get("state", {})
+            d = state.get("data", {})
+            cover = d.get("cover")
             if cover:
                 return cover
     except Exception:
@@ -57,67 +51,70 @@ def scrape_yen_press(html):
 
     return extract_og_image(html)
 
-# -------------------------------
-#  SEVEN SEAS (Schema.org JSON)
-# -------------------------------
-def scrape_seven_seas(html):
-    match = re.search(r'<script type="application/ld\+json">(.+?)</script>', html, re.DOTALL)
-    if match:
-        data = extract_json(match.group(1))
+
+def scrape_seven_seas(html: str) -> str | None:
+    # Schema.org JSON
+    soup = BeautifulSoup(html, "html.parser")
+    ld = soup.find("script", type="application/ld+json")
+    if ld and ld.string:
+        data = extract_json(ld.string)
         if isinstance(data, dict) and "image" in data:
             return data["image"]
 
     return extract_og_image(html)
 
-# -------------------------------
-#  J-NOVEL CLUB (Nuxt.js)
-# -------------------------------
-def scrape_jnovel(html):
+
+def scrape_jnovel(html: str) -> str | None:
+    # Nuxt.js window.__NUXT__
     match = re.search(r"window\.__NUXT__\s*=\s*(\{.*?\});", html, re.DOTALL)
     if match:
         data = extract_json(match.group(1))
-        if not data:
-            return None
-
-        try:
-            volumes = data["state"]["data"].get("volumes", [])
-            for v in volumes:
-                if "cover" in v:
-                    return v["cover"]
-        except Exception:
-            pass
+        if data:
+            try:
+                volumes = data["state"]["data"].get("volumes", [])
+                for v in volumes:
+                    if "cover" in v:
+                        return v["cover"]
+            except Exception:
+                pass
 
     return extract_og_image(html)
 
-# -------------------------------
-#  BOOKWALKER (Schema.org JSON)
-# -------------------------------
-def scrape_bookwalker(html):
-    match = re.search(r'<script type="application/ld\+json">(.+?)</script>', html, re.DOTALL)
-    if match:
-        data = extract_json(match.group(1))
+
+def scrape_bookwalker(html: str) -> str | None:
+    soup = BeautifulSoup(html, "html.parser")
+    ld = soup.find("script", type="application/ld+json")
+    if ld and ld.string:
+        data = extract_json(ld.string)
         if isinstance(data, dict) and "image" in data:
             return data["image"]
 
     return extract_og_image(html)
 
 # -------------------------------
-#  ROUTER
+#  PLAYWRIGHT SCRAPER
 # -------------------------------
-class CoverScraper:
-    def __init__(self, browser):
-        self.browser = browser
 
-    async def fetch_page(self, url):
-        page = await self.browser.new_page()
-        await page.goto(url, wait_until="networkidle")
-        await asyncio.sleep(0.5)  # polite delay
-        html = await page.content()
-        await page.close()
+class CoverScraper:
+    def __init__(self, context):
+        self.context = context
+
+    async def fetch_page(self, url: str) -> str | None:
+        page = await self.context.new_page()
+        try:
+            await page.goto(url, wait_until="domcontentloaded", timeout=45000)
+            await page.wait_for_timeout(1500)  # allow hydration
+            html = await page.content()
+        except Exception:
+            html = None
+        finally:
+            await page.close()
         return html
 
-    async def get_cover(self, url):
+    async def get_cover(self, url: str) -> str | None:
         html = await self.fetch_page(url)
+        if not html:
+            return None
 
         if "yenpress.com" in url:
             return scrape_yen_press(html)
