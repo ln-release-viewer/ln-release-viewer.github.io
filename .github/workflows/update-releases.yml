@@ -35,7 +35,7 @@ jobs:
 
       - name: Fetch covers from Open Library
         run: |
-          pip install requests pillow beautifulsoup4 playwright
+          pip install requests pillow beautifulsoup4 playwright playwright-stealth
           playwright install --with-deps chromium
           python scripts/fetch_covers.py
 

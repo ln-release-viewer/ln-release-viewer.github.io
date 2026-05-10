@@ -8,6 +8,7 @@ import hashlib
 import requests
 from PIL import Image
 from playwright.async_api import async_playwright
+from playwright_stealth import stealth_async
 from scrape_covers import CoverScraper
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -117,6 +118,11 @@ async def scrape_all_publishers(releases: list[dict]) -> list[tuple[dict, str | 
             locale="en-US",
             timezone_id="America/New_York",
         )
+
+        # Apply stealth to the entire context
+        stealth_page = await context.new_page()
+        await stealth_async(stealth_page)
+        await stealth_page.close()
 
         scraper = CoverScraper(context)
 

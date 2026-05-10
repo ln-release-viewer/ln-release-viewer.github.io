@@ -102,6 +102,7 @@ class CoverScraper:
     async def fetch_page(self, url: str) -> str | None:
         page = await self.context.new_page()
         try:
+            page = await self.context.new_page()
             await page.goto(url, wait_until="domcontentloaded", timeout=45000)
             await page.wait_for_timeout(1500)  # allow hydration
             html = await page.content()
