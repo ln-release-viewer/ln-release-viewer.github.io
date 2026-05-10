@@ -4,7 +4,9 @@ import requests
 from pathlib import Path
 from io import BytesIO
 from PIL import Image
-from scrape_covers import get_publisher_cover
+import asyncio
+from scrape_covers import CoverScraper
+from playwright.async_api import async_playwright
 
 
 RELEASES = Path("data/releases.json")
@@ -67,6 +69,23 @@ def fetch_google_books(isbn):
 
     return None
 
+async def scrape_all_publishers(releases):
+    """Yield (release, img_url) pairs using a single Playwright browser."""
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        scraper = CoverScraper(browser)
+
+        for r in releases:
+            url = r.get("link")
+            if not url:
+                yield r, None
+                continue
+
+            img_url = await scraper.get_cover(url)
+            yield r, img_url
+
+        await browser.close()
+
 def main():
     releases = json.loads(RELEASES.read_text())
 
@@ -110,19 +129,26 @@ def main():
         print(f"Google Books failed for ISBN {isbn}, trying publisher scrape…")
 
         # Fallback: Scrape Publisher
-        img_url = get_publisher_cover(r["link"])
-        if img_url:
-            try:
-                img = requests.get(img_url, timeout=10).content
-                if is_valid_image(img):
-                    cover_path.write_bytes(img)
-                    r["cover"] = f"/covers/{slug}.jpg"
-                    print(f"✔ Publisher cover saved for {r['title']} vol {r['volume']}")
-                    continue
-            except Exception:
-                pass
+        print("Starting publisher scraping pass…")
+        publisher_results = asyncio.run(scrape_all_publishers(releases))
 
-        print(f"❌ No valid cover found for {r['title']} vol {r['volume']}")
+        for r, img_url in publisher_results:
+            isbn = r.get("isbn")
+            slug = slugify(f"{r['title']}-vol-{r['volume']}")
+            cover_path = COVERS_DIR / f"{slug}.jpg"
+
+            if img_url:
+                try:
+                    img = requests.get(img_url, timeout=10).content
+                    if is_valid_image(img):
+                        cover_path.write_bytes(img)
+                        r["cover"] = f"/covers/{slug}.jpg"
+                        print(f"✔ Publisher cover saved for {r['title']} vol {r['volume']}")
+                        continue
+                except Exception:
+                    pass
+
+            print(f"❌ No valid cover found for {r['title']} vol {r['volume']}")
 
 
     OUTPUT.write_text(json.dumps(releases, indent=2, ensure_ascii=False))
