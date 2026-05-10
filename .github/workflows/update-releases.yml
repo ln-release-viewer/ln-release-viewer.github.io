@@ -33,11 +33,12 @@ jobs:
         run: |
           python scripts/add_isbns.py
 
-      - name: Fetch covers from Open Library
+      - name: Fetch covers with Xvfb
         run: |
-          pip install requests pillow beautifulsoup4 playwright playwright-stealth
+          pip install requests pillow beautifulsoup4 playwright
           playwright install --with-deps chromium
-          python scripts/fetch_covers.py
+          sudo apt-get install -y xvfb
+          xvfb-run -a python scripts/fetch_covers.py
 
       - name: Commit and push changes
         run: |
