@@ -8,7 +8,6 @@ import hashlib
 import requests
 from PIL import Image
 from playwright.async_api import async_playwright
-from playwright_stealth import stealth_sync
 from scrape_covers import CoverScraper
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,6 +16,44 @@ COVERS_DIR = ROOT / "public" / "covers"
 COVERS_DIR.mkdir(parents=True, exist_ok=True)
 
 REQUEST_DELAY = 0.4  # polite delay for HTTP APIs
+
+STEALTH_JS = """
+// navigator.webdriver
+Object.defineProperty(navigator, 'webdriver', {
+  get: () => false,
+});
+
+// plugins
+Object.defineProperty(navigator, 'plugins', {
+  get: () => [1, 2, 3],
+});
+
+// languages
+Object.defineProperty(navigator, 'languages', {
+  get: () => ['en-US', 'en'],
+});
+
+// WebGL vendor spoofing
+const getParameter = WebGLRenderingContext.prototype.getParameter;
+WebGLRenderingContext.prototype.getParameter = function(parameter) {
+  if (parameter === 37445) return 'Intel Inc.';
+  if (parameter === 37446) return 'Intel Iris OpenGL Engine';
+  return getParameter(parameter);
+};
+
+// Chrome runtime
+window.chrome = {
+  runtime: {},
+};
+
+// Permissions
+const originalQuery = window.navigator.permissions.query;
+window.navigator.permissions.query = (parameters) => (
+  parameters.name === 'notifications'
+    ? Promise.resolve({ state: Notification.permission })
+    : originalQuery(parameters)
+);
+"""
 
 
 def slugify_short(title: str, volume: str) -> str:
@@ -119,10 +156,8 @@ async def scrape_all_publishers(releases: list[dict]) -> list[tuple[dict, str | 
             timezone_id="America/New_York",
         )
 
-        # Apply stealth to the context
-        page = await context.new_page()
-        stealth_sync(page)
-        await page.close()
+        # Inject stealth patches
+        await context.add_init_script(STEALTH_JS)
 
         scraper = CoverScraper(context)
 
