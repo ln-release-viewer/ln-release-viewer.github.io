@@ -1,5 +1,6 @@
 import time
 import re
+from pathlib import Path
 from undetected_chromedriver import Chrome, ChromeOptions
 
 Path("debug").mkdir(exist_ok=True)
