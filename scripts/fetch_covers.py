@@ -73,7 +73,23 @@ async def scrape_all_publishers(releases):
     results = []
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(
+            headless=False,  # Cloudflare blocks headless
+            args=[
+                "--disable-blink-features=AutomationControlled",
+                "--disable-dev-shm-usage",
+                "--no-sandbox",
+            ]
+        )
+
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/123.0.0.0 Safari/537.36",
+            viewport={"width": 1280, "height": 800},
+            locale="en-US",
+            timezone_id="America/New_York",
+        )
         scraper = CoverScraper(browser)
 
         for r in releases:
@@ -116,7 +132,7 @@ def main():
                 print(f"✔ Open Library cover saved for {r['title']} vol {r['volume']}")
                 continue
 
-        print(f"Open Library failed for ISBN {isbn}, trying Google Books…")
+            print(f"Open Library failed for ISBN {isbn}, trying Google Books…")
 
         # Fallback: Google Books
         if isbn:
@@ -126,10 +142,7 @@ def main():
                 r["cover"] = f"/covers/{slug}.jpg"
                 print(f"✔ Google Books cover saved for {r['title']} vol {r['volume']}")
                 continue
-
-        print(f"❌ No valid cover found for {r['title']} vol {r['volume']}")
-
-        print(f"Google Books failed for ISBN {isbn}, trying publisher scrape…")
+            print(f"Google Books failed for ISBN {isbn}, trying publisher scrape…")
 
         # Fallback: Scrape Publisher
         print("Starting publisher scraping pass…")
@@ -151,7 +164,7 @@ def main():
                 except Exception:
                     pass
 
-            print(f"❌ No valid cover found for {r['title']} vol {r['volume']}")
+        print(f"❌ No valid cover found for {r['title']} vol {r['volume']}")
 
 
     OUTPUT.write_text(json.dumps(releases, indent=2, ensure_ascii=False))
