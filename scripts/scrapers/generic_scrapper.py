@@ -1,0 +1,46 @@
+import json
+from bs4 import BeautifulSoup
+
+def extract_json(text):
+    try:
+        return json.loads(text)
+    except Exception:
+        return None
+
+class GenericScraper:
+    """
+    Fallback scraper for publishers without a dedicated parser.
+    Attempts:
+      1. <meta property="og:image">
+      2. <script type="application/ld+json"> with "image"
+      3. <img> tags that look like covers
+    """
+
+    def parse(self, html: str) -> str | None:
+        soup = BeautifulSoup(html, "html.parser")
+
+        # 1. OG image
+        og = soup.find("meta", property="og:image")
+        if og and og.get("content"):
+            return og["content"]
+
+        # 2. JSON-LD with "image"
+        for tag in soup.find_all("script", type="application/ld+json"):
+            if not tag.string:
+                continue
+            data = extract_json(tag.string)
+            if isinstance(data, dict):
+                img = data.get("image")
+                if isinstance(img, str):
+                    return img
+                if isinstance(img, list) and img:
+                    return img[0]
+
+        # 3. Look for <img> tags that look like covers
+        #    (common pattern: filenames with "cover", "volume", "vol", etc.)
+        for img in soup.find_all("img"):
+            src = img.get("src") or ""
+            if any(k in src.lower() for k in ["cover", "volume", "vol", "jacket"]):
+                return src
+
+        return None
