@@ -70,7 +70,8 @@ def fetch_google_books(isbn):
     return None
 
 async def scrape_all_publishers(releases):
-    """Yield (release, img_url) pairs using a single Playwright browser."""
+    results = []
+
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         scraper = CoverScraper(browser)
@@ -78,22 +79,22 @@ async def scrape_all_publishers(releases):
         for r in releases:
             url = r.get("link")
             if not url:
-                yield r, None
+                results.append((r, None))
                 continue
 
             img_url = await scraper.get_cover(url)
-            yield r, img_url
+            results.append((r, img_url))
 
         await browser.close()
+
+    return results
+
 
 def main():
     releases = json.loads(RELEASES.read_text())
 
     for r in releases:
         isbn = r.get("isbn")
-        if not isbn:
-            print(f"No ISBN for {r['title']} vol {r['volume']} — skipping")
-            continue
 
         slug = slugify(f"{r['title']}-vol-{r['volume']}")
         cover_path = COVERS_DIR / f"{slug}.jpg"
@@ -107,22 +108,24 @@ def main():
         print(f"Fetching cover for {r['title']} vol {r['volume']} (ISBN {isbn})")
 
         # Try Open Library first
-        img = fetch_openlib(isbn)
-        if img:
-            cover_path.write_bytes(img)
-            r["cover"] = f"/covers/{slug}.jpg"
-            print(f"✔ Open Library cover saved for {r['title']} vol {r['volume']}")
-            continue
+        if isbn:
+            img = fetch_openlib(isbn)
+            if img:
+                cover_path.write_bytes(img)
+                r["cover"] = f"/covers/{slug}.jpg"
+                print(f"✔ Open Library cover saved for {r['title']} vol {r['volume']}")
+                continue
 
         print(f"Open Library failed for ISBN {isbn}, trying Google Books…")
 
         # Fallback: Google Books
-        img = fetch_google_books(isbn)
-        if img:
-            cover_path.write_bytes(img)
-            r["cover"] = f"/covers/{slug}.jpg"
-            print(f"✔ Google Books cover saved for {r['title']} vol {r['volume']}")
-            continue
+        if isbn:
+            img = fetch_google_books(isbn)
+            if img:
+                cover_path.write_bytes(img)
+                r["cover"] = f"/covers/{slug}.jpg"
+                print(f"✔ Google Books cover saved for {r['title']} vol {r['volume']}")
+                continue
 
         print(f"❌ No valid cover found for {r['title']} vol {r['volume']}")
 
