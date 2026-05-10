@@ -104,18 +104,28 @@ def scrape_bookwalker(html):
 # -------------------------------
 #  ROUTER
 # -------------------------------
-async def get_publisher_cover(url):
-    html = await fetch_page(url)
+class CoverScraper:
+    def __init__(self, browser):
+        self.browser = browser
 
-    if "yenpress.com" in url:
-        return scrape_yen_press(html)
-    if "sevenseasentertainment.com" in url:
-        return scrape_seven_seas(html)
-    if "j-novel.club" in url:
-        return scrape_jnovel(html)
-    if "bookwalker.com" in url:
-        return scrape_bookwalker(html)
+    async def fetch_page(self, url):
+        page = await self.browser.new_page()
+        await page.goto(url, wait_until="networkidle")
+        await asyncio.sleep(0.5)  # polite delay
+        html = await page.content()
+        await page.close()
+        return html
 
-    return extract_og_image(html)
+    async def get_cover(self, url):
+        html = await self.fetch_page(url)
 
+        if "yenpress.com" in url:
+            return scrape_yen_press(html)
+        if "sevenseasentertainment.com" in url:
+            return scrape_seven_seas(html)
+        if "j-novel.club" in url:
+            return scrape_jnovel(html)
+        if "bookwalker.com" in url:
+            return scrape_bookwalker(html)
 
+        return extract_og_image(html)
