@@ -101,16 +101,55 @@ class CoverScraper:
 
     async def fetch_page(self, url: str) -> str | None:
         page = await self.context.new_page()
+        html = None
+
         try:
-            page = await self.context.new_page()
             await page.goto(url, wait_until="domcontentloaded", timeout=45000)
-            await page.wait_for_timeout(1500)  # allow hydration
+
+            # --- Hydration waits (important for Yen Press) ---
+            # Wait for Next.js hydration to finish
+            try:
+                await page.wait_for_function(
+                    "() => window.__NEXT_DATA__ && window.__NEXT_DATA__.props",
+                    timeout=5000
+                )
+            except:
+                pass
+
+            # Wait for any image that looks like a cover
+            try:
+                await page.wait_for_selector("img[src*='cover']", timeout=5000)
+            except:
+                pass
+
+            # Give JS a little more time (Yen Press sometimes needs this)
+            await page.wait_for_timeout(1000)
+
             html = await page.content()
-        except Exception:
+
+            # --- Cloudflare detection ---
+            if html and (
+                "cf-browser-verification" in html
+                or "Checking your browser" in html
+                or "cf-challenge" in html
+            ):
+                print(f"⚠ Cloudflare challenge detected for: {url}")
+
+                # Dump HTML for debugging
+                debug_path = f"debug_cloudflare_{slugify_short(url, '')}.html"
+                with open(debug_path, "w", encoding="utf-8") as f:
+                    f.write(html)
+                print(f"⚠ Saved Cloudflare debug HTML to {debug_path}")
+
+        except Exception as e:
+            print(f"⚠ Exception while fetching {url}: {e}")
             html = None
+
         finally:
             await page.close()
+
         return html
+
 
     async def get_cover(self, url: str) -> str | None:
         html = await self.fetch_page(url)
