@@ -2,6 +2,8 @@ import asyncio
 import json
 import re
 from bs4 import BeautifulSoup
+from fetch_covers import slugify_short
+
 
 # -------------------------------
 #  HTML helpers
