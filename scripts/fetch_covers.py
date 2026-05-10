@@ -4,6 +4,8 @@ import requests
 from pathlib import Path
 from io import BytesIO
 from PIL import Image
+from scrape_covers import get_publisher_cover
+
 
 RELEASES = Path("data/releases.json")
 OUTPUT = Path("data/releases.json")
@@ -98,6 +100,24 @@ def main():
             continue
 
         print(f"❌ No valid cover found for {r['title']} vol {r['volume']}")
+
+        print(f"Google Books failed for ISBN {isbn}, trying publisher scrape…")
+        
+        # Fallback: Scrape Publisher
+        img_url = get_publisher_cover(r["link"])
+        if img_url:
+            try:
+                img = requests.get(img_url, timeout=10).content
+                if is_valid_image(img):
+                    cover_path.write_bytes(img)
+                    r["cover"] = f"/covers/{slug}.jpg"
+                    print(f"✔ Publisher cover saved for {r['title']} vol {r['volume']}")
+                    continue
+            except Exception:
+                pass
+
+        print(f"❌ No valid cover found for {r['title']} vol {r['volume']}")
+
 
     OUTPUT.write_text(json.dumps(releases, indent=2, ensure_ascii=False))
 
