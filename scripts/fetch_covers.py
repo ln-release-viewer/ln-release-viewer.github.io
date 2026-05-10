@@ -185,6 +185,7 @@ def main():
         cover_path = COVERS_DIR / f"{slug}.jpg"
 
         if r.get("cover") and cover_path.exists():
+            print(f"Cover for {title} already exists. Continuing...")
             continue
 
         print(f"Fetching cover for {title} vol {vol} (ISBN {isbn})")
