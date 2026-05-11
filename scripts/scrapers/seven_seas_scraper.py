@@ -2,6 +2,34 @@ import time
 import re
 from pathlib import Path
 from undetected_chromedriver import Chrome, ChromeOptions
+import re
+from bs4 import BeautifulSoup
+
+def parse(self, html: str) -> str | None:
+    soup = BeautifulSoup(html, "html.parser")
+
+    # 1. OG image
+    og = soup.find("meta", property="og:image")
+    if og and og.get("content"):
+        return og["content"]
+
+    # 2. WordPress post thumbnail
+    thumb = soup.find("img", class_="attachment-post-thumbnail")
+    if thumb and thumb.get("src"):
+        return thumb["src"]
+
+    # 3. Volume cover block
+    vc = soup.select_one("#volume-cover img")
+    if vc and vc.get("src"):
+        return vc["src"]
+
+    # 4. Any <img> that looks like a cover
+    for img in soup.find_all("img"):
+        src = img.get("src") or ""
+        if any(k in src.lower() for k in ["cover", "volume", "vol", "jacket"]):
+            return src
+
+    return None
 
 Path("debug").mkdir(exist_ok=True)
 
@@ -50,7 +78,7 @@ class SevenSeasScraper:
         driver.quit()
 
         # TODO: parse cover
-        return None
+        return self.parse(html)
 
 
     def close(self):
