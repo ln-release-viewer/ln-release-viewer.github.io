@@ -5,6 +5,17 @@ from undetected_chromedriver import Chrome, ChromeOptions
 
 Path("debug").mkdir(exist_ok=True)
 
+def slug_from_url(url: str) -> str:
+    # Extract the last path segment
+    m = re.search(r"/books/([^/]+)/?", url)
+    if not m:
+        return "unknown"
+
+    slug = m.group(1).lower()
+    slug = re.sub(r"[^a-z0-9-]", "-", slug)
+    return slug[:80]
+
+
 class SevenSeasScraper:
     def __init__(self):
         opts = ChromeOptions()
@@ -17,24 +28,30 @@ class SevenSeasScraper:
         self.driver = Chrome(options=opts, headless=False, version_main=147)
 
     def get_cover(self, url: str) -> str | None:
-        self.driver.get(url)
-        time.sleep(3)
+        # Create a fresh browser for every request
+        opts = ChromeOptions()
+        opts.add_argument("--disable-blink-features=AutomationControlled")
+        opts.add_argument("--no-sandbox")
+        opts.add_argument("--disable-dev-shm-usage")
+        opts.add_argument("--window-size=1280,800")
 
-        html = self.driver.page_source
+        driver = Chrome(options=opts, headless=False, version_main=147)
 
-        # Dump HTML for debugging
-        slug = re.sub(r"[^a-zA-Z0-9-]", "-", url.lower())[:40]
+        driver.get(url)
+        time.sleep(4)
+
+        html = driver.page_source
+
+        slug = slug_from_url(url)
         debug_path = f"debug/sevenseas_{slug}.html"
         with open(debug_path, "w", encoding="utf-8") as f:
             f.write(html)
-        print(f"⚠ Seven Seas debug saved to {debug_path}")
 
-        # TODO: extract cover once we see real Seven Seas HTML
-        m = re.search(r'cover\s*:\s*"([^"]+)"', html)
-        if m:
-            return m.group(1)
+        driver.quit()
 
+        # TODO: parse cover
         return None
+
 
     def close(self):
         self.driver.quit()
