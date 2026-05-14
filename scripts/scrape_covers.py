@@ -112,27 +112,18 @@ class CoverScraper:
 
         return html
 
-    # ---------------------------------------------------------
-    # MAIN COVER PIPELINE
-    # ---------------------------------------------------------
     async def get_cover(self, url: str, title: str = None, volume: str = None) -> str | None:
-        # -----------------------------------------------------
-        # 1. BOOKWALKER FIRST (search → volume → cover)
-        # -----------------------------------------------------
+        # 1. BookWalker search
         if title and volume:
-            bw_cover = await self.bookwalker.search_and_fetch(title, volume)
+            bw_cover = await self.bookwalker_search_and_fetch(title, volume)
             if bw_cover:
                 return bw_cover
 
-        # -----------------------------------------------------
-        # 2. SEVEN SEAS (Selenium)
-        # -----------------------------------------------------
+        # 2. Seven Seas
         if "sevenseasentertainment.com" in url:
             return self.seven.get_cover(url)
 
-        # -----------------------------------------------------
-        # 3. PUBLISHER SCRAPING (Playwright)
-        # -----------------------------------------------------
+        # 3. Publisher scraping
         html = await self.fetch_page(url)
         if not html:
             return None
@@ -152,7 +143,6 @@ class CoverScraper:
             if img:
                 return img
 
-        # -----------------------------------------------------
-        # 4. GENERIC OG-IMAGE FALLBACK
-        # -----------------------------------------------------
+        # 4. Generic fallback
         return self.generic.parse(html)
+
