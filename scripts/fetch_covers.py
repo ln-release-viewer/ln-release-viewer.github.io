@@ -162,7 +162,12 @@ async def scrape_all_publishers(releases: list[dict]) -> list[tuple[dict, str | 
                 results.append((r, None))
                 continue
 
-            img_url = await scraper.get_cover(url)
+            img_url = await scraper.get_cover(
+                url,
+                title=r.get("title"),
+                volume=r.get("volume")
+            )
+
             results.append((r, img_url))
 
         await context.close()
