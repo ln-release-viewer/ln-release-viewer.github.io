@@ -1,20 +1,60 @@
 ---
 import releases from '../../data/releases.json';
 
-// Optional: sort by date descending (most recent first)
+// Convert month name → index
+const MONTH_INDEX = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3,
+  May: 4, Jun: 5, Jul: 6, Aug: 7,
+  Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+// STEP 1 — Sort chronologically by (year, month, day)
 const sorted = releases.sort((a, b) => {
-  const da = new Date(`${a.date} 2024`); // Month Day, Year fallback
-  const db = new Date(`${b.date} 2024`);
-  return db - da;
+  if (a.year !== b.year) return a.year - b.year;
+
+  const ma = MONTH_INDEX[a.month.slice(0,3)];
+  const mb = MONTH_INDEX[b.month.slice(0,3)];
+  if (ma !== mb) return ma - mb;
+
+  // Extract day number from "May 01"
+  const da = parseInt(a.date.split(" ")[1]);
+  const db = parseInt(b.date.split(" ")[1]);
+  return da - db;
 });
+
+// STEP 2 — Group by "Month Year"
+const groups = {};
+for (const r of sorted) {
+  const key = `${r.month} ${r.year}`;
+  if (!groups[key]) groups[key] = [];
+  groups[key].push(r);
+}
 ---
 
 <style>
+  .year-block {
+    margin: 2rem 0;
+  }
+
+  .year-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .month-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.25rem;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 1.5rem;
-    padding: 1rem;
+    padding: 0.5rem 0;
   }
 
   .card {
@@ -59,24 +99,29 @@ const sorted = releases.sort((a, b) => {
   }
 </style>
 
-<div class="grid">
-  {sorted.map((r) => (
-    <a href={r.link} class="card" target="_blank">
-      <img
-        class="cover"
-        src={r.cover ?? '/covers/placeholder.jpg'}
-        alt={r.title}
-        loading="lazy"
-      />
+{Object.entries(groups).map(([monthYear, items]) => (
+  <div class="month-block">
+    <div class="month-title">{monthYear}</div>
 
-      <div class="info">
-        <div class="title">{r.title}</div>
-        <div class="meta">Vol. {r.volume}</div>
-        <div class="meta">{r.publisher}</div>
-        <div class="meta">{r.date}</div>
-      </div>
-    </a>
-  ))}
-</div>
+    <div class="grid">
+      {items.map((r) => (
+        <a href={r.link} class="card" target="_blank">
+          <img
+            class="cover"
+            src={r.cover ?? '/covers/placeholder.jpg'}
+            alt={r.title}
+            loading="lazy"
+          />
 
+          <div class="info">
+            <div class="title">{r.title}</div>
+            <div class="meta">Vol. {r.volume}</div>
+            <div class="meta">{r.publisher}</div>
+            <div class="meta">{r.date}</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+))}
 

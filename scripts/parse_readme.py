@@ -14,22 +14,42 @@ ROW_RE = re.compile(
     r"(?P<format>[^|]+)\|"
 )
 
+YEAR_RE = re.compile(r"^##\s+(\d{4})")
+MONTH_RE = re.compile(r"^###\s+([A-Za-z]+)")
+
 def parse_readme():
     releases = []
+    current_year = None
+    current_month = None
 
     with README.open("r", encoding="utf-8") as f:
         for line in f:
-            m = ROW_RE.match(line)
-            if not m:
+            # Detect year header
+            y = YEAR_RE.match(line)
+            if y:
+                current_year = int(y.group(1))
+                continue
+
+            # Detect month header
+            m = MONTH_RE.match(line)
+            if m:
+                current_month = m.group(1)
+                continue
+
+            # Detect release row
+            r = ROW_RE.match(line)
+            if not r:
                 continue
 
             releases.append({
-                "date": m.group("date").strip(),
-                "title": m.group("title").strip(),
-                "link": m.group("link").strip(),
-                "volume": m.group("volume").strip(),
-                "publisher": m.group("publisher").strip(),
-                "format": m.group("format").strip(),
+                "date": r.group("date").strip(),   # e.g. "May 01"
+                "month": current_month,            # e.g. "May"
+                "year": current_year,              # e.g. 2026
+                "title": r.group("title").strip(),
+                "link": r.group("link").strip(),
+                "volume": r.group("volume").strip(),
+                "publisher": r.group("publisher").strip(),
+                "format": r.group("format").strip(),
             })
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
@@ -37,3 +57,4 @@ def parse_readme():
 
 if __name__ == "__main__":
     parse_readme()
+
