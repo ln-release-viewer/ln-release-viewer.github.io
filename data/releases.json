@@ -346,8 +346,7 @@
     "volume": "10",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855427448",
-    "cover": "/covers/the-executioner-and-her-way-of-vol-10-ccff08.jpg"
+    "isbn": "9798855427448"
   },
   {
     "date": "May 12",
@@ -365,8 +364,7 @@
     "volume": "2",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855434033",
-    "cover": "/covers/the-summer-hikaru-died-vol-2-a8d494.jpg"
+    "isbn": "9798855434033"
   },
   {
     "date": "May 12",
@@ -375,8 +373,7 @@
     "volume": "3",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798400903618",
-    "cover": "/covers/villains-are-destined-to-die-vol-3-d8ff4d.jpg"
+    "isbn": "9798400903618"
   },
   {
     "date": "May 13",
@@ -893,8 +890,7 @@
     "volume": "4",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855422535",
-    "cover": "/covers/before-the-tutorial-starts-a-few-vol-4-fc3a1f.jpg"
+    "isbn": "9798855422535"
   },
   {
     "date": "Jun 09",
@@ -1013,8 +1009,7 @@
     "volume": "9",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855418958",
-    "cover": "/covers/the-magical-revolution-of-the-reincarnated-vol-9-bdd60d.jpg"
+    "isbn": "9798855418958"
   },
   {
     "date": "Jun 09",
@@ -1313,6 +1308,16 @@
   },
   {
     "date": "Jun 30",
+    "title": "Reincarnated Onmyoji",
+    "link": "https://books.apple.com/us/book/id6768500233",
+    "volume": "1",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "9781961788688",
+    "cover": "/covers/reincarnated-onmyoji-vol-1-48ca41.jpg"
+  },
+  {
+    "date": "Jun 30",
     "title": "ROLL OVER AND DIE: I Will Fight for an Ordinary Life with My Love and Cursed Sword!",
     "link": "https://sevenseasentertainment.com/books/roll-over-and-die-i-will-fight-for-an-ordinary-life-with-my-love-and-cursed-sword-light-novel-vol-6/",
     "volume": "6",
@@ -1320,6 +1325,16 @@
     "format": "📖",
     "isbn": "979-8-89765-820-6",
     "cover": "/covers/roll-over-and-die-i-will-vol-6-446b34.jpg"
+  },
+  {
+    "date": "Jun 30",
+    "title": "The Fruit of Evolution",
+    "link": "https://books.apple.com/us/book/id6768499302",
+    "volume": "13",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "9781961788664",
+    "cover": "/covers/the-fruit-of-evolution-vol-13-d6e49b.jpg"
   },
   {
     "date": "Jun 30",
@@ -1548,8 +1563,7 @@
     "volume": "6",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9781975388430",
-    "cover": "/covers/a-certain-magical-index-nt-vol-6-7b6685.jpg"
+    "isbn": "9781975388430"
   },
   {
     "date": "Jul 14",
@@ -1558,8 +1572,7 @@
     "volume": "16",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9781975372439",
-    "cover": "/covers/date-a-live-vol-16-1ec7f0.jpg"
+    "isbn": "9781975372439"
   },
   {
     "date": "Jul 14",
@@ -1568,8 +1581,7 @@
     "volume": "5",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9781975379469",
-    "cover": "/covers/hell-is-dark-with-no-flowers-vol-5-96dd7c.jpg"
+    "isbn": "9781975379469"
   },
   {
     "date": "Jul 14",
@@ -1597,8 +1609,7 @@
     "volume": "4",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855407174",
-    "cover": "/covers/ill-become-a-villainess-who-goes-vol-4-c51b14.jpg"
+    "isbn": "9798855407174"
   },
   {
     "date": "Jul 14",
@@ -1626,8 +1637,7 @@
     "volume": "8",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9781975370732",
-    "cover": "/covers/liar-liar-vol-8-75cdea.jpg"
+    "isbn": "9781975370732"
   },
   {
     "date": "Jul 14",
@@ -1654,8 +1664,7 @@
     "volume": "29",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9781975378509",
-    "cover": "/covers/rezero--starting-life-in-another-world--vol-29-a23677.jpg"
+    "isbn": "9781975378509"
   },
   {
     "date": "Jul 14",
@@ -1720,8 +1729,7 @@
     "volume": "3",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855434057",
-    "cover": "/covers/who-killed-the-hero-vol-3-111245.jpg"
+    "isbn": "9798855434057"
   },
   {
     "date": "Jul 15",
@@ -1889,7 +1897,8 @@
     "volume": "1",
     "publisher": "VIZ Media",
     "format": "🖥️📖",
-    "isbn": "978-1-9747-1632-6"
+    "isbn": "978-1-9747-1632-6",
+    "cover": "/covers/sakamoto-days-assassins-method-vol-1-18ccdb.jpg"
   },
   {
     "date": "Jul 28",
@@ -1923,6 +1932,26 @@
   },
   {
     "date": "Jul 30",
+    "title": "An Observation Log of My Wife Who Calls Herself a Villainess",
+    "link": "https://books.apple.com/us/book/id6768497105",
+    "volume": "4",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "9781961788732",
+    "cover": "/covers/an-observation-log-of-my-wife-vol-4-6e1519.jpg"
+  },
+  {
+    "date": "Jul 30",
+    "title": "Re:Monster",
+    "link": "https://books.apple.com/us/book/id6768498502",
+    "volume": "4",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "9781961788749",
+    "cover": "/covers/remonster-vol-4-7ef9bb.jpg"
+  },
+  {
+    "date": "Jul 30",
     "title": "Taking My Reincarnation One Step at a Time: No One Told Me There Would Be Monsters!",
     "link": "https://j-novel.club/series/taking-my-reincarnation-one-step-at-a-time#volume-10",
     "volume": "10",
@@ -1940,6 +1969,16 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/the-amazing-village-creator-slow-living-vol-4-3d194c.jpg"
+  },
+  {
+    "date": "Jul 30",
+    "title": "The New Gate",
+    "link": "https://books.apple.com/us/book/id6768498104",
+    "volume": "4",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "9781961788756",
+    "cover": "/covers/the-new-gate-vol-4-70c099.jpg"
   },
   {
     "date": "Jul 31",
@@ -2117,8 +2156,7 @@
     "volume": "15",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855434019",
-    "cover": "/covers/banished-from-the-heros-party-i-vol-15-f0fa94.jpg"
+    "isbn": "9798855434019"
   },
   {
     "date": "Aug 11",
@@ -2136,8 +2174,7 @@
     "volume": "20",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855437850",
-    "cover": "/covers/is-it-wrong-to-try-to-vol-20-132447.jpg"
+    "isbn": "9798855437850"
   },
   {
     "date": "Aug 11",
@@ -2146,8 +2183,7 @@
     "volume": "6",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855422023",
-    "cover": "/covers/kunon-the-sorcerer-can-see-vol-6-9bbd61.jpg"
+    "isbn": "9798855422023"
   },
   {
     "date": "Aug 11",
@@ -2174,8 +2210,7 @@
     "volume": "10",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855424300",
-    "cover": "/covers/sasaki-and-peeps-vol-10-24c788.jpg"
+    "isbn": "9798855424300"
   },
   {
     "date": "Aug 11",
@@ -2221,8 +2256,7 @@
     "volume": "6",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855434484",
-    "cover": "/covers/the-kept-man-of-the-princess-vol-6-53aece.jpg"
+    "isbn": "9798855434484"
   },
   {
     "date": "Aug 11",
@@ -2269,8 +2303,7 @@
     "volume": "12",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855434507",
-    "cover": "/covers/wolf-parchment-new-theory-spice-wolf-vol-12-294241.jpg"
+    "isbn": "9798855434507"
   },
   {
     "date": "Aug 11",
@@ -2279,8 +2312,7 @@
     "volume": "4",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855433890",
-    "cover": "/covers/you-are-my-regret-vol-4-167a23.jpg"
+    "isbn": "9798855433890"
   },
   {
     "date": "Aug 12",
@@ -2343,6 +2375,16 @@
     "cover": "/covers/unsung-epics-of-the-heros-journey-vol-2-786d54.jpg"
   },
   {
+    "date": "Aug 16",
+    "title": "The Vampire and the Chocolatier",
+    "link": "https://books.apple.com/us/book/id6768501610",
+    "volume": "1",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "9781961788718",
+    "cover": "/covers/the-vampire-and-the-chocolatier-vol-1-79992a.jpg"
+  },
+  {
     "date": "Aug 17",
     "title": "Repeated Vice: I Refuse to Be Important Enough to Die",
     "link": "https://j-novel.club/series/repeated-vice-i-refuse-to-be-important-enough-to-die#volume-4",
@@ -2374,6 +2416,16 @@
   },
   {
     "date": "Aug 18",
+    "title": "Sister Mafioso",
+    "link": "https://j-novel.club/series/sister-mafioso#volume-2",
+    "volume": "2",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/sister-mafioso-vol-2-9241a3.jpg"
+  },
+  {
+    "date": "Aug 18",
     "title": "There's No Freaking Way I'll be Your Lover! Unless…",
     "link": "https://sevenseasentertainment.com/books/theres-no-freaking-way-ill-be-your-lover-unless-light-novel-vol-8/",
     "volume": "8",
@@ -2391,6 +2443,26 @@
     "format": "🖥️📖",
     "isbn": "979-8-89765-551-9",
     "cover": "/covers/too-many-losing-heroines-vol-8-09a64d.jpg"
+  },
+  {
+    "date": "Aug 19",
+    "title": "The Misfit of Demon King Academy",
+    "link": "https://j-novel.club/series/the-misfit-of-demon-king-academy#volume-15",
+    "volume": "12.2",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/the-misfit-of-demon-king-academy-vol-12.2-2057fd.jpg"
+  },
+  {
+    "date": "Aug 19",
+    "title": "The Path of an S-Rank Adventurer: From Deadweight to Weapon Master",
+    "link": "https://j-novel.club/series/the-path-of-an-s-rank-adventurer-from-deadweight-to-weapon-master#volume-2",
+    "volume": "2",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/the-path-of-an-s-rank-adventurer-vol-2-a6b682.jpg"
   },
   {
     "date": "Aug 21",
@@ -2591,6 +2663,16 @@
   },
   {
     "date": "Sep 08",
+    "title": "Flung into a New World? Time to Lift the 200-Year Curse!",
+    "link": "https://j-novel.club/series/flung-into-a-new-world-time-to-lift-the-200-year-curse#volume-5",
+    "volume": "5",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/flung-into-a-new-world-time-vol-5-f2c2d2.jpg"
+  },
+  {
+    "date": "Sep 08",
     "title": "Four Child Life",
     "link": "https://yenpress.com/titles/9798855404036-four-child-life-vol-2",
     "volume": "2",
@@ -2707,8 +2789,7 @@
     "volume": "27",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855409802",
-    "cover": "/covers/the-irregular-at-magic-high-school-vol-27-2eb9e9.jpg"
+    "isbn": "9798855409802"
   },
   {
     "date": "Sep 08",
@@ -2793,6 +2874,16 @@
     "publisher": "Yen Press",
     "format": "🖥️📖",
     "isbn": "9798400903649"
+  },
+  {
+    "date": "Sep 16",
+    "title": "The Petty Villain Plays by the Rules: Rewriting This Otome Game with Honest Work!",
+    "link": "https://j-novel.club/series/the-petty-villain-plays-by-the-rules-rewriting-this-otome-game-with-honest-work#volume-3",
+    "volume": "3",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/the-petty-villain-plays-by-the-vol-3-2be6b4.jpg"
   },
   {
     "date": "Sep 17",
@@ -3523,5 +3614,15 @@
     "format": "🖥️📖",
     "isbn": "979-8-88843-811-4",
     "cover": "/covers/the-saints-magic-power-is-omnipotent-vol-10-d2197f.jpg"
+  },
+  {
+    "date": "Jun 08",
+    "title": "There's No Freaking Way I'll be Your Lover! Unless… Spin-off Collection",
+    "link": "https://sevenseasentertainment.com/books/theres-no-freaking-way-ill-be-your-lover-unless-spin-off-collection-light-novel/",
+    "volume": "1",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "979-8-89863-688-3",
+    "cover": "/covers/theres-no-freaking-way-ill-be-vol-1-5360e4.jpg"
   }
 ]
