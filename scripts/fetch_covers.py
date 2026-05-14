@@ -176,47 +176,12 @@ def main():
     with DATA_PATH.open("r", encoding="utf-8") as f:
         releases = json.load(f)
 
-    # First pass: Open Library + Google Books
-    for r in releases:
-        title = r["title"]
-        vol = r["volume"]
-        isbn = r.get("isbn")
-        slug = slugify_short(title, str(vol))
-        cover_path = COVERS_DIR / f"{slug}.jpg"
-
-        if r.get("cover") and cover_path.exists():
-            print(f"Cover for {title} already exists. Continuing...")
-            continue
-
-        print(f"Fetching cover for {title} vol {vol} (ISBN {isbn})")
-
-        img_content = None
-
-        if isbn:
-            img_content = fetch_openlibrary_cover(isbn)
-            if img_content and is_valid_image(img_content):
-                cover_path.write_bytes(img_content)
-                r["cover"] = f"/covers/{slug}.jpg"
-                print(f"✔ Open Library cover saved for {title} vol {vol}")
-                continue
-            else:
-                print(f"Open Library failed for ISBN {isbn}, trying Google Books…")
-
-            img_content = fetch_google_books_cover(isbn)
-            if img_content and is_valid_image(img_content):
-                cover_path.write_bytes(img_content)
-                r["cover"] = f"/covers/{slug}.jpg"
-                print(f"✔ Google Books cover saved for {title} vol {vol}")
-                continue
-            else:
-                print(f"Google Books failed for ISBN {isbn}, will try publisher scrape later…")
-        else:
-            print(f"No ISBN for {title} vol {vol} — will try publisher scrape later…")
-
-    # Second pass: Publisher scraping for anything still missing a cover
+    # ---------------------------------------------------------
+    # FIRST PASS: Publisher scraping (BookWalker → Publishers)
+    # ---------------------------------------------------------
     missing = [r for r in releases if not r.get("cover") and r.get("link")]
     if missing:
-        print("Starting publisher scraping pass…")
+        print("Starting publisher scraping pass (BookWalker first)…")
         publisher_results = asyncio.run(scrape_all_publishers(missing))
 
         for r, img_url in publisher_results:
@@ -243,14 +208,57 @@ def main():
 
                 cover_path.write_bytes(content)
                 r["cover"] = f"/covers/{slug}.jpg"
-                print(f"✔ Publisher cover saved for {title} vol {vol}")
+                print(f"✔ Publisher/BookWalker cover saved for {title} vol {vol}")
+
             except Exception:
                 print(f"❌ Error downloading publisher image for {title} vol {vol}")
 
-    # Write back updated JSON
+    # ---------------------------------------------------------
+    # SECOND PASS: ISBN APIs (Open Library → Google Books)
+    # ---------------------------------------------------------
+    for r in releases:
+        if r.get("cover"):
+            continue  # already handled by publisher pass
+
+        title = r["title"]
+        vol = r["volume"]
+        isbn = r.get("isbn")
+        slug = slugify_short(title, str(vol))
+        cover_path = COVERS_DIR / f"{slug}.jpg"
+
+        print(f"Trying ISBN APIs for {title} vol {vol} (ISBN {isbn})")
+
+        if not isbn:
+            print(f"No ISBN for {title} vol {vol} — skipping ISBN APIs")
+            continue
+
+        # --- Open Library ---
+        img_content = fetch_openlibrary_cover(isbn)
+        if img_content and is_valid_image(img_content):
+            cover_path.write_bytes(img_content)
+            r["cover"] = f"/covers/{slug}.jpg"
+            print(f"✔ Open Library cover saved for {title} vol {vol}")
+            continue
+
+        print(f"Open Library failed for ISBN {isbn}, trying Google Books…")
+
+        # --- Google Books ---
+        img_content = fetch_google_books_cover(isbn)
+        if img_content and is_valid_image(img_content):
+            cover_path.write_bytes(img_content)
+            r["cover"] = f"/covers/{slug}.jpg"
+            print(f"✔ Google Books cover saved for {title} vol {vol}")
+            continue
+
+        print(f"❌ ISBN APIs failed for {title} vol {vol}")
+
+    # ---------------------------------------------------------
+    # WRITE UPDATED JSON
+    # ---------------------------------------------------------
     with DATA_PATH.open("w", encoding="utf-8") as f:
         json.dump(releases, f, ensure_ascii=False, indent=2)
         f.write("\n")
+
 
 
 if __name__ == "__main__":
