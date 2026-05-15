@@ -226,21 +226,44 @@ class CoverScraper:
         try:
             await page.goto(url, wait_until="domcontentloaded", timeout=45000)
 
-            # Hydration waits (Yen Press)
-            try:
-                await page.wait_for_function(
-                    "() => window.__NEXT_DATA__ && window.__NEXT_DATA__.props",
-                    timeout=5000
-                )
-            except:
-                pass
+            # BOOKWALKER hydration
+            if "bookwalker.com" in url:
+                try:
+                    # Wait for React-rendered book cards or detail sections
+                    await page.wait_for_selector(
+                        "div.book-card-grid-view-module__A8__ha__root, "
+                        "a[href*='/series/'], "
+                        "a[href*='/volume/'], "
+                        "p[class*='title-page']",
+                        timeout=3000
+                    )
+                except:
+                    pass
 
-            try:
-                await page.wait_for_selector("img[src*='cover']", timeout=5000)
-            except:
-                pass
+            # YEN PRESS hydration
+            elif "yenpress.com" in url:
+                try:
+                    await page.wait_for_selector(
+                        "img[src*='cover'], div[class*='BookDetail']",
+                        timeout=3000
+                    )
+                except:
+                    pass
 
-            await page.wait_for_timeout(1000)
+            # J-NOVEL hydration (very light)
+            elif "j-novel.club" in url:
+                try:
+                    await page.wait_for_selector(
+                        "img, h1, picture",
+                        timeout=2000
+                    )
+                except:
+                    pass
+
+            # GENERIC: no hydration needed
+            else:
+                await page.wait_for_timeout(200)
+
             html = await page.content()
 
         except Exception as e:
@@ -251,6 +274,7 @@ class CoverScraper:
             await page.close()
 
         return html
+
 
     async def get_cover(self, url: str, title: str = None, volume: str = None) -> str | None:
         # 1. BookWalker search
