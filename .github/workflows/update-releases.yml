@@ -41,7 +41,7 @@ jobs:
 
       - name: Fetch covers with Xvfb
         run: |
-          pip install requests pillow beautifulsoup4 playwright undetected-chromedriver selenium
+          pip install requests pillow beautifulsoup4 playwright undetected-chromedriver selenium aiohttp
           playwright install --with-deps chromium
           sudo apt-get install -y xvfb
           xvfb-run -a python scripts/fetch_covers.py
