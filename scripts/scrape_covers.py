@@ -191,9 +191,10 @@ class CoverScraper:
                     chosen = v
                     break
 
-        # Final fallback
+        # Series found, but no matching volume
         if not chosen:
-            chosen = volume_links[0]
+            print("[BW] No matching volume found — falling back to publisher")
+            return None
 
         volume_url = "https://bookwalker.com" + chosen
         print(f"[BW] Volume URL: {volume_url}")
