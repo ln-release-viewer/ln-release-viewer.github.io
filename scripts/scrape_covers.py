@@ -19,6 +19,9 @@ class CoverScraper:
     # BOOKWALKER SEARCH → FETCH → PARSE
     # ---------------------------------------------------------
     async def bookwalker_search_and_fetch(self, title: str, volume: str) -> str | None:
+        print(f"[BW] Searching for: {title} Vol {volume}")
+        print(f"[BW] URL: {search_url}")
+
         # Normalize search query
         q = title.replace("’", "'").replace(":", "").replace(",", "")
         q = q.replace("(", "").replace(")", "")
@@ -44,10 +47,12 @@ class CoverScraper:
 
         if not candidates:
             return None
+        print(f"[BW] Candidates found: {len(candidates)}")
 
         # 3. Try to match the correct volume number
         # BookWalker URLs often contain "...-vol-3" or "...-volume-3"
         vol = volume.lower().replace("volume", "").replace("vol.", "").replace("vol", "").strip()
+        print(f"[BW] Normalized volume: '{vol}'")
 
         def matches_volume(url: str) -> bool:
             url_lower = url.lower()
@@ -55,6 +60,7 @@ class CoverScraper:
 
         # Prefer exact volume match
         for c in candidates:
+            print(f"[BW] Checking candidate: {c}")
             if matches_volume(c):
                 volume_url = "https://bookwalker.com" + c
                 break
