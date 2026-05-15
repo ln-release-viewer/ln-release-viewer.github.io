@@ -82,9 +82,25 @@ class CoverScraper:
         soup = BeautifulSoup(series_html, "html.parser")
 
         # Extract series title
-        series_title_el = soup.select_one("h1")
-        series_title = series_title_el.get_text(strip=True) if series_title_el else ""
+        # Extract series title using multiple fallback selectors
+        series_title_el = (
+            soup.select_one("p[class*='title-page']") or
+            soup.select_one("p[class*='title']") or
+            soup.select_one("[class*='series']") or
+            soup.select_one("div[data-testid='series-title']") or
+            soup.select_one("title")
+        )
+
+        series_title = ""
+        if series_title_el:
+            series_title = series_title_el.get_text(strip=True)
+            # If we got the <title> tag, strip the " | BookWalker" suffix
+            if " | BookWalker" in series_title:
+                series_title = series_title.split(" | BookWalker")[0]
+
         print(f"[BW] Series page title: {series_title}")
+
+
 
         # Validate title similarity
         def normalize_title(t: str) -> list[str]:
