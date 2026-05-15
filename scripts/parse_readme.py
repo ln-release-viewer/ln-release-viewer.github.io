@@ -41,16 +41,32 @@ def parse_readme():
             if not r:
                 continue
 
-            releases.append({
-                "date": r.group("date").strip(),   # e.g. "May 01"
-                "month": current_month,            # e.g. "May"
-                "year": current_year,              # e.g. 2026
-                "title": r.group("title").strip(),
-                "link": r.group("link").strip(),
-                "volume": r.group("volume").strip(),
-                "publisher": r.group("publisher").strip(),
-                "format": r.group("format").strip(),
-            })
+            vol_field = r.group("volume").strip()
+
+            # Detect ranges like "11-12"
+            if "-" in vol_field:
+                start, end = vol_field.split("-", 1)
+                try:
+                    start = int(start)
+                    end = int(end)
+                    volumes = [str(v) for v in range(start, end + 1)]
+                except ValueError:
+                    # If parsing fails, treat as a single volume
+                    volumes = [vol_field]
+            else:
+                volumes = [vol_field]
+
+            for vol in volumes:
+                releases.append({
+                    "date": r.group("date").strip(),
+                    "month": current_month,
+                    "year": current_year,
+                    "title": r.group("title").strip(),
+                    "link": r.group("link").strip(),
+                    "volume": vol,
+                    "publisher": r.group("publisher").strip(),
+                    "format": r.group("format").strip(),
+                })
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(releases, indent=2, ensure_ascii=False), encoding="utf-8")
