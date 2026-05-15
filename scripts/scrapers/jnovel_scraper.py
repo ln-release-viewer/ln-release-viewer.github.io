@@ -22,7 +22,7 @@ async def try_url(url: str) -> str | None:
 
 
 class JNovelScraper:
-    async def parse(self, html: str) -> str | None:
+    def parse(self, html: str) -> str | None:
         match = re.search(r"window\.__NUXT__\s*=\s*(\{.*?\});", html, re.DOTALL)
         if match:
             data = extract_json(match.group(1))
