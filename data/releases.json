@@ -221,10 +221,23 @@
     "year": 2026,
     "title": "Seirei Gensouki: Spirit Chronicles",
     "link": "https://j-novel.club/series/seirei-gensouki-spirit-chronicles#volume-25",
-    "volume": "25-26",
+    "volume": "25",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/seirei-gensouki-spirit-chronicles-vol-25-b2bfcc.jpg"
+  },
+  {
+    "date": "May 11",
+    "month": "May",
+    "year": 2026,
+    "title": "Seirei Gensouki: Spirit Chronicles",
+    "link": "https://j-novel.club/series/seirei-gensouki-spirit-chronicles#volume-25",
+    "volume": "26",
+    "publisher": "J-Novel Club",
+    "format": "📖",
+    "isbn": null,
+    "cover": "/covers/seirei-gensouki-spirit-chronicles-vol-26-b2bfcc.jpg"
   },
   {
     "date": "May 11",
@@ -295,8 +308,7 @@
     "volume": "8",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855405767",
-    "cover": "/covers/chitose-is-in-the-ramune-bottle-vol-8-5cee2c.jpg"
+    "isbn": "9798855405767"
   },
   {
     "date": "May 12",
@@ -343,8 +355,7 @@
     "volume": "10",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": "9798855433432",
-    "cover": "/covers/hell-mode-vol-10-098017.jpg"
+    "isbn": "9798855433432"
   },
   {
     "date": "May 12",
@@ -367,8 +378,7 @@
     "volume": "11",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": "9781975368401",
-    "cover": "/covers/my-instant-death-ability-is-so-vol-11-ca004a.jpg"
+    "isbn": "9781975368401"
   },
   {
     "date": "May 12",
@@ -379,8 +389,7 @@
     "volume": "9",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855427899",
-    "cover": "/covers/sword-art-online-progressive-vol-9-9e60a0.jpg"
+    "isbn": "9798855427899"
   },
   {
     "date": "May 12",
@@ -677,7 +686,8 @@
     "volume": "1",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/tearmoon-empire-short-story-collection-1-vol-1-2eed8d.jpg"
   },
   {
     "date": "May 20",
@@ -1031,10 +1041,23 @@
     "year": 2026,
     "title": "Campfire Cooking in Another World with My Absurd Skill",
     "link": "https://j-novel.club/series/campfire-cooking-in-another-world-with-my-absurd-skill#volume-11",
-    "volume": "11-12",
+    "volume": "11",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/campfire-cooking-in-another-world-with-vol-11-3ac5e3.jpg"
+  },
+  {
+    "date": "Jun 08",
+    "month": "June",
+    "year": 2026,
+    "title": "Campfire Cooking in Another World with My Absurd Skill",
+    "link": "https://j-novel.club/series/campfire-cooking-in-another-world-with-my-absurd-skill#volume-11",
+    "volume": "12",
+    "publisher": "J-Novel Club",
+    "format": "📖",
+    "isbn": null,
+    "cover": "/covers/campfire-cooking-in-another-world-with-vol-12-3ac5e3.jpg"
   },
   {
     "date": "Jun 08",
@@ -1042,10 +1065,35 @@
     "year": 2026,
     "title": "Invaders of the Rokujouma!?",
     "link": "https://j-novel.club/series/invaders-of-the-rokujouma#volume-44",
-    "volume": "42-44",
+    "volume": "42",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": "9781718308435"
+    "isbn": null,
+    "cover": "/covers/invaders-of-the-rokujouma-vol-42-745d23.jpg"
+  },
+  {
+    "date": "Jun 08",
+    "month": "June",
+    "year": 2026,
+    "title": "Invaders of the Rokujouma!?",
+    "link": "https://j-novel.club/series/invaders-of-the-rokujouma#volume-44",
+    "volume": "43",
+    "publisher": "J-Novel Club",
+    "format": "📖",
+    "isbn": null,
+    "cover": "/covers/invaders-of-the-rokujouma-vol-43-745d23.jpg"
+  },
+  {
+    "date": "Jun 08",
+    "month": "June",
+    "year": 2026,
+    "title": "Invaders of the Rokujouma!?",
+    "link": "https://j-novel.club/series/invaders-of-the-rokujouma#volume-44",
+    "volume": "44",
+    "publisher": "J-Novel Club",
+    "format": "📖",
+    "isbn": null,
+    "cover": "/covers/invaders-of-the-rokujouma-vol-44-745d23.jpg"
   },
   {
     "date": "Jun 08",
@@ -1152,7 +1200,8 @@
     "volume": "4",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855408454"
+    "isbn": "9798855408454",
+    "cover": "/covers/kusunokis-garden-of-gods-vol-4-35f708.jpg"
   },
   {
     "date": "Jun 09",
@@ -1269,7 +1318,8 @@
     "volume": "12",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/backstabbed-in-a-backwater-dungeon-my-vol-12-eff29c.jpg"
   },
   {
     "date": "Jun 16",
@@ -1495,7 +1545,8 @@
     "volume": "4",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-tiny-witch-from-the-deep-vol-4-247626.jpg"
   },
   {
     "date": "Jun 29",
@@ -1573,11 +1624,35 @@
     "year": 2026,
     "title": "Mushoku Tensei: Jobless Reincarnation",
     "link": "https://sevenseasentertainment.com/books/mushoku-tensei-jobless-reincarnation-deluxe-edition-2-light-novel-vol-4-6-hardcover-omnibus/",
-    "volume": "4-6",
+    "volume": "4",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-279-2",
-    "cover": "/covers/mushoku-tensei-jobless-reincarnation-vol-4-6-7ed4e7.jpg"
+    "isbn": "978-1-64505-179-4",
+    "cover": "/covers/mushoku-tensei-jobless-reincarnation-vol-4-7ed4e7.jpg"
+  },
+  {
+    "date": "Jun 30",
+    "month": "June",
+    "year": 2026,
+    "title": "Mushoku Tensei: Jobless Reincarnation",
+    "link": "https://sevenseasentertainment.com/books/mushoku-tensei-jobless-reincarnation-deluxe-edition-2-light-novel-vol-4-6-hardcover-omnibus/",
+    "volume": "5",
+    "publisher": "Seven Seas Entertainment",
+    "format": "📖",
+    "isbn": "978-1-64505-228-9",
+    "cover": "/covers/mushoku-tensei-jobless-reincarnation-vol-5-7ed4e7.jpg"
+  },
+  {
+    "date": "Jun 30",
+    "month": "June",
+    "year": 2026,
+    "title": "Mushoku Tensei: Jobless Reincarnation",
+    "link": "https://sevenseasentertainment.com/books/mushoku-tensei-jobless-reincarnation-deluxe-edition-2-light-novel-vol-4-6-hardcover-omnibus/",
+    "volume": "6",
+    "publisher": "Seven Seas Entertainment",
+    "format": "📖",
+    "isbn": "978-1-64505-488-7",
+    "cover": "/covers/mushoku-tensei-jobless-reincarnation-vol-6-7ed4e7.jpg"
   },
   {
     "date": "Jun 30",
@@ -1792,7 +1867,8 @@
     "volume": "7",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-tanaka-family-reincarnates-vol-7-ea8698.jpg"
   },
   {
     "date": "Jul 13",
@@ -1824,10 +1900,23 @@
     "year": 2026,
     "title": "Isekai Tensei: Recruited to Another World",
     "link": "https://j-novel.club/series/isekai-tensei-recruited-to-another-world#volume-9",
-    "volume": "9-10",
+    "volume": "9",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/isekai-tensei-recruited-to-another-world-vol-9-3131a8.jpg"
+  },
+  {
+    "date": "Jul 13",
+    "month": "July",
+    "year": 2026,
+    "title": "Isekai Tensei: Recruited to Another World",
+    "link": "https://j-novel.club/series/isekai-tensei-recruited-to-another-world#volume-9",
+    "volume": "10",
+    "publisher": "J-Novel Club",
+    "format": "📖",
+    "isbn": null,
+    "cover": "/covers/isekai-tensei-recruited-to-another-world-vol-10-3131a8.jpg"
   },
   {
     "date": "Jul 13",
@@ -1862,7 +1951,8 @@
     "volume": "8",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/my-quiet-blacksmith-life-in-another-vol-8-04088c.jpg"
   },
   {
     "date": "Jul 13",
@@ -1873,7 +1963,8 @@
     "volume": "10",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/otherside-picnic-vol-10-4163d0.jpg"
   },
   {
     "date": "Jul 13",
@@ -2648,7 +2739,8 @@
     "volume": "20",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855437850"
+    "isbn": "9798855437850",
+    "cover": "/covers/is-it-wrong-to-try-to-vol-20-132447.jpg"
   },
   {
     "date": "Aug 11",
@@ -2837,7 +2929,8 @@
     "volume": "17",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/campfire-cooking-in-another-world-with-vol-17-3ac5e3.jpg"
   },
   {
     "date": "Aug 12",
@@ -2896,7 +2989,8 @@
     "volume": "4",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-fearsome-witch-teaches-in-another-vol-4-d3ebc4.jpg"
   },
   {
     "date": "Aug 14",
@@ -2907,7 +3001,8 @@
     "volume": "2",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/unsung-epics-of-the-heros-journey-vol-2-786d54.jpg"
   },
   {
     "date": "Aug 16",
@@ -2930,7 +3025,8 @@
     "volume": "4",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/repeated-vice-i-refuse-to-be-vol-4-3f684c.jpg"
   },
   {
     "date": "Aug 18",
@@ -2965,7 +3061,8 @@
     "volume": "2",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/sister-mafioso-vol-2-9241a3.jpg"
   },
   {
     "date": "Aug 18",
@@ -3012,7 +3109,8 @@
     "volume": "2",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-path-of-an-s-rank-adventurer-vol-2-a6b682.jpg"
   },
   {
     "date": "Aug 21",
@@ -3119,7 +3217,8 @@
     "volume": "3",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-canon-fodders-ascension-from-pawn-vol-3-cbcdf1.jpg"
   },
   {
     "date": "Sep 01",
@@ -3189,7 +3288,8 @@
     "volume": "6",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/revenge-of-the-soul-eater-cast-vol-6-12b97e.jpg"
   },
   {
     "date": "Sep 07",
@@ -3197,10 +3297,23 @@
     "year": 2026,
     "title": "Infinite Dendrogram SP",
     "link": "https://j-novel.club/series/infinite-dendrogram#volume-24",
-    "volume": "1-2",
+    "volume": "1",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/infinite-dendrogram-sp-vol-1-687583.jpg"
+  },
+  {
+    "date": "Sep 07",
+    "month": "September",
+    "year": 2026,
+    "title": "Infinite Dendrogram SP",
+    "link": "https://j-novel.club/series/infinite-dendrogram#volume-24",
+    "volume": "2",
+    "publisher": "J-Novel Club",
+    "format": "📖",
+    "isbn": null,
+    "cover": "/covers/infinite-dendrogram-sp-vol-2-687583.jpg"
   },
   {
     "date": "Sep 07",
@@ -3271,7 +3384,8 @@
     "volume": "5",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/flung-into-a-new-world-time-vol-5-f2c2d2.jpg"
   },
   {
     "date": "Sep 08",
@@ -3544,7 +3658,8 @@
     "volume": "3",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-petty-villain-plays-by-the-vol-3-2be6b4.jpg"
   },
   {
     "date": "Sep 17",
@@ -3555,7 +3670,8 @@
     "volume": "6",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/butareba--the-story-of-a-man-vol-6-dbf96c.jpg"
   },
   {
     "date": "Sep 17",
@@ -3578,7 +3694,8 @@
     "volume": "2",
     "publisher": "J-Novel Club",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-reincarnated-mastermind-sundering-fate-with-vol-2-cb9bf9.jpg"
   },
   {
     "date": "Sep 21",
