@@ -19,8 +19,6 @@ class CoverScraper:
     # BOOKWALKER SEARCH → FETCH → PARSE
     # ---------------------------------------------------------
     async def bookwalker_search_and_fetch(self, title: str, volume: str) -> str | None:
-        print(f"[BW] Searching for: {title} Vol {volume}")
-        print(f"[BW] URL: {search_url}")
 
         # Normalize search query
         q = title.replace("’", "'").replace(":", "").replace(",", "")
@@ -28,6 +26,8 @@ class CoverScraper:
         q = q.strip()
 
         search_url = f"https://bookwalker.com/search/?q={q.replace(' ', '+')}"
+        print(f"[BW] Searching for: {title} Vol {volume}")
+        print(f"[BW] URL: {search_url}")
 
         # 1. Fetch search results page
         search_html = await self.fetch_page(search_url)
