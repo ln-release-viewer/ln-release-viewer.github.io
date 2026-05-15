@@ -11,47 +11,6 @@ def normalize_title(t: str) -> list[str]:
     t = re.sub(r"[^a-z0-9\s]", " ", t)
     return [w for w in t.split() if w]
 
-def is_bookwalker_placeholder(content: bytes) -> bool:
-    # 1. Reject tiny files
-    if len(content) < 20000:  # < 20 KB
-        return True
-
-    # 2. Check dimensions
-    try:
-        from PIL import Image
-        import io
-        img = Image.open(io.BytesIO(content))
-        w, h = img.size
-
-        # Very small images are always placeholders
-        if max(w, h) < 500:
-            return True
-
-        # Some BW placeholders are 400x600 but extremely low detail
-        if max(w, h) <= 600:
-            # Quick entropy check
-            import numpy as np
-            arr = np.array(img.convert("L"))
-            if arr.std() < 18:  # low variance = placeholder
-                return True
-
-    except Exception:
-        pass
-
-    return False
-
-async def try_url(url: str) -> str | None:
-    """Return URL if it exists (HTTP 200), else None."""
-    try:
-        async with aiohttp.ClientSession() as session:
-            async with session.head(url, timeout=5) as resp:
-                if resp.status == 200:
-                    return url
-    except:
-        pass
-    return None
-
-
 class CoverScraper:
     def __init__(self, context):
         self.context = context
@@ -250,12 +209,8 @@ class CoverScraper:
         # STEP 6 — Parse cover
         cover = self.bookwalker.parse(volume_html)
         if cover:
-            content = self.fetch_page(cover)
-            if is_bookwalker_placeholder(content):
-                print("❌ BookWalker placeholder detected — falling back to publisher")
-            else:
-                print(f"✔ BookWalker cover found for {title} Vol {volume}")
-                return cover
+            print(f"✔ BookWalker cover found for {title} Vol {volume}")
+            return cover
 
         print("[BW] No cover found")
         return None
@@ -345,17 +300,6 @@ class CoverScraper:
 
         if "j-novel.club" in url:
             img = self.jnovel.parse(html)
-            # If URL contains a size folder, try upgrading
-            m = re.search(r"/img/(\d+)/webp/(.+)$", img)
-            if m:
-                _, tail = m.groups()
-                for size in ["960", "480", "240"]:
-                    test_url = f"https://cdn.j-novel.club/pub/img/{size}/webp/{tail}"
-                    working = await try_url(test_url)
-                    if working:
-                        return working
-
-            # Otherwise return the original
             if img:
                 return img
 
