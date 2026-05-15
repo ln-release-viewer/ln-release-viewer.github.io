@@ -3,6 +3,7 @@ from scrapers.jnovel_scraper import JNovelScraper
 from scrapers.bookwalker_scraper import BookWalkerScraper
 from scrapers.seven_seas_scraper import SevenSeasScraper
 from scrapers.generic_scraper import GenericScraper
+from urllib.parse import quote_plus
 
 class CoverScraper:
     def __init__(self, context):
@@ -30,7 +31,8 @@ class CoverScraper:
                 .replace(")", "")
                 .strip()
         )
-        search_url = f"https://bookwalker.com/browse?search={q.replace(' ', '+')}"
+        q = quote_plus(title)
+        search_url = f"https://bookwalker.com/browse?search={q}"
         print(f"[BW] Search URL: {search_url}")
 
         # Fetch search results
@@ -85,12 +87,35 @@ class CoverScraper:
             return None
 
         # STEP 4 — Match correct volume
-        vol_norm = volume.lower().replace("volume", "").replace("vol.", "").replace("vol", "").strip()
+        vol_norm = (
+            volume.lower()
+                .replace("volume", "")
+                .replace("vol.", "")
+                .replace("vol", "")
+                .strip()
+        )
+
         print(f"[BW] Normalized volume: {vol_norm}")
+
+        # Convert fractional volumes like 8.1 → 8-1
+        if "." in vol_norm:
+            major, minor = vol_norm.split(".", 1)
+            vol_bw = f"{major}-{minor}"
+        else:
+            vol_bw = vol_norm
+
+        print(f"[BW] BookWalker volume key: {vol_bw}")
 
         def matches(url: str) -> bool:
             u = url.lower()
-            return f"-vol-{vol_norm}" in u or f"-volume-{vol_norm}" in u or u.endswith(f"/{vol_norm}")
+            return (
+                f"-vol-{vol_bw}" in u or
+                f"-volume-{vol_bw}" in u or
+                f"volume-{vol_bw}" in u or
+                f"-{vol_bw}" in u or
+                u.endswith(f"/{vol_bw}") or
+                u.endswith(f"-{vol_bw}")
+            )
 
         chosen = None
         for v in volume_links:
@@ -98,6 +123,15 @@ class CoverScraper:
                 chosen = v
                 break
 
+        # Fallback: fuzzy match (e.g., "8 part 1", "8 pt 1")
+        if not chosen:
+            for v in volume_links:
+                u = v.lower()
+                if vol_norm in u or vol_bw in u:
+                    chosen = v
+                    break
+
+        # Final fallback: first volume (rare)
         if not chosen:
             chosen = volume_links[0]
 
