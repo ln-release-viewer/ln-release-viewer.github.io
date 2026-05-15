@@ -97,25 +97,42 @@ class CoverScraper:
 
         print(f"[BW] Normalized volume: {vol_norm}")
 
-        # Convert fractional volumes like 8.1 → 8-1
+        patterns = []
+
+        # Fractional volume handling
         if "." in vol_norm:
             major, minor = vol_norm.split(".", 1)
-            vol_bw = f"{major}-{minor}"
-        else:
-            vol_bw = vol_norm
 
-        print(f"[BW] BookWalker volume key: {vol_bw}")
+            # Most common BookWalker pattern
+            patterns.append(f"volume-{major}-part-{minor}")
+
+            # Sometimes BookWalker uses hyphen
+            patterns.append(f"volume-{major}-{minor}")
+
+            # Sometimes BookWalker uses dot
+            patterns.append(f"volume-{major}.{minor}")
+
+            # Sometimes BookWalker uses underscore
+            patterns.append(f"volume-{major}_{minor}")
+
+            # Sometimes BookWalker uses "part X"
+            patterns.append(f"{major}-part-{minor}")
+
+            # Sometimes BookWalker uses "X part Y"
+            patterns.append(f"{major} part {minor}")
+
+        else:
+            # Normal integer volume
+            patterns.append(f"volume-{vol_norm}")
+            patterns.append(f"-vol-{vol_norm}")
+            patterns.append(f"-volume-{vol_norm}")
+            patterns.append(f"-{vol_norm}")
+
+        print(f"[BW] Volume patterns: {patterns}")
 
         def matches(url: str) -> bool:
             u = url.lower()
-            return (
-                f"-vol-{vol_bw}" in u or
-                f"-volume-{vol_bw}" in u or
-                f"volume-{vol_bw}" in u or
-                f"-{vol_bw}" in u or
-                u.endswith(f"/{vol_bw}") or
-                u.endswith(f"-{vol_bw}")
-            )
+            return any(p in u for p in patterns)
 
         chosen = None
         for v in volume_links:
@@ -123,20 +140,21 @@ class CoverScraper:
                 chosen = v
                 break
 
-        # Fallback: fuzzy match (e.g., "8 part 1", "8 pt 1")
+        # Fuzzy fallback: look for major volume number
         if not chosen:
+            major = vol_norm.split(".", 1)[0]
             for v in volume_links:
-                u = v.lower()
-                if vol_norm in u or vol_bw in u:
+                if f"volume-{major}" in v.lower():
                     chosen = v
                     break
 
-        # Final fallback: first volume (rare)
+        # Final fallback
         if not chosen:
             chosen = volume_links[0]
 
         volume_url = "https://bookwalker.com" + chosen
         print(f"[BW] Volume URL: {volume_url}")
+
 
         # STEP 5 — Fetch volume page
         volume_html = await self.fetch_page(volume_url)
