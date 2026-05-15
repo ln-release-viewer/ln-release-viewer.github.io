@@ -250,7 +250,7 @@ class CoverScraper:
         # STEP 6 — Parse cover
         cover = self.bookwalker.parse(volume_html)
         if cover:
-            content = requests.get(cover, headers={"User-Agent": "Mozilla/5.0"}).content
+            content = self.fetch_page(cover)
             if is_bookwalker_placeholder(content):
                 print("❌ BookWalker placeholder detected — falling back to publisher")
             else:
