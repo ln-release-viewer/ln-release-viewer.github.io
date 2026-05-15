@@ -19,67 +19,99 @@ class CoverScraper:
     # BOOKWALKER SEARCH → FETCH → PARSE
     # ---------------------------------------------------------
     async def bookwalker_search_and_fetch(self, title: str, volume: str) -> str | None:
-
-        # Normalize search query
-        q = title.replace("’", "'").replace(":", "").replace(",", "")
-        q = q.replace("(", "").replace(")", "")
-        q = q.strip()
-
-        search_url = f"https://bookwalker.com/search/?q={q.replace(' ', '+')}"
         print(f"[BW] Searching for: {title} Vol {volume}")
-        print(f"[BW] URL: {search_url}")
 
-        # 1. Fetch search results page
+        # Normalize query
+        q = (
+            title.replace("’", "'")
+                .replace(":", "")
+                .replace(",", "")
+                .replace("(", "")
+                .replace(")", "")
+                .strip()
+        )
+        search_url = f"https://bookwalker.com/browse?search={q.replace(' ', '+')}"
+        print(f"[BW] Search URL: {search_url}")
+
+        # Fetch search results
         search_html = await self.fetch_page(search_url)
         if not search_html:
+            print("[BW] No search HTML")
             return None
 
-        # 2. Parse search results for volume links
         from bs4 import BeautifulSoup
         soup = BeautifulSoup(search_html, "html.parser")
 
-        # BookWalker search results use <a class="bw-book"> or <a class="item">
-        candidates = []
+        # STEP 1 — Extract series links (Light Novel only)
+        series_links = []
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            genre = a.get("data-genre", "")
+            if "/series/" in href and "Light Novel" in genre:
+                series_links.append(href)
+
+        print(f"[BW] Series links found: {len(series_links)}")
+        if not series_links:
+            return None
+
+        # Use the first LN series result
+        series_url = "https://bookwalker.com" + series_links[0]
+        print(f"[BW] Series URL: {series_url}")
+
+        # STEP 2 — Fetch series page
+        series_html = await self.fetch_page(series_url)
+        if not series_html:
+            print("[BW] No series HTML")
+            return None
+
+        soup = BeautifulSoup(series_html, "html.parser")
+
+        # STEP 3 — Extract volume links
+        volume_links = []
         for a in soup.find_all("a", href=True):
             href = a["href"]
             if "/volume/" in href:
-                candidates.append(href)
+                volume_links.append(href)
 
-        if not candidates:
+        print(f"[BW] Volume links found: {len(volume_links)}")
+        if not volume_links:
             return None
-        print(f"[BW] Candidates found: {len(candidates)}")
 
-        # 3. Try to match the correct volume number
-        # BookWalker URLs often contain "...-vol-3" or "...-volume-3"
-        vol = volume.lower().replace("volume", "").replace("vol.", "").replace("vol", "").strip()
-        print(f"[BW] Normalized volume: '{vol}'")
+        # STEP 4 — Match correct volume
+        vol_norm = volume.lower().replace("volume", "").replace("vol.", "").replace("vol", "").strip()
+        print(f"[BW] Normalized volume: {vol_norm}")
 
-        def matches_volume(url: str) -> bool:
-            url_lower = url.lower()
-            return f"-vol-{vol}" in url_lower or f"-volume-{vol}" in url_lower
+        def matches(url: str) -> bool:
+            u = url.lower()
+            return f"-vol-{vol_norm}" in u or f"-volume-{vol_norm}" in u or u.endswith(f"/{vol_norm}")
 
-        # Prefer exact volume match
-        for c in candidates:
-            print(f"[BW] Checking candidate: {c}")
-            if matches_volume(c):
-                volume_url = "https://bookwalker.com" + c
+        chosen = None
+        for v in volume_links:
+            if matches(v):
+                chosen = v
                 break
-        else:
-            # If no exact match, just take the first candidate
-            volume_url = "https://bookwalker.com" + candidates[0]
 
-        # 4. Fetch the BookWalker volume page
+        if not chosen:
+            chosen = volume_links[0]
+
+        volume_url = "https://bookwalker.com" + chosen
+        print(f"[BW] Volume URL: {volume_url}")
+
+        # STEP 5 — Fetch volume page
         volume_html = await self.fetch_page(volume_url)
         if not volume_html:
+            print("[BW] No volume HTML")
             return None
 
-        # 5. Parse cover using BookWalkerScraper
+        # STEP 6 — Parse cover
         cover = self.bookwalker.parse(volume_html)
         if cover:
             print(f"✔ BookWalker cover found for {title} Vol {volume}")
             return cover
 
+        print("[BW] No cover found")
         return None
+
 
 
     # ---------------------------------------------------------
