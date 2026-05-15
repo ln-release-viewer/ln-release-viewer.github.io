@@ -44,11 +44,18 @@ class CoverScraper:
 
         # STEP 1 — Extract series links (Light Novel only)
         series_links = []
-        for a in soup.find_all("a", href=True):
-            href = a["href"]
-            genre = a.get("data-genre", "")
-            if "/series/" in href and "Light Novel" in genre:
-                series_links.append(href)
+        for card in soup.select("div.book-card-grid-view-module__A8__ha__root"):
+            # Check if this card is a NOVEL
+            label = card.select_one("p.text-module__BtXIkG__text")
+            if not label:
+                continue
+            if "NOVEL" not in label.get_text(strip=True).upper():
+                continue
+
+            # Extract the series link
+            a = card.select_one("a[href*='/series/']")
+            if a:
+                series_links.append(a["href"])
 
         print(f"[BW] Series links found: {len(series_links)}")
         if not series_links:
