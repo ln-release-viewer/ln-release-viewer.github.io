@@ -78,6 +78,16 @@ def is_valid_image(content: bytes) -> bool:
     except Exception:
         return False
 
+def is_placeholder_url(url: str) -> bool:
+    url = url.lower()
+    return any(x in url for x in [
+        "coming-soon",
+        "nocover",
+        "noimage",
+        "placeholder",
+        "default",
+        "temp",
+    ])
 
 def openlibrary_cover_url(isbn: str) -> str:
     return f"https://covers.openlibrary.org/b/isbn/{isbn}-L.jpg"
@@ -209,6 +219,10 @@ def main():
                 content = resp.content
                 if not is_valid_image(content):
                     print(f"❌ Invalid publisher image for {title} vol {vol}")
+                    continue
+
+                if is_placeholder_url(img_url):
+                    print(f"❌ Placeholder URL detected for {title} vol {vol}")
                     continue
 
                 cover_path.write_bytes(content)
