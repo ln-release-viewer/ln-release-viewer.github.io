@@ -40,6 +40,17 @@ def is_bookwalker_placeholder(content: bytes) -> bool:
 
     return False
 
+async def try_url(url: str) -> str | None:
+    """Return URL if it exists (HTTP 200), else None."""
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.head(url, timeout=5) as resp:
+                if resp.status == 200:
+                    return url
+    except:
+        pass
+    return None
+
 
 class CoverScraper:
     def __init__(self, context):
@@ -334,6 +345,17 @@ class CoverScraper:
 
         if "j-novel.club" in url:
             img = self.jnovel.parse(html)
+            # If URL contains a size folder, try upgrading
+            m = re.search(r"/img/(\d+)/webp/(.+)$", img)
+            if m:
+                _, tail = m.groups()
+                for size in ["960", "480", "240"]:
+                    test_url = f"https://cdn.j-novel.club/pub/img/{size}/webp/{tail}"
+                    working = await try_url(test_url)
+                    if working:
+                        return working
+
+            # Otherwise return the original
             if img:
                 return img
 
