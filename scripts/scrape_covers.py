@@ -11,6 +11,36 @@ def normalize_title(t: str) -> list[str]:
     t = re.sub(r"[^a-z0-9\s]", " ", t)
     return [w for w in t.split() if w]
 
+def is_bookwalker_placeholder(content: bytes) -> bool:
+    # 1. Reject tiny files
+    if len(content) < 20000:  # < 20 KB
+        return True
+
+    # 2. Check dimensions
+    try:
+        from PIL import Image
+        import io
+        img = Image.open(io.BytesIO(content))
+        w, h = img.size
+
+        # Very small images are always placeholders
+        if max(w, h) < 500:
+            return True
+
+        # Some BW placeholders are 400x600 but extremely low detail
+        if max(w, h) <= 600:
+            # Quick entropy check
+            import numpy as np
+            arr = np.array(img.convert("L"))
+            if arr.std() < 18:  # low variance = placeholder
+                return True
+
+    except Exception:
+        pass
+
+    return False
+
+
 class CoverScraper:
     def __init__(self, context):
         self.context = context
@@ -209,8 +239,12 @@ class CoverScraper:
         # STEP 6 — Parse cover
         cover = self.bookwalker.parse(volume_html)
         if cover:
-            print(f"✔ BookWalker cover found for {title} Vol {volume}")
-            return cover
+            content = requests.get(cover, headers={"User-Agent": "Mozilla/5.0"}).content
+            if is_bookwalker_placeholder(content):
+                print("❌ BookWalker placeholder detected — falling back to publisher")
+            else:
+                print(f"✔ BookWalker cover found for {title} Vol {volume}")
+                return cover
 
         print("[BW] No cover found")
         return None
