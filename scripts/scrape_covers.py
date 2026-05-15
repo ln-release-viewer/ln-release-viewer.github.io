@@ -4,6 +4,12 @@ from scrapers.bookwalker_scraper import BookWalkerScraper
 from scrapers.seven_seas_scraper import SevenSeasScraper
 from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
+import re
+
+def normalize_title(t: str) -> list[str]:
+    t = t.lower()
+    t = re.sub(r"[^a-z0-9\s]", " ", t)
+    return [w for w in t.split() if w]
 
 class CoverScraper:
     def __init__(self, context):
@@ -74,6 +80,27 @@ class CoverScraper:
             return None
 
         soup = BeautifulSoup(series_html, "html.parser")
+
+        # Extract series title
+        series_title_el = soup.select_one("h1")
+        series_title = series_title_el.get_text(strip=True) if series_title_el else ""
+        print(f"[BW] Series page title: {series_title}")
+
+        # Validate title similarity
+        def normalize_title(t: str) -> list[str]:
+            t = t.lower()
+            t = re.sub(r"[^a-z0-9\s]", " ", t)
+            return [w for w in t.split() if w]
+
+        bw_tokens = set(normalize_title(series_title))
+        ln_tokens = set(normalize_title(title))
+
+        overlap = len(bw_tokens & ln_tokens)
+        min_required = max(1, len(ln_tokens) // 2)
+
+        if overlap < min_required:
+            print(f"[BW] Title mismatch — rejecting BookWalker match")
+            return None
 
         # STEP 3 — Extract volume links
         volume_links = []
