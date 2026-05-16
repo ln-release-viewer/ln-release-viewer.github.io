@@ -9,12 +9,23 @@ def extract_json(text):
         return None
 
 BOOKWALKER_ICON_PATTERNS = [
-    "favicon", "apple-icon", "icon.png", "ogp", "default", "logo"
+    "favicon",
+    "apple-icon",
+    "/icon",
+    "/icons/",
+    "icon-",
+    "ogp",
+    "default",
+    "logo"
+]
+BOOKWALKER_PLACEHOLDER_PATTERNS = [
+    "noimage",
+    "comingsoon",
+    "no-cover",
+    "nocover",
+    "placeholder"
 ]
 
-BOOKWALKER_PLACEHOLDER_PATTERNS = [
-    "noimage", "comingsoon", "no-cover", "nocover", "placeholder"
-]
 
 class BookWalkerScraper:
     def parse(self, html: str) -> str | None:
@@ -40,10 +51,14 @@ class BookWalkerScraper:
                             return None
 
                         return url
+
+                    # If __NEXT_DATA__ exists but has no cover → no cover exists
+                    return None
+
                 except Exception:
                     pass
 
-        # 2. JSON-LD fallback (rare)
+        # 2. JSON-LD fallback (rare, but safe)
         for tag in soup.find_all("script", type="application/ld+json"):
             data = extract_json(tag.string or "")
             if not isinstance(data, dict):
@@ -51,19 +66,9 @@ class BookWalkerScraper:
 
             img = data.get("image")
             if isinstance(img, str):
-                if not any(p in img.lower() for p in BOOKWALKER_ICON_PATTERNS):
+                u = img.lower()
+                if not any(p in u for p in BOOKWALKER_ICON_PATTERNS):
                     return img
 
-            if isinstance(img, list) and img:
-                return img[0]
-
-        # 3. OG image fallback (last resort)
-        tag = soup.find("meta", property="og:image")
-        if tag:
-            url = tag.get("content")
-            if url and not any(p in url.lower() for p in BOOKWALKER_ICON_PATTERNS):
-                return url
-
+        # 3. DO NOT use OG/Twitter images — they are always icons
         return None
-
-
