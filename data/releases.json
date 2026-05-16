@@ -308,7 +308,8 @@
     "volume": "8",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855405767"
+    "isbn": "9798855405767",
+    "cover": "/covers/chitose-is-in-the-ramune-bottle-vol-8-5cee2c.jpg"
   },
   {
     "date": "May 12",
@@ -355,7 +356,8 @@
     "volume": "10",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": "9798855433432"
+    "isbn": "9798855433432",
+    "cover": "/covers/hell-mode-vol-10-098017.jpg"
   },
   {
     "date": "May 12",
@@ -378,7 +380,8 @@
     "volume": "11",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": "9781975368401"
+    "isbn": "9781975368401",
+    "cover": "/covers/my-instant-death-ability-is-so-vol-11-ca004a.jpg"
   },
   {
     "date": "May 12",
@@ -389,7 +392,8 @@
     "volume": "9",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855427899"
+    "isbn": "9798855427899",
+    "cover": "/covers/sword-art-online-progressive-vol-9-9e60a0.jpg"
   },
   {
     "date": "May 12",
@@ -1140,8 +1144,7 @@
     "volume": "7",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": "9781975392338",
-    "cover": "/covers/black-summoner-vol-7-4990d7.jpg"
+    "isbn": "9781975392338"
   },
   {
     "date": "Jun 09",
@@ -3492,8 +3495,7 @@
     "volume": "6",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855422559",
-    "cover": "/covers/sentenced-to-be-a-hero-vol-6-37774b.jpg"
+    "isbn": "9798855422559"
   },
   {
     "date": "Sep 08",
