@@ -62,12 +62,6 @@ class SevenSeasScraper:
         time.sleep(4)
 
         html = driver.page_source
-
-        slug = slug_from_url(url)
-        debug_path = f"debug/sevenseas_{slug}.html"
-        with open(debug_path, "w", encoding="utf-8") as f:
-            f.write(html)
-
         driver.quit()
 
         # TODO: parse cover
