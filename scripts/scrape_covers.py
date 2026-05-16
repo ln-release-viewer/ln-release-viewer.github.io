@@ -5,9 +5,8 @@ from scrapers.seven_seas_scraper import SevenSeasScraper
 from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
 import re
-from difflib import SequenceMatcher
 
-STOPWORDS = {"the", "a", "an", "of", "and", "to", "in"}
+STOPWORDS = {"the", "a", "an", "of", "and", "to", "in", "on", "for"}
 BOOKWALKER_ICON_PATTERNS = [
     "favicon", "apple-icon", "icon.png", "ogp", "default", "logo"
 ]
@@ -113,30 +112,41 @@ class CoverScraper:
 
 
         # Validate title similarity
-        def normalize(t: str) -> str:
+        def tokenize(t: str) -> list[str]:
             t = t.lower()
             t = re.sub(r"[^a-z0-9\s]", " ", t)
-            t = re.sub(r"\s+", " ", t).strip()
-            return t
+            tokens = [w for w in t.split() if w not in STOPWORDS]
+            return tokens
 
-        def lcs_length(a: str, b: str) -> int:
-            # SequenceMatcher's matching blocks approximate LCS well enough for titles
-            matcher = SequenceMatcher(None, a, b)
-            return sum(block.size for block in matcher.get_matching_blocks())
+        ln_tokens = tokenize(title)
+        bw_tokens = tokenize(series_title)
 
-        ln_norm = normalize(title)
-        bw_norm = normalize(series_title)
+        ln_set = set(ln_tokens)
+        bw_set = set(bw_tokens)
 
-        core_len = lcs_length(ln_norm, bw_norm)
-        min_required = int(len(ln_norm) * 0.50)
+        overlap = ln_set & bw_set
 
-        print(f"[BW] LCS core length: {core_len} / {len(ln_norm)}")
+        print(f"[BW] Token overlap: {overlap}")
 
-        if core_len < min_required:
-            print("[BW] Series mismatch — rejecting due to insufficient shared core")
+        # 1. Require at least 2 meaningful tokens in common
+        if len(overlap) < 2:
+            print("[BW] Rejecting — insufficient token overlap")
             return None
 
-        print("[BW] Series accepted via LCS core match")
+        # 2. Require first token match (strong anchor)
+        if ln_tokens[0] != bw_tokens[0]:
+            print("[BW] Rejecting — first token mismatch")
+            return None
+
+        # 3. Require at least 50% of LN tokens to appear in BW tokens
+        coverage = len(overlap) / len(ln_set)
+        print(f"[BW] Coverage: {coverage:.2f}")
+
+        if coverage < 0.50:
+            print("[BW] Rejecting — insufficient coverage")
+            return None
+
+        print("[BW] Series accepted via token-based match")
 
         # STEP 3 — Extract volume links
         volume_links = []
