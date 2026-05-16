@@ -5,7 +5,9 @@ from scrapers.seven_seas_scraper import SevenSeasScraper
 from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
 import re
+from difflib import SequenceMatcher
 
+STOPWORDS = {"the", "a", "an", "of", "and", "to", "in"}
 BOOKWALKER_ICON_PATTERNS = [
     "favicon", "apple-icon", "icon.png", "ogp", "default", "logo"
 ]
@@ -111,20 +113,30 @@ class CoverScraper:
 
 
         # Validate title similarity
-        def normalize_title(t: str) -> list[str]:
+        def normalize(t: str) -> str:
             t = t.lower()
             t = re.sub(r"[^a-z0-9\s]", " ", t)
-            return [w for w in t.split() if w]
+            t = re.sub(r"\s+", " ", t).strip()
+            return t
 
-        bw_tokens = set(normalize_title(series_title))
-        ln_tokens = set(normalize_title(title))
+        def lcs_length(a: str, b: str) -> int:
+            # SequenceMatcher's matching blocks approximate LCS well enough for titles
+            matcher = SequenceMatcher(None, a, b)
+            return sum(block.size for block in matcher.get_matching_blocks())
 
-        overlap = len(bw_tokens & ln_tokens)
-        min_required = max(1, len(ln_tokens) // 2)
+        ln_norm = normalize(title)
+        bw_norm = normalize(series_title)
 
-        if overlap < min_required:
-            print(f"[BW] Title mismatch — rejecting BookWalker match")
+        core_len = lcs_length(ln_norm, bw_norm)
+        min_required = int(len(ln_norm) * 0.50)
+
+        print(f"[BW] LCS core length: {core_len} / {len(ln_norm)}")
+
+        if core_len < min_required:
+            print("[BW] Series mismatch — rejecting due to insufficient shared core")
             return None
+
+        print("[BW] Series accepted via LCS core match")
 
         # STEP 3 — Extract volume links
         volume_links = []
