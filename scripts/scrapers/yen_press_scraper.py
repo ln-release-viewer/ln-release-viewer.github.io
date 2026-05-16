@@ -71,17 +71,21 @@ class YenPressScraper:
                 if isinstance(img, list) and img:
                     if not self._is_bad(img[0]):
                         return img[0]
-
-        # -----------------------------------------
-        # 3. <noscript> images (Yen Press often hides real cover here)
-        # -----------------------------------------
-        for nos in soup.find_all("noscript"):
-            nsoup = BeautifulSoup(nos.text, "html.parser")
-            img = nsoup.find("img")
+        
+        # 3. Yen Press real cover: <div class="series-cover">
+        series_cover = soup.find("div", class_="series-cover")
+        if series_cover:
+            img = series_cover.find("img")
             if img:
-                src = img.get("src")
+                src = img.get("src") or img.get("data-src") or img.get("srcset")
                 if src and not self._is_bad(src):
                     return src
+
+        # 4. <img class="img-box-shadow ...">
+        for img in soup.find_all("img", class_=lambda c: c and "img-box-shadow" in c):
+            src = img.get("src") or img.get("data-src") or img.get("srcset")
+            if src and not self._is_bad(src):
+                return src
 
         # -----------------------------------------
         # 4. <figure> blocks (common for LN covers)
@@ -120,7 +124,7 @@ class YenPressScraper:
             return True
 
         return False
-        
+
     def _debug_dump(self, html: str, url: str):
         # Create a safe slug from the URL
         slug = re.sub(r"[^a-zA-Z0-9]+", "-", url).strip("-")
