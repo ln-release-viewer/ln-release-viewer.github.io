@@ -2,6 +2,18 @@ import re
 import json
 from bs4 import BeautifulSoup
 
+def _debug_dump(self, html: str, url: str):
+    # Create a safe slug from the URL
+    slug = re.sub(r"[^a-zA-Z0-9]+", "-", url).strip("-")
+    path = f"debug/yenpress_{slug}.html"
+
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"[YEN DEBUG] Saved HTML to {path}")
+    except Exception as e:
+        print(f"[YEN DEBUG] Failed to save HTML: {e}")
+
 def extract_json(text):
     try:
         return json.loads(text)
@@ -20,6 +32,7 @@ YEN_PLACEHOLDER_PATTERNS = [
 class YenPressScraper:
     def parse(self, html: str) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
+        self._debug_dump(html, soup.title.string if soup.title else "unknown")
 
         # -----------------------------------------
         # 1. __NEXT_DATA__ (primary, most reliable)
