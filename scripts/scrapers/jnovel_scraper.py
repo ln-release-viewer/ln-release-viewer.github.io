@@ -1,6 +1,7 @@
 import re
 import json
 import aiohttp
+import os
 from bs4 import BeautifulSoup
 
 def extract_json(text):
@@ -10,7 +11,22 @@ def extract_json(text):
         return None
 
 class JNovelScraper:
-    def parse(self, html: str) -> str | None:
+    def _debug_dump(self, html: str, url: str):
+        os.makedirs("debug/jnovel", exist_ok=True)
+
+        # Create a safe filename from the URL
+        slug = re.sub(r"[^a-zA-Z0-9]+", "-", url).strip("-")
+        path = f"debug/jnovel/{slug}.html"
+
+        try:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(html)
+            print(f"[JNOVEL DEBUG] Saved HTML to {path}")
+        except Exception as e:
+            print(f"[JNOVEL DEBUG] Failed to save HTML: {e}")
+
+    def parse(self, html: str, url: str = "") -> str | None:
+        self._debug_dump(html, url)
         match = re.search(r"window\.__NUXT__\s*=\s*(\{.*?\});", html, re.DOTALL)
         if match:
             data = extract_json(match.group(1))
