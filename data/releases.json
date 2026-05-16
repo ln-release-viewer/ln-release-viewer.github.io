@@ -1239,8 +1239,7 @@
     "volume": "3",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855427936",
-    "cover": "/covers/once-upon-a-witchs-death-vol-3-145147.jpg"
+    "isbn": "9798855427936"
   },
   {
     "date": "Jun 09",
@@ -1382,7 +1381,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-455-0"
+    "isbn": "979-8-89765-455-0",
+    "cover": "/covers/the-confession-strategy-vol-1-eb85e5.jpg"
   },
   {
     "date": "Jun 17",
@@ -1834,7 +1834,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-460-4"
+    "isbn": "979-8-89765-460-4",
+    "cover": "/covers/distorted-i-love-you-vol-1-2b318c.jpg"
   },
   {
     "date": "Jul 07",
@@ -1857,7 +1858,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-226-6"
+    "isbn": "979-8-89765-226-6",
+    "cover": "/covers/magic-maker-how-to-create-magic-vol-3-ccdda9.jpg"
   },
   {
     "date": "Jul 07",
@@ -1868,7 +1870,8 @@
     "volume": "5",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "978-1-63858-633-3"
+    "isbn": "978-1-63858-633-3",
+    "cover": "/covers/my-status-as-an-assassin-obviously-vol-5-ef18d9.jpg"
   },
   {
     "date": "Jul 07",
@@ -1903,7 +1906,8 @@
     "volume": "6.2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-672-1"
+    "isbn": "979-8-89765-672-1",
+    "cover": "/covers/witch-and-mercenary-vol-6.2-42e285.jpg"
   },
   {
     "date": "Jul 08",
@@ -2034,7 +2038,8 @@
     "volume": "6",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9781975388430"
+    "isbn": "9781975388430",
+    "cover": "/covers/a-certain-magical-index-nt-vol-6-7b6685.jpg"
   },
   {
     "date": "Jul 14",
@@ -2080,7 +2085,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-763-2"
+    "isbn": "979-8-89561-763-2",
+    "cover": "/covers/i-got-married-to-the-girl-vol-3-56fe52.jpg"
   },
   {
     "date": "Jul 14",
@@ -2197,8 +2203,7 @@
     "volume": "10",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855403053",
-    "cover": "/covers/sugar-apple-fairy-tale-vol-10-6a3e03.jpg"
+    "isbn": "9798855403053"
   },
   {
     "date": "Jul 14",
@@ -2353,7 +2358,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/reluctant-space-commander-from-death-wish-vol-1-c2ce97.jpg"
   },
   {
     "date": "Jul 24",
@@ -2436,7 +2442,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-439-0"
+    "isbn": "979-8-89765-439-0",
+    "cover": "/covers/history-of-the-kingdom-of-orcsen-vol-1-8e970c.jpg"
   },
   {
     "date": "Jul 28",
@@ -2471,7 +2478,8 @@
     "volume": "12",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89373-754-7"
+    "isbn": "979-8-89373-754-7",
+    "cover": "/covers/the-case-files-of-jeweler-richard-vol-12-21184e.jpg"
   },
   {
     "date": "Jul 30",
@@ -2637,7 +2645,8 @@
     "volume": "14",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-453-6"
+    "isbn": "979-8-89765-453-6",
+    "cover": "/covers/reincarnated-as-a-dragon-hatchling-vol-14-566eac.jpg"
   },
   {
     "date": "Aug 04",
@@ -2648,7 +2657,8 @@
     "volume": "19",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-171-9"
+    "isbn": "979-8-89765-171-9",
+    "cover": "/covers/reincarnated-as-a-sword-vol-19-061051.jpg"
   },
   {
     "date": "Aug 04",
@@ -2659,7 +2669,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-937-1"
+    "isbn": "979-8-89765-937-1",
+    "cover": "/covers/space-orc-barbarian-raider-of-the-vol-1-d054a3.jpg"
   },
   {
     "date": "Aug 04",
@@ -2860,8 +2871,7 @@
     "volume": "10",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855425994",
-    "cover": "/covers/the-angel-next-door-spoils-me-vol-10-23345c.jpg"
+    "isbn": "9798855425994"
   },
   {
     "date": "Aug 11",
@@ -2884,7 +2894,8 @@
     "volume": "4",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-409-9"
+    "isbn": "979-8-89561-409-9",
+    "cover": "/covers/the-devil-princess-vol-4-95d739.jpg"
   },
   {
     "date": "Aug 11",
@@ -2907,7 +2918,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-747-2"
+    "isbn": "979-8-89561-747-2",
+    "cover": "/covers/the-tale-of-a-little-alchemist-vol-3-4656bb.jpg"
   },
   {
     "date": "Aug 11",
@@ -2930,7 +2942,8 @@
     "volume": "5",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-733-5"
+    "isbn": "979-8-89561-733-5",
+    "cover": "/covers/trapped-in-a-dating-sim-otome-vol-5-2f1594.jpg"
   },
   {
     "date": "Aug 11",
@@ -3205,7 +3218,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/liars-journey-reborn-as-a-false-vol-1-0dae42.jpg"
   },
   {
     "date": "Aug 25",
@@ -3216,7 +3230,8 @@
     "volume": "14",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-404-4"
+    "isbn": "979-8-89561-404-4",
+    "cover": "/covers/sword-of-the-demon-hunter-kijin-vol-14-4453d2.jpg"
   },
   {
     "date": "Aug 25",
@@ -3227,7 +3242,8 @@
     "volume": "13",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-261-8"
+    "isbn": "979-8-89863-261-8",
+    "cover": "/covers/the-weakest-tamer-began-a-journey-vol-13-a6e58a.jpg"
   },
   {
     "date": "Aug 26",
@@ -3274,7 +3290,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-900-5"
+    "isbn": "979-8-89765-900-5",
+    "cover": "/covers/classroom-of-the-elite-year-3-vol-2-03c3a4.jpg"
   },
   {
     "date": "Sep 01",
@@ -3320,7 +3337,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/reborn-as-an-assassins-apprentice-vol-2-45cbc7.jpg"
   },
   {
     "date": "Sep 03",
@@ -3463,8 +3481,7 @@
     "volume": "2",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855424775",
-    "cover": "/covers/legend-of-the-far-easts-savior-vol-2-dc24f2.jpg"
+    "isbn": "9798855424775"
   },
   {
     "date": "Sep 08",
@@ -3535,7 +3552,8 @@
     "volume": "17",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-401-3"
+    "isbn": "979-8-89561-401-3",
+    "cover": "/covers/she-professed-herself-pupil-of-the-vol-17-587872.jpg"
   },
   {
     "date": "Sep 08",
@@ -3546,8 +3564,7 @@
     "volume": "11",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855405248",
-    "cover": "/covers/spy-classroom-vol-11-7af279.jpg"
+    "isbn": "9798855405248"
   },
   {
     "date": "Sep 08",
@@ -3641,7 +3658,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/predator-witches-vol-1-2ed200.jpg"
   },
   {
     "date": "Sep 15",
@@ -3652,7 +3670,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-569-0"
+    "isbn": "979-8-89561-569-0",
+    "cover": "/covers/chronicles-of-an-aristocrat-reborn-in-vol-3-e27756.jpg"
   },
   {
     "date": "Sep 15",
@@ -3663,7 +3682,8 @@
     "volume": "15",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89373-772-1"
+    "isbn": "979-8-89373-772-1",
+    "cover": "/covers/the-strange-adventure-of-a-broke-vol-15-c97099.jpg"
   },
   {
     "date": "Sep 15",
@@ -3768,7 +3788,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-253-3"
+    "isbn": "979-8-89863-253-3",
+    "cover": "/covers/the-neverending-winter-the-land-of-vol-1-1a33f4.jpg"
   },
   {
     "date": "Sep 22",
@@ -3779,7 +3800,8 @@
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-996-8"
+    "isbn": "979-8-89765-996-8",
+    "cover": "/covers/though-i-am-an-inept-villainess-vol-11-67b28d.jpg"
   },
   {
     "date": "Sep 22",
@@ -3790,7 +3812,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-553-3"
+    "isbn": "979-8-89765-553-3",
+    "cover": "/covers/venus-mission-i-was-an-assassin-for-hire-vol-2-06d1bf.jpg"
   },
   {
     "date": "Sep 25",
@@ -3813,7 +3836,8 @@
     "volume": "8",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-985-2"
+    "isbn": "979-8-89765-985-2",
+    "cover": "/covers/easygoing-territory-defense-by-the-optimistic-vol-8-631031.jpg"
   },
   {
     "date": "Sep 29",
@@ -3824,7 +3848,8 @@
     "volume": "15",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-214-9"
+    "isbn": "979-8-89561-214-9",
+    "cover": "/covers/loner-life-in-another-world-vol-15-e48a8c.jpg"
   },
   {
     "date": "Sep 30",
@@ -3847,7 +3872,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/when-a-clueless-first-person-shooter-player-vol-3-8b9626.jpg"
   },
   {
     "date": "Oct 06",
@@ -3881,7 +3907,8 @@
     "volume": "4",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-419-8"
+    "isbn": "979-8-89561-419-8",
+    "cover": "/covers/virgin-knight-i-became-the-frontier-vol-4-8390e2.jpg"
   },
   {
     "date": "Oct 13",
@@ -3892,8 +3919,7 @@
     "volume": "7",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855407716",
-    "cover": "/covers/agents-of-the-four-seasons-vol-7-64fc4e.jpg"
+    "isbn": "9798855407716"
   },
   {
     "date": "Oct 13",
@@ -3915,8 +3941,7 @@
     "volume": "7",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9781975353094",
-    "cover": "/covers/associate-professor-akira-takatsukis-conjecture-vol-7-0ef9fa.jpg"
+    "isbn": "9781975353094"
   },
   {
     "date": "Oct 13",
@@ -3972,7 +3997,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/fluffy-caf-in-another-world-vol-2-fdbc9f.jpg"
   },
   {
     "date": "Oct 13",
@@ -4106,7 +4132,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/reborn-as-an-aristocratic-scoundrel-i-vol-1-47dce6.jpg"
   },
   {
     "date": "Oct 20",
@@ -4117,7 +4144,8 @@
     "volume": "13",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-165-9"
+    "isbn": "979-8-89863-165-9",
+    "cover": "/covers/adachi-and-shimamura-vol-13-9e4068.jpg"
   },
   {
     "date": "Oct 20",
@@ -4128,7 +4156,8 @@
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-108-5"
+    "isbn": "979-8-89765-108-5",
+    "cover": "/covers/a-tale-of-the-secret-saint-vol-11-3ec196.jpg"
   },
   {
     "date": "Oct 20",
@@ -4139,8 +4168,7 @@
     "volume": "3",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798400904103",
-    "cover": "/covers/semantic-error-vol-3-010c7f.jpg"
+    "isbn": "9798400904103"
   },
   {
     "date": "Oct 27",
@@ -4163,7 +4191,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-772-4"
+    "isbn": "979-8-89561-772-4",
+    "cover": "/covers/magical-buffs-the-support-caster-is-vol-3-f6bc8a.jpg"
   },
   {
     "date": "Oct 27",
@@ -4174,7 +4203,8 @@
     "volume": "10",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-238-0"
+    "isbn": "979-8-89863-238-0",
+    "cover": "/covers/survival-in-another-world-with-my-vol-10-0a30a2.jpg"
   },
   {
     "date": "Oct 27",
@@ -4185,7 +4215,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-faceless-mercenary-wants-to-settle-vol-1-829dff.jpg"
   },
   {
     "date": "Oct 27",
@@ -4207,7 +4238,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-393-6"
+    "isbn": "979-8-89863-393-6",
+    "cover": "/covers/when-it-rains-it-pours-vol-1-0764d0.jpg"
   },
   {
     "date": "Oct 29",
@@ -4218,7 +4250,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/al-the-adventurer-that-magic-shouldnt-vol-2-6ed8a3.jpg"
   },
   {
     "date": "Nov 03",
@@ -4240,7 +4273,8 @@
     "volume": "4",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-764-9"
+    "isbn": "979-8-89561-764-9",
+    "cover": "/covers/i-got-married-to-the-girl-vol-4-56fe52.jpg"
   },
   {
     "date": "Nov 03",
@@ -4262,7 +4296,8 @@
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-945-6"
+    "isbn": "979-8-89765-945-6",
+    "cover": "/covers/the-most-heretical-last-boss-queen-vol-11-13dbed.jpg"
   },
   {
     "date": "Nov 10",
@@ -4273,7 +4308,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-169-6"
+    "isbn": "979-8-89765-169-6",
+    "cover": "/covers/my-girlfriend-cheated-on-me-and-vol-3-4aaebf.jpg"
   },
   {
     "date": "Nov 10",
@@ -4284,7 +4320,8 @@
     "volume": "7",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-584-3"
+    "isbn": "979-8-89561-584-3",
+    "cover": "/covers/the-too-perfect-saint-tossed-aside-by-vol-7-9fb42a.jpg"
   },
   {
     "date": "Nov 17",
@@ -4317,7 +4354,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-440-6"
+    "isbn": "979-8-89765-440-6",
+    "cover": "/covers/history-of-the-kingdom-of-orcsen-vol-2-8e970c.jpg"
   },
   {
     "date": "Nov 24",
@@ -4328,7 +4366,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-521-8"
+    "isbn": "979-8-89561-521-8",
+    "cover": "/covers/i-like-villains-so-i-reincarnated-vol-3-70200d.jpg"
   },
   {
     "date": "Nov 24",
@@ -4530,7 +4569,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-90209-188-2"
+    "isbn": "979-8-90209-188-2",
+    "cover": "/covers/into-the-night-yoasobi-story-collection-vol-1-dd3e72.jpg"
   },
   {
     "date": "Jan 26",
