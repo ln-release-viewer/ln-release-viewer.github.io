@@ -8,34 +8,54 @@ def extract_json(text):
     except:
         return None
 
+YEN_PLACEHOLDER_PATTERNS = [
+    "placeholder",
+    "default",
+    "noimage",
+    "comingsoon",
+    "logo",
+    "icon",
+]
+
 class YenPressScraper:
     def parse(self, html: str) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
 
         # -----------------------------------------
-        # 1. __NEXT_DATA__ (primary)
+        # 1. __NEXT_DATA__ (primary, most reliable)
         # -----------------------------------------
-        match = re.search(
-            r'<script id="__NEXT_DATA__"[^>]*>(.+?)</script>',
-            html,
-            re.DOTALL,
-        )
-        if match:
-            data = extract_json(match.group(1))
+        script = soup.find("script", id="__NEXT_DATA__")
+        if script and script.string:
+            data = extract_json(script.string)
             if data:
-                # Newer Yen Press pages sometimes nest differently
                 try:
+                    # Try multiple known structures
+                    pp = data["props"]["pageProps"]
+
+                    # A) dehydratedState → queries → state → data → cover
                     queries = (
-                        data["props"]["pageProps"]
-                        .get("dehydratedState", {})
+                        pp.get("dehydratedState", {})
                         .get("queries", [])
                     )
                     for q in queries:
                         d = q.get("state", {}).get("data", {})
                         cover = d.get("cover")
-                        if cover:
+                        if cover and not self._is_bad(cover):
                             return cover
-                except:
+
+                    # B) product.cover
+                    product = pp.get("product", {})
+                    cover = product.get("cover")
+                    if cover and not self._is_bad(cover):
+                        return cover
+
+                    # C) product.images.cover
+                    images = product.get("images", {})
+                    cover = images.get("cover")
+                    if cover and not self._is_bad(cover):
+                        return cover
+
+                except Exception:
                     pass
 
         # -----------------------------------------
@@ -45,24 +65,57 @@ class YenPressScraper:
             data = extract_json(tag.string or "")
             if isinstance(data, dict):
                 img = data.get("image")
-                if isinstance(img, str):
+                if isinstance(img, str) and not self._is_bad(img):
                     return img
                 if isinstance(img, list) and img:
-                    return img[0]
+                    if not self._is_bad(img[0]):
+                        return img[0]
 
         # -----------------------------------------
-        # 3. OG image fallback
+        # 3. <noscript> images (Yen Press often hides real cover here)
         # -----------------------------------------
-        og = soup.find("meta", property="og:image")
-        if og and og.get("content"):
-            return og["content"]
+        for nos in soup.find_all("noscript"):
+            nsoup = BeautifulSoup(nos.text, "html.parser")
+            img = nsoup.find("img")
+            if img:
+                src = img.get("src")
+                if src and not self._is_bad(src):
+                    return src
 
         # -----------------------------------------
-        # 4. <img> tag heuristic fallback
+        # 4. <figure> blocks (common for LN covers)
+        # -----------------------------------------
+        for fig in soup.find_all("figure"):
+            img = fig.find("img")
+            if img:
+                src = img.get("src") or img.get("data-src")
+                if src and not self._is_bad(src):
+                    return src
+
+        # -----------------------------------------
+        # 5. <img> tags (lazy-loaded, data-src, etc.)
         # -----------------------------------------
         for img in soup.find_all("img"):
-            src = img.get("src") or ""
-            if any(k in src.lower() for k in ["cover", "jacket", "volume", "vol"]):
+            src = img.get("src") or img.get("data-src") or ""
+            if src and not self._is_bad(src):
                 return src
 
         return None
+
+    def _is_bad(self, url: str) -> bool:
+        """Reject placeholders, icons, logos, and tiny images."""
+        u = url.lower()
+
+        # Reject placeholders
+        if any(p in u for p in YEN_PLACEHOLDER_PATTERNS):
+            return True
+
+        # Reject icons
+        if "icon" in u or "favicon" in u:
+            return True
+
+        # Reject tiny thumbnails
+        if "150x150" in u or "300x300" in u:
+            return True
+
+        return False
