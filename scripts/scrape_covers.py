@@ -130,6 +130,30 @@ class CoverScraper:
             return None
 
         # STEP 4 — Match correct volume
+        # Detect title-based volumes (no numbers in any volume link)
+        all_numeric = any(re.search(r"\d", v) for v in volume_links)
+
+        if not all_numeric:
+            print("[BW] Detected title-based series — matching by title instead of volume number")
+
+            # Normalize title for matching
+            t = title.lower()
+            t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+
+            # Try to find a volume whose slug contains the normalized title
+            for v in volume_links:
+                if t in v.lower():
+                    chosen = v
+                    break
+
+            if chosen:
+                volume_url = "https://bookwalker.com" + chosen
+                print(f"[BW] Title-based match: {volume_url}")
+                return volume_url
+
+            print("[BW] No title-based match found — falling back to publisher")
+            return None
+
         vol_norm = (
             volume.lower()
                 .replace("volume", "")
