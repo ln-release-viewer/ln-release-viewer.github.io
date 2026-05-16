@@ -7,6 +7,7 @@ from pathlib import Path
 import hashlib
 import requests
 from PIL import Image
+import numpy as np
 from playwright.async_api import async_playwright
 from scrape_covers import CoverScraper
 
@@ -88,6 +89,33 @@ def is_placeholder_url(url: str) -> bool:
         "default",
         "temp",
     ])
+
+def image_entropy(img: Image.Image) -> float:
+    """Compute Shannon entropy of an image."""
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+
+    histogram = np.array(img.histogram())
+    histogram = histogram / histogram.sum()
+    histogram = histogram[histogram > 0]
+
+    return -np.sum(histogram * np.log2(histogram))
+
+def is_placeholder_image(content: bytes) -> bool:
+    """Detects publisher placeholders based on entropy."""
+    try:
+        img = Image.open(io.BytesIO(content))
+        ent = image_entropy(img)
+
+        # Debug print
+        print(f"[IMG] Entropy: {ent:.2f}")
+
+        # Threshold tuned for Yen Press, J-Novel, Seven Seas, BookWalker
+        return ent < 3.0
+
+    except Exception as e:
+        print(f"[IMG] Error checking entropy: {e}")
+        return False
 
 def openlibrary_cover_url(isbn: str) -> str:
     return f"https://covers.openlibrary.org/b/isbn/{isbn}-L.jpg"
@@ -223,6 +251,10 @@ def main():
 
                 if is_placeholder_url(img_url):
                     print(f"❌ Placeholder URL detected for {title} vol {vol}")
+                    continue
+
+                if is_placeholder_image(content):
+                    print("❌ Placeholder image detected")
                     continue
 
                 cover_path.write_bytes(content)
