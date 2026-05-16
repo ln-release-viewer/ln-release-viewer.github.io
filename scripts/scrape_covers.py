@@ -6,6 +6,14 @@ from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
 import re
 
+BOOKWALKER_ICON_PATTERNS = [
+    "favicon", "apple-icon", "icon.png", "ogp", "default", "logo"
+]
+
+BOOKWALKER_PLACEHOLDER_PATTERNS = [
+    "noimage", "comingsoon", "no-cover", "nocover", "placeholder"
+]
+
 def normalize_title(t: str) -> list[str]:
     t = t.lower()
     t = re.sub(r"[^a-z0-9\s]", " ", t)
