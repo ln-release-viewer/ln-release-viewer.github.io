@@ -368,8 +368,7 @@
     "volume": "3",
     "publisher": "Yen Press",
     "format": "📖",
-    "isbn": "9798855414288",
-    "cover": "/covers/lord-of-mysteries-vol-3-190e47.jpg"
+    "isbn": "9798855414288"
   },
   {
     "date": "May 12",
@@ -1239,7 +1238,8 @@
     "volume": "3",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855427936"
+    "isbn": "9798855427936",
+    "cover": "/covers/once-upon-a-witchs-death-vol-3-145147.jpg"
   },
   {
     "date": "Jun 09",
@@ -2133,8 +2133,7 @@
     "volume": "8",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9781975370732",
-    "cover": "/covers/liar-liar-vol-8-75cdea.jpg"
+    "isbn": "9781975370732"
   },
   {
     "date": "Jul 14",
@@ -2203,7 +2202,8 @@
     "volume": "10",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855403053"
+    "isbn": "9798855403053",
+    "cover": "/covers/sugar-apple-fairy-tale-vol-10-6a3e03.jpg"
   },
   {
     "date": "Jul 14",
@@ -3492,8 +3492,7 @@
     "volume": "4",
     "publisher": "Yen Press",
     "format": "📖",
-    "isbn": "9798855414295",
-    "cover": "/covers/lord-of-mysteries-vol-4-190e47.jpg"
+    "isbn": "9798855414295"
   },
   {
     "date": "Sep 08",
@@ -4569,8 +4568,7 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-90209-188-2",
-    "cover": "/covers/into-the-night-yoasobi-story-collection-vol-1-dd3e72.jpg"
+    "isbn": "979-8-90209-188-2"
   },
   {
     "date": "Jan 26",
