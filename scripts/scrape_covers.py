@@ -127,117 +127,118 @@ class CoverScraper:
 
         print(f"[BW] Volume links found: {len(volume_links)}")
         if not volume_links:
+            print("[BW] No volumes found on BookWalker")
             return None
 
-        # STEP 4 — Match correct volume
-        # Detect title-based volumes (no numbers in any volume link)
-        all_numeric = any(re.search(r"\d", v) for v in volume_links)
+        # Normalize all slugs
+        slugs = [v.lower() for v in volume_links]
 
-        if not all_numeric:
-            print("[BW] Detected title-based series — matching by title instead of volume number")
+        # Detect if series is numeric or title-based
+        has_numbers = any(re.search(r"\d", s) for s in slugs)
 
-            # Normalize title for matching
-            t = title.lower()
-            t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+        # Normalize LNRelease title for matching
+        def slugify(t: str) -> str:
+            t = t.lower()
+            t = re.sub(r"[^a-z0-9]+", "-", t)
+            return t.strip("-")
 
-            # Try to find a volume whose slug contains the normalized title
-            for v in volume_links:
-                if t in v.lower():
-                    chosen = v
-                    break
-
-            if chosen:
-                volume_url = "https://bookwalker.com" + chosen
-                print(f"[BW] Title-based match: {volume_url}")
-                return volume_url
-
-            print("[BW] No title-based match found — falling back to publisher")
-            return None
-
-        vol_norm = (
-            volume.lower()
-                .replace("volume", "")
-                .replace("vol.", "")
-                .replace("vol", "")
-                .strip()
-        )
-
-        print(f"[BW] Normalized volume: {vol_norm}")
-
-        patterns = []
-
-        # Fractional volume handling
-        if "." in vol_norm:
-            major, minor = vol_norm.split(".", 1)
-
-            # Most common BookWalker pattern
-            patterns.append(f"volume-{major}-part-{minor}")
-
-            # Sometimes BookWalker uses hyphen
-            patterns.append(f"volume-{major}-{minor}")
-
-            # Sometimes BookWalker uses dot
-            patterns.append(f"volume-{major}.{minor}")
-
-            # Sometimes BookWalker uses underscore
-            patterns.append(f"volume-{major}_{minor}")
-
-            # Sometimes BookWalker uses "part X"
-            patterns.append(f"{major}-part-{minor}")
-
-            # Sometimes BookWalker uses "X part Y"
-            patterns.append(f"{major} part {minor}")
-
-        else:
-            # Normal integer volume
-            patterns.append(f"volume-{vol_norm}")
-            patterns.append(f"-vol-{vol_norm}")
-            patterns.append(f"-volume-{vol_norm}")
-            patterns.append(f"-{vol_norm}")
-
-        print(f"[BW] Volume patterns: {patterns}")
-
-        def matches(url: str) -> bool:
-            u = url.lower()
-            return any(p in u for p in patterns)
+        title_slug = slugify(title)
 
         chosen = None
-        for v in volume_links:
-            if matches(v):
-                chosen = v
-                break
 
-        # Fuzzy fallback: look for major volume number
-        if not chosen:
-            major = vol_norm.split(".", 1)[0]
-            for v in volume_links:
-                if f"volume-{major}" in v.lower():
-                    chosen = v
+        # STEP 4A — Title-based matching (Rascal, Monogatari, Haruhi, etc.)
+        if not has_numbers:
+            print("[BW] Detected title-based series — matching by title slug")
+
+            for s in slugs:
+                if title_slug in s:
+                    chosen = s
                     break
 
-        # Series found, but no matching volume
-        if not chosen:
-            print("[BW] No matching volume found — falling back to publisher")
-            return None
+            if not chosen:
+                print("[BW] No title-based match found")
+                return None
 
+        else:
+            # STEP 4B — Numeric matching
+            vol_norm = (
+                volume.lower()
+                    .replace("volume", "")
+                    .replace("vol.", "")
+                    .replace("vol", "")
+                    .strip()
+            )
+
+            print(f"[BW] Normalized volume: {vol_norm}")
+
+            patterns = []
+
+            # Fractional volumes
+            if "." in vol_norm:
+                major, minor = vol_norm.split(".", 1)
+                patterns += [
+                    f"volume-{major}-part-{minor}",
+                    f"volume-{major}-{minor}",
+                    f"volume-{major}.{minor}",
+                    f"volume-{major}_{minor}",
+                    f"{major}-part-{minor}",
+                    f"{major} part {minor}",
+                ]
+            else:
+                patterns += [
+                    f"volume-{vol_norm}",
+                    f"-vol-{vol_norm}",
+                    f"-volume-{vol_norm}",
+                    f"-{vol_norm}",
+                ]
+
+            print(f"[BW] Volume patterns: {patterns}")
+
+            for s in slugs:
+                if any(p in s for p in patterns):
+                    chosen = s
+                    break
+
+            # Fuzzy fallback
+            if not chosen:
+                major = vol_norm.split(".", 1)[0]
+                for s in slugs:
+                    if f"volume-{major}" in s:
+                        chosen = s
+                        break
+
+            if not chosen:
+                print("[BW] No numeric volume match found")
+                return None
+
+        # STEP 5 — Fetch volume page
         volume_url = "https://bookwalker.com" + chosen
         print(f"[BW] Volume URL: {volume_url}")
 
-
-        # STEP 5 — Fetch volume page
         volume_html = await self.fetch_page(volume_url)
         if not volume_html:
             print("[BW] No volume HTML")
             return None
 
-        # STEP 6 — Parse cover
+        # STEP 6 — Parse cover with strict validation
         cover = self.bookwalker.parse(volume_html)
-        if cover:
-            print(f"✔ BookWalker cover found for {title} Vol {volume}")
-            return cover
+        if not cover:
+            print("[BW] No valid cover found")
+            return None
 
-        print("[BW] No cover found")
-        return None
+        # Reject icons or placeholders again (double safety)
+        lc = cover.lower()
+        if any(p in lc for p in BOOKWALKER_ICON_PATTERNS):
+            print("[BW] Rejected icon masquerading as cover")
+            return None
+
+        if any(p in lc for p in BOOKWALKER_PLACEHOLDER_PATTERNS):
+            print("[BW] Rejected placeholder cover")
+            return None
+
+        print(f"✔ BookWalker cover found for {title} Vol {volume}")
+        return cover
+
 
 
 
