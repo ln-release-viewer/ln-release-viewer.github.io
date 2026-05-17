@@ -341,7 +341,7 @@ class CoverScraper:
         if "sevenseasentertainment.com" in url:
             img = self.seven.get_cover(url)
             if img:
-                print(f"✔ Seven Seas cover saved for {title} vol {vol}")
+                print(f"✔ Seven Seas cover saved for {title} vol {volume}")
                 return img
 
         html = await self.fetch_page(url)
@@ -350,28 +350,28 @@ class CoverScraper:
         if "yenpress.com" in url:
             img = self.yen.parse(html)
             if img:
-                print(f"✔ Yen Press cover saved for {title} vol {vol}")
+                print(f"✔ Yen Press cover saved for {title} vol {volume}")
                 return img
 
         # 3. J-Novel Club
         if "j-novel.club" in url and volume:
             img = await self.jnovel.parse(html, url=url, volume=volume)
             if img:
-                print(f"✔ J-Novel Club cover saved for {title} vol {vol}")
+                print(f"✔ J-Novel Club cover saved for {title} vol {volume}")
                 return img
 
         # 4. Cross Infinite World
         if "crossinfworld.com" in url:
             img = await self.crossinf.parse(html, url=url)
             if img:
-                print(f"✔ Cross Infinite World cover saved for {title} vol {vol}")
+                print(f"✔ Cross Infinite World cover saved for {title} vol {volume}")
                 return img
 
         # 5. Square Enix
         if "squareenixmangaandbooks.square-enix-games.com" in url:
             img = await self.squareenix.parse(html, url=url)
             if img:
-                print(f"✔ Square Enix cover saved for {title} vol {vol}")
+                print(f"✔ Square Enix cover saved for {title} vol {volume}")
                 return img
 
         # 6. BookWalker search fallback
