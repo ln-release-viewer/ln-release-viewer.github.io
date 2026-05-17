@@ -33,27 +33,14 @@ class JNovelScraper:
 
     async def parse(self, html: str, url: str = "", volume: int | None = None) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
+        self._debug_dump(html, soup.title.string if soup.title else "unknown")
 
         if volume is not None:
-            # Find the anchor for the requested volume
-            anchor = soup.find("a", href=f"#volume-{volume}")
-            if anchor:
-                # Walk upward to a stable container
-                container = anchor
-                for _ in range(5):
-                    container = container.parent
-                    if container is None:
-                        break
-
-                # Walk backwards to find the first <img>
-                img = None
-                node = container.previous_sibling
-
-                while node and not img:
-                    if hasattr(node, "find"):
-                        img = node.find("img")
-                    node = node.previous_sibling
-
+            # Find the volume container directly
+            container = soup.find("div", id=f"volume-{volume}")
+            if container:
+                # Find the first image inside this volume block
+                img = container.find("img")
                 if img:
                     src = img.get("src") or img.get("data-src")
                     if src:
@@ -65,6 +52,7 @@ class JNovelScraper:
                             if await self._url_exists(candidate):
                                 return candidate
 
+                        return src
 
         # fallback: OG image
         soup = BeautifulSoup(html, "html.parser")
