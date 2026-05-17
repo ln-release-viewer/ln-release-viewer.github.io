@@ -31,52 +31,39 @@ class JNovelScraper:
                 return resp.status == 200
 
 
-    async def parse(self, html: str, url: str = "") -> str | None:
-        # -----------------------------------------
-        # 2. HTML fallback: parse volume blocks
-        # -----------------------------------------
+    async def parse(self, html: str, url: str = "", volume: int | None = None) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
 
-        # Find all volume anchors
-        anchors = soup.find_all("a", href=re.compile(r"#volume-(\d+)"))
+        if volume is not None:
+            # Find the anchor for the requested volume
+            anchor = soup.find("a", href=f"#volume-{volume}")
+            if anchor:
+                # Walk upward to a stable container
+                container = anchor
+                for _ in range(5):
+                    container = container.parent
+                    if container is None:
+                        break
 
-        volumes = []
-        for a in anchors:
-            m = re.search(r"#volume-(\d+)", a["href"])
-            if not m:
-                continue
+                # Walk backwards to find the first <img>
+                img = None
+                node = container.previous_sibling
 
-            vol_num = int(m.group(1))
+                while node and not img:
+                    if hasattr(node, "find"):
+                        img = node.find("img")
+                    node = node.previous_sibling
 
-            # The cover is usually in the next sibling block
-            block = a.find_parent()
-            if not block:
-                continue
+                if img:
+                    src = img.get("src") or img.get("data-src")
+                    if src:
+                        # Upgrade resolution
+                        url_960 = src.replace("/240/", "/960/")
+                        url_480 = src.replace("/240/", "/480/")
 
-            img = block.find("img")
-            if not img:
-                continue
-
-            src = img.get("src") or img.get("data-src")
-            if not src:
-                continue
-
-            volumes.append((vol_num, src))
-
-        # Sort by volume number descending
-        volumes.sort(key=lambda x: x[0], reverse=True)
-
-        # Return the highest volume cover
-        if volumes:
-            vol_num, url = volumes[0]
-
-            # Upgrade resolution
-            url_960 = url.replace("/240/", "/960/")
-            url_480 = url.replace("/240/", "/480/")
-
-            for candidate in (url_960, url_480, url):
-                if await self._url_exists(candidate):
-                    return candidate
+                        for candidate in (url_960, url_480, src):
+                            if await self._url_exists(candidate):
+                                return candidate
 
 
         # fallback: OG image

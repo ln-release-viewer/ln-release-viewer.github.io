@@ -353,8 +353,8 @@ class CoverScraper:
             if img:
                 return img
 
-        if "j-novel.club" in url:
-            img = await self.jnovel.parse(html)
+        if "j-novel.club" in url and volume:
+            img = await self.jnovel.parse(html, url=url, volume=volume)
             if img:
                 return img
 
