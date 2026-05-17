@@ -8,6 +8,16 @@ def extract_json(text):
     except Exception:
         return None
 
+def title_similarity(a: str, b: str) -> float:
+    a_tokens = set(re.findall(r"\w+", a.lower()))
+    b_tokens = set(re.findall(r"\w+", b.lower()))
+
+    if not a_tokens or not b_tokens:
+        return 0.0
+
+    overlap = len(a_tokens & b_tokens)
+    return overlap / len(a_tokens)
+    
 class GenericScraper:
     """
     Fallback scraper for publishers without a dedicated parser.
@@ -16,16 +26,6 @@ class GenericScraper:
       2. <script type="application/ld+json"> with "image"
       3. <img> tags that look like covers
     """
-
-    def title_similarity(a: str, b: str) -> float:
-        a_tokens = set(re.findall(r"\w+", a.lower()))
-        b_tokens = set(re.findall(r"\w+", b.lower()))
-
-        if not a_tokens or not b_tokens:
-            return 0.0
-
-        overlap = len(a_tokens & b_tokens)
-        return overlap / len(a_tokens)
 
     def parse(self, html: str, expected_title: str | None = None) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
