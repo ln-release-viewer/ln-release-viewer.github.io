@@ -3,6 +3,7 @@ from scrapers.jnovel_scraper import JNovelScraper
 from scrapers.bookwalker_scraper import BookWalkerScraper
 from scrapers.seven_seas_scraper import SevenSeasScraper
 from scrapers.crossinfinite_scraper import CrossInfiniteScraper
+from scrapers.squareenix_scraper import SquareEnixScraper
 from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
 import re
@@ -31,6 +32,7 @@ class CoverScraper:
         self.jnovel = JNovelScraper()
         self.seven = SevenSeasScraper()
         self.crossinf = CrossInfiniteScraper()
+        self.squareenix = SquareEnixScraper()
         self.generic = GenericScraper()
 
     # ---------------------------------------------------------
@@ -367,6 +369,11 @@ class CoverScraper:
 
         if "crossinfworld.com" in url:
             img = await self.crossinf.parse(html, url=url)
+            if img:
+                return img
+
+        if "squareenixmangaandbooks.square-enix-games.com" in url:
+            img = await self.squareenix.parse(html, url=url)
             if img:
                 return img
 
