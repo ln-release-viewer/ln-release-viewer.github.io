@@ -337,17 +337,10 @@ class CoverScraper:
 
 
     async def get_cover(self, url: str, title: str = None, volume: str = None) -> str | None:
-        # 1. BookWalker search
-        #if title and volume:
-        #    bw_cover = await self.bookwalker_search_and_fetch(title, volume)
-        #    if bw_cover:
-        #        return bw_cover
-
-        # 2. Seven Seas
+        # Publisher scraping
         if "sevenseasentertainment.com" in url:
             return self.seven.get_cover(url)
 
-        # 3. Publisher scraping
         html = await self.fetch_page(url)
         if not html:
             return None
@@ -377,6 +370,12 @@ class CoverScraper:
             if img:
                 return img
 
-        # 4. Generic fallback
+        # BookWalker fall back if publisher's didn't have it)
+        if title and volume:
+            bw_cover = await self.bookwalker_search_and_fetch(title, volume)
+            if bw_cover:
+                return bw_cover
+
+        # Generic fallback
         return self.generic.parse(html)
 
