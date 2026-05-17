@@ -19,6 +19,23 @@ class GenericScraper:
     def parse(self, html: str) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
 
+        # Detect Shopify 404s
+        # 1. OG title says 404
+        og_title = soup.find("meta", property="og:title")
+        if og_title:
+            title = og_title.get("content", "").lower()
+            if "404" in title or "not found" in title:
+                return None
+
+        # 2. Shopify 404 text
+        if soup.find(string=lambda s: s and "page does not exist" in s.lower()):
+            return None
+
+        # 3. TOKYOPOP-specific 404 signature
+        if soup.find("h1", string=lambda s: s and "404" in s):
+            return None
+
+
         # 1. OG image
         og = soup.find("meta", property="og:image")
         if og and og.get("content"):

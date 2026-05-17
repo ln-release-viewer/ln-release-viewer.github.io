@@ -27,7 +27,7 @@ class CoverScraper:
         self.context = context
 
         # Scrapers
-        self.bookwalker = BookWalkerScraper()   # FIRST PRIORITY
+        self.bookwalker = BookWalkerScraper()
         self.yen = YenPressScraper()
         self.jnovel = JNovelScraper()
         self.seven = SevenSeasScraper()
@@ -337,45 +337,43 @@ class CoverScraper:
 
 
     async def get_cover(self, url: str, title: str = None, volume: str = None) -> str | None:
-        # Publisher scraping
+        # 1. Seven Seas (Selenium)
         if "sevenseasentertainment.com" in url:
-            return self.seven.get_cover(url)
+            img = self.seven.get_cover(url)
+            if img:
+                return img
 
         html = await self.fetch_page(url)
-        if not html:
-            return None
 
+        # 2. Yen Press
         if "yenpress.com" in url:
             img = self.yen.parse(html)
             if img:
                 return img
 
+        # 3. J-Novel Club
         if "j-novel.club" in url and volume:
             img = await self.jnovel.parse(html, url=url, volume=volume)
             if img:
                 return img
 
-        if "bookwalker.com" in url:
-            img = self.bookwalker.parse(html)
-            if img:
-                return img
-
+        # 4. Cross Infinite World
         if "crossinfworld.com" in url:
             img = await self.crossinf.parse(html, url=url)
             if img:
                 return img
 
+        # 5. Square Enix
         if "squareenixmangaandbooks.square-enix-games.com" in url:
             img = await self.squareenix.parse(html, url=url)
             if img:
                 return img
 
-        # BookWalker fall back if publisher's didn't have it)
+        # 6. BookWalker search fallback
         if title and volume:
             bw_cover = await self.bookwalker_search_and_fetch(title, volume)
             if bw_cover:
                 return bw_cover
 
-        # Generic fallback
+        # 8. Generic fallback
         return self.generic.parse(html)
-
