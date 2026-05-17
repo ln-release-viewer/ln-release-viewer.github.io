@@ -367,6 +367,8 @@ class CoverScraper:
 
         if "crossinfworld.com" in url:
             img = await self.crossinf.parse(html, url=url)
+            if img:
+                return img
 
         # 4. Generic fallback
         return self.generic.parse(html)

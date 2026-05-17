@@ -33,7 +33,6 @@ class JNovelScraper:
 
     async def parse(self, html: str, url: str = "", volume: int | None = None) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
-        self._debug_dump(html, soup.title.string if soup.title else "unknown")
 
         if volume is not None:
             # Find the volume container directly
