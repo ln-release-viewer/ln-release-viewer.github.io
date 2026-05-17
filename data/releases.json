@@ -992,7 +992,8 @@
     "volume": "6",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-234-1"
+    "isbn": "979-8-88560-234-1",
+    "cover": "/covers/the-drab-princess-the-black-cat-vol-6-e36595.jpg"
   },
   {
     "date": "May 31",
@@ -1003,7 +1004,8 @@
     "volume": "3",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-236-5"
+    "isbn": "979-8-88560-236-5",
+    "cover": "/covers/welcome-to-olivias-magic-jewelers-vol-3-7db2c5.jpg"
   },
   {
     "date": "Jun 01",
@@ -1626,7 +1628,8 @@
     "volume": "3",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-207-5"
+    "isbn": "979-8-88560-207-5",
+    "cover": "/covers/breaking-up-was-the-plan-the-vol-3-de4fa0.jpg"
   },
   {
     "date": "Jun 30",
@@ -1649,7 +1652,8 @@
     "volume": "3",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-221-1"
+    "isbn": "979-8-88560-221-1",
+    "cover": "/covers/love-magic-academy-who-cares-about-vol-3-969d45.jpg"
   },
   {
     "date": "Jun 30",
@@ -2596,7 +2600,8 @@
     "volume": "9",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-232-7"
+    "isbn": "979-8-88560-232-7",
+    "cover": "/covers/fluffy-paradise-vol-9-2cf6d5.jpg"
   },
   {
     "date": "Aug 03",
@@ -4449,8 +4454,7 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-687-6",
-    "cover": "/covers/theres-no-freaking-way-ill-be-vol-1-8660ca.jpg"
+    "isbn": "979-8-89863-687-6"
   },
   {
     "date": "Dec 08",
@@ -4516,8 +4520,7 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-157-4",
-    "cover": "/covers/too-many-losing-heroines-short-stories-vol-1-39c8e1.jpg"
+    "isbn": "979-8-89863-157-4"
   },
   {
     "date": "Dec 29",
@@ -4650,7 +4653,6 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-688-3",
-    "cover": "/covers/theres-no-freaking-way-ill-be-vol-1-5360e4.jpg"
+    "isbn": "979-8-89863-688-3"
   }
 ]
