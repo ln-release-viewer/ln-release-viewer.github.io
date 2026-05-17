@@ -30,7 +30,7 @@ class CoverScraper:
         self.yen = YenPressScraper()
         self.jnovel = JNovelScraper()
         self.seven = SevenSeasScraper()
-        self.crossinf = CrossInfinite()
+        self.crossinf = CrossInfiniteScraper()
         self.generic = GenericScraper()
 
     # ---------------------------------------------------------
