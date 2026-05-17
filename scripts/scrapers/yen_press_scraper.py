@@ -20,7 +20,6 @@ YEN_PLACEHOLDER_PATTERNS = [
 class YenPressScraper:
     def parse(self, html: str) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
-        self._debug_dump(html, soup.title.string if soup.title else "unknown")
 
         # -----------------------------------------
         # 1. __NEXT_DATA__ (primary, most reliable)
