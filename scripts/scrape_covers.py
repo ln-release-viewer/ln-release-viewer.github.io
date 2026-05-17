@@ -346,7 +346,7 @@ class CoverScraper:
 
         html = await self.fetch_page(url)
 
-        # 2. Yen Press
+        # 2. Yen Press - Note: Doesn't fall through to BookWalker - returns cover images
         if "yenpress.com" in url:
             img = self.yen.parse(html)
             if img:
