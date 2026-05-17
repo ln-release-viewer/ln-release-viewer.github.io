@@ -336,10 +336,10 @@ class CoverScraper:
 
     async def get_cover(self, url: str, title: str = None, volume: str = None) -> str | None:
         # 1. BookWalker search
-        if title and volume:
-            bw_cover = await self.bookwalker_search_and_fetch(title, volume)
-            if bw_cover:
-                return bw_cover
+        #if title and volume:
+        #    bw_cover = await self.bookwalker_search_and_fetch(title, volume)
+        #    if bw_cover:
+        #        return bw_cover
 
         # 2. Seven Seas
         if "sevenseasentertainment.com" in url:
