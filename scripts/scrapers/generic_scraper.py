@@ -17,7 +17,7 @@ def title_similarity(a: str, b: str) -> float:
 
     overlap = len(a_tokens & b_tokens)
     return overlap / len(a_tokens)
-    
+
 class GenericScraper:
     """
     Fallback scraper for publishers without a dedicated parser.
@@ -30,6 +30,7 @@ class GenericScraper:
     def parse(self, html: str, expected_title: str | None = None) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
 
+        actual_og_title = soup.find("meta", property="og:title")
         if expected_title:
             score = title_similarity(expected_title, actual_og_title)
             if score < 0.5:
