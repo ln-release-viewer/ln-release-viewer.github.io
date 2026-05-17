@@ -25,41 +25,59 @@ class JNovelScraper:
         except Exception as e:
             print(f"[JNOVEL DEBUG] Failed to save HTML: {e}")
 
+    async def _url_exists(self, url: str) -> bool:
+        async with aiohttp.ClientSession() as session:
+            async with session.head(url) as resp:
+                return resp.status == 200
+
+
     def parse(self, html: str, url: str = "") -> str | None:
-        self._debug_dump(html, url)
-        match = re.search(r"window\.__NUXT__\s*=\s*(\{.*?\});", html, re.DOTALL)
-        if match:
-            data = extract_json(match.group(1))
-            if data:
-                try:
-                    volumes = data["state"]["data"].get("volumes", [])
-                    if volumes:
-                        # Sort by volume number descending
-                        volumes_sorted = sorted(
-                            volumes,
-                            key=lambda v: v.get("number", 0),
-                            reverse=True
-                        )
+        # -----------------------------------------
+        # 2. HTML fallback: parse volume blocks
+        # -----------------------------------------
+        soup = BeautifulSoup(html, "html.parser")
 
-                        for v in volumes_sorted:
-                            cover = v.get("cover")
-                            if not cover:
-                                continue
+        # Find all volume anchors
+        anchors = soup.find_all("a", href=re.compile(r"#volume-(\d+)"))
 
-                            # Prefer explicit fields
-                            url = (
-                                cover.get("originalUrl")
-                                or cover.get("coverUrl")
-                                or (cover if isinstance(cover, str) else None)
-                            )
+        volumes = []
+        for a in anchors:
+            m = re.search(r"#volume-(\d+)", a["href"])
+            if not m:
+                continue
 
-                            if not url:
-                                continue
+            vol_num = int(m.group(1))
 
-                            return url
+            # The cover is usually in the next sibling block
+            block = a.find_parent()
+            if not block:
+                continue
 
-                except Exception:
-                    pass
+            img = block.find("img")
+            if not img:
+                continue
+
+            src = img.get("src") or img.get("data-src")
+            if not src:
+                continue
+
+            volumes.append((vol_num, src))
+
+        # Sort by volume number descending
+        volumes.sort(key=lambda x: x[0], reverse=True)
+
+        # Return the highest volume cover
+        if volumes:
+            vol_num, url = volumes[0]
+
+            # Upgrade resolution
+            url_960 = url.replace("/240/", "/960/")
+            url_480 = url.replace("/240/", "/480/")
+
+            for candidate in (url_960, url_480, url):
+                if await self._url_exists(candidate):
+                    return candidate
+
 
         # fallback: OG image
         soup = BeautifulSoup(html, "html.parser")
