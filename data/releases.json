@@ -1621,18 +1621,6 @@
     "date": "Jun 30",
     "month": "June",
     "year": 2026,
-    "title": "Al the Adventurer: That Magic Shouldn't Work!",
-    "link": "https://sevenseasentertainment.com/books/al-the-adventurer-that-magic-shouldnt-work-light-novel-vol-1-ebook/",
-    "volume": "1",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": null,
-    "cover": "/covers/al-the-adventurer-that-magic-shouldnt-vol-1-6ed8a3.jpg"
-  },
-  {
-    "date": "Jun 30",
-    "month": "June",
-    "year": 2026,
     "title": "Breaking Up Was the Plan, the Duke Falling For the Villainess Was Not!",
     "link": "https://crossinfworld.com/Breaking-Up-Was-the-Plan-the-Duke-Falling-For-the-Villainess-Was-Not-Volume-3.html",
     "volume": "3",
@@ -1758,6 +1746,18 @@
     "format": "🖥️",
     "isbn": "9781961788701",
     "cover": "/covers/tsukimichi-vol-17-5e9c7b.jpg"
+  },
+  {
+    "date": "Jul 02",
+    "month": "July",
+    "year": 2026,
+    "title": "Al the Adventurer: That Magic Shouldn't Work!",
+    "link": "https://sevenseasentertainment.com/books/al-the-adventurer-that-magic-shouldnt-work-light-novel-vol-1-ebook/",
+    "volume": "1",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/al-the-adventurer-that-magic-shouldnt-vol-1-6ed8a3.jpg"
   },
   {
     "date": "Jul 02",
@@ -4314,17 +4314,6 @@
     "date": "Nov 03",
     "month": "November",
     "year": 2026,
-    "title": "I'm Running for Crown Princess, but All I Want is a Steady Paycheck!",
-    "link": "https://sevenseasentertainment.com/books/im-running-for-crown-princess-but-all-i-want-is-a-steady-paycheck-light-novel-vol-1-ebook/",
-    "volume": "1",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": null
-  },
-  {
-    "date": "Nov 03",
-    "month": "November",
-    "year": 2026,
     "title": "The Most Heretical Last Boss Queen: From Villainess to Savior",
     "link": "https://sevenseasentertainment.com/books/the-most-heretical-last-boss-queen-from-villainess-to-savior-light-novel-vol-11/",
     "volume": "11",
@@ -4332,6 +4321,17 @@
     "format": "🖥️📖",
     "isbn": "979-8-89765-945-6",
     "cover": "/covers/the-most-heretical-last-boss-queen-vol-11-13dbed.jpg"
+  },
+  {
+    "date": "Nov 05",
+    "month": "November",
+    "year": 2026,
+    "title": "I'm Running for Crown Princess, but All I Want is a Steady Paycheck!",
+    "link": "https://sevenseasentertainment.com/books/im-running-for-crown-princess-but-all-i-want-is-a-steady-paycheck-light-novel-vol-1-ebook/",
+    "volume": "1",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": null
   },
   {
     "date": "Nov 10",
@@ -4571,6 +4571,17 @@
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
     "isbn": null
+  },
+  {
+    "date": "Dec 29",
+    "month": "December",
+    "year": 2026,
+    "title": "The Weakest Tamer Began a Journey to Pick Up Trash",
+    "link": "https://sevenseasentertainment.com/books/the-weakest-tamer-began-a-journey-to-pick-up-trash-light-novel-vol-14/",
+    "volume": "14",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "979-8-89863-262-5"
   },
   {
     "date": "Jan 05",
