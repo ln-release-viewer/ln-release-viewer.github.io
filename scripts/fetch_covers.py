@@ -270,7 +270,7 @@ def main():
 
                 cover_path.write_bytes(content)
                 r["cover"] = f"/covers/{slug}.jpg"
-                print(f"✔ Publisher/BookWalker cover saved for {title} vol {vol}")
+                print(f"✔ Publisher cover saved for {title} vol {vol}")
 
             except Exception:
                 print(f"❌ Error downloading publisher image for {title} vol {vol}")

@@ -16,8 +16,19 @@ class GenericScraper:
       3. <img> tags that look like covers
     """
 
-    def parse(self, html: str) -> str | None:
+    def parse(self, html: str, expected_title: str | None = None) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
+
+        # 1. OG title mismatch → homepage redirect → invalid product
+        og_title = soup.find("meta", property="og:title")
+        if expected_title and og_title:
+            actual = og_title.get("content", "").strip().lower()
+            expected = expected_title.strip().lower()
+
+            # If the OG title does not contain the expected title, reject
+            if expected not in actual:
+                return None
+
 
         # Detect Shopify 404s
         # 1. OG title says 404
