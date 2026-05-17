@@ -31,7 +31,7 @@ class JNovelScraper:
                 return resp.status == 200
 
 
-    def parse(self, html: str, url: str = "") -> str | None:
+    async def parse(self, html: str, url: str = "") -> str | None:
         # -----------------------------------------
         # 2. HTML fallback: parse volume blocks
         # -----------------------------------------
