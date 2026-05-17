@@ -102,20 +102,31 @@ def image_entropy(img: Image.Image) -> float:
     return -np.sum(histogram * np.log2(histogram))
 
 def is_placeholder_image(content: bytes) -> bool:
-    """Detects publisher placeholders based on entropy."""
     try:
-        img = Image.open(io.BytesIO(content))
+        img = Image.open(io.BytesIO(content)).convert("RGB")
+
         ent = image_entropy(img)
+        uniq = len(img.getcolors(maxcolors=256*256*256) or [])
+        var = np.array(img.convert("L")).var()
 
-        # Debug print
-        print(f"[IMG] Entropy: {ent:.2f}")
+        print(f"[IMG] Entropy={ent:.2f}, UniqueColors={uniq}, Variance={var:.0f}")
 
-        # Threshold tuned for Yen Press, J-Novel, Seven Seas, BookWalker
-        return ent < 3.0
+        # Strongest signals first
+        if uniq < 8000:
+            return True
+        if var < 1000:
+            return True
+
+        # Entropy is weakest, but still useful
+        if ent < 3.0:
+            return True
+
+        return False
 
     except Exception as e:
         print(f"[IMG] Error checking entropy: {e}")
         return False
+
 
 def openlibrary_cover_url(isbn: str) -> str:
     return f"https://covers.openlibrary.org/b/isbn/{isbn}-L.jpg"
