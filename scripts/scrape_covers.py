@@ -144,7 +144,7 @@ class CoverScraper:
         coverage = len(overlap) / len(ln_set)
         print(f"[BW] Coverage: {coverage:.2f}")
 
-        if coverage < 0.50:
+        if coverage < 0.90:
             print("[BW] Rejecting — insufficient coverage")
             return None
 
