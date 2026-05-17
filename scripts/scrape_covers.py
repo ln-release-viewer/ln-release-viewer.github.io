@@ -2,6 +2,7 @@ from scrapers.yen_press_scraper import YenPressScraper
 from scrapers.jnovel_scraper import JNovelScraper
 from scrapers.bookwalker_scraper import BookWalkerScraper
 from scrapers.seven_seas_scraper import SevenSeasScraper
+from scrapers.crossinfinite_scraper import CrossInfiniteScraper
 from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
 import re
@@ -29,6 +30,7 @@ class CoverScraper:
         self.yen = YenPressScraper()
         self.jnovel = JNovelScraper()
         self.seven = SevenSeasScraper()
+        self.crossinf = CrossInfinite()
         self.generic = GenericScraper()
 
     # ---------------------------------------------------------
@@ -362,6 +364,9 @@ class CoverScraper:
             img = self.bookwalker.parse(html)
             if img:
                 return img
+
+        if "crossinfworld.com" in url:
+            img = await self.crossinf.parse(html, url=url)
 
         # 4. Generic fallback
         return self.generic.parse(html)
