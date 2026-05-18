@@ -266,19 +266,6 @@ def main():
 
                 if is_placeholder_image(content):
                     print("❌ Placeholder image detected")
-
-                    # Try BookWalker fallback for Yen Press only
-                    if "yenpress.com" in r["link"]:
-                        print("➡ Trying BookWalker fallback for Yen Press…")
-                        bw_cover = asyncio.run(bookwalker_search_and_fetch(r["title"], r["volume"]))
-                        if bw_cover:
-                            print("✔ BookWalker fallback succeeded")
-                            resp = requests.get(bw_cover, timeout=10)
-                            if resp.status_code == 200 and is_valid_image(resp.content):
-                                cover_path.write_bytes(resp.content)
-                                r["cover"] = f"/covers/{slug}.jpg"
-                                continue
-
                     continue
 
                 cover_path.write_bytes(content)
