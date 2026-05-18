@@ -55,6 +55,10 @@ def is_placeholder_image(content: bytes) -> bool:
             return True
 
         return False
+    
+    except Exception as e:
+        print(f"[IMG] Error checking entropy: {e}")
+        return False
 
 class CoverScraper:
     def __init__(self, context):
