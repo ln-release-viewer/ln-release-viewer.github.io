@@ -1,54 +1,105 @@
 # 📚 Light Novel Release Viewer
 
-A clean, responsive, visual dashboard designed to track upcoming English light novel releases **complete with their original publisher cover art**. 
+A clean, fast, static Astro-powered website that aggregates and displays upcoming English light novel releases.  
+This project automatically fetches release data weekly, parses it into structured JSON, and renders it in a searchable, mobile-friendly grid with dark mode support.
 
-This project operates as an independent, visual expansion of the curated textual schedules maintained by the open-source community, making it easy to see what is coming out at a glance.
-
-🔗 **Live Demo:** [https://ln-release-viewer.github.io](https://ln-release-viewer.github.io)
+This is a personal, open-source hobby project — built for convenience and discoverability.
 
 ---
 
 ## ✨ Features
 
-- **Sticky Controls Header:** The search bar and theme controls remain pinned to the top of the viewport for seamless navigation while scrolling through massive multi-month calendars.
-- **Pill Switch Toggle:** A custom, modern toggle switch for Fluid Light/Dark mode transitions that respects and preserves user browser preferences via local storage.
-- **Lightning-Fast Live Filtering:** Instant client-side text filtering across titles, volume counts, and publisher tags.
-- **Smart Empty States:** Gracefully alerts the user if a specific query returns no results instead of collapsing the page layout.
-- **Keyboard Shortcut:** Press `/` anywhere on the page to instantly jump focus directly into the header search input field.
-- **Automated Data Lifecycle:** A headless CI/CD browser pipeline that completely automates data synchronization without requiring manual developer builds.
+- **Automatic weekly updates** via GitHub Actions  
+- **Chronological grouping** (Month → Releases)  
+- **Responsive grid layout**  
+- **Instant search filtering**  
+- **Dark / Light mode toggle**  
+- **Fallback cover images**  
+- **Publisher, volume, and date metadata**  
+- **Direct links to official publisher pages**  
+- **Fully static — no backend required**
 
 ---
 
-## 🛠️ Data Pipeline & Automation
+## 🛠️ Tech Stack
 
-The site updates automatically via a scheduled **GitHub Actions** workflow. The automated backend handles compilation through a multi-stage Python and browser automation stack:
-
-1. **Upstream Sync:** Clones the latest structured source text tables from the repository index.
-2. **Parsing:** Parses markdown data tables directly into a unified schema (`scripts/parse_readme.py`).
-3. **Metadata Enrichment:** Merges volume listings with comprehensive catalog identifiers (`scripts/add_isbns.py`).
-4. **Headless Scraper:** Spins up a virtual frame buffer (`Xvfb`) and runs an automated browser instance via Playwright/Selenium to locate and save official covers into the local asset tree (`scripts/fetch_covers.py`).
-5. **Static Build:** Astro compiles the final production build into optimized, static HTML, which is automatically pushed directly to GitHub Pages.
+- **Astro** (static site generation)
+- **Vanilla JS** for client-side filtering
+- **GitHub Actions** for scheduled data updates
+- **Cheerio** for parsing LNRelease HTML
+- **CSS variables** for theme support
 
 ---
 
-## 🚀 Project Structure
+## 🚀 Development
 
-```text
+Clone the repo:
+
+```bash
+git clone https://github.com/<your-username>/ln-release-viewer.git
+cd ln-release-viewer
+```
+Install dependencies:
+```bash
+npm install
+```
+Run locally:
+```bash
+npm run dev
+```
+Build for production:
+```bash
+npm run build
+```
+Preview the build:
+```bash
+npm run preview
+```
+
+## 🔄 Automated Data Updates
+
+A GitHub Action runs weekly to:
+
+    1. Fetch the latest LNRelease data
+
+    2. Parse the release table
+
+    3. Generate data/releases.json
+
+    4. Commit changes
+
+    5. Trigger a rebuild of the GitHub Pages site
+
+This keeps the site up-to-date with zero manual maintenance.
+
+## 📁 Project Structure
+
+```
 /
-├── data/
-│   └── releases.json       # Clean, aggregated database of upcoming books
-├── public/
-│   ├── covers/             # Cached cover art images indexed by script pipeline
-│   └── icons/              # SVG vectors for UI components
-├── scripts/
-│   ├── parse_readme.py     # Extracts text listings from upstream source
-│   ├── add_isbns.py        # Enriches volume objects with catalog criteria
-│   └── fetch_covers.py     # Headless Playwright browser fetching utility
+├── public/              # Static assets (icons, placeholder covers)
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro    # Core document shell, dark mode classes, and global layout styles
-│   └── pages/
-│       └── index.astro     # Main application dashboard view & client filtering logic
-├── package.json
-└── astro.config.mjs
+│   ├── components/      # Reusable UI components
+│   ├── layouts/         # Layout wrappers
+│   ├── pages/           # Astro pages
+│   └── scripts/         # Parsing + utilities
+├── data/
+│   └── releases.json    # Auto-generated release data
+└── .github/workflows/   # Scheduled update pipeline
+```
 
+## ⚠️ Disclaimer
+
+This repository is an unofficial, independent, open‑source hobby project.
+It is not affiliated with, endorsed by, or partnered with the LNRelease project, its maintainers, or any official light novel publishers.
+
+All book covers, illustrations, logos, and promotional assets are the exclusive intellectual property of their respective artists, creators, and licensing publishers.
+
+Images are surfaced strictly for descriptive, identification, and cataloging purposes under fair use.
+Each card links directly to the official publisher’s webpage to support discoverability and direct traffic to primary storefronts.
+
+If you are a rights holder and would like an asset removed or credited differently, please open an issue.
+
+## 📄 License
+
+This project is licensed under the MIT License.  
+See the [LICENSE](./LICENSE) file for details.
