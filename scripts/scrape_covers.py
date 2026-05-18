@@ -8,6 +8,7 @@ from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
 from urllib.parse import urljoin
 from PIL import Image
+import numpy as np
 import requests
 import io
 import re
