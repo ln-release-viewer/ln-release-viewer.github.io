@@ -5,7 +5,7 @@ from urllib.parse import urljoin
 class CrossInfiniteScraper:
     BASE = "https://crossinfworld.com/"
 
-    async def parse(self, html: str, url: str) -> str | None:
+    def parse(self, html: str, url: str) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
 
         # The cover is always inside the left column
@@ -24,13 +24,5 @@ class CrossInfiniteScraper:
         # Convert relative → absolute
         full_url = urljoin(self.BASE, src)
 
-        # Optionally check if it exists
-        if await self._url_exists(full_url):
-            return full_url
 
-        return None
-
-    async def _url_exists(self, url: str) -> bool:
-        async with aiohttp.ClientSession() as session:
-            async with session.head(url) as resp:
-                return resp.status == 200
+        return full_url

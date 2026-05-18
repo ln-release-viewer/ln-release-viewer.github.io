@@ -362,7 +362,7 @@ class CoverScraper:
 
         # 4. Cross Infinite World
         if "crossinfworld.com" in url:
-            img = await self.crossinf.parse(html, url=url)
+            img = self.crossinf.parse(html, url=url)
             if img:
                 print(f"✔ Cross Infinite World cover saved for {title} vol {volume}")
                 return img
