@@ -2,27 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import releases from '../../data/releases.json';
 
-// Convert month name → index
 const MONTH_INDEX = {
   Jan: 0, Feb: 1, Mar: 2, Apr: 3,
   May: 4, Jun: 5, Jul: 6, Aug: 7,
   Sep: 8, Oct: 9, Nov: 10, Dec: 11,
 };
 
-// STEP 1 — Sort chronologically by (year, month, day)
 const sorted = releases.sort((a, b) => {
   if (a.year !== b.year) return a.year - b.year;
-
   const ma = MONTH_INDEX[a.month.slice(0,3)];
   const mb = MONTH_INDEX[b.month.slice(0,3)];
   if (ma !== mb) return ma - mb;
-
   const da = parseInt(a.date.split(" ")[1]);
   const db = parseInt(b.date.split(" ")[1]);
   return da - db;
 });
 
-// STEP 2 — Group by "Month Year"
 const groups = {};
 for (const r of sorted) {
   const key = `${r.month} ${r.year}`;
@@ -32,6 +27,71 @@ for (const r of sorted) {
 ---
 
 <Layout title="Light Novel Releases">
+  <header class="sticky-header">
+    <div class="header-inner">
+      <div class="search-wrapper">
+        <input
+          id="search"
+          type="text"
+          placeholder="Search titles, volumes, publishers…"
+          class="search-bar"
+        />
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle" role="switch" aria-label="Toggle Dark Mode" aria-checked="false">
+        <div class="pill-track">
+          <div class="pill-thumb"></div>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+    {Object.entries(groups).map(([monthYear, items]) => (
+      <div class="month-block">
+        <h2 class="month-title">{monthYear}</h2>
+
+        <div class="grid">
+          {items.map((r) => (
+            <a href={r.link} class="card" target="_blank">
+              <img
+                class="cover"
+                src={r.cover ?? '/covers/placeholder.jpg'}
+                alt={r.title}
+                loading="lazy"
+              />
+              <div class="info">
+                <div class="title">{r.title}</div>
+                <div class="meta">Vol. {r.volume}</div>
+                <div class="meta publisher">{r.publisher}</div>
+                <div class="meta">{r.date}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+<script>
+  const input = document.getElementById("search");
+
+  input.addEventListener("input", () => {
+    const q = input.value.toLowerCase();
+
+    document.querySelectorAll(".card").forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(q) ? "" : "none";
+    });
+
+    document.querySelectorAll(".month-block").forEach(block => {
+      const visible = block.querySelector(".card:not([style*='display: none'])");
+      block.style.display = visible ? "" : "none";
+    });
+  });
+</script>
+</Layout>
+
 <style>
   .container {
     max-width: 1200px;
@@ -39,12 +99,56 @@ for (const r of sorted) {
     padding: 1rem;
   }
 
-  .search-bar {
+  /* --- Sticky Header Setup --- */
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--header-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Wrapper hosts the pseudo-element search icon safely */
+  .search-wrapper {
+    position: relative;
     width: 100%;
     max-width: 400px;
-    margin: 1rem auto 2rem;
-    display: block;
-    padding: 0.6rem 0.8rem;
+  }
+
+  .search-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    -webkit-mask-image: url('/icons/search.svg');
+    mask-image: url('/icons/search.svg');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-color: var(--text);
+    z-index: 1;
+    pointer-events: none; 
+  }
+
+  .search-bar {
+    width: 100%;
+    padding: 0.6rem 0.8rem 0.6rem 2.5rem;
     font-size: 1rem;
     border-radius: 6px;
     background: var(--card-bg);
@@ -53,16 +157,27 @@ for (const r of sorted) {
     transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
   }
 
+  .search-bar:focus {
+    outline: 2px solid #4c8bf5;
+    border-color: #4c8bf5;
+  }
+
   .month-block {
     margin-bottom: 2rem;
   }
 
+  /* Snaps cleanly below the main 60px tall sticky header bar */
   .month-title {
+    position: sticky;
+    top: 61px; 
+    background: var(--bg);
+    z-index: 40;
     font-size: 2rem;
     font-weight: 700;
-    margin: 1rem 0 0.5rem;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0.75rem 0 0.5rem;
     border-bottom: 2px solid var(--border);
-    padding-bottom: 0.25rem;
     color: var(--text);
   }
 
@@ -70,7 +185,7 @@ for (const r of sorted) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 1.5rem;
-    padding: 0.5rem 0;
+    padding: 1.5rem 0;
   }
 
   .card {
@@ -82,25 +197,33 @@ for (const r of sorted) {
     text-decoration: none;
     color: var(--text);
     box-shadow: 0 2px 6px var(--card-shadow);
-    transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, color 0.2s ease;
   }
 
   .card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 4px 12px var(--card-shadow);
   }
 
   .cover {
     width: 100%;
-    height: 260px;
+    aspect-ratio: 2 / 3; /* Locks down the element dimensions before the file resolves */
     object-fit: cover;
-    background: #ccc; /* neutral placeholder that works in both themes */
+    background: var(--border); /* Acts as a clean solid placeholder skeleton */
+    border-radius: 4px 4px 0 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .cover[loading="lazy"] {
+    opacity: 1;
   }
 
   .info {
     padding: 0.75rem;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.35rem;
+    flex-grow: 1;
   }
 
   .title {
@@ -108,6 +231,11 @@ for (const r of sorted) {
     font-size: 0.95rem;
     line-height: 1.2;
     color: var(--text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: auto;
   }
 
   .meta {
@@ -115,66 +243,15 @@ for (const r of sorted) {
     opacity: 0.75;
     color: var(--text);
   }
+  
+  .meta.publisher {
+    background: var(--border);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: fit-content;
+    transition: background 0.2s ease;
+  }
 </style>
-
-<div class="container">
-
-  <!-- Search Bar -->
-  <input
-    id="search"
-    type="text"
-    placeholder="Search titles, volumes, publishers…"
-    class="search-bar"
-  />
-
-  <!-- Month Groups -->
-  {Object.entries(groups).map(([monthYear, items]) => (
-    <div class="month-block">
-      <div class="month-title">{monthYear}</div>
-
-      <div class="grid">
-        {items.map((r) => (
-          <a href={r.link} class="card" target="_blank">
-            <img
-              class="cover"
-              src={r.cover ?? '/covers/placeholder.jpg'}
-              alt={r.title}
-              loading="lazy"
-            />
-
-            <div class="info">
-              <div class="title">{r.title}</div>
-              <div class="meta">Vol. {r.volume}</div>
-              <div class="meta">{r.publisher}</div>
-              <div class="meta">{r.date}</div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  ))}
-
-</div>
-
-<!-- ⭐ Client-side filtering script -->
-<script>
-  const input = document.getElementById("search");
-
-  input.addEventListener("input", () => {
-    const q = input.value.toLowerCase();
-
-    // Filter cards
-    document.querySelectorAll(".card").forEach(card => {
-      const text = card.innerText.toLowerCase();
-      card.style.display = text.includes(q) ? "" : "none";
-    });
-
-    // Hide month blocks with no visible cards
-    document.querySelectorAll(".month-block").forEach(block => {
-      const visible = block.querySelector(".card:not([style*='display: none'])");
-      block.style.display = visible ? "" : "none";
-    });
-  });
-</script>
-</Layout>
 
