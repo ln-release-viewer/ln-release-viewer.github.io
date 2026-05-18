@@ -3,12 +3,24 @@ import json
 import aiohttp
 import os
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 
 def extract_json(text):
     try:
         return json.loads(text)
     except:
         return None
+
+def normalize_fractional_volume(vol: str) -> str:
+    """Convert 8.1 → '8 part 1', 12.2 → '12 act 2'."""
+    if "." not in vol:
+        return f"volume {vol}"
+
+    base, frac = vol.split(".")
+    frac = frac.strip()
+
+    # J-Novel uses "Part" or "Act" depending on series, but matching either works
+    return f"{base} {frac}"
 
 class JNovelScraper:
     def _debug_dump(self, html: str, url: str):
@@ -52,6 +64,41 @@ class JNovelScraper:
                                 return candidate
 
                         return src
+
+        # If we have a fractional volume, we must fuzzy-match
+        if volume:
+            expected = normalize_fractional_volume(str(volume)).lower()
+
+            anchors = soup.find_all("a", href=re.compile(r"#volume-(\d+)"))
+            candidates = []
+
+            for a in anchors:
+                text = a.get_text(strip=True).lower()
+
+                # Basic fuzzy match: check if expected tokens appear in the title
+                score = sum(1 for tok in expected.split() if tok in text)
+
+                if score > 0:
+                    # Find the image BEFORE the anchor
+                    block = a.find_parent()
+                    if block:
+                        img = block.find("img")
+                        if img:
+                            src = img.get("src") or img.get("data-src")
+                            if src:
+                                candidates.append((score, src))
+
+            if candidates:
+                # Pick the best-scoring match
+                candidates.sort(key=lambda x: x[0], reverse=True)
+                src = candidates[0][1]
+
+                # Upgrade resolution
+                url_960 = src.replace("/240/", "/960/")
+                url_480 = src.replace("/240/", "/480/")
+
+                for candidate in (url_960, url_480, src):
+                    return candidate
 
         # fallback: OG image
         soup = BeautifulSoup(html, "html.parser")
