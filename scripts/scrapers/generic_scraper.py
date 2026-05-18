@@ -32,7 +32,8 @@ class GenericScraper:
 
         actual_og_title = soup.find("meta", property="og:title")
         if expected_title and actual_og_title:
-            score = title_similarity(expected_title, actual_og_title)
+            actual = actual_og_title.get("content", "")
+            score = title_similarity(expected_title, actual)
             if score < 0.5:
                 return None
 
