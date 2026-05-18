@@ -5,6 +5,21 @@ import os
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
+SPLIT_KEYWORDS = ["part", "act", "episode", "interlude", "side", "bonus"]
+NUM_WORDS = {
+    "1": ["1", "one", "i"],
+    "2": ["2", "two", "ii"],
+    "3": ["3", "three", "iii"],
+    "4": ["4", "four", "iv"],
+    "5": ["5", "five", "v"],
+    "6": ["6", "six", "vi"],
+    "7": ["7", "seven", "vii"],
+    "8": ["8", "eight", "viii"],
+    "9": ["9", "nine", "ix"],
+    "10": ["10", "ten", "x"],
+}
+
+
 def extract_json(text):
     try:
         return json.loads(text)
@@ -47,6 +62,7 @@ class JNovelScraper:
         soup = BeautifulSoup(html, "html.parser")
 
         vol_str = str(volume)
+        # 1. Direct volume search
         if volume is not None and "." not in vol_str:
             # Find the volume container directly
             container = soup.find("div", id=f"volume-{volume}")
@@ -66,48 +82,52 @@ class JNovelScraper:
 
                         return src
 
-        # If we have a fractional volume, we must go through all volumes
+        # 2. Fractional volumes
         if "." in vol_str:
             base, frac = vol_str.split(".", 1)
             base = base.strip()
             frac = frac.strip()
 
-            anchors = soup.find_all("a", href=re.compile(r"#volume-(\d+)"))
+            # Find ALL volume containers
+            containers = soup.find_all("div", id=re.compile(r"volume-(\d+)"))
+
             candidates = []
 
-            for a in anchors:
-                text = a.get_text(strip=True).lower()
+            for c in containers:
+                # Extract the displayed title text inside the block
+                header = c.find("h2")
+                if not header:
+                    continue
 
-                # Require the base volume number
+                text = header.get_text(" ", strip=True).lower()
+
+                # Must contain the base volume number
                 if f"volume {base}" not in text:
                     continue
 
-                # Require some kind of split indicator
-                if "part" not in text and "act" not in text:
+                # Must be a fractional volume
+                if not any(k in text for k in SPLIT_KEYWORDS):
                     continue
 
-                # Distinguish .1 vs .2
-                if frac == "1" and not any(w in text for w in ["one", "1", "i"]):
-                    continue
-                if frac == "2" and not any(w in text for w in ["two", "2", "ii"]):
+                # Require that at least one form of the fractional number appears
+                frac_forms = NUM_WORDS.get(frac, [frac])
+                if not any(f in text for f in frac_forms):
                     continue
 
-                block = a.find_parent()
-                if block:
-                    img = block.find("img")
-                    if img:
-                        src = img.get("src") or img.get("data-src")
-                        if src:
-                            candidates.append(src)
+                # Extract image
+                img = c.find("img")
+                if img:
+                    src = img.get("src") or img.get("data-src")
+                    if src:
+                        candidates.append(src)
 
             if candidates:
                 src = candidates[0]
-
                 url_960 = src.replace("/240/", "/960/")
                 url_480 = src.replace("/240/", "/480/")
-
                 for candidate in (url_960, url_480, src):
                     return candidate
+
 
         # fallback: OG image
         tag = soup.find("meta", property="og:image")
