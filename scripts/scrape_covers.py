@@ -6,6 +6,7 @@ from scrapers.crossinfinite_scraper import CrossInfiniteScraper
 from scrapers.squareenix_scraper import SquareEnixScraper
 from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
+from PIL import Image
 import re
 
 STOPWORDS = {"the", "a", "an", "of", "and", "to", "in", "on", "for"}
@@ -21,6 +22,39 @@ def normalize_title(t: str) -> list[str]:
     t = t.lower()
     t = re.sub(r"[^a-z0-9\s]", " ", t)
     return [w for w in t.split() if w]
+
+def image_entropy(img: Image.Image) -> float:
+    """Compute Shannon entropy of an image."""
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+
+    histogram = np.array(img.histogram())
+    histogram = histogram / histogram.sum()
+    histogram = histogram[histogram > 0]
+
+    return -np.sum(histogram * np.log2(histogram))
+
+def is_placeholder_image(content: bytes) -> bool:
+    try:
+        img = Image.open(io.BytesIO(content)).convert("RGB")
+
+        ent = image_entropy(img)
+        uniq = len(img.getcolors(maxcolors=256*256*256) or [])
+        var = np.array(img.convert("L")).var()
+
+        print(f"[IMG] Entropy={ent:.2f}, UniqueColors={uniq}, Variance={var:.0f}")
+
+        # Strongest signals first
+        if uniq < 8000:
+            return True
+        if var < 1000:
+            return True
+
+        # Entropy is weakest, but still useful
+        if ent < 3.0:
+            return True
+
+        return False
 
 class CoverScraper:
     def __init__(self, context):
@@ -349,7 +383,7 @@ class CoverScraper:
         # 2. Yen Press - Note: Doesn't fall through to BookWalker - returns cover images
         if "yenpress.com" in url:
             img = self.yen.parse(html)
-            if img:
+            if img and not is_placeholder_image(img):
                 print(f"✔ Yen Press cover saved for {title} vol {volume}")
                 return img
 
