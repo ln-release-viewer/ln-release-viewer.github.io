@@ -46,7 +46,8 @@ class JNovelScraper:
     async def parse(self, html: str, url: str = "", volume: int | None = None) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
 
-        if volume is not None:
+        vol_str = str(volume)
+        if volume is not None and "." not in vol_str:
             # Find the volume container directly
             container = soup.find("div", id=f"volume-{volume}")
             if container:
@@ -65,9 +66,11 @@ class JNovelScraper:
 
                         return src
 
-        # If we have a fractional volume, we must fuzzy-match
-        if volume:
-            expected = normalize_fractional_volume(str(volume)).lower()
+        # If we have a fractional volume, we must go through all volumes
+        if "." in vol_str:
+            base, frac = vol_str.split(".", 1)
+            base = base.strip()
+            frac = frac.strip()
 
             anchors = soup.find_all("a", href=re.compile(r"#volume-(\d+)"))
             candidates = []
@@ -75,25 +78,31 @@ class JNovelScraper:
             for a in anchors:
                 text = a.get_text(strip=True).lower()
 
-                # Basic fuzzy match: check if expected tokens appear in the title
-                score = sum(1 for tok in expected.split() if tok in text)
+                # Require the base volume number
+                if f"volume {base}" not in text:
+                    continue
 
-                if score > 0:
-                    # Find the image BEFORE the anchor
-                    block = a.find_parent()
-                    if block:
-                        img = block.find("img")
-                        if img:
-                            src = img.get("src") or img.get("data-src")
-                            if src:
-                                candidates.append((score, src))
+                # Require some kind of split indicator
+                if "part" not in text and "act" not in text:
+                    continue
+
+                # Distinguish .1 vs .2
+                if frac == "1" and not any(w in text for w in ["one", "1", "i"]):
+                    continue
+                if frac == "2" and not any(w in text for w in ["two", "2", "ii"]):
+                    continue
+
+                block = a.find_parent()
+                if block:
+                    img = block.find("img")
+                    if img:
+                        src = img.get("src") or img.get("data-src")
+                        if src:
+                            candidates.append(src)
 
             if candidates:
-                # Pick the best-scoring match
-                candidates.sort(key=lambda x: x[0], reverse=True)
-                src = candidates[0][1]
+                src = candidates[0]
 
-                # Upgrade resolution
                 url_960 = src.replace("/240/", "/960/")
                 url_480 = src.replace("/240/", "/480/")
 
@@ -101,10 +110,10 @@ class JNovelScraper:
                     return candidate
 
         # fallback: OG image
-        soup = BeautifulSoup(html, "html.parser")
         tag = soup.find("meta", property="og:image")
         if tag:
             return tag.get("content")
+
 
         return None
 
