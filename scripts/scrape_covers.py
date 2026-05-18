@@ -421,8 +421,8 @@ class CoverScraper:
 
                         print("❌ Yen Press placeholder detected, falling back to BookWalker…")
 
-                except Exception:
-                    print("❌ Error downloading Yen Press image, falling back to BookWalker…")
+                except Exception as e:
+                    print(f"❌ Error downloading Yen Press image, falling back to BookWalker: {e}")
 
         # 3. J-Novel Club
         if "j-novel.club" in url and volume:
