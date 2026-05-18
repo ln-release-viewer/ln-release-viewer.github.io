@@ -7,6 +7,7 @@ from scrapers.squareenix_scraper import SquareEnixScraper
 from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
 from PIL import Image
+import io
 import re
 
 STOPWORDS = {"the", "a", "an", "of", "and", "to", "in", "on", "for"}
