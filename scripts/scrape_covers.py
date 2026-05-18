@@ -6,6 +6,7 @@ from scrapers.crossinfinite_scraper import CrossInfiniteScraper
 from scrapers.squareenix_scraper import SquareEnixScraper
 from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
+from urllib.parse import urljoin
 from PIL import Image
 import io
 import re
@@ -23,6 +24,24 @@ def normalize_title(t: str) -> list[str]:
     t = t.lower()
     t = re.sub(r"[^a-z0-9\s]", " ", t)
     return [w for w in t.split() if w]
+
+def normalize_img_url(url: str) -> str | None:
+    if not url:
+        return None
+
+    # If it's a srcset, take the first URL
+    if "," in url and " " in url:
+        url = url.split(",")[0].split(" ")[0].strip()
+
+    # If it's relative, make it absolute
+    if url.startswith("/"):
+        return urljoin("https://yenpress.com", url)
+
+    # If it's already absolute
+    if url.startswith("http://") or url.startswith("https://"):
+        return url
+
+    return None
 
 def image_entropy(img: Image.Image) -> float:
     """Compute Shannon entropy of an image."""
@@ -387,8 +406,8 @@ class CoverScraper:
 
         # 2. Yen Press - Note: Doesn't fall through to BookWalker - returns cover images
         if "yenpress.com" in url:
-            img_url = self.yen.parse(html)
-
+            img = self.yen.parse(html)
+            img_url = normalize_img_url(img)
             if img_url:
                 # Download the image
                 try:
@@ -399,7 +418,7 @@ class CoverScraper:
                         # Check placeholder
                         if not is_placeholder_image(content):
                             print(f"✔ Yen Press cover saved for {title} vol {volume}")
-                            return img_url
+                            return img
 
                         print("❌ Yen Press placeholder detected, falling back to BookWalker…")
 
