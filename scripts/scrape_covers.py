@@ -388,7 +388,7 @@ class CoverScraper:
         # 2. Yen Press - Note: Doesn't fall through to BookWalker - returns cover images
         if "yenpress.com" in url:
             img = self.yen.parse(html)
-            if img and not is_placeholder_image(img):
+            if img and not is_placeholder_image(img.content):
                 print(f"✔ Yen Press cover saved for {title} vol {volume}")
                 return img
 
