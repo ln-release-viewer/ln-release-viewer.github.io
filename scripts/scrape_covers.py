@@ -407,11 +407,10 @@ class CoverScraper:
         # 2. Yen Press - Note: Doesn't fall through to BookWalker - returns cover images
         if "yenpress.com" in url:
             img = self.yen.parse(html)
-            img_url = normalize_img_url(img)
             if img_url:
                 # Download the image
                 try:
-                    resp = requests.get(img_url, timeout=10)
+                    resp = requests.get(img, timeout=10)
                     if resp.status_code == 200:
                         content = resp.content
 
