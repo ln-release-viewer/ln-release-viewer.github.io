@@ -3,6 +3,9 @@ name: Deploy Astro site
 on:
   push:
     branches: [ main ]
+    paths:
+      - "src/**"
+      - "public/**"
   workflow_dispatch:
 
 permissions:
