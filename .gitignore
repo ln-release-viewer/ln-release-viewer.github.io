@@ -23,6 +23,9 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# vs code settings
+.vscode/
+
 # lnrelease repo
 lnrelease.github.io/
 

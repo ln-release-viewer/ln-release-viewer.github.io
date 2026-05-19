@@ -76,15 +76,36 @@ This keeps the site up-to-date with zero manual maintenance.
 
 ```
 /
-├── public/              # Static assets (icons, placeholder covers)
-├── src/
-│   ├── components/      # Reusable UI components
-│   ├── layouts/         # Layout wrappers
-│   ├── pages/           # Astro pages
-│   └── scripts/         # Parsing + utilities
+├── .github/
+│   └── workflows/
+│       ├── deploy.yml              # Builds + deploys Astro site to GitHub Pages
+│       └── update-releases.yml     # Weekly LNRelease data update pipeline
+│
 ├── data/
-│   └── releases.json    # Auto-generated release data
-└── .github/workflows/   # Scheduled update pipeline
+│   └── releases.json               # Auto-generated release data (parsed weekly)
+│
+├── public/
+│   ├── covers/                     # Auto-fetched cover images
+│   ├── icons/                      # Page icons
+│   ├── favicon.ico                 # Site favicon (ICO)
+│   └── favicon.svg                 # Site favicon (SVG)
+│
+├── scripts/
+│   ├── scrapers/                   # Individual publisher scrapers (unused in CI)
+│   ├── add_isbns.py                # Adds ISBNs to releases for Open Library / Google Books
+│   ├── fetch_covers.py             # Fetches cover images from linked publishers and APIs
+│   ├── parse_readme.py             # Parses LNRelease README into structured JSON
+│   └── scrape_covers.py            # Helper for scraper calls
+│
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro            # Global layout wrapper
+│   └── pages/
+│       └── index.astro             # Main release viewer page
+│
+├── LICENSE                         # MIT License
+└── package.json                    # Dependencies + scripts
+
 ```
 
 ## ⚠️ Disclaimer
