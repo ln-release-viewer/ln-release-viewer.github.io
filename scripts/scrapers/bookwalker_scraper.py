@@ -26,7 +26,6 @@ BOOKWALKER_PLACEHOLDER_PATTERNS = [
     "placeholder"
 ]
 
-
 class BookWalkerScraper:
     def parse(self, html: str) -> str | None:
         soup = BeautifulSoup(html, "html.parser")

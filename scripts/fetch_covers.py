@@ -230,9 +230,7 @@ def main():
     with DATA_PATH.open("r", encoding="utf-8") as f:
         releases = json.load(f)
 
-    # ---------------------------------------------------------
-    # FIRST PASS: Publisher scraping (BookWalker → Publishers)
-    # ---------------------------------------------------------
+    # FIRST PASS: Publisher scraping (Publishers -> BookWalker -> Generic fallback)
     missing = [r for r in releases if not r.get("cover") and r.get("link")]
     if missing:
         print("Starting publisher scraping pass (BookWalker first)…")
@@ -275,9 +273,7 @@ def main():
             except Exception:
                 print(f"❌ Error downloading publisher image for {title} vol {vol}")
 
-    # ---------------------------------------------------------
-    # SECOND PASS: ISBN APIs (Open Library → Google Books)
-    # ---------------------------------------------------------
+    # SECOND PASS: ISBN APIs (Open Library -> Google Books)
     for r in releases:
         if r.get("cover"):
             continue  # already handled by publisher pass
@@ -314,14 +310,10 @@ def main():
 
         print(f"❌ ISBN APIs failed for {title} vol {vol}")
 
-    # ---------------------------------------------------------
     # WRITE UPDATED JSON
-    # ---------------------------------------------------------
     with DATA_PATH.open("w", encoding="utf-8") as f:
         json.dump(releases, f, ensure_ascii=False, indent=2)
         f.write("\n")
-
-
 
 if __name__ == "__main__":
     main()

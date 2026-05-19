@@ -64,7 +64,6 @@ class SevenSeasScraper:
         html = driver.page_source
         driver.quit()
 
-        # TODO: parse cover
         return self.parse(html)
 
 

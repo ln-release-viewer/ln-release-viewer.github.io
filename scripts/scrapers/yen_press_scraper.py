@@ -21,9 +21,7 @@ class YenPressScraper:
     def parse(self, html: str) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
 
-        # -----------------------------------------
         # 1. __NEXT_DATA__ (primary, most reliable)
-        # -----------------------------------------
         script = soup.find("script", id="__NEXT_DATA__")
         if script and script.string:
             data = extract_json(script.string)
@@ -32,7 +30,7 @@ class YenPressScraper:
                     # Try multiple known structures
                     pp = data["props"]["pageProps"]
 
-                    # A) dehydratedState → queries → state → data → cover
+                    # A) dehydratedState -> queries -> state -> data -> cover
                     queries = (
                         pp.get("dehydratedState", {})
                         .get("queries", [])
@@ -58,9 +56,7 @@ class YenPressScraper:
                 except Exception:
                     pass
 
-        # -----------------------------------------
         # 2. JSON-LD fallback
-        # -----------------------------------------
         for tag in soup.find_all("script", type="application/ld+json"):
             data = extract_json(tag.string or "")
             if isinstance(data, dict):
@@ -86,9 +82,7 @@ class YenPressScraper:
             if src and not self._is_bad(src):
                 return src
 
-        # -----------------------------------------
-        # 4. <figure> blocks (common for LN covers)
-        # -----------------------------------------
+        # 5. <figure> blocks (common for LN covers)
         for fig in soup.find_all("figure"):
             img = fig.find("img")
             if img:
@@ -96,9 +90,7 @@ class YenPressScraper:
                 if src and not self._is_bad(src):
                     return src
 
-        # -----------------------------------------
-        # 5. <img> tags (lazy-loaded, data-src, etc.)
-        # -----------------------------------------
+        # 6. <img> tags (lazy-loaded, data-src, etc.)
         for img in soup.find_all("img"):
             src = img.get("src") or img.get("data-src") or ""
             if src and not self._is_bad(src):

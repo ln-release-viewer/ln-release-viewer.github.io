@@ -21,7 +21,7 @@ class CrossInfiniteScraper:
         if not src:
             return None
 
-        # Convert relative → absolute
+        # Convert relative -> absolute
         full_url = urljoin(self.BASE, src)
 
 

@@ -37,30 +37,14 @@ class GenericScraper:
             if score < 0.5:
                 return None
 
-        # 1. OG title mismatch → homepage redirect → invalid product
- #       og_title = soup.find("meta", property="og:title")
- #       if expected_title and og_title:
- #           actual = og_title.get("content", "").strip().lower()
- #           expected = expected_title.strip().lower()
-
-            # If the OG title does not contain the expected title, reject
- #           if expected not in actual:
- #               return None
-
-
         # Detect Shopify 404s
-        # 1. OG title says 404
         og_title = soup.find("meta", property="og:title")
         if og_title:
             title = og_title.get("content", "").lower()
             if "404" in title or "not found" in title:
                 return None
-
-        # 2. Shopify 404 text
         if soup.find(string=lambda s: s and "page does not exist" in s.lower()):
             return None
-
-        # 3. TOKYOPOP-specific 404 signature
         if soup.find("h1", string=lambda s: s and "404" in s):
             return None
 

@@ -27,24 +27,6 @@ def normalize_title(t: str) -> list[str]:
     t = re.sub(r"[^a-z0-9\s]", " ", t)
     return [w for w in t.split() if w]
 
-def normalize_img_url(url: str) -> str | None:
-    if not url:
-        return None
-
-    # If it's a srcset, take the first URL
-    if "," in url and " " in url:
-        url = url.split(",")[0].split(" ")[0].strip()
-
-    # If it's relative, make it absolute
-    if url.startswith("/"):
-        return urljoin("https://yenpress.com", url)
-
-    # If it's already absolute
-    if url.startswith("http://") or url.startswith("https://"):
-        return url
-
-    return None
-
 def image_entropy(img: Image.Image) -> float:
     """Compute Shannon entropy of an image."""
     if img.mode != "RGB":
@@ -95,9 +77,7 @@ class CoverScraper:
         self.squareenix = SquareEnixScraper()
         self.generic = GenericScraper()
 
-    # ---------------------------------------------------------
-    # BOOKWALKER SEARCH → FETCH → PARSE
-    # ---------------------------------------------------------
+    # BOOKWALKER SEARCH -> FETCH -> PARSE
     async def bookwalker_search_and_fetch(self, title: str, volume: str) -> str | None:
         print(f"[BW] Searching for: {title} Vol {volume}")
 
@@ -154,7 +134,6 @@ class CoverScraper:
 
         soup = BeautifulSoup(series_html, "html.parser")
 
-        # Extract series title
         # Extract series title using multiple fallback selectors
         series_title_el = (
             soup.select_one("p[class*='title-page']") or
@@ -333,12 +312,7 @@ class CoverScraper:
         print(f"✔ BookWalker cover found for {title} Vol {volume}")
         return cover
 
-
-
-
-    # ---------------------------------------------------------
     # PLAYWRIGHT FETCH
-    # ---------------------------------------------------------
     async def fetch_page(self, url: str) -> str | None:
         page = await self.context.new_page()
         html = None
@@ -406,7 +380,7 @@ class CoverScraper:
 
         html = await self.fetch_page(url)
 
-        # 2. Yen Press - Note: Doesn't fall through to BookWalker - returns cover images
+        # 2. Yen Press - Note: returns cover images
         if "yenpress.com" in url:
             img = self.yen.parse(html)
             if img:

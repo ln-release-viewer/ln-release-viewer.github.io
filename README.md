@@ -1,6 +1,6 @@
 # 📚 Light Novel Release Viewer
 
-A clean, fast, static Astro-powered website that aggregates and displays upcoming English light novel releases.  
+An Astro-powered website that aggregates and displays upcoming English light novel releases.  
 This project automatically fetches release data weekly, parses it into structured JSON, and renders it in a searchable, mobile-friendly grid with dark mode support.
 
 This is a personal, open-source hobby project — built for convenience and discoverability.
