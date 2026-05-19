@@ -1,32 +1,29 @@
 # 📚 Light Novel Release Viewer
 
 An Astro-powered website that aggregates and displays upcoming English light novel releases.  
-This project automatically fetches release data weekly, parses it into structured JSON, and renders it in a searchable, mobile-friendly grid with dark mode support.
+This project automatically fetches release data weekly from [lnrelease.github.io](https://github.com/LNRelease/lnrelease.github.io), parses it into structured JSON, and renders it in a searchable grid of novels with their corresponding covers.
 
-This is a personal, open-source hobby project — built for convenience and discoverability.
+This is a personal, open-source hobby project — built for convenience and discoverability of upcoming light novels.
 
 ---
 
 ## ✨ Features
 
 - **Automatic weekly updates** via GitHub Actions  
-- **Chronological grouping** (Month → Releases)  
-- **Responsive grid layout**  
-- **Instant search filtering**  
-- **Dark / Light mode toggle**  
-- **Fallback cover images**  
+- **Chronological grouping** (Month → Releases)
+- **Search filtering**  
+- **Dark / Light mode toggle** 
 - **Publisher, volume, and date metadata**  
-- **Direct links to official publisher pages**  
-- **Fully static — no backend required**
+- **Direct links to official publisher pages**
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Astro** (static site generation)
+- **Astro** for static site generation
 - **Vanilla JS** for client-side filtering
 - **GitHub Actions** for scheduled data updates
-- **Cheerio** for parsing LNRelease HTML
+- **Python** for parsing LNRelease data and fetching covers
 - **CSS variables** for theme support
 
 ---
@@ -36,7 +33,7 @@ This is a personal, open-source hobby project — built for convenience and disc
 Clone the repo:
 
 ```bash
-git clone https://github.com/<your-username>/ln-release-viewer.git
+git clone https://github.com/ln-release-viewer/ln-release-viewer.github.io.git
 cd ln-release-viewer
 ```
 Install dependencies:
@@ -62,15 +59,15 @@ A GitHub Action runs weekly to:
 
     1. Fetch the latest LNRelease data
 
-    2. Parse the release table
+    2. Parse the README and generate data/releases.json
 
-    3. Generate data/releases.json
+    3. Fetch covers
 
     4. Commit changes
 
     5. Trigger a rebuild of the GitHub Pages site
 
-This keeps the site up-to-date with zero manual maintenance.
+This keeps the site up-to-date.
 
 ## 📁 Project Structure
 
