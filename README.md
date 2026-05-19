@@ -91,7 +91,7 @@ This keeps the site up-to-date with zero manual maintenance.
 │   └── favicon.svg                 # Site favicon (SVG)
 │
 ├── scripts/
-│   ├── scrapers/                   # Individual publisher scrapers (unused in CI)
+│   ├── scrapers/                   # Individual publisher scrapers
 │   ├── add_isbns.py                # Adds ISBNs to releases for Open Library / Google Books
 │   ├── fetch_covers.py             # Fetches cover images from linked publishers and APIs
 │   ├── parse_readme.py             # Parses LNRelease README into structured JSON
