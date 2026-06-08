@@ -35,7 +35,7 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add
 
 # Install Chrome 147 (pin exact version)
 RUN apt-get update && apt-get install -y \
-    google-chrome-stable=147.0.5828.0 \
+    google-chrome-stable=147.0.5828 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
