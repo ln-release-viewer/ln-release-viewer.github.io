@@ -20,31 +20,17 @@ jobs:
         run: |
           git clone https://github.com/LNRelease/lnrelease.github.io lnrelease-src
 
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install Chrome
+      - name: Build scraper Docker image
         run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          docker build -t ln-scraper .
 
-
-      - name: Parse README into JSON
+      - name: Run scraper inside container
         run: |
-          python scripts/parse_readme.py
-
-      - name: Add ISBNs from LNRelease CSV
-        run: |
-          python scripts/add_isbns.py
-
-      - name: Fetch covers with Xvfb
-        run: |
-          pip install requests pillow beautifulsoup4 playwright undetected-chromedriver selenium aiohttp numpy
-          playwright install --with-deps chromium
-          sudo apt-get install -y xvfb
-          xvfb-run -a python scripts/fetch_covers.py
+          docker run \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/public:/app/public \
+            -v ${{ github.workspace }}/debug:/app/debug \
+            ln-scraper
 
       - name: Commit and push changes
         run: |
@@ -53,4 +39,5 @@ jobs:
           git add data/releases.json public/covers debug
           git commit -m "Updated releases.json and covers" || echo "No changes to commit"
           git push
+
 

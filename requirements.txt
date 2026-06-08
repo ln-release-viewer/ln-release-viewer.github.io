@@ -1,0 +1,8 @@
+requests
+pillow
+beautifulsoup4
+undetected-chromedriver
+selenium
+aiohttp
+numpy
+playwright
