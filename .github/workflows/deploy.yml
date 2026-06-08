@@ -6,7 +6,12 @@ on:
     paths:
       - "src/**"
       - "public/**"
-  workflow_dispatch:
+
+  workflow_run:
+    workflows: ["Update LN Releases"]
+    types:
+      - completed
+
 
 permissions:
   contents: read
