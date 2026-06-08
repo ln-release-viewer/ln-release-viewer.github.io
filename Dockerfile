@@ -1,12 +1,39 @@
-FROM selenium/standalone-chrome:147.0
-ENV DISPLAY=:99
-USER root
+FROM ubuntu:22.04
 
-# Install Python + pip + Xvfb
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
-    xvfb
+    wget \
+    xvfb \
+    unzip \
+    fonts-liberation \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libgtk-3-0 \
+    libgbm1 \
+    libxshmfence1 \
+    libxrandr2 \
+    libxdamage1 \
+    libxcomposite1 \
+    libxfixes3 \
+    libxext6 \
+    libx11-xcb1 \
+    libxcb-dri3-0 \
+    libdrm2 \
+    libxkbcommon0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Google Chrome (same as original workflow)
+RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+    && apt-get update \
+    && apt-get install -y ./google-chrome-stable_current_amd64.deb \
+    && rm google-chrome-stable_current_amd64.deb
 
 WORKDIR /app
 
@@ -14,15 +41,15 @@ WORKDIR /app
 COPY scripts/ scripts/
 COPY requirements.txt .
 
-# Install setuptools so UDC can import distutils shim
-RUN pip3 install setuptools
-
 # Install Python dependencies
 RUN pip3 install -r requirements.txt
 
-# Install Playwright browser
+# Install Playwright Chromium
 RUN playwright install --with-deps chromium
 
-# Run scraper under Xvfb
-CMD ["xvfb-run", "-a", "python3", "-u", "scripts/fetch_covers.py"]
+# Use entrypoint script
+RUN chmod +x scripts/run_all.sh
+CMD ["bash", "scripts/run_all.sh"]
+
+
 
