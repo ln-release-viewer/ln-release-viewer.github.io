@@ -30,10 +30,11 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Chrome 147 (matches UDC support)
-RUN wget -q https://snapshot.debian.org/archive/google-chrome/20241010T031200Z/pool/main/g/google-chrome-stable/google-chrome-stable_147.0.7727.55-1_amd64.deb \
+RUN wget -q http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_147.0.7727.55-1_amd64.deb \
     && apt-get update \
     && apt-get install -y ./google-chrome-stable_147.0.7727.55-1_amd64.deb \
     && rm google-chrome-stable_147.0.7727.55-1_amd64.deb
+
 
 WORKDIR /app
 
