@@ -31,6 +31,7 @@ jobs:
             -v ${{ github.workspace }}/data:/app/data \
             -v ${{ github.workspace }}/public:/app/public \
             -v ${{ github.workspace }}/debug:/app/debug \
+            -v ${{ github.workspace }}/lnrelease-src:/app/lnrelease-src \
             ln-scraper
 
       - name: Commit and push changes
