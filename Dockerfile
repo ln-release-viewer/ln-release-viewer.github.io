@@ -1,5 +1,5 @@
 FROM selenium/standalone-chrome:147.0
-
+ENV DISPLAY=:99
 USER root
 
 # Install Python + pip + Xvfb
@@ -24,5 +24,5 @@ RUN pip3 install -r requirements.txt
 RUN playwright install --with-deps chromium
 
 # Run scraper under Xvfb
-CMD ["xvfb-run", "-a", "python3", "scripts/fetch_covers.py"]
+CMD ["xvfb-run", "-a", "python3", "-u", "scripts/fetch_covers.py"]
 
