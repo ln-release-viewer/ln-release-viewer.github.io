@@ -6,3 +6,4 @@ selenium
 aiohttp
 numpy
 playwright
+setuptools
