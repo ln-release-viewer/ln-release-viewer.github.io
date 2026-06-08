@@ -29,11 +29,11 @@ RUN apt-get update && apt-get install -y \
     libxkbcommon0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Google Chrome (same as original workflow)
-RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+# Install Chrome 147 (matches UDC support)
+RUN wget -q https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_147.0.5828.0-1_amd64.deb \
     && apt-get update \
-    && apt-get install -y ./google-chrome-stable_current_amd64.deb \
-    && rm google-chrome-stable_current_amd64.deb
+    && apt-get install -y ./google-chrome-stable_147.0.5828.0-1_amd64.deb \
+    && rm google-chrome-stable_147.0.5828.0-1_amd64.deb
 
 WORKDIR /app
 
