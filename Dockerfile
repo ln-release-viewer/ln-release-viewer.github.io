@@ -14,6 +14,9 @@ COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip3 install -r requirements.txt
+RUN pip3 install playwright
+RUN playwright install --with-deps chromium
+
 
 # Default command (can be overridden in GitHub Actions)
 CMD ["python3", "scripts/fetch_covers.py"]
