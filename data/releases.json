@@ -308,7 +308,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89561-228-6"
+    "isbn": "979-8-89561-228-6",
+    "cover": "/covers/virgin-knight-i-became-the-frontier-vol-3-8390e2.jpg"
   },
   {
     "date": "Jun 11",
@@ -319,7 +320,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89765-168-9"
+    "isbn": "979-8-89765-168-9",
+    "cover": "/covers/my-girlfriend-cheated-on-me-and-vol-2-4aaebf.jpg"
   },
   {
     "date": "Jun 11",
@@ -342,7 +344,8 @@
     "volume": "6.2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89765-672-1"
+    "isbn": "979-8-89765-672-1",
+    "cover": "/covers/witch-and-mercenary-vol-6.2-42e285.jpg"
   },
   {
     "date": "Jun 12",
@@ -389,7 +392,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-455-0"
+    "isbn": "979-8-89765-455-0",
+    "cover": "/covers/the-confession-strategy-vol-1-eb85e5.jpg"
   },
   {
     "date": "Jun 17",
@@ -448,7 +452,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89765-439-0"
+    "isbn": "979-8-89765-439-0",
+    "cover": "/covers/history-of-the-kingdom-of-orcsen-vol-1-8e970c.jpg"
   },
   {
     "date": "Jun 18",
@@ -507,7 +512,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89561-182-1"
+    "isbn": "979-8-89561-182-1",
+    "cover": "/covers/i-like-villains-so-i-reincarnated-vol-2-70200d.jpg"
   },
   {
     "date": "Jun 23",
@@ -530,7 +536,8 @@
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-396-6"
+    "isbn": "979-8-89765-396-6",
+    "cover": "/covers/im-the-evil-lord-of-an-vol-11-0b062b.jpg"
   },
   {
     "date": "Jun 23",
@@ -661,7 +668,8 @@
     "volume": "3",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-207-5"
+    "isbn": "979-8-88560-207-5",
+    "cover": "/covers/breaking-up-was-the-plan-the-vol-3-de4fa0.jpg"
   },
   {
     "date": "Jun 30",
@@ -669,11 +677,11 @@
     "year": 2026,
     "title": "GATE",
     "link": "https://books.apple.com/us/book/id6766386887",
-    "volume": "1-B",
+    "volume": "1.2",
     "publisher": "Hanashi Media",
     "format": "🖥️",
     "isbn": "9781961788657",
-    "cover": "/covers/gate-vol-1-B-95d205.jpg"
+    "cover": "/covers/gate-vol-1.2-95d205.jpg"
   },
   {
     "date": "Jun 30",
@@ -684,7 +692,8 @@
     "volume": "3",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-221-1"
+    "isbn": "979-8-88560-221-1",
+    "cover": "/covers/love-magic-academy-who-cares-about-vol-3-969d45.jpg"
   },
   {
     "date": "Jun 30",
@@ -755,7 +764,8 @@
     "volume": "6",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-820-6"
+    "isbn": "979-8-89765-820-6",
+    "cover": "/covers/roll-over-and-die-i-will-vol-6-446b34.jpg"
   },
   {
     "date": "Jun 30",
@@ -790,7 +800,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/al-the-adventurer-that-magic-shouldnt-vol-1-6ed8a3.jpg"
   },
   {
     "date": "Jul 02",
@@ -849,7 +860,8 @@
     "volume": "12",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89373-754-7"
+    "isbn": "979-8-89373-754-7",
+    "cover": "/covers/the-case-files-of-jeweler-richard-vol-12-21184e.jpg"
   },
   {
     "date": "Jul 06",
@@ -884,7 +896,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-460-4"
+    "isbn": "979-8-89765-460-4",
+    "cover": "/covers/distorted-i-love-you-vol-1-2b318c.jpg"
   },
   {
     "date": "Jul 07",
@@ -897,17 +910,6 @@
     "format": "📖",
     "isbn": "979-8-89765-225-9",
     "cover": "/covers/magic-maker-how-to-create-magic-vol-2-ccdda9.jpg"
-  },
-  {
-    "date": "Jul 07",
-    "month": "July",
-    "year": 2026,
-    "title": "Magic Maker: How to Create Magic in Another World",
-    "link": "https://sevenseasentertainment.com/books/magic-maker-how-to-create-magic-in-another-world-light-novel-vol-3/",
-    "volume": "3",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "979-8-89765-226-6"
   },
   {
     "date": "Jul 07",
@@ -942,7 +944,8 @@
     "volume": "6",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89373-775-2"
+    "isbn": "979-8-89373-775-2",
+    "cover": "/covers/the-too-perfect-saint-tossed-aside-by-vol-6-9fb42a.jpg"
   },
   {
     "date": "Jul 07",
@@ -953,7 +956,8 @@
     "volume": "6.2",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-672-1"
+    "isbn": "979-8-89765-672-1",
+    "cover": "/covers/witch-and-mercenary-vol-6.2-42e285.jpg"
   },
   {
     "date": "Jul 08",
@@ -976,7 +980,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89765-895-4"
+    "isbn": "979-8-89765-895-4",
+    "cover": "/covers/7th-time-loop-the-villainess-enjoys-vol-1-f4a4f3.jpg"
   },
   {
     "date": "Jul 09",
@@ -987,7 +992,8 @@
     "volume": "19",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89765-171-9"
+    "isbn": "979-8-89765-171-9",
+    "cover": "/covers/reincarnated-as-a-sword-vol-19-061051.jpg"
   },
   {
     "date": "Jul 09",
@@ -1166,7 +1172,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89561-763-2"
+    "isbn": "979-8-89561-763-2",
+    "cover": "/covers/i-got-married-to-the-girl-vol-3-56fe52.jpg"
   },
   {
     "date": "Jul 14",
@@ -1268,18 +1275,6 @@
     "date": "Jul 14",
     "month": "July",
     "year": 2026,
-    "title": "Space Orc: Barbarian Raider of the Stars, Aiming for the Queen!",
-    "link": "https://sevenseasentertainment.com/books/space-orc-barbarian-raider-of-the-stars-aiming-for-the-queen-light-novel-vol-1/",
-    "volume": "1",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": "979-8-89765-937-1",
-    "cover": "/covers/space-orc-barbarian-raider-of-the-vol-1-d054a3.jpg"
-  },
-  {
-    "date": "Jul 14",
-    "month": "July",
-    "year": 2026,
     "title": "Spy Classroom Short Story Collection",
     "link": "https://yenpress.com/titles/9798855414943-spy-classroom-short-story-collection-vol-5-light-novel",
     "volume": "5",
@@ -1316,18 +1311,6 @@
     "date": "Jul 14",
     "month": "July",
     "year": 2026,
-    "title": "The Tale of a Little Alchemist Blessed by the Spirits",
-    "link": "https://sevenseasentertainment.com/books/the-tale-of-a-little-alchemist-blessed-by-the-spirits-light-novel-vol-3/",
-    "volume": "3",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": "979-8-89561-747-2",
-    "cover": "/covers/the-tale-of-a-little-alchemist-vol-3-4656bb.jpg"
-  },
-  {
-    "date": "Jul 14",
-    "month": "July",
-    "year": 2026,
     "title": "The Unimplemented Overlords Have Joined the Party!",
     "link": "https://yenpress.com/titles/9781975397203-the-unimplemented-overlords-have-joined-the-party-vol-6",
     "volume": "6",
@@ -1347,17 +1330,6 @@
     "format": "🖥️📖",
     "isbn": "9798855430202",
     "cover": "/covers/the-world-bows-down-before-my-vol-4-774b1f.jpg"
-  },
-  {
-    "date": "Jul 14",
-    "month": "July",
-    "year": 2026,
-    "title": "Trapped in a Dating Sim: Otome Games Are Tough For Us, Too!",
-    "link": "https://sevenseasentertainment.com/books/trapped-in-a-dating-sim-otome-games-are-tough-for-us-too-light-novel-vol-5/",
-    "volume": "5",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": "979-8-89561-733-5"
   },
   {
     "date": "Jul 14",
@@ -1399,6 +1371,42 @@
     "date": "Jul 16",
     "month": "July",
     "year": 2026,
+    "title": "Space Orc: Barbarian Raider of the Stars, Aiming for the Queen!",
+    "link": "https://sevenseasentertainment.com/books/space-orc-barbarian-raider-of-the-stars-aiming-for-the-queen-light-novel-vol-1/",
+    "volume": "1",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89765-937-1",
+    "cover": "/covers/space-orc-barbarian-raider-of-the-vol-1-d054a3.jpg"
+  },
+  {
+    "date": "Jul 16",
+    "month": "July",
+    "year": 2026,
+    "title": "The Tale of a Little Alchemist Blessed by the Spirits",
+    "link": "https://sevenseasentertainment.com/books/the-tale-of-a-little-alchemist-blessed-by-the-spirits-light-novel-vol-3/",
+    "volume": "3",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89561-747-2",
+    "cover": "/covers/the-tale-of-a-little-alchemist-vol-3-4656bb.jpg"
+  },
+  {
+    "date": "Jul 16",
+    "month": "July",
+    "year": 2026,
+    "title": "Trapped in a Dating Sim: Otome Games Are Tough For Us, Too!",
+    "link": "https://sevenseasentertainment.com/books/trapped-in-a-dating-sim-otome-games-are-tough-for-us-too-light-novel-vol-5/",
+    "volume": "5",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89561-733-5",
+    "cover": "/covers/trapped-in-a-dating-sim-otome-vol-5-2f1594.jpg"
+  },
+  {
+    "date": "Jul 16",
+    "month": "July",
+    "year": 2026,
     "title": "Zero Damage Sword Saint: I Enrolled in a Magic School and Wound Up in a Contract with the Demon Queen",
     "link": "https://j-novel.club/series/zero-damage-sword-saint-i-enrolled-in-a-magic-school-and-wound-up-in-a-contract-with-the-demon-queen#volume-4",
     "volume": "4",
@@ -1435,17 +1443,6 @@
     "date": "Jul 21",
     "month": "July",
     "year": 2026,
-    "title": "Betrothed to My Sister's Ex",
-    "link": "https://sevenseasentertainment.com/books/betrothed-to-my-sisters-ex-light-novel-vol-3/",
-    "volume": "3",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": "979-8-89561-751-9"
-  },
-  {
-    "date": "Jul 21",
-    "month": "July",
-    "year": 2026,
     "title": "My Girlfriend Cheated on Me, and Now My Flirty Underclassman Won't Leave Me Alone",
     "link": "https://sevenseasentertainment.com/books/my-girlfriend-cheated-on-me-and-now-my-flirty-underclassman-wont-leave-me-alone-light-novel-vol-2/",
     "volume": "2",
@@ -1467,16 +1464,16 @@
     "cover": "/covers/omniscient-readers-viewpoint-vol-4-e16989.jpg"
   },
   {
-    "date": "Jul 21",
+    "date": "Jul 23",
     "month": "July",
     "year": 2026,
-    "title": "Too Many Losing Heroines!",
-    "link": "https://sevenseasentertainment.com/books/too-many-losing-heroines-light-novel-vol-8/",
-    "volume": "8",
+    "title": "Betrothed to My Sister's Ex",
+    "link": "https://sevenseasentertainment.com/books/betrothed-to-my-sisters-ex-light-novel-vol-3/",
+    "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89765-551-9",
-    "cover": "/covers/too-many-losing-heroines-vol-8-09a64d.jpg"
+    "isbn": "979-8-89561-751-9",
+    "cover": "/covers/betrothed-to-my-sisters-ex-vol-3-a31c72.jpg"
   },
   {
     "date": "Jul 23",
@@ -1489,6 +1486,30 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/reluctant-space-commander-from-death-wish-vol-1-c2ce97.jpg"
+  },
+  {
+    "date": "Jul 23",
+    "month": "July",
+    "year": 2026,
+    "title": "There's No Freaking Way I'll be Your Lover! Unless…",
+    "link": "https://sevenseasentertainment.com/books/theres-no-freaking-way-ill-be-your-lover-unless-light-novel-vol-8/",
+    "volume": "8",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89765-401-7",
+    "cover": "/covers/theres-no-freaking-way-ill-be-vol-8-5a90b9.jpg"
+  },
+  {
+    "date": "Jul 23",
+    "month": "July",
+    "year": 2026,
+    "title": "Too Many Losing Heroines!",
+    "link": "https://sevenseasentertainment.com/books/too-many-losing-heroines-light-novel-vol-8/",
+    "volume": "8",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89765-551-9",
+    "cover": "/covers/too-many-losing-heroines-vol-8-09a64d.jpg"
   },
   {
     "date": "Jul 24",
@@ -1570,7 +1591,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-439-0"
+    "isbn": "979-8-89765-439-0",
+    "cover": "/covers/history-of-the-kingdom-of-orcsen-vol-1-8e970c.jpg"
   },
   {
     "date": "Jul 28",
@@ -1581,7 +1603,8 @@
     "volume": "7.1",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-400-0"
+    "isbn": "979-8-89765-400-0",
+    "cover": "/covers/reincarnated-into-a-game-as-the-vol-7.1-e1a542.jpg"
   },
   {
     "date": "Jul 28",
@@ -1599,45 +1622,13 @@
     "date": "Jul 28",
     "month": "July",
     "year": 2026,
-    "title": "Saving a Weapon Shop from Bankruptcy after the Demon King's Defeat",
-    "link": "https://sevenseasentertainment.com/books/saving-a-weapon-shop-from-bankruptcy-after-the-demon-kings-defeat-light-novel-vol-1/",
-    "volume": "1",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": "979-8-89765-952-4"
-  },
-  {
-    "date": "Jul 28",
-    "month": "July",
-    "year": 2026,
     "title": "The Case Files of Jeweler Richard",
     "link": "https://sevenseasentertainment.com/books/the-case-files-of-jeweler-richard-light-novel-vol-12/",
     "volume": "12",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89373-754-7"
-  },
-  {
-    "date": "Jul 28",
-    "month": "July",
-    "year": 2026,
-    "title": "The Strange Adventure of a Broke Mercenary",
-    "link": "https://sevenseasentertainment.com/books/the-strange-adventure-of-a-broke-mercenary-light-novel-vol-15/",
-    "volume": "15",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": "979-8-89373-772-1"
-  },
-  {
-    "date": "Jul 28",
-    "month": "July",
-    "year": 2026,
-    "title": "The Weakest Tamer Began a Journey to Pick Up Trash",
-    "link": "https://sevenseasentertainment.com/books/the-weakest-tamer-began-a-journey-to-pick-up-trash-light-novel-vol-13/",
-    "volume": "13",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": "979-8-89863-261-8"
+    "isbn": "979-8-89373-754-7",
+    "cover": "/covers/the-case-files-of-jeweler-richard-vol-12-21184e.jpg"
   },
   {
     "date": "Jul 30",
@@ -1691,6 +1682,30 @@
     "date": "Jul 30",
     "month": "July",
     "year": 2026,
+    "title": "Saving a Weapon Shop from Bankruptcy after the Demon King's Defeat",
+    "link": "https://sevenseasentertainment.com/books/saving-a-weapon-shop-from-bankruptcy-after-the-demon-kings-defeat-light-novel-vol-1/",
+    "volume": "1",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89765-952-4",
+    "cover": "/covers/saving-a-weapon-shop-from-bankruptcy-vol-1-caf373.jpg"
+  },
+  {
+    "date": "Jul 30",
+    "month": "July",
+    "year": 2026,
+    "title": "Sword of the Demon Hunter: Kijin Gentōshō",
+    "link": "https://sevenseasentertainment.com/books/sword-of-the-demon-hunter-kijin-gentosho-light-novel-vol-14/",
+    "volume": "14",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89561-404-4",
+    "cover": "/covers/sword-of-the-demon-hunter-kijin-vol-14-4453d2.jpg"
+  },
+  {
+    "date": "Jul 30",
+    "month": "July",
+    "year": 2026,
     "title": "Taking My Reincarnation One Step at a Time: No One Told Me There Would Be Monsters!",
     "link": "https://j-novel.club/series/taking-my-reincarnation-one-step-at-a-time#volume-10",
     "volume": "10",
@@ -1724,6 +1739,42 @@
     "cover": "/covers/the-new-gate-vol-4-70c099.jpg"
   },
   {
+    "date": "Jul 30",
+    "month": "July",
+    "year": 2026,
+    "title": "The Strange Adventure of a Broke Mercenary",
+    "link": "https://sevenseasentertainment.com/books/the-strange-adventure-of-a-broke-mercenary-light-novel-vol-15/",
+    "volume": "15",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89373-772-1",
+    "cover": "/covers/the-strange-adventure-of-a-broke-vol-15-c97099.jpg"
+  },
+  {
+    "date": "Jul 30",
+    "month": "July",
+    "year": 2026,
+    "title": "The Weakest Tamer Began a Journey to Pick Up Trash",
+    "link": "https://sevenseasentertainment.com/books/the-weakest-tamer-began-a-journey-to-pick-up-trash-light-novel-vol-13/",
+    "volume": "13",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89863-261-8",
+    "cover": "/covers/the-weakest-tamer-began-a-journey-vol-13-a6e58a.jpg"
+  },
+  {
+    "date": "Jul 31",
+    "month": "July",
+    "year": 2026,
+    "title": "Even Dogs Go to Other Worlds: Life in Another World with My Beloved Hound",
+    "link": "https://crossinfworld.com/Even-Dogs-Go-to-Other-Worlds-Volume-7.html",
+    "volume": "7",
+    "publisher": "Cross Infinite World",
+    "format": "🖥️",
+    "isbn": "979-8-88560-239-6",
+    "cover": "/covers/even-dogs-go-to-other-worlds-vol-7-dfc583.jpg"
+  },
+  {
     "date": "Jul 31",
     "month": "July",
     "year": 2026,
@@ -1744,7 +1795,20 @@
     "volume": "9",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-232-7"
+    "isbn": "979-8-88560-232-7",
+    "cover": "/covers/fluffy-paradise-vol-9-2cf6d5.jpg"
+  },
+  {
+    "date": "Jul 31",
+    "month": "July",
+    "year": 2026,
+    "title": "Goodbye, Horrible Fiancé, Hello, Fun Magic School Life!",
+    "link": "https://crossinfworld.com/Goodbye-Horrible-Fiance-Hello-Fun-Magic-School-Life-Volume-2.html",
+    "volume": "2",
+    "publisher": "Cross Infinite World",
+    "format": "🖥️",
+    "isbn": "979-8-88560-241-9",
+    "cover": "/covers/goodbye-horrible-fianc-hello-fun-magic-vol-2-1b1d55.jpg"
   },
   {
     "date": "Aug 03",
@@ -1779,7 +1843,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-895-4"
+    "isbn": "979-8-89765-895-4",
+    "cover": "/covers/7th-time-loop-the-villainess-enjoys-vol-1-f4a4f3.jpg"
   },
   {
     "date": "Aug 04",
@@ -1814,7 +1879,8 @@
     "volume": "14",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-453-6"
+    "isbn": "979-8-89765-453-6",
+    "cover": "/covers/reincarnated-as-a-dragon-hatchling-vol-14-566eac.jpg"
   },
   {
     "date": "Aug 04",
@@ -1825,7 +1891,8 @@
     "volume": "19",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-171-9"
+    "isbn": "979-8-89765-171-9",
+    "cover": "/covers/reincarnated-as-a-sword-vol-19-061051.jpg"
   },
   {
     "date": "Aug 04",
@@ -1861,6 +1928,18 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/hell-mode-vol-12-098017.jpg"
+  },
+  {
+    "date": "Aug 06",
+    "month": "August",
+    "year": 2026,
+    "title": "Classroom of the Elite: Year 3",
+    "link": "https://sevenseasentertainment.com/books/classroom-of-the-elite-year-3-light-novel-vol-2/",
+    "volume": "2",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89765-900-5",
+    "cover": "/covers/classroom-of-the-elite-year-3-vol-2-03c3a4.jpg"
   },
   {
     "date": "Aug 06",
@@ -2062,7 +2141,8 @@
     "volume": "4",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89561-409-9"
+    "isbn": "979-8-89561-409-9",
+    "cover": "/covers/the-devil-princess-vol-4-95d739.jpg"
   },
   {
     "date": "Aug 11",
@@ -2109,7 +2189,8 @@
     "volume": "5",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89561-733-5"
+    "isbn": "979-8-89561-733-5",
+    "cover": "/covers/trapped-in-a-dating-sim-otome-vol-5-2f1594.jpg"
   },
   {
     "date": "Aug 11",
@@ -2216,7 +2297,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89561-569-0"
+    "isbn": "979-8-89561-569-0",
+    "cover": "/covers/chronicles-of-an-aristocrat-reborn-in-vol-3-e27756.jpg"
   },
   {
     "date": "Aug 13",
@@ -2227,7 +2309,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89765-553-3"
+    "isbn": "979-8-89765-553-3",
+    "cover": "/covers/venus-mission-i-was-an-assassin-for-hire-vol-2-06d1bf.jpg"
   },
   {
     "date": "Aug 14",
@@ -2298,7 +2381,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-952-4"
+    "isbn": "979-8-89765-952-4",
+    "cover": "/covers/saving-a-weapon-shop-from-bankruptcy-vol-1-caf373.jpg"
   },
   {
     "date": "Aug 18",
@@ -2320,8 +2404,9 @@
     "link": "https://sevenseasentertainment.com/books/theres-no-freaking-way-ill-be-your-lover-unless-light-novel-vol-8/",
     "volume": "8",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "979-8-89765-401-7"
+    "format": "📖",
+    "isbn": "979-8-89765-401-7",
+    "cover": "/covers/theres-no-freaking-way-ill-be-vol-8-5a90b9.jpg"
   },
   {
     "date": "Aug 18",
@@ -2363,12 +2448,37 @@
     "date": "Aug 20",
     "month": "August",
     "year": 2026,
+    "title": "Loner Life in Another World",
+    "link": "https://sevenseasentertainment.com/books/loner-life-in-another-world-light-novel-vol-15/",
+    "volume": "15",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89561-214-9",
+    "cover": "/covers/loner-life-in-another-world-vol-15-e48a8c.jpg"
+  },
+  {
+    "date": "Aug 20",
+    "month": "August",
+    "year": 2026,
+    "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+    "link": "https://sevenseasentertainment.com/books/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-light-novel-vol-16/",
+    "volume": "16",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89863-227-4",
+    "cover": "/covers/reborn-as-a-space-mercenary-i-vol-16-eb1016.jpg"
+  },
+  {
+    "date": "Aug 20",
+    "month": "August",
+    "year": 2026,
     "title": "Though I Am an Inept Villainess: Tale of the Butterfly-Rat Body Swap in the Maiden Court",
     "link": "https://sevenseasentertainment.com/books/though-i-am-an-inept-villainess-tale-of-the-butterfly-rat-body-swap-in-the-maiden-court-light-novel-vol-11/",
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89765-996-8"
+    "isbn": "979-8-89765-996-8",
+    "cover": "/covers/though-i-am-an-inept-villainess-vol-11-67b28d.jpg"
   },
   {
     "date": "Aug 21",
@@ -2426,8 +2536,9 @@
     "link": "https://sevenseasentertainment.com/books/sword-of-the-demon-hunter-kijin-gentosho-light-novel-vol-14/",
     "volume": "14",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "979-8-89561-404-4"
+    "format": "📖",
+    "isbn": "979-8-89561-404-4",
+    "cover": "/covers/sword-of-the-demon-hunter-kijin-vol-14-4453d2.jpg"
   },
   {
     "date": "Aug 25",
@@ -2438,7 +2549,8 @@
     "volume": "13",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89863-261-8"
+    "isbn": "979-8-89863-261-8",
+    "cover": "/covers/the-weakest-tamer-began-a-journey-vol-13-a6e58a.jpg"
   },
   {
     "date": "Aug 26",
@@ -2473,7 +2585,8 @@
     "volume": "8",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": "979-8-89765-985-2"
+    "isbn": "979-8-89765-985-2",
+    "cover": "/covers/easygoing-territory-defense-by-the-optimistic-vol-8-631031.jpg"
   },
   {
     "date": "Aug 27",
@@ -2531,7 +2644,7 @@
     "link": "https://sevenseasentertainment.com/books/classroom-of-the-elite-year-3-light-novel-vol-2/",
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "979-8-89765-900-5",
     "cover": "/covers/classroom-of-the-elite-year-3-vol-2-03c3a4.jpg"
   },
@@ -2544,7 +2657,8 @@
     "volume": "20",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89373-312-9"
+    "isbn": "979-8-89373-312-9",
+    "cover": "/covers/how-a-realist-hero-rebuilt-the-vol-20-37baa2.jpg"
   },
   {
     "date": "Sep 01",
@@ -2590,7 +2704,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/reborn-as-an-assassins-apprentice-vol-2-45cbc7.jpg"
   },
   {
     "date": "Sep 03",
@@ -2685,7 +2800,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89561-751-9"
+    "isbn": "979-8-89561-751-9",
+    "cover": "/covers/betrothed-to-my-sisters-ex-vol-3-a31c72.jpg"
   },
   {
     "date": "Sep 08",
@@ -2967,12 +3083,25 @@
     "date": "Sep 10",
     "month": "September",
     "year": 2026,
+    "title": "Magical Buffs: The Support Caster is Stronger Than He Realized!",
+    "link": "https://sevenseasentertainment.com/books/magical-buffs-the-support-caster-is-stronger-than-he-realized-light-novel-vol-3/",
+    "volume": "3",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89561-772-4",
+    "cover": "/covers/magical-buffs-the-support-caster-is-vol-3-f6bc8a.jpg"
+  },
+  {
+    "date": "Sep 10",
+    "month": "September",
+    "year": 2026,
     "title": "Predator Witches",
     "link": "https://sevenseasentertainment.com/books/predator-witches-light-novel-vol-1-ebook/",
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/predator-witches-vol-1-2ed200.jpg"
   },
   {
     "date": "Sep 10",
@@ -2985,6 +3114,30 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/private-tutor-to-the-dukes-daughter-vol-0-dddb59.jpg"
+  },
+  {
+    "date": "Sep 11",
+    "month": "September",
+    "year": 2026,
+    "title": "A Young Maiden's Growing Pains: I Reincarnated and All I Got Was This 100X Stat Buff!",
+    "link": "https://j-novel.club/series/a-young-maiden-s-growing-pains-i-reincarnated-and-all-i-got-was-this-100x-stat-buff#volume-1",
+    "volume": "1",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/a-young-maidens-growing-pains-i-vol-1-8de81b.jpg"
+  },
+  {
+    "date": "Sep 11",
+    "month": "September",
+    "year": 2026,
+    "title": "Father, Have You Sinned? An Assassin in Priest's Robes",
+    "link": "https://j-novel.club/series/father-have-you-sinned-an-assassin-in-priest-s-robes#volume-1",
+    "volume": "1",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/father-have-you-sinned-an-assassin-vol-1-a1a8b6.jpg"
   },
   {
     "date": "Sep 11",
@@ -3019,7 +3172,20 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89561-569-0"
+    "isbn": "979-8-89561-569-0",
+    "cover": "/covers/chronicles-of-an-aristocrat-reborn-in-vol-3-e27756.jpg"
+  },
+  {
+    "date": "Sep 15",
+    "month": "September",
+    "year": 2026,
+    "title": "I'll Become an Elegant Villainess! Time to Enjoy My Second Life to the Fullest",
+    "link": "https://j-novel.club/series/i-ll-become-an-elegant-villainess-time-to-enjoy-my-second-life-to-the-fullest#volume-1",
+    "volume": "1",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/ill-become-an-elegant-villainess-time-vol-1-b41c08.jpg"
   },
   {
     "date": "Sep 15",
@@ -3042,7 +3208,8 @@
     "volume": "15",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89373-772-1"
+    "isbn": "979-8-89373-772-1",
+    "cover": "/covers/the-strange-adventure-of-a-broke-vol-15-c97099.jpg"
   },
   {
     "date": "Sep 15",
@@ -3096,6 +3263,18 @@
     "date": "Sep 17",
     "month": "September",
     "year": 2026,
+    "title": "Adachi and Shimamura",
+    "link": "https://sevenseasentertainment.com/books/adachi-and-shimamura-light-novel-vol-13/",
+    "volume": "13",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89863-165-9",
+    "cover": "/covers/adachi-and-shimamura-vol-13-9e4068.jpg"
+  },
+  {
+    "date": "Sep 17",
+    "month": "September",
+    "year": 2026,
     "title": "Butareba -The Story of a Man Turned into a Pig-",
     "link": "https://j-novel.club/series/butareba-the-story-of-a-man-turned-into-a-pig#volume-9",
     "volume": "6",
@@ -3115,6 +3294,18 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/d-genesis-three-years-after-the-dungeons-vol-10-60f677.jpg"
+  },
+  {
+    "date": "Sep 17",
+    "month": "September",
+    "year": 2026,
+    "title": "Imperial Reincarnation: I Came, I Saw, I Survived",
+    "link": "https://j-novel.club/series/imperial-reincarnation-i-came-i-saw-i-survived#volume-7",
+    "volume": "7",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/imperial-reincarnation-i-came-i-saw-vol-7-d56acd.jpg"
   },
   {
     "date": "Sep 18",
@@ -3148,7 +3339,7 @@
     "link": "https://sevenseasentertainment.com/books/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-light-novel-vol-16/",
     "volume": "16",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "979-8-89863-227-4",
     "cover": "/covers/reborn-as-a-space-mercenary-i-vol-16-eb1016.jpg"
   },
@@ -3172,7 +3363,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-253-3"
+    "isbn": "979-8-89863-253-3",
+    "cover": "/covers/the-neverending-winter-the-land-of-vol-1-1a33f4.jpg"
   },
   {
     "date": "Sep 22",
@@ -3183,7 +3375,8 @@
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89765-996-8"
+    "isbn": "979-8-89765-996-8",
+    "cover": "/covers/though-i-am-an-inept-villainess-vol-11-67b28d.jpg"
   },
   {
     "date": "Sep 22",
@@ -3196,6 +3389,90 @@
     "format": "📖",
     "isbn": "979-8-89765-553-3",
     "cover": "/covers/venus-mission-i-was-an-assassin-for-hire-vol-2-06d1bf.jpg"
+  },
+  {
+    "date": "Sep 23",
+    "month": "September",
+    "year": 2026,
+    "title": "By the Grace of the Gods",
+    "link": "https://j-novel.club/series/by-the-grace-of-the-gods#volume-18",
+    "volume": "18",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/by-the-grace-of-the-gods-vol-18-fcd48a.jpg"
+  },
+  {
+    "date": "Sep 23",
+    "month": "September",
+    "year": 2026,
+    "title": "From Villainess to Healer",
+    "link": "https://j-novel.club/series/from-villainess-to-healer#volume-7",
+    "volume": "7",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/from-villainess-to-healer-vol-7-b70596.jpg"
+  },
+  {
+    "date": "Sep 23",
+    "month": "September",
+    "year": 2026,
+    "title": "Peddler in Another World: I Can Go Back to My World Whenever I Want!",
+    "link": "https://j-novel.club/series/peddler-in-another-world#volume-13",
+    "volume": "13",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/peddler-in-another-world-i-can-vol-13-a793fb.jpg"
+  },
+  {
+    "date": "Sep 23",
+    "month": "September",
+    "year": 2026,
+    "title": "The Poison King: Now that I've Gained Ultimate Power, the Bewitching Beauties in My Harem Can't Get Enough of Me",
+    "link": "https://j-novel.club/series/the-poison-king-now-that-i-ve-gained-ultimate-power-the-bewitching-beauties-in-my-harem-can-t-get-enough-of-me#volume-8",
+    "volume": "8",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/the-poison-king-now-that-ive-vol-8-490f94.jpg"
+  },
+  {
+    "date": "Sep 24",
+    "month": "September",
+    "year": 2026,
+    "title": "Cooking with Wild Game",
+    "link": "https://j-novel.club/series/cooking-with-wild-game#volume-35",
+    "volume": "35",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/cooking-with-wild-game-vol-35-f59faa.jpg"
+  },
+  {
+    "date": "Sep 24",
+    "month": "September",
+    "year": 2026,
+    "title": "I Got Married to the Girl I Hate Most in Class",
+    "link": "https://sevenseasentertainment.com/books/i-got-married-to-the-girl-i-hate-most-in-class-light-novel-vol-4/",
+    "volume": "4",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89561-764-9",
+    "cover": "/covers/i-got-married-to-the-girl-vol-4-56fe52.jpg"
+  },
+  {
+    "date": "Sep 24",
+    "month": "September",
+    "year": 2026,
+    "title": "Survival in Another World with My Mistress!",
+    "link": "https://sevenseasentertainment.com/books/survival-in-another-world-with-my-mistress-light-novel-vol-10/",
+    "volume": "10",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89863-238-0",
+    "cover": "/covers/survival-in-another-world-with-my-vol-10-0a30a2.jpg"
   },
   {
     "date": "Sep 25",
@@ -3249,6 +3526,18 @@
     "date": "Sep 28",
     "month": "September",
     "year": 2026,
+    "title": "A Wicked Lady's Guide to Accidentally Saving the Kingdom",
+    "link": "https://j-novel.club/series/a-wicked-lady-s-guide-to-accidentally-saving-the-kingdom#volume-1",
+    "volume": "1",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/a-wicked-ladys-guide-to-accidentally-vol-1-5f0cd0.jpg"
+  },
+  {
+    "date": "Sep 28",
+    "month": "September",
+    "year": 2026,
     "title": "Looks like a Job for a Maid! The Tales of a Dismissed Supermaid",
     "link": "https://j-novel.club/series/looks-like-a-job-for-a-maid-the-tales-of-a-dismissed-supermaid#volume-4",
     "volume": "4",
@@ -3277,8 +3566,9 @@
     "link": "https://sevenseasentertainment.com/books/loner-life-in-another-world-light-novel-vol-15/",
     "volume": "15",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "979-8-89561-214-9"
+    "format": "📖",
+    "isbn": "979-8-89561-214-9",
+    "cover": "/covers/loner-life-in-another-world-vol-15-e48a8c.jpg"
   },
   {
     "date": "Sep 30",
@@ -3291,6 +3581,30 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/rebuild-world-vol-8.2-5ae550.jpg"
+  },
+  {
+    "date": "Sep 30",
+    "month": "September",
+    "year": 2026,
+    "title": "Sorry Darling, but You Won't Kill Me Again!",
+    "link": "https://j-novel.club/series/sorry-darling-but-you-won-t-kill-me-again#volume-1",
+    "volume": "1",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/sorry-darling-but-you-wont-kill-vol-1-25ab84.jpg"
+  },
+  {
+    "date": "Oct 01",
+    "month": "October",
+    "year": 2026,
+    "title": "Disowned but Not Disheartened! Life Is Good with Overpowered Magic",
+    "link": "https://j-novel.club/series/disowned-but-not-disheartened-life-is-good-with-overpowered-magic#volume-4",
+    "volume": "4",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/disowned-but-not-disheartened-life-is-vol-4-de53ef.jpg"
   },
   {
     "date": "Oct 01",
@@ -3313,7 +3627,20 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/when-a-clueless-first-person-shooter-player-vol-3-8b9626.jpg"
+  },
+  {
+    "date": "Oct 01",
+    "month": "October",
+    "year": 2026,
+    "title": "You Were Experienced, I Was Not: Our Dating Story",
+    "link": "https://j-novel.club/series/you-were-experienced-i-was-not-our-dating-story#volume-9",
+    "volume": "8.2",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/you-were-experienced-i-was-not-vol-8.2-5088c3.jpg"
   },
   {
     "date": "Oct 06",
@@ -3331,12 +3658,25 @@
     "date": "Oct 06",
     "month": "October",
     "year": 2026,
+    "title": "Earl and Fairy",
+    "link": "https://j-novel.club/series/earl-and-fairy#volume-13",
+    "volume": "13",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/earl-and-fairy-vol-13-528990.jpg"
+  },
+  {
+    "date": "Oct 06",
+    "month": "October",
+    "year": 2026,
     "title": "Heroine? Saint? No, I'm an All-Works Maid (And Proud of It)!",
     "link": "https://sevenseasentertainment.com/books/heroine-saint-no-im-an-all-works-maid-and-proud-of-it-light-novel-vol-7/",
     "volume": "7",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-116-0"
+    "isbn": "979-8-89765-116-0",
+    "cover": "/covers/heroine-saint-no-im-an-all-works-vol-7-616e87.jpg"
   },
   {
     "date": "Oct 06",
@@ -3347,7 +3687,8 @@
     "volume": "5",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-397-3"
+    "isbn": "979-8-89765-397-3",
+    "cover": "/covers/im-the-heroic-knight-of-an-vol-5-d119f0.jpg"
   },
   {
     "date": "Oct 06",
@@ -3358,7 +3699,20 @@
     "volume": "4",
     "publisher": "Seven Seas Entertainment",
     "format": "📖",
-    "isbn": "979-8-89561-419-8"
+    "isbn": "979-8-89561-419-8",
+    "cover": "/covers/virgin-knight-i-became-the-frontier-vol-4-8390e2.jpg"
+  },
+  {
+    "date": "Oct 09",
+    "month": "October",
+    "year": 2026,
+    "title": "Seirei Gensouki: Spirit Chronicles",
+    "link": "https://j-novel.club/series/seirei-gensouki-spirit-chronicles#volume-28",
+    "volume": "28",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/seirei-gensouki-spirit-chronicles-vol-28-b2bfcc.jpg"
   },
   {
     "date": "Oct 12",
@@ -3501,7 +3855,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/fluffy-caf-in-another-world-vol-2-fdbc9f.jpg"
   },
   {
     "date": "Oct 13",
@@ -3514,6 +3869,18 @@
     "format": "🖥️📖",
     "isbn": "9798855439434",
     "cover": "/covers/frieren-beyond-journeys-end--prelude--vol-2-9cb9cc.jpg"
+  },
+  {
+    "date": "Oct 13",
+    "month": "October",
+    "year": 2026,
+    "title": "God Sleeps in Seafoam",
+    "link": "https://j-novel.club/series/god-sleeps-in-seafoam#volume-1",
+    "volume": "1",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/god-sleeps-in-seafoam-vol-1-b25c57.jpg"
   },
   {
     "date": "Oct 13",
@@ -3623,6 +3990,18 @@
     "cover": "/covers/your-castles-little-helper-vol-1-a8c39a.jpg"
   },
   {
+    "date": "Oct 14",
+    "month": "October",
+    "year": 2026,
+    "title": "Genius in the Library: This Bookish Rookie Will Save the Day!",
+    "link": "https://j-novel.club/series/genius-in-the-library-this-bookish-rookie-will-save-the-day#volume-1",
+    "volume": "1",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/genius-in-the-library-this-bookish-vol-1-672892.jpg"
+  },
+  {
     "date": "Oct 15",
     "month": "October",
     "year": 2026,
@@ -3631,7 +4010,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/reborn-as-an-aristocratic-scoundrel-i-vol-1-47dce6.jpg"
   },
   {
     "date": "Oct 20",
@@ -3641,8 +4021,9 @@
     "link": "https://sevenseasentertainment.com/books/adachi-and-shimamura-light-novel-vol-13/",
     "volume": "13",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "979-8-89863-165-9"
+    "format": "📖",
+    "isbn": "979-8-89863-165-9",
+    "cover": "/covers/adachi-and-shimamura-vol-13-9e4068.jpg"
   },
   {
     "date": "Oct 20",
@@ -3653,7 +4034,8 @@
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-108-5"
+    "isbn": "979-8-89765-108-5",
+    "cover": "/covers/a-tale-of-the-secret-saint-vol-11-3ec196.jpg"
   },
   {
     "date": "Oct 20",
@@ -3734,7 +4116,7 @@
     "link": "https://sevenseasentertainment.com/books/magical-buffs-the-support-caster-is-stronger-than-he-realized-light-novel-vol-3/",
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "979-8-89561-772-4",
     "cover": "/covers/magical-buffs-the-support-caster-is-vol-3-f6bc8a.jpg"
   },
@@ -3746,8 +4128,9 @@
     "link": "https://sevenseasentertainment.com/books/survival-in-another-world-with-my-mistress-light-novel-vol-10/",
     "volume": "10",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "979-8-89863-238-0"
+    "format": "📖",
+    "isbn": "979-8-89863-238-0",
+    "cover": "/covers/survival-in-another-world-with-my-vol-10-0a30a2.jpg"
   },
   {
     "date": "Oct 27",
@@ -3758,7 +4141,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-faceless-mercenary-wants-to-settle-vol-1-829dff.jpg"
   },
   {
     "date": "Oct 27",
@@ -3781,7 +4165,8 @@
     "volume": "1",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855432749"
+    "isbn": "9798855432749",
+    "cover": "/covers/tokujo-chan-the-girls-who-brighten-your-vol-1-cfd0b8.jpg"
   },
   {
     "date": "Oct 27",
@@ -3792,7 +4177,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-393-6"
+    "isbn": "979-8-89863-393-6",
+    "cover": "/covers/when-it-rains-it-pours-vol-1-0764d0.jpg"
   },
   {
     "date": "Oct 28",
@@ -3815,7 +4201,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/al-the-adventurer-that-magic-shouldnt-vol-2-6ed8a3.jpg"
   },
   {
     "date": "Oct 29",
@@ -3838,7 +4225,8 @@
     "volume": "21",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-395-9"
+    "isbn": "979-8-89765-395-9",
+    "cover": "/covers/didnt-i-say-to-make-my-vol-21-5f62e8.jpg"
   },
   {
     "date": "Nov 03",
@@ -3848,8 +4236,9 @@
     "link": "https://sevenseasentertainment.com/books/i-got-married-to-the-girl-i-hate-most-in-class-light-novel-vol-4/",
     "volume": "4",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "979-8-89561-764-9"
+    "format": "📖",
+    "isbn": "979-8-89561-764-9",
+    "cover": "/covers/i-got-married-to-the-girl-vol-4-56fe52.jpg"
   },
   {
     "date": "Nov 03",
@@ -3860,7 +4249,20 @@
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-945-6"
+    "isbn": "979-8-89765-945-6",
+    "cover": "/covers/the-most-heretical-last-boss-queen-vol-11-13dbed.jpg"
+  },
+  {
+    "date": "Nov 04",
+    "month": "November",
+    "year": 2026,
+    "title": "Grimgar of Fantasy and Ash",
+    "link": "https://j-novel.club/series/grimar-of-fantasy-and-ash#volume-25",
+    "volume": "3",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": "978-1-626926-62-2",
+    "cover": "/covers/grimgar-of-fantasy-and-ash-vol-3-b51b4e.jpg"
   },
   {
     "date": "Nov 05",
@@ -3990,7 +4392,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-169-6"
+    "isbn": "979-8-89765-169-6",
+    "cover": "/covers/my-girlfriend-cheated-on-me-and-vol-3-4aaebf.jpg"
   },
   {
     "date": "Nov 10",
@@ -4001,7 +4404,8 @@
     "volume": "1",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855433081"
+    "isbn": "9798855433081",
+    "cover": "/covers/on-the-way-home-after-defeating-vol-1-5e64df.jpg"
   },
   {
     "date": "Nov 10",
@@ -4034,7 +4438,8 @@
     "volume": "2",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855422474"
+    "isbn": "9798855422474",
+    "cover": "/covers/the-azure-sword-slayer-of-distortions-vol-2-f8edef.jpg"
   },
   {
     "date": "Nov 10",
@@ -4091,7 +4496,8 @@
     "volume": "7",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-584-3"
+    "isbn": "979-8-89561-584-3",
+    "cover": "/covers/the-too-perfect-saint-tossed-aside-by-vol-7-9fb42a.jpg"
   },
   {
     "date": "Nov 10",
@@ -4125,7 +4531,20 @@
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-182-6"
+    "isbn": "979-8-89863-182-6",
+    "cover": "/covers/free-life-fantasy-online-immortal-princess-vol-11-9ddc5e.jpg"
+  },
+  {
+    "date": "Nov 17",
+    "month": "November",
+    "year": 2026,
+    "title": "Magic Maker: How to Create Magic in Another World",
+    "link": "https://sevenseasentertainment.com/books/magic-maker-how-to-create-magic-in-another-world-light-novel-vol-3/",
+    "volume": "3",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "979-8-89765-226-6",
+    "cover": "/covers/magic-maker-how-to-create-magic-vol-3-ccdda9.jpg"
   },
   {
     "date": "Nov 17",
@@ -4171,7 +4590,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-440-6"
+    "isbn": "979-8-89765-440-6",
+    "cover": "/covers/history-of-the-kingdom-of-orcsen-vol-2-8e970c.jpg"
   },
   {
     "date": "Nov 24",
@@ -4182,7 +4602,8 @@
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-521-8"
+    "isbn": "979-8-89561-521-8",
+    "cover": "/covers/i-like-villains-so-i-reincarnated-vol-3-70200d.jpg"
   },
   {
     "date": "Nov 24",
@@ -4229,7 +4650,8 @@
     "volume": "7",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-271-7"
+    "isbn": "979-8-89863-271-7",
+    "cover": "/covers/witch-and-mercenary-vol-7-42e285.jpg"
   },
   {
     "date": "Dec 01",
@@ -4240,7 +4662,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/legend-of-the-accidental-sword-saint-vol-1-fa386e.jpg"
   },
   {
     "date": "Dec 01",
@@ -4263,7 +4686,8 @@
     "volume": "14",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855438239"
+    "isbn": "9798855438239",
+    "cover": "/covers/86--eighty-six-vol-14-590acc.jpg"
   },
   {
     "date": "Dec 08",
@@ -4329,8 +4753,7 @@
     "volume": "1",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": "9781718317901",
-    "cover": "/covers/haibaras-teenage-new-game-vol-1-5be1ef.jpg"
+    "isbn": "9781718317901"
   },
   {
     "date": "Dec 08",
@@ -4363,8 +4786,7 @@
     "volume": "11",
     "publisher": "J-Novel Club",
     "format": "📖",
-    "isbn": "9781718345294",
-    "cover": "/covers/my-quiet-blacksmith-life-in-another-vol-11-04088c.jpg"
+    "isbn": "9781718345294"
   },
   {
     "date": "Dec 08",
@@ -4375,7 +4797,8 @@
     "volume": "7",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855437935"
+    "isbn": "9798855437935",
+    "cover": "/covers/orc-eroica-vol-7-574813.jpg"
   },
   {
     "date": "Dec 08",
@@ -4386,7 +4809,8 @@
     "volume": "1",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855436280"
+    "isbn": "9798855436280",
+    "cover": "/covers/playful-relationships-vol-1-71d36c.jpg"
   },
   {
     "date": "Dec 08",
@@ -4474,7 +4898,8 @@
     "volume": "4",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89561-748-9"
+    "isbn": "979-8-89561-748-9",
+    "cover": "/covers/the-tale-of-a-little-alchemist-vol-4-4656bb.jpg"
   },
   {
     "date": "Dec 08",
@@ -4518,7 +4943,8 @@
     "volume": "6",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-163-5"
+    "isbn": "979-8-89863-163-5",
+    "cover": "/covers/a-tale-of-the-secret-saint-vol-6-574986.jpg"
   },
   {
     "date": "Dec 15",
@@ -4552,7 +4978,8 @@
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/liars-journey-reborn-as-a-false-vol-2-0dae42.jpg"
   },
   {
     "date": "Dec 22",
@@ -4563,7 +4990,8 @@
     "volume": "7.2",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-230-4"
+    "isbn": "979-8-89863-230-4",
+    "cover": "/covers/reincarnated-into-a-game-as-the-vol-7.2-e1a542.jpg"
   },
   {
     "date": "Dec 22",
@@ -4574,7 +5002,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-157-4"
+    "isbn": "979-8-89863-157-4",
+    "cover": "/covers/too-many-losing-heroines-short-stories-vol-1-39c8e1.jpg"
   },
   {
     "date": "Dec 29",
@@ -4597,7 +5026,8 @@
     "volume": "7",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-232-8"
+    "isbn": "979-8-89863-232-8",
+    "cover": "/covers/roll-over-and-die-i-will-vol-7-446b34.jpg"
   },
   {
     "date": "Dec 29",
@@ -4608,7 +5038,8 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null
+    "isbn": null,
+    "cover": "/covers/the-berserker-npc-unknowingly-destroys-the-vol-1-c46efd.jpg"
   },
   {
     "date": "Dec 29",
@@ -4619,7 +5050,8 @@
     "volume": "9",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89765-940-1"
+    "isbn": "979-8-89765-940-1",
+    "cover": "/covers/the-condemned-villainess-goes-back-in-vol-9-bc6cd9.jpg"
   },
   {
     "date": "Dec 29",
@@ -4630,7 +5062,8 @@
     "volume": "14",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
-    "isbn": "979-8-89863-262-5"
+    "isbn": "979-8-89863-262-5",
+    "cover": "/covers/the-weakest-tamer-began-a-journey-vol-14-a6e58a.jpg"
   },
   {
     "date": "Jan 08",
@@ -4746,8 +5179,8 @@
     "date": "Jun 08",
     "month": "June",
     "year": 2027,
-    "title": "There's No Freaking Way I'll be Your Lover! Unless… Spin-off Collection",
-    "link": "https://sevenseasentertainment.com/books/theres-no-freaking-way-ill-be-your-lover-unless-spin-off-collection-light-novel/",
+    "title": "There's No Freaking Way I'll Be Your Lover! Unless… Even More Stories to Love!",
+    "link": "https://sevenseasentertainment.com/books/theres-no-freaking-way-ill-be-your-lover-unless-even-more-stories-to-love-light-novel/",
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
