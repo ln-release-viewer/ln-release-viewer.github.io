@@ -717,6 +717,17 @@
     "cover": "/covers/tearmoon-empire-vol-17-32eacc.jpg"
   },
   {
+    "date": "Aug 23",
+    "month": "August",
+    "year": 2026,
+    "title": "The Abandoned Reincarnation Sage",
+    "link": "https://hanashi.media/ebooks/the-abandoned-reincarnation-sage-vol-5",
+    "volume": "5",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "978-1-961788-76-3"
+  },
+  {
     "date": "Aug 24",
     "month": "August",
     "year": 2026,
@@ -890,7 +901,8 @@
     "volume": "1",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-238-9"
+    "isbn": "979-8-88560-238-9",
+    "cover": "/covers/assassin-empress-bellreuge-vol-1-58b529.jpg"
   },
   {
     "date": "Aug 31",
@@ -901,7 +913,8 @@
     "volume": "1",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-237-2"
+    "isbn": "979-8-88560-237-2",
+    "cover": "/covers/from-corporate-drone-to-mincemaster-one-vol-1-cc2bdd.jpg"
   },
   {
     "date": "Aug 31",
@@ -912,7 +925,8 @@
     "volume": "5",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-240-2"
+    "isbn": "979-8-88560-240-2",
+    "cover": "/covers/onmyoji-and-tengu-eyes-vol-5-2efdec.jpg"
   },
   {
     "date": "Sep 01",
@@ -1260,6 +1274,18 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/worthless-at-home-whiz-to-the-vol-6-bc5ba8.jpg"
+  },
+  {
+    "date": "Sep 10",
+    "month": "September",
+    "year": 2026,
+    "title": "A Tale of the Secret Saint",
+    "link": "https://sevenseasentertainment.com/books/a-tale-of-the-secret-saint-light-novel-vol-11/",
+    "volume": "11",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89765-108-5",
+    "cover": "/covers/a-tale-of-the-secret-saint-vol-11-3ec196.jpg"
   },
   {
     "date": "Sep 10",
@@ -1903,7 +1929,8 @@
     "volume": "1",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-244-0"
+    "isbn": "979-8-88560-244-0",
+    "cover": "/covers/from-bumbling-prodigy-to-villainess-will-vol-1-f08978.jpg"
   },
   {
     "date": "Sep 30",
@@ -1988,6 +2015,18 @@
     "date": "Oct 01",
     "month": "October",
     "year": 2026,
+    "title": "My Girlfriend Cheated on Me, and Now My Flirty Underclassman Won't Leave Me Alone",
+    "link": "https://sevenseasentertainment.com/books/my-girlfriend-cheated-on-me-and-now-my-flirty-underclassman-wont-leave-me-alone-light-novel-vol-3/",
+    "volume": "3",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89765-169-6",
+    "cover": "/covers/my-girlfriend-cheated-on-me-and-vol-3-4aaebf.jpg"
+  },
+  {
+    "date": "Oct 01",
+    "month": "October",
+    "year": 2026,
     "title": "Pens Down, Swords Up: Throw Your Studies to the Wind",
     "link": "https://j-novel.club/series/pens-down-swords-up#volume-7",
     "volume": "7",
@@ -1995,6 +2034,18 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/pens-down-swords-up-throw-your-vol-7-c91937.jpg"
+  },
+  {
+    "date": "Oct 01",
+    "month": "October",
+    "year": 2026,
+    "title": "The Most Heretical Last Boss Queen: From Villainess to Savior",
+    "link": "https://sevenseasentertainment.com/books/the-most-heretical-last-boss-queen-from-villainess-to-savior-light-novel-vol-11/",
+    "volume": "11",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89765-945-6",
+    "cover": "/covers/the-most-heretical-last-boss-queen-vol-11-13dbed.jpg"
   },
   {
     "date": "Oct 01",
@@ -2091,6 +2142,18 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/peddler-in-another-world-i-can-vol-13-a793fb.jpg"
+  },
+  {
+    "date": "Oct 08",
+    "month": "October",
+    "year": 2026,
+    "title": "Free Life Fantasy Online: Immortal Princess",
+    "link": "https://sevenseasentertainment.com/books/free-life-fantasy-online-immortal-princess-light-novel-vol-11/",
+    "volume": "11",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "979-8-89863-182-6",
+    "cover": "/covers/free-life-fantasy-online-immortal-princess-vol-11-9ddc5e.jpg"
   },
   {
     "date": "Oct 09",
@@ -2495,7 +2558,7 @@
     "link": "https://sevenseasentertainment.com/books/a-tale-of-the-secret-saint-light-novel-vol-11/",
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "979-8-89765-108-5",
     "cover": "/covers/a-tale-of-the-secret-saint-vol-11-3ec196.jpg"
   },
@@ -2504,7 +2567,7 @@
     "month": "October",
     "year": 2026,
     "title": "Her Royal Highness Seems to Be Angry",
-    "link": "https://www.penguinrandomhouse.com/books/803335/her-royal-highness-seems-to-be-angry-volume-4-light-novel-by-kou-yatsuhashi/9781427883001",
+    "link": "https://tokyopop.com/products/9781427883001_her-royal-highness-seems-to-be-angry-volume-4-light-novel",
     "volume": "4",
     "publisher": "TOKYOPOP",
     "format": "🖥️📖",
@@ -2546,6 +2609,17 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/disowned-but-not-disheartened-life-is-vol-4-de53ef.jpg"
+  },
+  {
+    "date": "Oct 23",
+    "month": "October",
+    "year": 2026,
+    "title": "I Was Reborn as a Refugee Girl, So I'm Working Toward Citizenship from Scratch",
+    "link": "https://hanashi.media/ebooks/i-was-reborn-as-a-refugee-girl-vol-1",
+    "volume": "1",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "978-1-961788-92-3"
   },
   {
     "date": "Oct 26",
@@ -2803,7 +2877,8 @@
     "volume": "1",
     "publisher": "Cross Infinite World",
     "format": "🖥️",
-    "isbn": "979-8-88560-242-6"
+    "isbn": "979-8-88560-242-6",
+    "cover": "/covers/the-villainess-journal-newlywed-life-of-vol-1-346f3b.jpg"
   },
   {
     "date": "Nov 03",
@@ -2873,7 +2948,7 @@
     "link": "https://sevenseasentertainment.com/books/the-most-heretical-last-boss-queen-from-villainess-to-savior-light-novel-vol-11/",
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "979-8-89765-945-6",
     "cover": "/covers/the-most-heretical-last-boss-queen-vol-11-13dbed.jpg"
   },
@@ -3089,7 +3164,7 @@
     "link": "https://sevenseasentertainment.com/books/my-girlfriend-cheated-on-me-and-now-my-flirty-underclassman-wont-leave-me-alone-light-novel-vol-3/",
     "volume": "3",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "979-8-89765-169-6",
     "cover": "/covers/my-girlfriend-cheated-on-me-and-vol-3-4aaebf.jpg"
   },
@@ -3244,7 +3319,7 @@
     "link": "https://sevenseasentertainment.com/books/free-life-fantasy-online-immortal-princess-light-novel-vol-11/",
     "volume": "11",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "979-8-89863-182-6",
     "cover": "/covers/free-life-fantasy-online-immortal-princess-vol-11-9ddc5e.jpg"
   },
@@ -4697,6 +4772,42 @@
     "isbn": "979-8-90209-075-5"
   },
   {
+    "date": "Apr 13",
+    "month": "April",
+    "year": 2027,
+    "title": "The Devil Princess",
+    "link": "https://sevenseasentertainment.com/books/the-devil-princess-light-novel-vol-6/",
+    "volume": "6",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "979-8-89863-306-6",
+    "cover": "/covers/the-devil-princess-vol-6-95d739.jpg"
+  },
+  {
+    "date": "Apr 13",
+    "month": "April",
+    "year": 2027,
+    "title": "The Tale of a Little Alchemist Blessed by the Spirits",
+    "link": "https://sevenseasentertainment.com/books/the-tale-of-a-little-alchemist-blessed-by-the-spirits-light-novel-vol-5/",
+    "volume": "5",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "979-8-89765-654-7",
+    "cover": "/covers/the-tale-of-a-little-alchemist-vol-5-4656bb.jpg"
+  },
+  {
+    "date": "Apr 20",
+    "month": "April",
+    "year": 2027,
+    "title": "The Weakest Tamer Began a Journey to Pick Up Trash",
+    "link": "https://sevenseasentertainment.com/books/the-weakest-tamer-began-a-journey-to-pick-up-trash-light-novel-vol-15/",
+    "volume": "15",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "979-8-89863-596-1",
+    "cover": "/covers/the-weakest-tamer-began-a-journey-vol-15-a6e58a.jpg"
+  },
+  {
     "date": "Apr 27",
     "month": "April",
     "year": 2027,
@@ -4717,6 +4828,17 @@
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
     "isbn": "979-8-90209-677-1"
+  },
+  {
+    "date": "May 11",
+    "month": "May",
+    "year": 2027,
+    "title": "She Professed Herself Pupil of the Wise Man",
+    "link": "https://sevenseasentertainment.com/books/she-professed-herself-pupil-of-the-wise-man-light-novel-vol-19/",
+    "volume": "19",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "979-8-89765-640-0"
   },
   {
     "date": "Jun 08",
