@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-class HanashiScraper:
+class HanashiMediaScraper:
     def parse(self, html: str, url: str) -> str | None:
         soup = BeautifulSoup(html, "html.parser")
 
