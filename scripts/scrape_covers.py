@@ -4,6 +4,7 @@ from scrapers.bookwalker_scraper import BookWalkerScraper
 from scrapers.seven_seas_scraper import SevenSeasScraper
 from scrapers.crossinfinite_scraper import CrossInfiniteScraper
 from scrapers.squareenix_scraper import SquareEnixScraper
+from scrapers.hanashimedia_scraper import HanashiMediaScraper
 from scrapers.generic_scraper import GenericScraper
 from urllib.parse import quote_plus
 from urllib.parse import urljoin
@@ -75,6 +76,7 @@ class CoverScraper:
         self.seven = SevenSeasScraper()
         self.crossinf = CrossInfiniteScraper()
         self.squareenix = SquareEnixScraper()
+        self.hanashimedia = HanashiMediaScraper()
         self.generic = GenericScraper()
 
     # BOOKWALKER SEARCH -> FETCH -> PARSE
@@ -354,6 +356,16 @@ class CoverScraper:
                 except:
                     pass
 
+            # HANASHI MEDIA hydration
+            elif "hanashi.media" in url:
+                try:
+                    await page.wait_for_selector(
+                        "img[src*='store-api.hanashi.media/ebooks/cover']",
+                        timeout=5000
+                    )
+                except:
+                    pass
+
             # GENERIC: no hydration needed
             else:
                 await page.wait_for_timeout(200)
@@ -395,10 +407,10 @@ class CoverScraper:
                             print(f"✔ Yen Press cover saved for {title} vol {volume}")
                             return img
 
-                        print("❌ Yen Press placeholder detected, falling back to BookWalker…")
+                        print("❌ Yen Press placeholder detected")
 
                 except Exception as e:
-                    print(f"❌ Error downloading Yen Press image, falling back to BookWalker: {e}")
+                    print(f"❌ Error downloading Yen Press image: {e}")
 
         # 3. J-Novel Club
         if "j-novel.club" in url and volume:
@@ -421,7 +433,14 @@ class CoverScraper:
                 print(f"✔ Square Enix cover saved for {title} vol {volume}")
                 return img
 
-        # 6. BookWalker search fallback
+        # 6. Hanashi Media
+        if "hanashi.media" in url:
+            img = self.hanashimedia.parse(html, url=url)
+            if img:
+                print(f"✔ Hanashi Media cover saved for {title} vol {volume}")
+                return img
+
+        # 7. BookWalker search fallback
         if title and volume:
             bw_cover = await self.bookwalker_search_and_fetch(title, volume)
             if bw_cover:
