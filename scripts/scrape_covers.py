@@ -391,7 +391,12 @@ class CoverScraper:
                 return img
 
         html = await self.fetch_page(url)
+        # Error check html
+        if not html:
+            pprint(f"❌ No HTML fetched for {title} vol {volume} ({url}), skipping")
+            return None
 
+        # PLAYWRIGHT PARSERS
         # 2. Yen Press - Note: returns cover images
         if "yenpress.com" in url:
             img = self.yen.parse(html)
