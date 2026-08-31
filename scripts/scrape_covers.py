@@ -393,7 +393,7 @@ class CoverScraper:
         html = await self.fetch_page(url)
         # Error check html
         if not html:
-            pprint(f"❌ No HTML fetched for {title} vol {volume} ({url}), skipping")
+            print(f"❌ No HTML fetched for {title} vol {volume} ({url}), skipping")
             return None
 
         # PLAYWRIGHT PARSERS
