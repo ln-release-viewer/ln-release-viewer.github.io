@@ -3,6 +3,7 @@ import io
 import json
 import re
 import time
+import os
 from pathlib import Path
 import hashlib
 import requests
@@ -323,9 +324,10 @@ def main():
             continue  # never delete placeholder
 
         if filename not in valid_filenames:
-            print(f"🗑 Removing old cover: {filename}")
+            print(f"Removing old cover: {filename}")
             try:
                 os.remove(COVERS_DIR / filename)
+                print(f"✔ Removed: {filename}")
             except Exception as e:
                 print(f"⚠ Failed to remove {filename}: {e}")
 
