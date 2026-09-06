@@ -315,5 +315,19 @@ def main():
         json.dump(releases, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
+    # CLEANUP: remove any covers not in current releases
+    valid_filenames = {f"{slugify_short(r['title'], str(r['volume']))}.jpg" for r in releases}
+
+    for filename in os.listdir(COVERS_DIR):
+        if filename == "placeholder.jpg":
+            continue  # never delete placeholder
+
+        if filename not in valid_filenames:
+            print(f"🗑 Removing old cover: {filename}")
+            try:
+                os.remove(COVERS_DIR / filename)
+            except Exception as e:
+                print(f"⚠ Failed to remove {filename}: {e}")
+
 if __name__ == "__main__":
     main()
