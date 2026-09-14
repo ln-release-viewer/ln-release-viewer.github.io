@@ -1,15 +1,64 @@
 ---
-const { title = "Light Novel Releases" } = Astro.props;
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title = "Light Novel Releases | Track Upcoming Volumes",
+  description = "A clean, automated release schedule and tracker for upcoming English light novel volumes, official publishers, and digital pre-orders.",
+  image = "/og-banner.png", // Drop a default 1200x630 banner in your /public directory
+  canonicalURL = Astro.url.href,
+} = Astro.props;
+
+const siteTitle = title.includes("Light Novel Releases") ? title : `${title} | Light Novel Releases`;
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+    
+    <!-- Primary SEO Metadata -->
+    <title>{siteTitle}</title>
+    <meta name="title" content={siteTitle} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Google Analytics (GA4) -->
+    {import.meta.env.PROD && (
+      <>
+        <script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-YOURMEASUREMENTID"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RNHQPLWGRN');
+        </script>
+      </>
+    )}
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site || canonicalURL)} />
+
+    <!-- Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={siteTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site || canonicalURL)} />
+
+    <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <slot name="head" />
   </head>
 
