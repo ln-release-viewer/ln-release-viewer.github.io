@@ -1418,18 +1418,6 @@
     "date": "Oct 13",
     "month": "October",
     "year": 2026,
-    "title": "Fluffy Café in Another World",
-    "link": "https://sevenseasentertainment.com/books/fluffy-cafe-in-another-world-light-novel-vol-2-ebook/",
-    "volume": "2",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️",
-    "isbn": null,
-    "cover": "/covers/fluffy-caf-in-another-world-vol-2-fdbc9f.jpg"
-  },
-  {
-    "date": "Oct 13",
-    "month": "October",
-    "year": 2026,
     "title": "Frieren: Beyond Journey's End -Prelude-",
     "link": "https://yenpress.com/titles/9798855439434-frieren-beyond-journey-s-end-prelude-vol-2-novel",
     "volume": "2",
@@ -1593,6 +1581,18 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/the-dorky-npc-mercenary-knows-his-vol-6-10c83c.jpg"
+  },
+  {
+    "date": "Oct 15",
+    "month": "October",
+    "year": 2026,
+    "title": "Fluffy Café in Another World",
+    "link": "https://sevenseasentertainment.com/books/fluffy-cafe-in-another-world-light-novel-vol-2-ebook/",
+    "volume": "2",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/fluffy-caf-in-another-world-vol-2-fdbc9f.jpg"
   },
   {
     "date": "Oct 15",
@@ -3033,6 +3033,18 @@
     "cover": "/covers/after-school-dungeon-diver-level-grinding-in-vol-6-1f33a9.jpg"
   },
   {
+    "date": "Dec 03",
+    "month": "December",
+    "year": 2026,
+    "title": "Imperial Reincarnation: I Came, I Saw, I Survived",
+    "link": "https://j-novel.club/series/imperial-reincarnation-i-came-i-saw-i-survived#volume-8",
+    "volume": "8",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/imperial-reincarnation-i-came-i-saw-vol-8-d56acd.jpg"
+  },
+  {
     "date": "Dec 07",
     "month": "December",
     "year": 2026,
@@ -3264,7 +3276,7 @@
     "month": "December",
     "year": 2026,
     "title": "The Immortal Witch Would Sacrifice Ten Thousand Lives to Fulfill a Simple Wish",
-    "link": "https://yenpress.com/titles/9798855433449-the-immortal-witch-would-sacrifice-ten-thousand-lives-to-fulfill-a-simple-wish-vol-1-light-novel",
+    "link": "https://yenpress.com/titles/9798855433449-the-immortal-witch-would-sacrifice-ten-thousand-lives-to-fulfill-a-simple-wish-light-novel",
     "volume": "1",
     "publisher": "Yen Press",
     "format": "🖥️📖",
@@ -3311,13 +3323,13 @@
     "date": "Dec 08",
     "month": "December",
     "year": 2026,
-    "title": "Wistoria: Wand and Sword",
-    "link": "https://yenpress.com/titles/9798855419665-wistoria-wand-and-sword-light-novel",
+    "title": "Wistoria: Wand and Sword—GrimoActa",
+    "link": "https://yenpress.com/titles/9798855419665-wistoria-wand-and-sword-grimoacta-vol-1-light-novel",
     "volume": "1",
     "publisher": "Yen Press",
     "format": "🖥️📖",
     "isbn": "9798855419665",
-    "cover": "/covers/wistoria-wand-and-sword-vol-1-210298.jpg"
+    "cover": "/covers/wistoria-wand-and-swordgrimoacta-vol-1-a3a213.jpg"
   },
   {
     "date": "Dec 09",
@@ -3497,6 +3509,18 @@
     "format": "🖥️",
     "isbn": null,
     "cover": "/covers/a-dumped-villainess-married-me-a-vol-1-f9c072.jpg"
+  },
+  {
+    "date": "Dec 23",
+    "month": "December",
+    "year": 2026,
+    "title": "A Late-Start Tamer's Laid-Back Life",
+    "link": "https://j-novel.club/series/a-late-start-tamer-s-laid-back-life#volume-15",
+    "volume": "15",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/a-late-start-tamers-laid-back-life-vol-15-e49d41.jpg"
   },
   {
     "date": "Dec 28",
@@ -3863,7 +3887,8 @@
     "volume": "7",
     "publisher": "Yen Press",
     "format": "🖥️📖",
-    "isbn": "9798855405361"
+    "isbn": "9798855405361",
+    "cover": "/covers/the-unimplemented-overlords-have-joined-the-vol-7-11de2b.jpg"
   },
   {
     "date": "Jan 12",
@@ -3910,6 +3935,18 @@
     "publisher": "Yen Press",
     "format": "🖥️📖",
     "isbn": "9798855427950"
+  },
+  {
+    "date": "Jan 15",
+    "month": "January",
+    "year": 2027,
+    "title": "The Trials and Tribulations of My Next Life as a Noblewoman",
+    "link": "https://j-novel.club/series/the-trials-and-tribulations-of-my-next-life-as-a-noblewoman#volume-9",
+    "volume": "5.2",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "isbn": null,
+    "cover": "/covers/the-trials-and-tribulations-of-my-vol-5.2-34646a.jpg"
   },
   {
     "date": "Jan 19",
