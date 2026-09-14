@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Dark Mode Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <!-- Glowing Accent Gradient -->
+    <linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Decorative Accent Bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accent-gradient)"/>
+
+  <!-- Book Icon Overlay -->
+  <g transform="translate(100, 195)">
+    <!-- Book Cover Silhouette -->
+    <rect x="0" y="0" width="180" height="240" rx="12" fill="#1E293B" stroke="url(#accent-gradient)" stroke-width="4"/>
+    <!-- Book Pages / Lines -->
+    <line x1="30" y1="50" x2="150" y2="50" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+    <line x1="30" y1="90" x2="130" y2="90" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="30" y1="120" x2="140" y2="120" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="30" y1="150" x2="110" y2="150" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+    <!-- Calendar Badge -->
+    <circle cx="140" cy="190" r="22" fill="#818CF8"/>
+    <path d="M132 190 L138 196 L148 184" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Main Typography -->
+  <g transform="translate(320, 240)">
+    <!-- Main Title -->
+    <text x="0" y="40" font-family="'Inter', system-ui, sans-serif" font-weight="700" font-size="54" fill="#F8FAFC" letter-spacing="-1">
+      Light Novel Releases
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="95" font-family="'Inter', system-ui, sans-serif" font-weight="400" font-size="26" fill="#94A3B8">
+      Upcoming English Volume Schedules &amp; Publisher Tracker
+    </text>
+
+    <!-- Feature Tags -->
+    <g transform="translate(0, 140)">
+      <!-- Tag 1 -->
+      <rect x="0" y="0" width="150" height="36" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+      <text x="75" y="23" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="14" fill="#38BDF8" text-anchor="middle">OFFICIAL DATES</text>
+      
+      <!-- Tag 2 -->
+      <rect x="165" y="0" width="130" height="36" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+      <text x="230" y="23" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="14" fill="#818CF8" text-anchor="middle">PUBLISHERS</text>
+
+      <!-- Tag 3 -->
+      <rect x="310" y="0" width="140" height="36" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+      <text x="380" y="23" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="14" fill="#34D399" text-anchor="middle">PRE-ORDERS</text>
+    </g>
+  </g>
+
+  <!-- Footer / Domain Identifier -->
+  <text x="100" y="550" font-family="'Inter', system-ui, sans-serif" font-weight="500" font-size="20" fill="#64748B">
+    ln-release-viewer.github.io
+  </text>
+</svg>

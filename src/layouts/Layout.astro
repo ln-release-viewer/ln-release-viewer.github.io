@@ -9,7 +9,7 @@ interface Props {
 const {
   title = "Light Novel Releases | Track Upcoming Volumes",
   description = "A clean, automated release schedule and tracker for upcoming English light novel volumes, official publishers, and digital pre-orders.",
-  image = "/og-banner.png", // Drop a default 1200x630 banner in your /public directory
+  image = "/og-banner.png", 
   canonicalURL = Astro.url.href,
 } = Astro.props;
 
@@ -30,7 +30,7 @@ const siteTitle = title.includes("Light Novel Releases") ? title : `${title} | L
     <!-- Google Analytics (GA4) -->
     {import.meta.env.PROD && (
       <>
-        <script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-YOURMEASUREMENTID"></script>
+        <script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-RNHQPLWGRN"></script>
         <script is:inline>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
