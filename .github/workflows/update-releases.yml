@@ -1,0 +1,67 @@
+name: Update LN Releases
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your repo
+        uses: actions/checkout@v4
+
+      - name: Clone LNRelease repo
+        run: |
+          git clone https://github.com/LNRelease/lnrelease.github.io lnrelease-src
+
+      - name: Create Docker Network
+        run: docker network create scraper-net
+
+      - name: Start FlareSolverr Container
+        run: |
+          docker run -d \
+            --name=flaresolverr \
+            --network=scraper-net \
+            -e LOG_LEVEL=info \
+            -e BROWSER_TIMEOUT=15000 \
+            -e HEADLESS=true \
+            ghcr.io/flaresolverr/flaresolverr:latest
+          
+          # Wait until FlareSolverr responds on http://flaresolverr:8191/v1
+          echo "Waiting for FlareSolverr to start..."
+          until docker run --rm --network=scraper-net curlimages/curl:latest -s http://flaresolverr:8191/v1 > /dev/null; do
+            sleep 2
+          done
+          echo "FlareSolverr is ready!"
+
+      - name: Build scraper Docker image
+        run: |
+          docker build -t ln-scraper .
+
+      - name: Run scraper inside container
+        run: |
+          docker run --rm -t \
+            --network=scraper-net \
+            -e PYTHONUNBUFFERED=1 \
+            -e FLARESOLVERR_URL="http://flaresolverr:8191/v1" \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/public:/app/public \
+            -v ${{ github.workspace }}/debug:/app/debug \
+            -v ${{ github.workspace }}/lnrelease-src:/app/lnrelease-src \
+            ln-scraper
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/releases.json public/covers debug
+          git commit -m "Updated releases.json and covers" || echo "No changes to commit"
+          git push
+
+

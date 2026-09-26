@@ -1,0 +1,318 @@
+---
+import Layout from '../layouts/Layout.astro';
+import releases from '../../data/releases.json';
+
+const MONTH_INDEX = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3,
+  May: 4, Jun: 5, Jul: 6, Aug: 7,
+  Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+// 1. Filter out entries marked as 404
+const validReleases = releases.filter((r) => !r.is404);
+
+// 2. Sort remaining active releases
+const sorted = validReleases.sort((a, b) => {
+  if (a.year !== b.year) return a.year - b.year;
+  const ma = MONTH_INDEX[a.month.slice(0, 3)];
+  const mb = MONTH_INDEX[b.month.slice(0, 3)];
+  if (ma !== mb) return ma - mb;
+  const da = parseInt(a.date.split(" ")[1]);
+  const db = parseInt(b.date.split(" ")[1]);
+  return da - db;
+});
+
+const groups = {};
+for (const r of sorted) {
+  const key = `${r.month} ${r.year}`;
+  if (!groups[key]) groups[key] = [];
+  groups[key].push(r);
+}
+
+const getSlug = (r) => {
+  return `${r.title}-vol-${r.volume}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+};
+---
+
+<Layout 
+title="Light Novel Releases - Upcoming Schedule"
+description="Browse and search upcoming English light novel releases across all major publishers in a clean calendar view."
+>
+  <header class="sticky-header">
+    <div class="header-inner">
+      <div class="search-wrapper">
+        <input
+          id="search"
+          type="search"
+          placeholder="Search titles, volumes, publishers…"
+          class="search-bar"
+        />
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle" role="switch" aria-label="Toggle Dark Mode" aria-checked="false">
+        <div class="pill-track">
+          <div class="pill-thumb"></div>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div id="no-results" class="no-results" style="display:none;">
+      No results found.
+    </div>
+    {Object.entries(groups).map(([monthYear, items]) => (
+      <div class="month-block">
+        <h2 class="month-title">{monthYear}</h2>
+
+        <div class="grid">
+          {items.map((r) => (
+            <a href={`/releases/${getSlug(r)}`} class="card">
+              <img
+                class="cover"
+                src={r.cover || '/covers/placeholder.jpg'}
+                alt={r.title}
+                loading="lazy"
+                onerror="this.onerror=null; this.src='/covers/placeholder.jpg';"
+              />
+              <div class="info">
+                <div class="title">{r.title}</div>
+                <div class="meta">Vol. {r.volume}</div>
+                <div class="meta publisher">{r.publisher}</div>
+                <div class="meta">{r.date}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+  <footer class="site-footer">
+    <p>Data sourced from the open-source <a href="https://github.com/LNRelease/lnrelease.github.io" target="_blank" rel="noopener noreferrer">LNRelease</a> project. This viewer is unofficial and independent.</p>
+  </footer>
+
+<script>
+  const input = document.getElementById("search");
+  const noResults = document.getElementById("no-results");
+
+  input.addEventListener("input", () => {
+    const q = input.value.toLowerCase();
+
+    // Filter cards
+    document.querySelectorAll(".card").forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(q) ? "" : "none";
+    });
+
+    // Hide month blocks with no visible cards
+    document.querySelectorAll(".month-block").forEach(block => {
+      const visibleCard = block.querySelector(".card:not([style*='display: none'])");
+      block.style.display = visibleCard ? "" : "none";
+    });
+
+    // Check if ANY card is visible anywhere
+    const anyVisibleCard = document.querySelector(".card:not([style*='display: none'])");
+
+    if (anyVisibleCard) {
+      noResults.style.display = "none";
+    } else {
+      noResults.style.display = "block";
+    }
+  });
+</script>
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  /* --- Sticky Header Setup --- */
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--header-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Wrapper hosts the pseudo-element search icon safely */
+  .search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .search-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    -webkit-mask-image: url('/icons/search.svg');
+    mask-image: url('/icons/search.svg');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-color: var(--text);
+    z-index: 1;
+    pointer-events: none; 
+  }
+
+  .search-bar {
+    width: 100%;
+    padding: 0.6rem 0.8rem 0.6rem 2.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    background: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+  }
+
+  .search-bar:focus {
+    outline: 2px solid #4c8bf5;
+    border-color: #4c8bf5;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    cursor: pointer;
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+  }
+
+
+  .month-block {
+    margin-bottom: 2rem;
+  }
+
+  /* Snaps cleanly below the main 60px tall sticky header bar */
+  .month-title {
+    position: sticky;
+    top: 61px; 
+    background: var(--bg);
+    z-index: 40;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0.75rem 0 0.5rem;
+    border-bottom: 2px solid var(--border);
+    color: var(--text);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 2px 6px var(--card-shadow);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, color 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px var(--card-shadow);
+  }
+
+  .cover {
+    width: 100%;
+    aspect-ratio: 2 / 3; /* Locks down the element dimensions before the file resolves */
+    object-fit: cover;
+    background: var(--border); /* Acts as a clean solid placeholder skeleton */
+    border-radius: 4px 4px 0 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .cover[loading="lazy"] {
+    opacity: 1;
+  }
+
+  .info {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex-grow: 1;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    color: var(--text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: auto;
+  }
+
+  .meta {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    color: var(--text);
+  }
+
+  .meta.publisher {
+    background: var(--border);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: fit-content;
+    transition: background 0.2s ease;
+  }
+  .site-footer {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+
+  .site-footer:hover {
+    opacity: 0.8; /* Subtle lift when they look close */
+  }
+
+  .site-footer a {
+    color: var(--text);
+    text-decoration: underline;
+  }
+</style>
+

@@ -1,0 +1,216 @@
+---
+// src/pages/releases/[slug].astro
+import Layout from '../../layouts/Layout.astro';
+import releases from '../../../data/releases.json';
+
+export async function getStaticPaths() {
+  const grouped = releases.reduce((acc, book) => {
+    const slug = `${book.title}-vol-${book.volume}`
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+
+    if (!acc[slug]) {
+      acc[slug] = {
+        title: book.title,
+        volume: book.volume,
+        publisher: book.publisher,
+        cover: book.cover,
+        synopsis: book.synopsis || book.description,
+        isbn: book.isbn,
+        link: book.link,
+        formats: [],
+        vendors: []
+      };
+    }
+
+    const dateStr = `${book.month} ${book.date}, ${book.year}`;
+    const rawFormat = book.format || '';
+
+    // Check if entry represents Digital, Physical, or Both
+    const isDigital = rawFormat.includes('🖥️') || rawFormat.toLowerCase().includes('digital');
+    const isPhysical = rawFormat.includes('📖') || rawFormat.toLowerCase().includes('print') || rawFormat.toLowerCase().includes('physical');
+
+    // Helper to push unique format entries
+    const addFormat = (type, icon) => {
+      if (!acc[slug].formats.some((f) => f.type === type && f.dateStr === dateStr)) {
+        acc[slug].formats.push({ type, icon, dateStr });
+      }
+    };
+
+    if (isDigital) addFormat('Digital E-Book', '🖥️');
+    if (isPhysical) addFormat('Physical Print', '📖');
+
+    // Fallback if neither emoji matched
+    if (!isDigital && !isPhysical) {
+      addFormat('Release', rawFormat);
+    }
+
+    // Consolidate unique vendors
+    if (book.vendors && Array.isArray(book.vendors)) {
+      for (const vendor of book.vendors) {
+        if (!acc[slug].vendors.some((v) => v.url === vendor.url)) {
+          acc[slug].vendors.push(vendor);
+        }
+      }
+    }
+
+    if (!acc[slug].cover && book.cover) acc[slug].cover = book.cover;
+    if (!acc[slug].synopsis && (book.synopsis || book.description)) {
+      acc[slug].synopsis = book.synopsis || book.description;
+    }
+
+    return acc;
+  }, {});
+
+  return Object.entries(grouped).map(([slug, book]) => ({
+    params: { slug },
+    props: { book }
+  }));
+}
+
+const { book } = Astro.props;
+
+// Helper to sanitize ISBNs for affiliate searches
+const cleanIsbn = book.isbn ? book.isbn.replace(/[^0-9X]/gi, '') : null;
+
+// Construct Amazon affiliate link
+const amazonTag = 'your-tag-20';
+const amazonSearchUrl = cleanIsbn 
+  ? `https://www.amazon.com/dp/${cleanIsbn}?tag=${amazonTag}`
+  : `https://www.amazon.com/s?k=${encodeURIComponent(book.title + ' volume ' + book.volume + ' light novel')}&tag=${amazonTag}`;
+
+const synopsisText = book.synopsis || 
+  `Official ${book.publisher} release for ${book.title} Volume ${book.volume}.`;
+
+const hasAmazonVendor = book.vendors?.some(
+  (v) => v.name.toLowerCase().includes('amazon')
+);
+---
+
+<Layout 
+  title={`${book.title} Vol. ${book.volume}`}
+  description={synopsisText}
+  image={book.cover || '/covers/placeholder.jpg'}
+>
+  <main class="release-container">
+    <nav class="breadcrumb">
+      <a href="/" id="back-link">⇽ Back to Schedule</a>
+    </nav>
+    <script>
+      const backLink = document.getElementById('back-link');
+      if (backLink) {
+        backLink.addEventListener('click', (e) => {
+          if (document.referrer && document.referrer.includes(window.location.host)) {
+            e.preventDefault();
+            window.history.back();
+          }
+        });
+      }
+    </script>
+
+    <div class="book-grid">
+      <div class="cover-column">
+        <img 
+          src={book.cover || '/covers/placeholder.jpg'} 
+          alt={`${book.title} Vol. ${book.volume} Cover`} 
+          class="book-cover" 
+        />
+      </div>
+
+      <div class="details-column">
+        <!-- Render all format tags -->
+        <div class="tags">
+          {book.formats.map((fmt) => (
+            <span class="tag-format">{fmt.icon} {fmt.type}</span>
+          ))}
+          <span class="tag-publisher">{book.publisher}</span>
+        </div>
+
+        <h1>{book.title}</h1>
+        <h2 class="volume-header">Volume {book.volume}</h2>
+
+        <!-- Render both Digital and Physical dates -->
+        <div class="meta-card">
+          {book.formats.map((fmt) => (
+            <div class="meta-item">
+              <span class="label">{fmt.type} Release</span>
+              <span class="value">{fmt.dateStr}</span>
+            </div>
+          ))}
+          {book.isbn && (
+            <div class="meta-item">
+              <span class="label">ISBN-13</span>
+              <span class="value">{book.isbn}</span>
+            </div>
+          )}
+        </div>
+
+        <div class="synopsis-box">
+          <h3>Synopsis</h3>
+          <p>{synopsisText}</p>
+        </div>
+
+          <div class="vendors-section">
+              <h3>Available Retailers</h3>
+              <div class="action-buttons">
+                {!hasAmazonVendor && (
+                <a href={amazonSearchUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    Amazon
+                </a>
+                )}
+
+                {book.vendors?.map((vendor) => (
+                <a 
+                    href={vendor.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class={`btn ${vendor.name.toLowerCase().includes('amazon') ? 'btn-primary' : 'btn-vendor'}`}
+                >
+                    {vendor.name}
+                </a>
+                ))}
+
+                {book.link && (
+                <a href={book.link} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    Official {book.publisher} Page
+                </a>
+                )}
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .release-container { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; color: #F8FAFC; }
+  .breadcrumb a { color: #38BDF8; text-decoration: none; font-weight: 500; }
+  .book-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-top: 1.5rem; }
+  
+  @media (min-width: 768px) {
+    .book-grid { grid-template-columns: 320px 1fr; }
+  }
+
+  .book-cover { width: 100%; max-width: 320px; border-radius: 12px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5); }
+  .volume-header { color: #94A3B8; font-size: 1.5rem; margin-top: -0.5rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  .tag-format, .tag-publisher { background: #1E293B; padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid #334155; }
+  
+  .meta-card { display: flex; flex-wrap: wrap; gap: 2rem; background: #0F172A; padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border: 1px solid #1E293B; }
+  .meta-item .label { display: block; font-size: 0.75rem; color: #64748B; text-transform: uppercase; }
+  .meta-item .value { font-weight: 600; color: #E2E8F0; }
+
+  .synopsis-box { line-height: 1.6; color: #CBD5E1; margin-bottom: 2rem; white-space: pre-line; }
+  .synopsis-box h3, .vendors-section h3 { font-size: 1.1rem; color: #F1F5F9; margin-bottom: 0.75rem; }
+
+  .action-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .btn { padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 600; text-decoration: none; text-align: center; font-size: 0.95rem; transition: background-color 0.2s; }
+  .btn-primary { background: #38BDF8; color: #0F172A; }
+  .btn-primary:hover { background: #0284C7; }
+  .btn-vendor { background: #0F172A; color: #E2E8F0; border: 1px solid #334155; }
+  .btn-vendor:hover { background: #1E293B; }
+  .btn-secondary { background: #1E293B; color: #94A3B8; border: 1px solid #334155; }
+  .btn-secondary:hover { color: #F1F5F9; background: #334155; }
+</style>
