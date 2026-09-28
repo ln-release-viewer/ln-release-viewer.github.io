@@ -2286,6 +2286,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718309968"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718309968"
       }
     ],
     "isbn": "9781718309968",
@@ -2314,6 +2318,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718314900"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718314900"
       }
     ],
     "isbn": "9781718314900",
@@ -2342,6 +2350,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718313125"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718313125"
       }
     ],
     "isbn": "9781718313125",
@@ -2402,6 +2414,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718318922"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718318922"
       }
     ],
     "isbn": "9781718318922",
@@ -2526,6 +2542,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718391222"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718391222"
       }
     ],
     "isbn": "9781718391222",
@@ -2578,6 +2598,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718350885"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718350885"
       }
     ],
     "isbn": "9781718350885",
@@ -2682,6 +2706,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718315983"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718315983"
       }
     ],
     "isbn": "9781718315983",
@@ -2734,6 +2762,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=When+a+Clueless+First-Person+Shooter+Player+Falls+into+Another+World+volume+3+light+novel"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9798902096610"
       }
     ],
     "isbn": "9798902096610",
@@ -2786,6 +2818,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718381247"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718381247"
       }
     ],
     "isbn": "9781718381247",
@@ -2814,6 +2850,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718304604"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718304604"
       }
     ],
     "isbn": "9781718304604",
@@ -2982,6 +3022,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718349728"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718349728"
       }
     ],
     "isbn": "9781718349728",
@@ -3066,6 +3110,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718328549"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718328549"
       }
     ],
     "isbn": "9781718328549",
@@ -3094,6 +3142,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718344693"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718344693"
       }
     ],
     "isbn": "9781718344693",
@@ -3122,6 +3174,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718343245"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718343245"
       }
     ],
     "isbn": "9781718343245",
@@ -3178,6 +3234,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718326460"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718326460"
       }
     ],
     "isbn": "9781718326460",
@@ -3206,6 +3266,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781718330603"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781718330603"
       }
     ],
     "isbn": "9781718330603",
@@ -6191,7 +6255,7 @@
     "isbn": null,
     "synopsis": "Coming soon.",
     "cover": "/covers/the-vampire-and-the-chocolatier-vol-2-79992a.jpg",
-    "coverHash": "d6b27c8264cbea6be9791cab6640519b",
+    "coverHash": "dd71ca9928182a232a5d4d9646da0042",
     "vendors": [
       {
         "name": "Amazon",
@@ -6540,6 +6604,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Invaders+of+the+Rokujouma%21%3F+volume+49+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718313002"
       }
     ],
     "isbn": "9781718313002",
@@ -6588,6 +6656,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Middle-Aged+and+Mid+No+More%3A+Rising+in+Ranks+over+Drinks+with+an+Elite+Priest+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718365285"
       }
     ],
     "isbn": "9781718365285",
@@ -6612,6 +6684,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Min-Maxing+My+TRPG+Build+in+Another+World+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718384484"
       }
     ],
     "isbn": "9781718384484",
@@ -6636,6 +6712,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Water+Magician%3A+Arc+1+volume+3+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718333741"
       }
     ],
     "isbn": "9781718333741",
@@ -6800,6 +6880,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Return+of+the+Corpse+King%3A+Reining+in+My+Cringe+Secret+Society+volume+3+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718384903"
       }
     ],
     "isbn": "9781718384903",
@@ -6852,6 +6936,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Cooking+with+Wild+Game+volume+36+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718334700"
       }
     ],
     "isbn": "9781718334700",
@@ -6896,6 +6984,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Isekai+Walking+volume+8+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718352643"
       }
     ],
     "isbn": "9781718352643",
@@ -6920,6 +7012,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Private+Tutor+to+the+Duke%27s+Daughter+volume+21+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718386402"
       }
     ],
     "isbn": "9781718386402",
@@ -7060,6 +7156,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=To+Another+World...+with+Land+Mines%21+volume+14+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718388239"
       }
     ],
     "isbn": "9781718388239",
@@ -7084,6 +7184,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=I%27ll+Become+an+Elegant+Villainess%21+Time+to+Enjoy+My+Second+Life+to+the+Fullest+volume+2+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718352223"
       }
     ],
     "isbn": "9781718352223",
@@ -7108,6 +7212,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Lacey+Longs+for+Freedom%3A+The+Dawn+Witch%27s+Low-Key+Life+after+Defeating+the+Demon+King+volume+4+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718375260"
       }
     ],
     "isbn": "9781718375260",
@@ -7132,6 +7240,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Notorious+No+More%3A+The+Villainess+Enjoys+Feigning+Incompetence+volume+4+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718335301"
       }
     ],
     "isbn": "9781718335301",
@@ -7156,6 +7268,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=After-School+Dungeon+Diver%3A+Level+Grinding+in+Another+World+volume+6+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718308909"
       }
     ],
     "isbn": "9781718308909",
@@ -7180,6 +7296,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Imperial+Reincarnation%3A+I+Came%2C+I+Saw%2C+I+Survived+volume+8+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718365469"
       }
     ],
     "isbn": "9781718365469",
@@ -7204,6 +7324,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=From+Villainess+to+Healer+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718369740"
       }
     ],
     "isbn": "9781718369740",
@@ -7228,6 +7352,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Haibara%27s+Teenage+New+Game%2B+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718342804"
       }
     ],
     "isbn": "9781718342804",
@@ -7252,6 +7380,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=My+Quiet+Blacksmith+Life+in+Another+World+volume+11+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718390171"
       }
     ],
     "isbn": "9781718390171",
@@ -7300,6 +7432,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Water+Magician%3A+Arc+1+volume+4+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718333765"
       }
     ],
     "isbn": "9781718333765",
@@ -7838,6 +7974,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Nia+Liston%3A+The+Merciless+Maiden+volume+11+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718318700"
       }
     ],
     "isbn": "9781718318700",
@@ -7862,6 +8002,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Reborn+to+Reign%3A+Imposing+My+Rules+with+My+Mastery+of+Magic+volume+2+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718396661"
       }
     ],
     "isbn": "9781718396661",
@@ -7914,6 +8058,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Chivalry+of+a+Failed+Knight+volume+12+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718347342"
       }
     ],
     "isbn": "9781718347342",
@@ -7938,6 +8086,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Isekai+Tensei%3A+Recruited+to+Another+World+volume+15+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718318403"
       }
     ],
     "isbn": "9781718318403",
@@ -7990,6 +8142,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Proud+to+Be+the+Villainess+volume+3+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718396388"
       }
     ],
     "isbn": "9781718396388",
@@ -8014,6 +8170,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Revenge+of+the+Soul+Eater%3A+Cast+Out+as+a+Weakling+by+My+Sword+Saint+Father+volume+7+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718339866"
       }
     ],
     "isbn": "9781718339866",
@@ -8038,6 +8198,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Greatest+Magicmaster%27s+Retirement+Plan+volume+20+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718344389"
       }
     ],
     "isbn": "9781718344389",
@@ -8110,6 +8274,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Diary+of+a+Middle-Aged+Sage%27s+Carefree+Life+in+Another+World+volume+12+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718374065"
       }
     ],
     "isbn": "9781718374065",
@@ -8134,6 +8302,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=A+Wicked+Lady%27s+Guide+to+Accidentally+Saving+the+Kingdom+volume+2+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718370388"
       }
     ],
     "isbn": "9781718370388",
