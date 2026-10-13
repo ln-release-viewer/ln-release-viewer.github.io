@@ -86,6 +86,25 @@ const synopsisText = book.synopsis ||
 const hasAmazonVendor = book.vendors?.some(
   (v) => v.name.toLowerCase().includes('amazon')
 );
+
+// 1. Separate same-series volumes and same-publisher books
+const sameSeries = releases.filter(
+  (r) => r.title === book.title && r.volume !== book.volume
+);
+
+const samePublisher = releases.filter(
+  (r) => r.publisher === book.publisher && r.title !== book.title
+);
+
+// 2. Simple Fisher-Yates shuffle for the publisher pool
+const shuffledPublisher = [...samePublisher];
+for (let i = shuffledPublisher.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [shuffledPublisher[i], shuffledPublisher[j]] = [shuffledPublisher[j], shuffledPublisher[i]];
+}
+
+// 3. Combine them (same series first, filled out with randomized publisher picks)
+const relatedBooks = [...sameSeries, ...shuffledPublisher].slice(0, 6);
 ---
 
 <Layout 
@@ -93,9 +112,18 @@ const hasAmazonVendor = book.vendors?.some(
   description={synopsisText}
   image={book.cover || '/covers/placeholder.jpg'}
 >
+  <!-- Ambient Blurred Artwork Backdrop -->
+  <div class="ambient-backdrop" style={`background-image: url(${book.cover || '/covers/placeholder.jpg'});`}></div>
+
   <main class="release-container">
     <nav class="breadcrumb">
-      <a href="/" id="back-link">⇽ Back to Schedule</a>
+      <a href="/" id="back-link" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back
+      </a>
     </nav>
     <script>
       const backLink = document.getElementById('back-link');
@@ -109,17 +137,25 @@ const hasAmazonVendor = book.vendors?.some(
       }
     </script>
 
+    <!-- Top Grid: Cover on Left, Main Details & Retailers on Right -->
     <div class="book-grid">
       <div class="cover-column">
-        <img 
-          src={book.cover || '/covers/placeholder.jpg'} 
-          alt={`${book.title} Vol. ${book.volume} Cover`} 
-          class="book-cover" 
-        />
+        <div class="cover-interaction-wrapper" id="cover-container">
+          <img 
+            src={book.cover || '/covers/placeholder.jpg'} 
+            alt={`${book.title} Vol. ${book.volume} Cover`} 
+            class="book-cover" 
+            id="book-cover-image"
+          />
+          <div class="expand-prompt">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            <span>Click to expand</span>
+          </div>
+        </div>
       </div>
 
       <div class="details-column">
-        <!-- Render all format tags -->
+        <!-- Tags -->
         <div class="tags">
           {book.formats.map((fmt) => (
             <span class="tag-format">{fmt.icon} {fmt.type}</span>
@@ -130,7 +166,7 @@ const hasAmazonVendor = book.vendors?.some(
         <h1>{book.title}</h1>
         <h2 class="volume-header">Volume {book.volume}</h2>
 
-        <!-- Render both Digital and Physical dates -->
+        <!-- Meta Info -->
         <div class="meta-card">
           {book.formats.map((fmt) => (
             <div class="meta-item">
@@ -146,71 +182,507 @@ const hasAmazonVendor = book.vendors?.some(
           )}
         </div>
 
+        <!-- Synopsis -->
         <div class="synopsis-box">
           <h3>Synopsis</h3>
           <p>{synopsisText}</p>
         </div>
 
-          <div class="vendors-section">
-              <h3>Available Retailers</h3>
-              <div class="action-buttons">
-                {!hasAmazonVendor && (
-                <a href={amazonSearchUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    Amazon
-                </a>
-                )}
+        <!-- Retailers -->
+        <div class="vendors-section">
+          <h3>Available Retailers</h3>
+          <div class="action-buttons">
+            {book.link && (
+              <a href={book.link} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                {book.publisher}
+              </a>
+            )}
 
-                {book.vendors?.map((vendor) => (
-                <a 
-                    href={vendor.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    class={`btn ${vendor.name.toLowerCase().includes('amazon') ? 'btn-primary' : 'btn-vendor'}`}
-                >
-                    {vendor.name}
-                </a>
-                ))}
+            {book.vendors?.map((vendor) => (
+              <a 
+                href={vendor.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-vendor"
+              >
+                {vendor.name}
+              </a>
+            ))}
 
-                {book.link && (
-                <a href={book.link} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    Official {book.publisher} Page
-                </a>
-                )}
-              </div>
+            {!hasAmazonVendor && (
+              <a href={amazonSearchUrl} target="_blank" rel="noopener noreferrer" class="btn btn-vendor">
+                Amazon
+              </a>
+            )}
           </div>
         </div>
+      </div> <!-- End of details-column -->
+    </div> <!-- End of book-grid -->
+
+    <!-- Full-Width Bottom Section Inside Card Container -->
+    {relatedBooks.length > 0 && (
+      <div class="related-section">
+        <div class="related-header">
+          <h3>More Like This</h3>
+          <div class="carousel-controls">
+            <button class="carousel-btn prev-btn" aria-label="Scroll left">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="carousel-btn next-btn" aria-label="Scroll right">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="related-scroll" id="related-scroll-container">
+          {relatedBooks.map((rel) => {
+            const relSlug = `${rel.title}-vol-${rel.volume}`
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/(^-|-$)+/g, '');
+
+            return (
+              <a href={`/releases/${relSlug}`} class="related-card">
+                <img 
+                  src={rel.cover || '/covers/placeholder.jpg'} 
+                  alt={rel.title} 
+                  class="related-cover"
+                  width="150"
+                  height="225"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="related-info">
+                  <span class="related-title">{rel.title}</span>
+                  <span class="related-meta">Vol. {rel.volume} • {rel.date}</span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
       </div>
+    )}
+
+    <!-- Lightbox Modal -->
+    <div id="cover-modal" class="cover-modal">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <img 
+        src={book.cover || '/covers/placeholder.jpg'} 
+        alt={`${book.title} Vol. ${book.volume} Cover`} 
+        class="modal-cover-image" 
+      />
     </div>
+
+    <script is:inline>
+      const container = document.getElementById('cover-container');
+      const modal = document.getElementById('cover-modal');
+
+      if (container && modal) {
+        container.addEventListener('click', () => {
+          modal.classList.add('is-active');
+        });
+
+        modal.addEventListener('click', () => {
+          modal.classList.remove('is-active');
+        });
+      }
+    </script>
+
+    <script is:inline>
+      const scrollContainer = document.getElementById('related-scroll-container');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+
+      if (scrollContainer && prevBtn && nextBtn) {
+        const scrollAmount = 320; // Adjusts how far a click scrolls (approx 2 cards)
+
+        prevBtn.addEventListener('click', () => {
+          scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+          scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      }
+    </script>
   </main>
 </Layout>
 
 <style>
-  .release-container { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; color: #F8FAFC; }
-  .breadcrumb a { color: #38BDF8; text-decoration: none; font-weight: 500; }
-  .book-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-top: 1.5rem; }
+  .release-container { 
+    max-width: 1000px; 
+    width: 100%;
+    margin: 2.5rem auto; /* Adds breathing room top/bottom and centers it */
+    padding: 2.5rem 2rem; 
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--card-shadow);
+    color: var(--text); 
+    box-sizing: border-box; /* Keeps padding from blowing out the width */
+  }
+  
+  .breadcrumb a { 
+    color: #0284C7; 
+    text-decoration: none; 
+    font-weight: 500; 
+  }
+  html.dark .breadcrumb a {
+    color: #38BDF8;
+  }
+
+  .book-grid { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 2.5rem; 
+    margin-top: 1.5rem; 
+  }
   
   @media (min-width: 768px) {
     .book-grid { grid-template-columns: 320px 1fr; }
   }
 
-  .book-cover { width: 100%; max-width: 320px; border-radius: 12px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5); }
-  .volume-header { color: #94A3B8; font-size: 1.5rem; margin-top: -0.5rem; }
-  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-  .tag-format, .tag-publisher { background: #1E293B; padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid #334155; }
+  .cover-column { 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; /* Prevents the column from stretching vertically */
+  }
+
+  .book-cover { 
+    display: block;
+    width: 100%; 
+    max-width: 320px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .volume-header { 
+    color: var(--text); 
+    opacity: 0.75;
+    font-size: 1.5rem; 
+    margin-top: -0.5rem; 
+  }
+
+  .tags { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+    margin-bottom: 1rem; 
+  }
+
+  .tag-format, .tag-publisher { 
+    background: var(--card-bg); 
+    color: var(--text);
+    padding: 0.25rem 0.75rem; 
+    border-radius: 6px; 
+    font-size: 0.875rem; 
+    border: 1px solid var(--border); 
+  }
   
-  .meta-card { display: flex; flex-wrap: wrap; gap: 2rem; background: #0F172A; padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border: 1px solid #1E293B; }
-  .meta-item .label { display: block; font-size: 0.75rem; color: #64748B; text-transform: uppercase; }
-  .meta-item .value { font-weight: 600; color: #E2E8F0; }
+  .meta-card { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 2rem; 
+    background: var(--card-bg); 
+    padding: 1rem; 
+    border-radius: 8px; 
+    margin: 1.5rem 0; 
+    border: 1px solid var(--border); 
+    box-shadow: 0 4px 12px var(--card-shadow);
+  }
 
-  .synopsis-box { line-height: 1.6; color: #CBD5E1; margin-bottom: 2rem; white-space: pre-line; }
-  .synopsis-box h3, .vendors-section h3 { font-size: 1.1rem; color: #F1F5F9; margin-bottom: 0.75rem; }
+  .meta-item .label { 
+    display: block; 
+    font-size: 0.75rem; 
+    color: var(--text); 
+    opacity: 0.65;
+    text-transform: uppercase; 
+  }
 
-  .action-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-  .btn { padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 600; text-decoration: none; text-align: center; font-size: 0.95rem; transition: background-color 0.2s; }
-  .btn-primary { background: #38BDF8; color: #0F172A; }
-  .btn-primary:hover { background: #0284C7; }
-  .btn-vendor { background: #0F172A; color: #E2E8F0; border: 1px solid #334155; }
-  .btn-vendor:hover { background: #1E293B; }
-  .btn-secondary { background: #1E293B; color: #94A3B8; border: 1px solid #334155; }
-  .btn-secondary:hover { color: #F1F5F9; background: #334155; }
+  .meta-item .value { 
+    font-weight: 600; 
+    color: var(--text); 
+  }
+
+  .synopsis-box { 
+    line-height: 1.6; 
+    color: var(--text); 
+    opacity: 0.9;
+    margin-bottom: 2rem; 
+    white-space: pre-line; 
+  }
+
+  .synopsis-box h3, .vendors-section h3 { 
+    font-size: 1.1rem; 
+    color: var(--text); 
+    margin-bottom: 0.75rem; 
+  }
+
+  .action-buttons { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.75rem; 
+  }
+
+  .btn { 
+    padding: 0.6rem 1.2rem; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    text-decoration: none; 
+    text-align: center; 
+    font-size: 0.95rem; 
+    transition: background-color 0.2s, opacity 0.2s; 
+  }
+
+  .btn-primary { 
+    background: #0284C7; 
+    color: #ffffff; 
+  }
+  html.dark .btn-primary {
+    background: #38BDF8;
+    color: #0F172A;
+  }
+  .btn-primary:hover { 
+    opacity: 0.9; 
+  }
+
+  .btn-vendor { 
+    background: var(--card-bg); 
+    color: var(--text); 
+    border: 1px solid var(--border); 
+  }
+  .btn-vendor:hover { 
+    opacity: 0.8; 
+  }
+
+  .btn-secondary { 
+    background: var(--card-bg); 
+    color: var(--text); 
+    opacity: 0.85;
+    border: 1px solid var(--border); 
+  }
+  .btn-secondary:hover { 
+    opacity: 1; 
+  }
+  .breadcrumb a { 
+    color: var(--accent-color, #0284C7); 
+    text-decoration: none; 
+    font-weight: 500; 
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .cover-interaction-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: zoom-in;
+  }
+
+  /* Default hover effect on the static cover */
+  .cover-interaction-wrapper:hover .book-cover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6);
+  }
+
+  /* The prompt text/icon */
+  .expand-prompt {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 0.5rem 0.75rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    font-size: 0.85rem;
+  }
+
+  .cover-interaction-wrapper:hover .expand-prompt {
+    opacity: 1;
+  }
+
+  /* --- Lightbox Modal Styles --- */
+  .cover-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    cursor: zoom-out;
+  }
+
+  .cover-modal.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-cover-image {
+    position: relative;
+    z-index: 1001;
+    max-height: 85vh;
+    max-width: 85vw;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: scale(0.95);
+  }
+
+  .cover-modal.is-active .modal-cover-image {
+    transform: scale(1);
+  }
+
+  .ambient-backdrop {
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 120vw;
+    height: 120vh;
+    background-size: cover;
+    background-position: center;
+    filter: blur(80px) opacity(0.5) saturate(1.4);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* --- Related Books Carousel --- */
+  .related-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .related-section h3 {
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-bottom: 0;
+  }
+
+  .related-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .related-header h3 {
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .related-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .related-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .related-scroll::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+  }
+
+  .related-card {
+    flex: 0 0 150px;
+    width: 150px; /* Explicit width prevents horizontal stretching */
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .related-card:hover {
+    transform: translateY(-3px);
+    border-color: #0284C7;
+  }
+
+  .related-cover {
+    width: 150px;
+    height: 225px; /* Exact 2:3 light novel cover ratio */
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+    background-color: var(--border); /* Acts as a clean placeholder box while image downloads */
+  }
+
+  .related-info {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .related-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .related-meta {
+    font-size: 0.7rem;
+    color: var(--text);
+    opacity: 0.65;
+  }
+
+  .carousel-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .carousel-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .carousel-btn:hover {
+    background: var(--border);
+    border-color: #0284C7;
+  }
 </style>
