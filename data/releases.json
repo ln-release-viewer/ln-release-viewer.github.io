@@ -1207,6 +1207,26 @@
     "date": "Oct 14",
     "month": "October",
     "year": 2026,
+    "title": "Goodbye, Horrible Fiancé, Hello, Fun Magic School Life!",
+    "link": "https://crossinfworld.com/Goodbye-Horrible-Fiance-Hello-Fun-Magic-School-Life-Volume-1.html",
+    "volume": "1",
+    "publisher": "Cross Infinite World",
+    "format": "📖",
+    "isbn": "9798885602716",
+    "synopsis": "A Fresh Start!\n\nMeet Misha, a strong-willed young lady betrayed by her fiancé. Refusing to take his treachery lying down, she punches him to teach him a lesson before canceling their engagement. Misha tries to use her newfound freedom to enroll in magic school, but a certain issue comes to light, forcing her to give up. However, during the entrance exam interview phase, she resolves a problem with herbs, earning the favor of the exam proctor, meaning that… Misha makes it into the school of her dreams! But what awaits her isn’t just a world of magic that makes her heart dance with delight. There’s a jiggly slime spirit, too?! She eagerly dives into a hectic yet exciting second chapter of her life. Will it be everything she hoped for?",
+    "cover": "/covers/goodbye-horrible-fianc-hello-fun-magic-vol-1-1b1d55.jpg",
+    "coverHash": "ed8a25ebfbed3a13ad4bc390cf80534c",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Goodbye%2C+Horrible+Fianc%C3%A9%2C+Hello%2C+Fun+Magic+School+Life%21+volume+1+light+novel"
+      }
+    ]
+  },
+  {
+    "date": "Oct 14",
+    "month": "October",
+    "year": 2026,
     "title": "Infinite Dendrogram SP",
     "link": "https://j-novel.club/series/infinite-dendrogram#volume-26",
     "volume": "3",
@@ -1783,7 +1803,7 @@
     "isbn": "9781961788923",
     "synopsis": "Lill’s stomach growls.\r\n\r\nOf all the places she could have been reincarnated, she ended up in a refugee settlement. Worse yet, her parents refuse to work, leaving her ostracized by the others. With nothing but dried grass for a bed and uncertainty waiting for her each day, life is anything but easy.\r\n\r\nBut then Lill learns there may be a way out: if she registers with the Adventurers’ Guild and works her way up to B-rank, she’ll earn the right to live in town!\r\n\r\nDetermined to leave her life as a refugee behind, Lill starts from the very bottom. Picking up trash, cleaning, and taking whatever small F-rank requests she can find—she tackles every job earnestly, one step at a time.\r\n\r\nAnd when she finally earns her very first reward, there’s only one place she wants to go: a restaurant in town, somewhere she’s never been able to set foot in before. Her first bite of the grilled skewers she’s dreamed about for so long is so delicious it nearly brings tears to her eyes.\r\n\r\n“If it means getting a hot meal, bring on any quest!”\r\n\r\nStarting with absolutely nothing, one hardworking reincarnated girl is determined to build a new life for herself—and earn her way out of refugee status!\r\n\r\nA heartwarming, laid-back otherworld adventure begins!",
     "cover": "/covers/i-was-reborn-as-a-refugee-vol-1-0802c1.jpg",
-    "coverHash": "3050f2e252f6df6da7d4cb8e92fa7bb9",
+    "coverHash": "14ab1037919ceb1702fd2b203ebda464",
     "vendors": [
       {
         "name": "Amazon",
@@ -1960,13 +1980,13 @@
     "month": "October",
     "year": 2026,
     "title": "The Wrong Way to Use Healing Magic",
-    "link": "https://bookwalker.com/volume/2S9639BZ3W20/the-wrong-way-to-use-healing-magic-volume-6",
+    "link": "https://www.onepeacebooks.com/jt/HealingMagic.html#:~:text=The%20Wrong%20Way%20to%20Use%20Healing%20Magic%20Volume%206",
     "volume": "6",
     "publisher": "One Peace Books",
-    "format": "🖥️",
+    "format": "🖥️📖",
     "isbn": "9781642736359",
-    "synopsis": "Usato and his friends are headed to Samariarl! Known also as the Prayerlands, it is notorious for its discrimination against demi-humans and beastkin. So when the beastkin Amako and the monster Nea disappear out of nowhere, Usato fears the worst. But when he’s met by Samariarl’s knights for an audience with its king, Usato has to put the disappearance of his friends aside and focus on the task at hand. And though King Lucas casually agrees to put his support behind Llinger in their battle against the Demon Lord, he has one perplexing condition...that Usato spend time with his daughter Eva. Are Amako and Nea safe? And what happens when Usato, a healer whose actions defy common sense, meets his match in Eva, a girl whose knowledge of common sense might be less than zero? What secrets does she harbor?",
-    "cover": "/covers/the-wrong-way-to-use-healing-vol-6-fbaa65.jpg",
+    "synopsis": null,
+    "cover": null,
     "coverHash": "98af6fbe9f05c2bbdc70d56b930b22b3",
     "vendors": [
       {
@@ -1985,7 +2005,8 @@
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781642736359"
       }
-    ]
+    ],
+    "is404": true
   },
   {
     "date": "Oct 27",
@@ -2291,7 +2312,7 @@
     "isbn": "9781961788855",
     "synopsis": "After losing his life due to a god’s mistake, Takumi is reincarnated in another world. There, he rescues the twins Allen and Elena from a forest and begins a new life as an adventurer.\r\nDuring a visit to the local lord’s estate in the port town of Bailey, Takumi and the children end up staying there for a while. One day, Takumi decides to make curry for lunch. Drawn in by the irresistible aroma, more and more people begin to gather, until the entire lord’s household has assembled.\r\nWith Allen and Elena helping him, Takumi prepares a special curry for everyone. The lord is so impressed by the dish that he makes Takumi an unexpected proposal—",
     "cover": "/covers/a-journey-through-another-world-vol-3-c3d5c9.jpg",
-    "coverHash": "ca32d98a4ae2b210dc55016996c22c2b",
+    "coverHash": "49c5a19b372485ca986fd4fba2499660",
     "vendors": [
       {
         "name": "Amazon",
@@ -2388,34 +2409,6 @@
       {
         "name": "BookWalker",
         "url": "https://bookwalker.com/series/3T2YEAT654KG/reincarnated-onmyoji"
-      }
-    ]
-  },
-  {
-    "date": "Oct 30",
-    "month": "October",
-    "year": 2026,
-    "title": "Re:Monster",
-    "link": "https://hanashi.media/ebooks/remonster-vol-5",
-    "volume": "5",
-    "publisher": "Hanashi Media",
-    "format": "🖥️",
-    "isbn": "9781961788879",
-    "synopsis": "After completely crushing the coup that shook the kingdom, Aporou has become a figure whose name is now known far beyond its borders. With clashes against extraordinary beings such as the Hero, the Legendary Hero, the Demon King, and the Beast King seemingly only a matter of time, Aporou follows his curiosity into a labyrinth said to have been created by the gods.\r\n\r\nInside awaits a dungeon filled with monsters far stronger than any he has faced before, along with even greater treasures and the finest ingredients imaginable. The new power Aporou gains from conquering the labyrinth will propel him to even greater heights!",
-    "cover": "/covers/remonster-vol-5-7ef9bb.jpg",
-    "coverHash": "c099175d4a7c2ed38b78a3a5100d95cc",
-    "vendors": [
-      {
-        "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=Re%3AMonster+volume+5+light+novel"
-      },
-      {
-        "name": "Apple Books",
-        "url": "https://books.apple.com/us/book/isbn9781961788879"
-      },
-      {
-        "name": "BookWalker",
-        "url": "https://bookwalker.com/series/1XDB9MGEG3WG/remonster"
       }
     ]
   },
@@ -2595,34 +2588,6 @@
     "date": "Nov 03",
     "month": "November",
     "year": 2026,
-    "title": "Didn't I Say to Make My Abilities Average in the Next Life?!",
-    "link": "https://sevenseasentertainment.com/books/didnt-i-say-to-make-my-abilities-average-in-the-next-life-light-novel-vol-21/",
-    "volume": "21",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "9798897653959",
-    "synopsis": "BELLES OF THE BALL!\n\nPrincess-slash-Arch-Saint Estorina has a wild favor to ask of the Wonder Trio—and to see it through, Marcela, Mile, and Mavis will have to attend a ball at the royal palace, soak up the limelight, and turn the whole party upside down! The chaos continues when a pretty young girl drops in from beyond the stars, followed by more hijinks with the elder dragons. There’s never a dull moment for the invincible girls of the Crimson Vow!",
-    "cover": "/covers/didnt-i-say-to-make-my-vol-21-5f62e8.jpg",
-    "coverHash": "c1c2dc9fffe39305c8df22accd505c1c",
-    "vendors": [
-      {
-        "name": "BookWalker",
-        "url": "https://bookwalker.com/series/1EXMSW4FB1H0/didnt-i-say-to-make-my-abilities-average-in-the-next-life"
-      },
-      {
-        "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=Didn%27t+I+Say+to+Make+My+Abilities+Average+in+the+Next+Life%3F%21+volume+21+light+novel"
-      },
-      {
-        "name": "Barnes & Noble",
-        "url": "https://www.barnesandnoble.com/s/9798897653959"
-      }
-    ]
-  },
-  {
-    "date": "Nov 03",
-    "month": "November",
-    "year": 2026,
     "title": "Housekeeping Mage from Another World: Making Your Adventures Feel Like Home!",
     "link": "https://j-novel.club/series/housekeeping-mage-from-another-world-making-your-adventures-feel-like-home#volume-10",
     "volume": "10",
@@ -2650,34 +2615,6 @@
     "synopsis": "Now that they’re roommates, Shiori and Alec are paving their way toward a beautiful life together. Alec has decided to face his past, and arranges a meeting with his brother Olivier as well as his former lover, Rebecca—to apologize, make amends, and look forward to a brighter future, one unburdened by regrets. Before that, however, he and Shiori start their search for a place to turn into an adventurer sharehouse and education center. As luck would have it, the perfect place has just landed in their laps, except for one little snag: There might just be a couple of ghosts in the attic!",
     "cover": "/covers/housekeeping-mage-from-another-world-making-vol-10-8abd8f.jpg",
     "coverHash": "8b688a6b52565d67d3ecb53bc143033d"
-  },
-  {
-    "date": "Nov 03",
-    "month": "November",
-    "year": 2026,
-    "title": "I Got Married to the Girl I Hate Most in Class",
-    "link": "https://sevenseasentertainment.com/books/i-got-married-to-the-girl-i-hate-most-in-class-light-novel-vol-4/",
-    "volume": "4",
-    "publisher": "Seven Seas Entertainment",
-    "format": "📖",
-    "isbn": "9798895617649",
-    "synopsis": "A SURPRISE GIFT FROM THE STORK?\n\nJust as Saito and Akane’s relationship is on the mend after another storm of misunderstandings, a new addition joins the household: Akane’s little sister Maho! Akane swings into full mother-mode as she dotes on Maho, while Saito is swept up in the chaos of having to live with not one, but two Sakuramori girls.\n\nTo make matters worse, Maho suddenly approaches Akane with a shocking proposal that leaves the newlyweds rocked to the core. Akane realizes that what Maho asks for is the one thing Akane cannot give her spoiled sibling. Can the newlyweds face both their fears and their feelings and end up stronger than ever?",
-    "cover": "/covers/i-got-married-to-the-girl-vol-4-56fe52.jpg",
-    "coverHash": "870cd24046ad77a3eba0a98f90cae7ff",
-    "vendors": [
-      {
-        "name": "BookWalker",
-        "url": "https://bookwalker.com/volume/3Q8W448APAWG/i-got-married-to-the-girl-i-hate-most-in-class-vol-4"
-      },
-      {
-        "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=I+Got+Married+to+the+Girl+I+Hate+Most+in+Class+volume+4+light+novel"
-      },
-      {
-        "name": "Barnes & Noble",
-        "url": "https://www.barnesandnoble.com/s/9798895617649"
-      }
-    ]
   },
   {
     "date": "Nov 03",
@@ -2764,34 +2701,6 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781646094264"
-      }
-    ]
-  },
-  {
-    "date": "Nov 03",
-    "month": "November",
-    "year": 2026,
-    "title": "The Most Heretical Last Boss Queen: From Villainess to Savior",
-    "link": "https://sevenseasentertainment.com/books/the-most-heretical-last-boss-queen-from-villainess-to-savior-light-novel-vol-11/",
-    "volume": "11",
-    "publisher": "Seven Seas Entertainment",
-    "format": "📖",
-    "isbn": "9798897659456",
-    "synopsis": "FALLING FROM GRACE\n\nEver since her shocking transformation at Tiara’s birthday party, Pride has become increasingly erratic. Her kind words and gestures of goodwill are nowhere to be found, replaced by vile outbursts and self-isolation. As her nearest and dearest agonize over her condition, one man rises up to put an end to the chaos: Arthur, her dear friend and imperial knight. Will his pleas reach this heartless new version of the princess, or have her dalliances with destiny doomed them to be bitter enemies?",
-    "cover": "/covers/the-most-heretical-last-boss-queen-vol-11-13dbed.jpg",
-    "coverHash": "70dd4320ce733387a99c980371f2d14c",
-    "vendors": [
-      {
-        "name": "BookWalker",
-        "url": "https://bookwalker.com/volume/06ZV03HN21TG/the-most-heretical-last-boss-queen-from-villainess-to-savior-vol-11"
-      },
-      {
-        "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=The+Most+Heretical+Last+Boss+Queen%3A+From+Villainess+to+Savior+volume+11+light+novel"
-      },
-      {
-        "name": "Barnes & Noble",
-        "url": "https://www.barnesandnoble.com/s/9798897659456"
       }
     ]
   },
@@ -3703,34 +3612,6 @@
     "date": "Nov 10",
     "month": "November",
     "year": 2026,
-    "title": "The Too-Perfect Saint: Tossed Aside By My Fiancé and Sold to Another Kingdom",
-    "link": "https://sevenseasentertainment.com/books/the-too-perfect-saint-tossed-aside-by-my-fiance-and-sold-to-another-kingdom-light-novel-vol-7/",
-    "volume": "7",
-    "publisher": "Seven Seas Entertainment",
-    "format": "📖",
-    "isbn": "9798895615843",
-    "synopsis": "WEDDING CRASHERS\n\nMia and Prince Fernand are tying the knot! Though eager to attend her sister’s wedding, Philia is apprehensive about returning to Girtonia, the land that sold her away. Her fears prove justified when the nuptials are interrupted by Erza announcing a demon has infiltrated the castle! Even worse, the disgraced Prince Julius seems to have a hand in this newest mess. But nothing can compare to the greatest shock of all—when they finally face off against this demonic foe, Philia finds she cannot use her magic! What could possibly nullify an Archsaint’s power? And does she stand a chance without any of her hard-won skills?",
-    "cover": "/covers/the-too-perfect-saint-tossed-aside-by-vol-7-9fb42a.jpg",
-    "coverHash": "57c4c910468ddd218e7215a4d4167e4a",
-    "vendors": [
-      {
-        "name": "BookWalker",
-        "url": "https://bookwalker.com/volume/17ZQHF08EK80/the-too-perfect-saint-tossed-aside-by-my-fiance-and-sold-to-another-kingdom-vol-7"
-      },
-      {
-        "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=The+Too-Perfect+Saint%3A+Tossed+Aside+By+My+Fianc%C3%A9+and+Sold+to+Another+Kingdom+volume+7+light+novel"
-      },
-      {
-        "name": "Barnes & Noble",
-        "url": "https://www.barnesandnoble.com/s/9798895615843"
-      }
-    ]
-  },
-  {
-    "date": "Nov 10",
-    "month": "November",
-    "year": 2026,
     "title": "The World's Strongest Witch",
     "link": "https://yenpress.com/titles/9798855414394-the-world-s-strongest-witch-vol-3-light-novel",
     "volume": "3",
@@ -3875,6 +3756,34 @@
     "date": "Nov 12",
     "month": "November",
     "year": 2026,
+    "title": "The Condemned Villainess Goes Back in Time and Aims to Become the Ultimate Villain",
+    "link": "https://sevenseasentertainment.com/books/the-condemned-villainess-goes-back-in-time-and-aims-to-become-the-ultimate-villain-light-novel-vol-9/",
+    "volume": "9",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "9798897659401",
+    "synopsis": "A TREASURE HUNT FOR THE TRUTH\n\nAs part of their vacation, Claudia and Sylvester attend an international conference together. The countries’ future leaders assemble in an impregnable fortress on a remote island, assured of its security—until the banquet begins, and some attendees vanish without a trace! During the ensuing investigation, our heroine is joined by an eastern prince known for his philandering ways. Their efforts to solve the mystery soon evolve into a search for treasure rumored to be hidden within the ancient halls!",
+    "cover": "/covers/the-condemned-villainess-goes-back-in-vol-9-bc6cd9.jpg",
+    "coverHash": "aa67b2da88d5d1c79a096772d8d4b64b",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=The+Condemned+Villainess+Goes+Back+in+Time+and+Aims+to+Become+the+Ultimate+Villain+volume+9+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798897659401"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/0XBY47ECPQ4G/the-condemned-villainess-goes-back-in-time-and-aims-to-become-the-ultimate-villain"
+      }
+    ]
+  },
+  {
+    "date": "Nov 12",
+    "month": "November",
+    "year": 2026,
     "title": "The Weakest Tamer Began a Journey to Pick Up Trash",
     "link": "https://sevenseasentertainment.com/books/the-weakest-tamer-began-a-journey-to-pick-up-trash-light-novel-vol-14/",
     "volume": "14",
@@ -3955,34 +3864,6 @@
     "date": "Nov 17",
     "month": "November",
     "year": 2026,
-    "title": "Free Life Fantasy Online: Immortal Princess",
-    "link": "https://sevenseasentertainment.com/books/free-life-fantasy-online-immortal-princess-light-novel-vol-11/",
-    "volume": "11",
-    "publisher": "Seven Seas Entertainment",
-    "format": "📖",
-    "isbn": "9798898631826",
-    "synopsis": "RELEASE THE KRAKEN!\n\nTsukushiro Kotone, aka Anastasia the Immortal Princess, has reached level 50 and has evolved yet again! And what better way to test out her new skills than a world quest to defend the port city of Imbamunte. The players of Free Life Fantasy Online must board a warship together to fight off all manner of aquatic monsters threatening to drag them down to the depths. Meanwhile, Anastasia and the other flying players take to the skies for a different kind of battle. Can they come out on top in Free Life Fantasy Online ’s very first naval battle?",
-    "cover": "/covers/free-life-fantasy-online-immortal-princess-vol-11-9ddc5e.jpg",
-    "coverHash": "871131385abbf3dd12597a26296001c5",
-    "vendors": [
-      {
-        "name": "BookWalker",
-        "url": "https://bookwalker.com/volume/27NE0HVCQ2SG/free-life-fantasy-online-immortal-princess-vol-11"
-      },
-      {
-        "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=Free+Life+Fantasy+Online%3A+Immortal+Princess+volume+11+light+novel"
-      },
-      {
-        "name": "Barnes & Noble",
-        "url": "https://www.barnesandnoble.com/s/9798898631826"
-      }
-    ]
-  },
-  {
-    "date": "Nov 17",
-    "month": "November",
-    "year": 2026,
     "title": "Her Royal Highness Seems to Be Angry",
     "link": "https://tokyopop.com/products/9781427883001_her-royal-highness-seems-to-be-angry-volume-4-light-novel",
     "volume": "4",
@@ -4004,34 +3885,6 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781427883001"
-      }
-    ]
-  },
-  {
-    "date": "Nov 17",
-    "month": "November",
-    "year": 2026,
-    "title": "Magic Maker: How to Create Magic in Another World",
-    "link": "https://sevenseasentertainment.com/books/magic-maker-how-to-create-magic-in-another-world-light-novel-vol-3/",
-    "volume": "3",
-    "publisher": "Seven Seas Entertainment",
-    "format": "📖",
-    "isbn": "9798897652266",
-    "synopsis": "MAGICAL LESSONS ARE NOW IN SESSION!\n\nThanks to Shion’s magical prowess, he discovers the cure for a mysterious new illness that has been ravaging the kingdom. Word of Shion’s exclusive knowledge and accomplishments reach the highest levels of the nation, and the queen orders him to teach students in the royal capital about magic and how it works. Shion’s new role as teacher is anything but smooth sailing, though, as his aristocratic students from diverse backgrounds are skeptical of his ideas from the get-go. Magical experiments are one thing, but trying to change rigid minds is a battle not so easily won! Can a mere commoner like Shion convince the royal echelons of society of magic’s existence?\n\nFINAL VOLUME",
-    "cover": "/covers/magic-maker-how-to-create-magic-vol-3-ccdda9.jpg",
-    "coverHash": "17a31983b68d8c84eea75a78f9a50c52",
-    "vendors": [
-      {
-        "name": "BookWalker",
-        "url": "https://bookwalker.com/volume/3EREWJYND2EG/magic-maker-how-to-create-magic-in-another-world-vol-3"
-      },
-      {
-        "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=Magic+Maker%3A+How+to+Create+Magic+in+Another+World+volume+3+light+novel"
-      },
-      {
-        "name": "Barnes & Noble",
-        "url": "https://www.barnesandnoble.com/s/9798897652266"
       }
     ]
   },
@@ -4539,6 +4392,62 @@
     "date": "Nov 24",
     "month": "November",
     "year": 2026,
+    "title": "Didn't I Say to Make My Abilities Average in the Next Life?!",
+    "link": "https://sevenseasentertainment.com/books/didnt-i-say-to-make-my-abilities-average-in-the-next-life-light-novel-vol-21/",
+    "volume": "21",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "9798897653959",
+    "synopsis": "BELLES OF THE BALL!\n\nPrincess-slash-Arch-Saint Estorina has a wild favor to ask of the Wonder Trio—and to see it through, Marcela, Mile, and Mavis will have to attend a ball at the royal palace, soak up the limelight, and turn the whole party upside down! The chaos continues when a pretty young girl drops in from beyond the stars, followed by more hijinks with the elder dragons. There’s never a dull moment for the invincible girls of the Crimson Vow!",
+    "cover": "/covers/didnt-i-say-to-make-my-vol-21-5f62e8.jpg",
+    "coverHash": "c1c2dc9fffe39305c8df22accd505c1c",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/1EXMSW4FB1H0/didnt-i-say-to-make-my-abilities-average-in-the-next-life"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Didn%27t+I+Say+to+Make+My+Abilities+Average+in+the+Next+Life%3F%21+volume+21+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798897653959"
+      }
+    ]
+  },
+  {
+    "date": "Nov 24",
+    "month": "November",
+    "year": 2026,
+    "title": "Free Life Fantasy Online: Immortal Princess",
+    "link": "https://sevenseasentertainment.com/books/free-life-fantasy-online-immortal-princess-light-novel-vol-11/",
+    "volume": "11",
+    "publisher": "Seven Seas Entertainment",
+    "format": "📖",
+    "isbn": "9798898631826",
+    "synopsis": "RELEASE THE KRAKEN!\n\nTsukushiro Kotone, aka Anastasia the Immortal Princess, has reached level 50 and has evolved yet again! And what better way to test out her new skills than a world quest to defend the port city of Imbamunte. The players of Free Life Fantasy Online must board a warship together to fight off all manner of aquatic monsters threatening to drag them down to the depths. Meanwhile, Anastasia and the other flying players take to the skies for a different kind of battle. Can they come out on top in Free Life Fantasy Online ’s very first naval battle?",
+    "cover": "/covers/free-life-fantasy-online-immortal-princess-vol-11-9ddc5e.jpg",
+    "coverHash": "871131385abbf3dd12597a26296001c5",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/27NE0HVCQ2SG/free-life-fantasy-online-immortal-princess-vol-11"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Free+Life+Fantasy+Online%3A+Immortal+Princess+volume+11+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798898631826"
+      }
+    ]
+  },
+  {
+    "date": "Nov 24",
+    "month": "November",
+    "year": 2026,
     "title": "History of the Kingdom of Orcsen: How the Barbarian Orcish Nation Came to Burn Down the Peaceful Elfland",
     "link": "https://sevenseasentertainment.com/books/history-of-the-kingdom-of-orcsen-how-the-barbarian-orcish-nation-came-to-burn-down-the-peaceful-elfland-light-novel-vol-2/",
     "volume": "2",
@@ -4560,6 +4469,34 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9798897654406"
+      }
+    ]
+  },
+  {
+    "date": "Nov 24",
+    "month": "November",
+    "year": 2026,
+    "title": "I Got Married to the Girl I Hate Most in Class",
+    "link": "https://sevenseasentertainment.com/books/i-got-married-to-the-girl-i-hate-most-in-class-light-novel-vol-4/",
+    "volume": "4",
+    "publisher": "Seven Seas Entertainment",
+    "format": "📖",
+    "isbn": "9798895617649",
+    "synopsis": "A SURPRISE GIFT FROM THE STORK?\n\nJust as Saito and Akane’s relationship is on the mend after another storm of misunderstandings, a new addition joins the household: Akane’s little sister Maho! Akane swings into full mother-mode as she dotes on Maho, while Saito is swept up in the chaos of having to live with not one, but two Sakuramori girls.\n\nTo make matters worse, Maho suddenly approaches Akane with a shocking proposal that leaves the newlyweds rocked to the core. Akane realizes that what Maho asks for is the one thing Akane cannot give her spoiled sibling. Can the newlyweds face both their fears and their feelings and end up stronger than ever?",
+    "cover": "/covers/i-got-married-to-the-girl-vol-4-56fe52.jpg",
+    "coverHash": "870cd24046ad77a3eba0a98f90cae7ff",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/3Q8W448APAWG/i-got-married-to-the-girl-i-hate-most-in-class-vol-4"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=I+Got+Married+to+the+Girl+I+Hate+Most+in+Class+volume+4+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798895617649"
       }
     ]
   },
@@ -4672,6 +4609,62 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9781974716333"
+      }
+    ]
+  },
+  {
+    "date": "Nov 24",
+    "month": "November",
+    "year": 2026,
+    "title": "The Most Heretical Last Boss Queen: From Villainess to Savior",
+    "link": "https://sevenseasentertainment.com/books/the-most-heretical-last-boss-queen-from-villainess-to-savior-light-novel-vol-11/",
+    "volume": "11",
+    "publisher": "Seven Seas Entertainment",
+    "format": "📖",
+    "isbn": "9798897659456",
+    "synopsis": "FALLING FROM GRACE\n\nEver since her shocking transformation at Tiara’s birthday party, Pride has become increasingly erratic. Her kind words and gestures of goodwill are nowhere to be found, replaced by vile outbursts and self-isolation. As her nearest and dearest agonize over her condition, one man rises up to put an end to the chaos: Arthur, her dear friend and imperial knight. Will his pleas reach this heartless new version of the princess, or have her dalliances with destiny doomed them to be bitter enemies?",
+    "cover": "/covers/the-most-heretical-last-boss-queen-vol-11-13dbed.jpg",
+    "coverHash": "70dd4320ce733387a99c980371f2d14c",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/06ZV03HN21TG/the-most-heretical-last-boss-queen-from-villainess-to-savior-vol-11"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=The+Most+Heretical+Last+Boss+Queen%3A+From+Villainess+to+Savior+volume+11+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798897659456"
+      }
+    ]
+  },
+  {
+    "date": "Nov 24",
+    "month": "November",
+    "year": 2026,
+    "title": "The Too-Perfect Saint: Tossed Aside By My Fiancé and Sold to Another Kingdom",
+    "link": "https://sevenseasentertainment.com/books/the-too-perfect-saint-tossed-aside-by-my-fiance-and-sold-to-another-kingdom-light-novel-vol-7/",
+    "volume": "7",
+    "publisher": "Seven Seas Entertainment",
+    "format": "📖",
+    "isbn": "9798895615843",
+    "synopsis": "WEDDING CRASHERS\n\nMia and Prince Fernand are tying the knot! Though eager to attend her sister’s wedding, Philia is apprehensive about returning to Girtonia, the land that sold her away. Her fears prove justified when the nuptials are interrupted by Erza announcing a demon has infiltrated the castle! Even worse, the disgraced Prince Julius seems to have a hand in this newest mess. But nothing can compare to the greatest shock of all—when they finally face off against this demonic foe, Philia finds she cannot use her magic! What could possibly nullify an Archsaint’s power? And does she stand a chance without any of her hard-won skills?",
+    "cover": "/covers/the-too-perfect-saint-tossed-aside-by-vol-7-9fb42a.jpg",
+    "coverHash": "57c4c910468ddd218e7215a4d4167e4a",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/17ZQHF08EK80/the-too-perfect-saint-tossed-aside-by-my-fiance-and-sold-to-another-kingdom-vol-7"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=The+Too-Perfect+Saint%3A+Tossed+Aside+By+My+Fianc%C3%A9+and+Sold+to+Another+Kingdom+volume+7+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798895615843"
       }
     ]
   },
@@ -4810,6 +4803,34 @@
     "synopsis": "DIGITAL EXCLUSIVE!\n\nAfter spending years in seclusion, a powerful magician sets out on a casual journey only to find he’s being worshiped as a Demon God! An action-adventure tale about magic, power, and leaving a lasting impression— manga also available from Seven Seas.\n\nA peaceful city is shaken when a young man with one eye, one arm, and one leg emerges from a nearby forest. It seems that this is Ains Silvetas—a legendary magician whose astounding power first started turning heads a full two thousand years ago. In the intervening years, awe over Silvetas’s uncanny talent has only increased. Now that he’s shown up in person once again, can he measure up too? Was his fearsome reputation overblown—or can Ains Silvetas do justice to the legends he inspired?!",
     "cover": "/covers/the-one-eyed-one-armed-one-legged-sorcerer-vol-1-796a50.jpg",
     "coverHash": "9a75351318905e4a6e7683528004e7a7"
+  },
+  {
+    "date": "Nov 29",
+    "month": "November",
+    "year": 2026,
+    "title": "Re:Monster",
+    "link": "https://hanashi.media/ebooks/remonster-vol-5",
+    "volume": "5",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "9781961788879",
+    "synopsis": "After completely crushing the coup that shook the kingdom, Aporou has become a figure whose name is now known far beyond its borders. With clashes against extraordinary beings such as the Hero, the Legendary Hero, the Demon King, and the Beast King seemingly only a matter of time, Aporou follows his curiosity into a labyrinth said to have been created by the gods.\r\n\r\nInside awaits a dungeon filled with monsters far stronger than any he has faced before, along with even greater treasures and the finest ingredients imaginable. The new power Aporou gains from conquering the labyrinth will propel him to even greater heights!",
+    "cover": "/covers/remonster-vol-5-7ef9bb.jpg",
+    "coverHash": "c099175d4a7c2ed38b78a3a5100d95cc",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Re%3AMonster+volume+5+light+novel"
+      },
+      {
+        "name": "Apple Books",
+        "url": "https://books.apple.com/us/book/isbn9781961788879"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/1XDB9MGEG3WG/remonster"
+      }
+    ]
   },
   {
     "date": "Nov 30",
@@ -5092,6 +5113,34 @@
     "date": "Dec 01",
     "month": "December",
     "year": 2026,
+    "title": "Magic Maker: How to Create Magic in Another World",
+    "link": "https://sevenseasentertainment.com/books/magic-maker-how-to-create-magic-in-another-world-light-novel-vol-3/",
+    "volume": "3",
+    "publisher": "Seven Seas Entertainment",
+    "format": "📖",
+    "isbn": "9798897652266",
+    "synopsis": "MAGICAL LESSONS ARE NOW IN SESSION!\n\nThanks to Shion’s magical prowess, he discovers the cure for a mysterious new illness that has been ravaging the kingdom. Word of Shion’s exclusive knowledge and accomplishments reach the highest levels of the nation, and the queen orders him to teach students in the royal capital about magic and how it works. Shion’s new role as teacher is anything but smooth sailing, though, as his aristocratic students from diverse backgrounds are skeptical of his ideas from the get-go. Magical experiments are one thing, but trying to change rigid minds is a battle not so easily won! Can a mere commoner like Shion convince the royal echelons of society of magic’s existence?\n\nFINAL VOLUME",
+    "cover": "/covers/magic-maker-how-to-create-magic-vol-3-ccdda9.jpg",
+    "coverHash": "17a31983b68d8c84eea75a78f9a50c52",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/3EREWJYND2EG/magic-maker-how-to-create-magic-in-another-world-vol-3"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Magic+Maker%3A+How+to+Create+Magic+in+Another+World+volume+3+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798897652266"
+      }
+    ]
+  },
+  {
+    "date": "Dec 01",
+    "month": "December",
+    "year": 2026,
     "title": "Space Orc: Barbarian Raider of the Stars, Aiming for the Queen!",
     "link": "https://sevenseasentertainment.com/books/space-orc-barbarian-raider-of-the-stars-aiming-for-the-queen-light-novel-vol-2/",
     "volume": "2",
@@ -5283,6 +5332,34 @@
     "synopsis": "\"If you wish to take our head, then come at us!\" (Am I gonna make it out of this alive...?)\nWith a dazzling reveal of his magic, Carmine has managed to crush Rocourt's forces and draw the kingdom to the negotiating table. And sure, the divinity remains a major pain, and there are still two more kingdoms to handle in this war, not to mention what comes after. But at least for now, things seem to be going...well?\nAs Carmine has learned, though, things are never quite so simple. And sure enough, just as he judges things to be safe and proceeding smoothly, an unbelievable assault is launched upon his very home. Can Carmine rally his troops to counter an attack so thoroughly out of the blue? And even if he can, what will it cost him in the process?\nPlentiful negotiations and shocking violence in the heart of the Empire fill the pages of volume 8 of Imperial Reincarnation!",
     "cover": "/covers/imperial-reincarnation-i-came-i-saw-vol-8-d56acd.jpg",
     "coverHash": "b109f5986ee5c7317da89335a99ce8d4"
+  },
+  {
+    "date": "Dec 03",
+    "month": "December",
+    "year": 2026,
+    "title": "Saving a Weapon Shop from Bankruptcy after the Demon King's Defeat",
+    "link": "https://sevenseasentertainment.com/books/saving-a-weapon-shop-from-bankruptcy-after-the-demon-kings-defeat-light-novel-vol-2/",
+    "volume": "2",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "9798898631017",
+    "synopsis": "REVOLUTION’S ON THE RISE—BUT WHAT ABOUT PROFITS?\n\nCorio’s weapon shop was on the brink of bankruptcy after the defeat of the Demon Lord left adventurers without a need for gear. But rather than give up, Corio banded together with his sister Eni, his friend Kizza, and the clever moneylender Frista. Together, they launched a new business, eking out a profit and just barely avoiding ruin.\n\nYet their patchwork venture brings no end of trouble. One day, a girl named Lillian, an analyst from the church’s Bureau of Prophecy, appears and begs Corio’s help in halting a rising religious reformation. Though the tale sounds too wild to believe, Lillian’s persistence sways Corio, and he agrees to assist.\n\nNow juggling commerce and church intrigue, Corio finds himself back in dire straits. And just when things seem like they can’t get worse, Kizza receives a shocking proposal…",
+    "cover": "/covers/saving-a-weapon-shop-from-bankruptcy-vol-2-caf373.jpg",
+    "coverHash": "97eb1b63b10140efd5b3614b00424d17",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Saving+a+Weapon+Shop+from+Bankruptcy+after+the+Demon+King%27s+Defeat+volume+2+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798898631017"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/3XMA9Y3X1ZHG/saving-a-weapon-shop-from-bankruptcy-after-the-demon-kings-defeat"
+      }
+    ]
   },
   {
     "date": "Dec 07",
@@ -5967,6 +6044,62 @@
     "coverHash": "01daca4c00a79ffed4fa0af02d04baf0"
   },
   {
+    "date": "Dec 10",
+    "month": "December",
+    "year": 2026,
+    "title": "I'm in Love with the Villainess: Come On and Notice Me Already",
+    "link": "https://sevenseasentertainment.com/books/im-in-love-with-the-villainess-come-on-and-notice-me-already-light-novel-vol-1/",
+    "volume": "1",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "9798902093572",
+    "synopsis": "The hit yuri/Girls’ Love series returns with a third arc—this time featuring the daughters of the beloved main couple! The curtain rises on a new story with new characters and even some familiar favorites.\n\nThe story of I’m in Love with the Villainess continues as Rae and Claire’s daughters, May and Aleah, enroll at Bauer Girls’ Private Academy! There, they share a room with Lilly Lilium, who remains hopelessly in love with their mother, Rae. But Aleah has feelings for Lilly of her own, while May isn’t about to give up her place as the most important person in her sister’s life!\n\nLove triangles, heartbreak, friendship, and adventure await in this next-generation sequel, proving that no matter how much the world changes, some things never do.",
+    "cover": "/covers/im-in-love-with-the-villainess-vol-1-6095f9.jpg",
+    "coverHash": "3483b2821c3fb40f87d9f464f4e1d84f",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/0T6RYYDKFSD0/im-in-love-with-the-villainess-come-on-and-notice-me-already-vol-1"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=I%27m+in+Love+with+the+Villainess%3A+Come+On+and+Notice+Me+Already+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798902093572"
+      }
+    ]
+  },
+  {
+    "date": "Dec 10",
+    "month": "December",
+    "year": 2026,
+    "title": "Reincarnated as a Sword",
+    "link": "https://sevenseasentertainment.com/books/reincarnated-as-a-sword-light-novel-vol-20/",
+    "volume": "20",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "9798898631543",
+    "synopsis": "BLACK LIGHTNING STRIKES TWICE\n\nHaving saved Sophie in Cendia, Fran and Teacher head to a new battlefield under orders from the Adventurers’ Guild. There, they join forces with S-Rank adventurer Izalio and Adol the Godsword Knight to save a town from being destroyed—but the appearance of several strange, giant antibodies sets off what might just be the greatest swarm Goldicia has ever witnessed. In the midst of all this chaos, a mysterious Black Cat surrounded by black lightning arrives on the scene. Who is this person? Will she prove friend, or foe?",
+    "cover": "/covers/reincarnated-as-a-sword-vol-20-061051.jpg",
+    "coverHash": "bb4b47af557e95086cd699751ad2e1e1",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Reincarnated+as+a+Sword+volume+20+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798898631543"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/1PD16M9EGXHG/reincarnated-as-a-sword"
+      }
+    ]
+  },
+  {
     "date": "Dec 11",
     "month": "December",
     "year": 2026,
@@ -6155,6 +6288,34 @@
       {
         "name": "Apple Books",
         "url": "https://books.apple.com/us/book/isbn9781961788947"
+      }
+    ]
+  },
+  {
+    "date": "Dec 17",
+    "month": "December",
+    "year": 2026,
+    "title": "Betrothed to My Sister's Ex",
+    "link": "https://sevenseasentertainment.com/books/betrothed-to-my-sisters-ex-light-novel-vol-4/",
+    "volume": "4",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "9798897655762",
+    "synopsis": "THE THINGS WE DO FOR LOVE\n\nMarie, a girl who escaped an unloving home, and Kyros, the richest man in the kingdom, are in love and just can’t wait to get married! Only problem is, for some reason, they just can’t get permission to marry! After investigating the matter, they learn that the crown prince is trying to pin a crime on Marie to force the two apart!\n\nThe couple are distraught and don’t know what to do. But when Luifon, the third-eldest prince and close friend of Kyros, hears of it, he decides to sacrifice himself for their happiness. Is there really no other way?!",
+    "cover": "/covers/betrothed-to-my-sisters-ex-vol-4-a31c72.jpg",
+    "coverHash": "3b32854892123208f503ab330cb15e47",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Betrothed+to+My+Sister%27s+Ex+volume+4+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798897655762"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/2BGE7DEKY6N0/betrothed-to-my-sisters-ex"
       }
     ]
   },
@@ -6513,6 +6674,62 @@
     ]
   },
   {
+    "date": "Dec 24",
+    "month": "December",
+    "year": 2026,
+    "title": "Chronicles of an Aristocrat Reborn in Another World",
+    "link": "https://sevenseasentertainment.com/books/chronicles-of-an-aristocrat-reborn-in-another-world-light-novel-vol-4/",
+    "volume": "4",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "9798895615706",
+    "synopsis": "WHEN THE SAINTS GO MARCHING IN\n\nSo far, Cain’s new life after reincarnating into another world has certainly kept him on his toes. The blessings he received from the gods on his fifth birthday are some of the strongest around, and his power does not go unnoticed.\n\nSo when the Adventurer’s Guild leaves the town of Drientl a wreck, the leaders of the Esfort Kingdom promote Cain, a mere twelve years old, as lord to clean up the mess. With one success after another, Cain is up for any task that comes his way—but can he handle being guard to a Holy Woman?",
+    "cover": "/covers/chronicles-of-an-aristocrat-reborn-in-vol-4-e27756.jpg",
+    "coverHash": "e56733cef567bde9fcfda29a8c184f6d",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Chronicles+of+an+Aristocrat+Reborn+in+Another+World+volume+4+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798895615706"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/3B54PP9R4P6G/chronicles-of-an-aristocrat-reborn-in-another-world"
+      }
+    ]
+  },
+  {
+    "date": "Dec 24",
+    "month": "December",
+    "year": 2026,
+    "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+    "link": "https://sevenseasentertainment.com/books/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-light-novel-vol-17/",
+    "volume": "17",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "9798898635244",
+    "synopsis": "AN UNFAMILIAR KRISHNA\n\nThere’s been an interruption to Hiro’s usual travels through space; space pirates have ambushed his ship! To make matters worse, they haven’t just caught him off guard. He’s also facing an enormous fleet of foes.\n\nThe psionic abilities Hiro has recently been honing offer him an edge against space pirates, of course. But in his attempt to get past his attackers, Hiro winds up affecting the Krishna itself—and the consequences are enough to astound even a tough, well-traveled space mercenary!",
+    "cover": "/covers/reborn-as-a-space-mercenary-i-vol-17-eb1016.jpg",
+    "coverHash": "4963b649d63e2c4edc87426baab7c8df",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Reborn+as+a+Space+Mercenary%3A+I+Woke+Up+Piloting+the+Strongest+Starship%21+volume+17+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798898635244"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/2NTTQ55KCAWG/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship"
+      }
+    ]
+  },
+  {
     "date": "Dec 28",
     "month": "December",
     "year": 2026,
@@ -6628,6 +6845,34 @@
     "date": "Dec 29",
     "month": "December",
     "year": 2026,
+    "title": "His Reluctant Thrall",
+    "link": "https://j-novel.club/series/his-reluctant-thrall#volume-1",
+    "volume": "1",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/1RN74S0QA8KG/his-reluctant-thrall-volume-1"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=His+Reluctant+Thrall+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718313743"
+      }
+    ],
+    "isbn": "9781718313743",
+    "synopsis": "When Damion wakes up in a luxurious apartment with no memory of getting there, he’s immediately suspicious of the dazzlingly handsome guy who owns the place, not to mention his chilly medical assistant. But Damion’s right to be suspicious...because Lazarel is a vampire. And now, he wants to make a deal with Damion. But not for his blood, or even his company. He wants something...much odder. And Damion—with his late rent, broken phone, moth-bitten clothes, cup noodle dinners, and family medical crisis—might just have to agree to his terms.",
+    "cover": "/covers/his-reluctant-thrall-vol-1-d2f0f0.jpg",
+    "coverHash": "2fb11031c78f3f1dc6633dcbb454728f"
+  },
+  {
+    "date": "Dec 29",
+    "month": "December",
+    "year": 2026,
     "title": "ROLL OVER AND DIE: I Will Fight for an Ordinary Life with My Love and Cursed Sword!",
     "link": "https://sevenseasentertainment.com/books/roll-over-and-die-i-will-fight-for-an-ordinary-life-with-my-love-and-cursed-sword-light-novel-vol-7/",
     "volume": "7",
@@ -6680,7 +6925,7 @@
     "link": "https://sevenseasentertainment.com/books/the-condemned-villainess-goes-back-in-time-and-aims-to-become-the-ultimate-villain-light-novel-vol-9/",
     "volume": "9",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "9798897659401",
     "synopsis": "A TREASURE HUNT FOR THE TRUTH\n\nAs part of their vacation, Claudia and Sylvester attend an international conference together. The countries’ future leaders assemble in an impregnable fortress on a remote island, assured of its security—until the banquet begins, and some attendees vanish without a trace! During the ensuing investigation, our heroine is joined by an eastern prince known for his philandering ways. Their efforts to solve the mystery soon evolve into a search for treasure rumored to be hidden within the ancient halls!",
     "cover": "/covers/the-condemned-villainess-goes-back-in-vol-9-bc6cd9.jpg",
@@ -6897,6 +7142,34 @@
     "coverHash": "d09844f5264a732389fc38cb2f507ea7"
   },
   {
+    "date": "Dec 31",
+    "month": "December",
+    "year": 2026,
+    "title": "Virgin Knight: I Became the Frontier Lord in a World Ruled by Women",
+    "link": "https://sevenseasentertainment.com/books/virgin-knight-i-became-the-frontier-lord-in-a-world-ruled-by-women-light-novel-vol-5/",
+    "volume": "5",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️",
+    "isbn": "9798897656608",
+    "synopsis": "AN APPRENTICE’S AWAKENING!\n\nFaust von Polidoro, a frontier lord, is reincarnated from modern Japan into a medieval fantasy world where gender roles are flipped. In this strange society, he becomes a rare male knight. Martina von Bosel, a young girl serving him as an apprentice knight, visits the Polidoro fief ruled by Faust.\n\nUnder orders from Duke Astarte to do some snooping in the Polidoro fief, Martina deepens her inquiry to satisfy her own curiosity. As she watches Faust spend time with his people, she gradually finds her thoughts turning to her late mother, Caroline—a woman who betrayed the kingdom and was executed by Faust.\n\nIn the exciting fifth arc of this heroic gender-bent saga, an apprentice knight’s journey to accept her mother’s loss turns to unexpected romance!",
+    "cover": "/covers/virgin-knight-i-became-the-frontier-vol-5-8390e2.jpg",
+    "coverHash": "7140a8d16207924ad0bfb4a7b759b9bb",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Virgin+Knight%3A+I+Became+the+Frontier+Lord+in+a+World+Ruled+by+Women+volume+5+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798897656608"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/1995YQJP1J3G/virgin-knight-i-became-the-frontier-lord-in-a-world-ruled-by-women"
+      }
+    ]
+  },
+  {
     "date": "Jan 04",
     "month": "January",
     "year": 2027,
@@ -6913,6 +7186,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Black+Summoner+volume+23+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718377387"
       }
     ],
     "isbn": "9781718377387",
@@ -6956,7 +7233,7 @@
     "link": "https://sevenseasentertainment.com/books/reincarnated-as-a-sword-light-novel-vol-20/",
     "volume": "20",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "9798898631543",
     "synopsis": "BLACK LIGHTNING STRIKES TWICE\n\nHaving saved Sophie in Cendia, Fran and Teacher head to a new battlefield under orders from the Adventurers’ Guild. There, they join forces with S-Rank adventurer Izalio and Adol the Godsword Knight to save a town from being destroyed—but the appearance of several strange, giant antibodies sets off what might just be the greatest swarm Goldicia has ever witnessed. In the midst of all this chaos, a mysterious Black Cat surrounded by black lightning arrives on the scene. Who is this person? Will she prove friend, or foe?",
     "cover": "/covers/reincarnated-as-a-sword-vol-20-061051.jpg",
@@ -6984,7 +7261,7 @@
     "link": "https://sevenseasentertainment.com/books/saving-a-weapon-shop-from-bankruptcy-after-the-demon-kings-defeat-light-novel-vol-2/",
     "volume": "2",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "9798898631017",
     "synopsis": "REVOLUTION’S ON THE RISE—BUT WHAT ABOUT PROFITS?\n\nCorio’s weapon shop was on the brink of bankruptcy after the defeat of the Demon Lord left adventurers without a need for gear. But rather than give up, Corio banded together with his sister Eni, his friend Kizza, and the clever moneylender Frista. Together, they launched a new business, eking out a profit and just barely avoiding ruin.\n\nYet their patchwork venture brings no end of trouble. One day, a girl named Lillian, an analyst from the church’s Bureau of Prophecy, appears and begs Corio’s help in halting a rising religious reformation. Though the tale sounds too wild to believe, Lillian’s persistence sways Corio, and he agrees to assist.\n\nNow juggling commerce and church intrigue, Corio finds himself back in dire straits. And just when things seem like they can’t get worse, Kizza receives a shocking proposal…",
     "cover": "/covers/saving-a-weapon-shop-from-bankruptcy-vol-2-caf373.jpg",
@@ -7244,7 +7521,7 @@
     "link": "https://sevenseasentertainment.com/books/betrothed-to-my-sisters-ex-light-novel-vol-4/",
     "volume": "4",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "9798897655762",
     "synopsis": "THE THINGS WE DO FOR LOVE\n\nMarie, a girl who escaped an unloving home, and Kyros, the richest man in the kingdom, are in love and just can’t wait to get married! Only problem is, for some reason, they just can’t get permission to marry! After investigating the matter, they learn that the crown prince is trying to pin a crime on Marie to force the two apart!\n\nThe couple are distraught and don’t know what to do. But when Luifon, the third-eldest prince and close friend of Kyros, hears of it, he decides to sacrifice himself for their happiness. Is there really no other way?!",
     "cover": "/covers/betrothed-to-my-sisters-ex-vol-4-a31c72.jpg",
@@ -7440,7 +7717,7 @@
     "link": "https://sevenseasentertainment.com/books/im-in-love-with-the-villainess-come-on-and-notice-me-already-light-novel-vol-1/",
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "9798902093572",
     "synopsis": "The hit yuri/Girls’ Love series returns with a third arc—this time featuring the daughters of the beloved main couple! The curtain rises on a new story with new characters and even some familiar favorites.\n\nThe story of I’m in Love with the Villainess continues as Rae and Claire’s daughters, May and Aleah, enroll at Bauer Girls’ Private Academy! There, they share a room with Lilly Lilium, who remains hopelessly in love with their mother, Rae. But Aleah has feelings for Lilly of her own, while May isn’t about to give up her place as the most important person in her sister’s life!\n\nLove triangles, heartbreak, friendship, and adventure await in this next-generation sequel, proving that no matter how much the world changes, some things never do.",
     "cover": "/covers/im-in-love-with-the-villainess-vol-1-424f21.jpg",
@@ -7453,6 +7730,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9798902093572"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/0T6RYYDKFSD0/im-in-love-with-the-villainess-come-on-and-notice-me-already-vol-1"
       }
     ]
   },
@@ -7460,19 +7741,23 @@
     "date": "Jan 12",
     "month": "January",
     "year": 2027,
-    "title": "Into The Night – YOASOBI Story Collection",
+    "title": "Into The Night - YOASOBI Story Collection",
     "link": "https://sevenseasentertainment.com/books/into-the-night-yoasobi-story-collection-light-novel/",
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
     "isbn": "9798902091882",
     "synopsis": "The inspiration behind YOASOBI’s hit single, Into The Night , is now available in English! Five enthralling short stories that were so powerful they inspired music that touched the world.\n\nYOASOBI—the chart-topping duo behind hits like “Into The Night (Yoru ni Kakeru)”—is known for turning short stories into songs. Their breakout debut reached No. 1 on the Billboard Japan Hot 100.\n\nThis collection features the original stories behind some of their most popular tracks, including “Into The Night,” “Tracing A Dream,” and “Haven’t,” along with additional related works.\n\nGo back to where the songs began—the stories that inspired them.\n\nIncludes a special interview with YOASOBI.",
-    "cover": "/covers/into-the-night-yoasobi-story-collection-vol-1-cdd475.jpg",
+    "cover": "/covers/into-the-night---yoasobi-story-vol-1-c34221.jpg",
     "coverHash": "f8c52c61e170911547306d08e565c221",
     "vendors": [
       {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/2W5ZS5ECMP80/into-the-night-yoasobi-story-collection"
+      },
+      {
         "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=Into+The+Night+%E2%80%93+YOASOBI+Story+Collection+volume+1+light+novel"
+        "url": "https://www.amazon.com/s?k=Into+The+Night+-+YOASOBI+Story+Collection+volume+1+light+novel"
       },
       {
         "name": "Barnes & Noble",
@@ -7716,7 +8001,7 @@
     "isbn": "9798855411942",
     "synopsis": "After being accused of spying and order to divorce her husband by the Imperial Army, Byletta’s business is suffering. But when she journeys northward in the hope of finding a new opportunity, she once again encounters Arnald, who is in the middle of a military operation! Byletta tries to keep her distance, unable to understand why Arnald never fought against the divorce—but she has no idea that he is still deeply in love with her and carrying out a secret mission of his own. How long will this couple continue to talk past each other?",
     "cover": "/covers/to-sir-without-love-im-divorcing-vol-2.2-47a5b7.jpg",
-    "coverHash": "5e64998cd6f9e7f842f9a89a947c21a7",
+    "coverHash": "b9c084c5c91d06d5b864705f8af04c5e",
     "vendors": [
       {
         "name": "Amazon",
@@ -7808,6 +8093,30 @@
     "date": "Jan 15",
     "month": "January",
     "year": 2027,
+    "title": "The Fearsome Witch Teaches in Another World",
+    "link": "https://j-novel.club/series/the-fearsome-witch-teaches-in-another-world#volume-6",
+    "volume": "6",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/0TN54R5ZS0B0/the-fearsome-witch-teaches-in-another-world"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=The+Fearsome+Witch+Teaches+in+Another+World+volume+6+light+novel"
+      }
+    ],
+    "isbn": null,
+    "synopsis": "After returning to Fiddich from the elven kingdom of Aqua Vitae, Aoi throws herself back into her classes and research. For a little bit, everything seems to be business as usual, and she’s able to make some progress learning healing and spirit sorcery. Unbeknownst to her, though, her success in Aqua Vitae has made her an enticing marriage prospect for every noble household, resulting in a huge influx of male students to Fiddich. They have little chance of wooing Aoi, whose mind is completely focused on her research and her students. However, the bigger problem is how elitist these new nobles are. The situation comes to a boil when the prince of Karvun ends up in a scuffle with several Fiddich instructors, causing Aoi to step in and neutralize the situation. Seeing no remorse from the prince, Aoi decides it’s time for a parent-teacher conference with his father, the king. Aoi has spoken with many royals before, but will this be the day she meets her match?",
+    "cover": "/covers/the-fearsome-witch-teaches-in-another-vol-6-d3ebc4.jpg",
+    "coverHash": "2fa12f958ac1876975bb98a895cd5cdd"
+  },
+  {
+    "date": "Jan 15",
+    "month": "January",
+    "year": 2027,
     "title": "The Trials and Tribulations of My Next Life as a Noblewoman",
     "link": "https://j-novel.club/series/the-trials-and-tribulations-of-my-next-life-as-a-noblewoman#volume-9",
     "volume": "5.2",
@@ -7860,7 +8169,7 @@
     "link": "https://sevenseasentertainment.com/books/chronicles-of-an-aristocrat-reborn-in-another-world-light-novel-vol-4/",
     "volume": "4",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "9798895615706",
     "synopsis": "WHEN THE SAINTS GO MARCHING IN\n\nSo far, Cain’s new life after reincarnating into another world has certainly kept him on his toes. The blessings he received from the gods on his fifth birthday are some of the strongest around, and his power does not go unnoticed.\n\nSo when the Adventurer’s Guild leaves the town of Drientl a wreck, the leaders of the Esfort Kingdom promote Cain, a mere twelve years old, as lord to clean up the mess. With one success after another, Cain is up for any task that comes his way—but can he handle being guard to a Holy Woman?",
     "cover": "/covers/chronicles-of-an-aristocrat-reborn-in-vol-4-e27756.jpg",
@@ -7888,7 +8197,7 @@
     "link": "https://sevenseasentertainment.com/books/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-light-novel-vol-17/",
     "volume": "17",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "9798898635244",
     "synopsis": "AN UNFAMILIAR KRISHNA\n\nThere’s been an interruption to Hiro’s usual travels through space; space pirates have ambushed his ship! To make matters worse, they haven’t just caught him off guard. He’s also facing an enormous fleet of foes.\n\nThe psionic abilities Hiro has recently been honing offer him an edge against space pirates, of course. But in his attempt to get past his attackers, Hiro winds up affecting the Krishna itself—and the consequences are enough to astound even a tough, well-traveled space mercenary!",
     "cover": "/covers/reborn-as-a-space-mercenary-i-vol-17-eb1016.jpg",
@@ -7953,6 +8262,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Bladesmith%27s+Enchanted+Weapons+volume+7+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718331945"
       }
     ],
     "isbn": "9781718331945",
@@ -7997,12 +8310,36 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Zero+Damage+Sword+Saint%3A+I+Enrolled+in+a+Magic+School+and+Wound+Up+in+a+Contract+with+the+Demon+Queen+volume+6+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718368668"
       }
     ],
     "isbn": "9781718368668",
     "synopsis": "Airi, the next empress of the Grenflare Empire and Eugene’s childhood friend, has transferred to Lykeion Magic Academy, and her presence intensifies the romantic rivalries surrounding Eugene. These peaceful(?) school days don’t last long, though, as an unprecedented abnormality occurs in Babel. Not even Anemoi, the Dungeon Master, is safe from monster attacks, nor can the Demon Queen Erinyes predict what catastrophes are about to strike. As Eugene investigates, he discovers that a calamity on the scale of a mythological disaster is about to hit the dungeon city. Can he and his friends overwrite this doomed fate?",
     "cover": "/covers/zero-damage-sword-saint-i-enrolled-vol-6-d68c7b.jpg",
     "coverHash": "1a7aec552999a2e0270b2d41ca5729df"
+  },
+  {
+    "date": "Jan 23",
+    "month": "January",
+    "year": 2027,
+    "title": "I Was Reborn as a Refugee Girl, So I'm Working Toward Citizenship from Scratch",
+    "link": "https://hanashi.media/ebooks/i-was-reborn-as-a-refugee-girl-vol-2",
+    "volume": "2",
+    "publisher": "Hanashi Media",
+    "format": "🖥️",
+    "isbn": "9798953136112",
+    "synopsis": "Coming soon.",
+    "cover": "/covers/i-was-reborn-as-a-refugee-vol-2-0802c1.jpg",
+    "coverHash": "7a547ad23ea539ae25e0602a4a954f13",
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=I+Was+Reborn+as+a+Refugee+Girl%2C+So+I%27m+Working+Toward+Citizenship+from+Scratch+volume+2+light+novel"
+      }
+    ]
   },
   {
     "date": "Jan 25",
@@ -8087,6 +8424,30 @@
     "synopsis": "The magus Agrippina saves the munchkin hero Erich by the skin of his teeth. But this favor does not come without a cost—she brings news that little Elisa is actually a changeling! To protect his sister’s future, Erich’s only choice is to accompany the magus to the imperial capital as a servant, leaving his hometown behind...but not before making an oath to his childhood friend. When fairies suddenly appear on his path to the capital, will he be able to avoid a critical failure?! The Henderson scale-breaking, number-crunching TRPG adventure returns for another session!",
     "cover": "/covers/min-maxing-my-trpg-build-in-another-vol-2-418af7.jpg",
     "coverHash": "e32e4d2214c692208d3d02b9a4e060e4"
+  },
+  {
+    "date": "Jan 25",
+    "month": "January",
+    "year": 2027,
+    "title": "The Isle of Paramounts: Reborn into a Slow Life Among the Strongest in the World",
+    "link": "https://j-novel.club/series/the-isle-of-paramounts-reborn-into-a-slow-life-among-the-strongest-in-the-world#volume-6",
+    "volume": "6",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/1VNHN5MK5HTG/the-isle-of-paramounts-reborn-into-a-slow-life-among-the-strongest-in-the-world"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=The+Isle+of+Paramounts%3A+Reborn+into+a+Slow+Life+Among+the+Strongest+in+the+World+volume+6+light+novel"
+      }
+    ],
+    "isbn": null,
+    "synopsis": "The island is even livelier now that the hero’s party and the rest of the Celestial Archmages have arrived at Arcadia. There’s just one group left that Arata has yet to visit: the High Elves, who reside in the forest of the World Tree. But when Arata arrives at their secluded village, the World Tree is under assault by legendary beasts draining it of its mana, and the High Elves and Great Spirits are doing everything they can just to hold them back. As if that weren’t enough, Snow suddenly disappears too! Together with Elga and the High Elf Brunhilde, Arata will have to go to the World Tree and fight the monsters threatening it in order to rescue Snow and the other Great Spirits!",
+    "cover": "/covers/the-isle-of-paramounts-reborn-into-vol-6-68531f.jpg",
+    "coverHash": "b6a4e22e049e8b7d168eb40b557d9749"
   },
   {
     "date": "Jan 25",
@@ -8192,6 +8553,30 @@
     "date": "Jan 27",
     "month": "January",
     "year": 2027,
+    "title": "Déjà Vute: Betrayal Begets New Beginnings",
+    "link": "https://j-novel.club/series/d-j-vute-betrayal-begets-new-beginnings#volume-2",
+    "volume": "2",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/2SRA3M2871C0/deja-vute-betrayal-begets-new-beginnings"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=D%C3%A9j%C3%A0+Vute%3A+Betrayal+Begets+New+Beginnings+volume+2+light+novel"
+      }
+    ],
+    "isbn": null,
+    "synopsis": "At the Saint’s purification ritual, Freesia’s suspicions are at last confirmed: she is the Sun Witch.\n\nBut at the very same moment, those around her realize the truth as well.\n\n“You’re the Sun Witch, aren’t you?”\n\nOverwhelmed by memories of her little sister’s words on the day she was killed and the terror she felt then, Freesia is thrown into confusion. \n\nThat’s when Vute reveals a secret of his own: he, too, has returned to the past. At last, the two confess the secrets they have been keeping and the feelings they have for one another.\n\nBut before they can move forward, Freesia’s father arrives—determined to take his daughter back—along with her stepmother, who has long been waiting for the chance to eliminate the Sun Witch once and for all!\n\nA final confrontation with Freesia’s family awaits! What will become of her and Vute’s love?",
+    "cover": "/covers/dj-vute-betrayal-begets-new-beginnings-vol-2-1319b3.jpg",
+    "coverHash": "187dbd2c245407b02394540e4b5d6174"
+  },
+  {
+    "date": "Jan 27",
+    "month": "January",
+    "year": 2027,
     "title": "Genius in the Library: This Bookish Rookie Will Save the Day!",
     "link": "https://j-novel.club/series/genius-in-the-library-this-bookish-rookie-will-save-the-day#volume-2",
     "volume": "2",
@@ -8205,6 +8590,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Genius+in+the+Library%3A+This+Bookish+Rookie+Will+Save+the+Day%21+volume+2+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718372122"
       }
     ],
     "isbn": "9781718372122",
@@ -8257,9 +8646,13 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Amazing+Village+Creator%3A+Slow+Living+with+the+Village+Building+Cheat+Skill+volume+6+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718330627"
       }
     ],
-    "isbn": null,
+    "isbn": "9781718330627",
     "synopsis": "Just as Luke’s peaceful new life is spiraling out of control, a samurai girl arrives from the eastern mountains, bringing a whole new adventure with her. Before long, Luke and his friends are racing across the land, tackling one crisis after another!\n\nA deadly plague is spreading. A powerful empire is invading. And somehow, Luke’s little village has become the center of it all.\n\nCan this unlikely village survive, and can Luke ever get the slow life he dreamed of?",
     "cover": "/covers/the-amazing-village-creator-slow-living-vol-6-3d194c.jpg",
     "coverHash": "e283d6da7bdb3a16f1b9ea56fb605eb7"
@@ -8328,7 +8721,7 @@
     "link": "https://sevenseasentertainment.com/books/virgin-knight-i-became-the-frontier-lord-in-a-world-ruled-by-women-light-novel-vol-5/",
     "volume": "5",
     "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
+    "format": "📖",
     "isbn": "9798897656608",
     "synopsis": "AN APPRENTICE’S AWAKENING!\n\nFaust von Polidoro, a frontier lord, is reincarnated from modern Japan into a medieval fantasy world where gender roles are flipped. In this strange society, he becomes a rare male knight. Martina von Bosel, a young girl serving him as an apprentice knight, visits the Polidoro fief ruled by Faust.\n\nUnder orders from Duke Astarte to do some snooping in the Polidoro fief, Martina deepens her inquiry to satisfy her own curiosity. As she watches Faust spend time with his people, she gradually finds her thoughts turning to her late mother, Caroline—a woman who betrayed the kingdom and was executed by Faust.\n\nIn the exciting fifth arc of this heroic gender-bent saga, an apprentice knight’s journey to accept her mother’s loss turns to unexpected romance!",
     "cover": "/covers/virgin-knight-i-became-the-frontier-vol-5-8390e2.jpg",
@@ -8381,7 +8774,7 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null,
+    "isbn": "9798905684562",
     "synopsis": "DIGITAL EXCLUSIVE!\n\nA programmer and his beloved cat are transported to another world where their skills open new opportunities and the ability to reform their domain! A purrfect isekai series featuring an engineer and his precious paw-tner.\n\nTransported into a strange new world, Matsumoto Isamu—a systems engineer, thirty-four, recently divorced—and Orihime—his cat—are granted unique powers. Those from other worlds usually command respect and protection, but Isamu’s seemingly useless skill, Magi Debugger, barely secures him the patronage of a poor, low-ranking noble.\n\nHowever, when paired with Isamu’s programming knowledge, Magi Debugger allows him to engineer anything and everything, from portable lanterns to magic swords. With the equally talented Orihime by his side, Isamu sets forward to innovate and improve their new world to turn it into a home.",
     "cover": "/covers/in-another-world-with-my-cat-vol-1-6ec3c4.jpg",
     "coverHash": "9fd3b976df86f64d0c20fb19c46b78ad",
@@ -8389,8 +8782,60 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=In+Another+World+with+My+Cat%3A+A+Software+Engineer+Uses+Code+to+Master+Magic+and+Build+a+Territory+volume+1+light+novel"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/0RWMW5PHVX10/in-another-world-with-my-cat-a-software-engineer-uses-code-to-master-magic-and-build-a-territory-vol-1"
       }
     ]
+  },
+  {
+    "date": "Feb 04",
+    "month": "February",
+    "year": 2027,
+    "title": "Mirror, Mirror on the Wall",
+    "link": "https://j-novel.club/series/mirror-mirror-on-the-wall#volume-2",
+    "volume": "2",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/3SD0KYXCDGXG/mirror-mirror-on-the-wall"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Mirror%2C+Mirror+on+the+Wall+volume+2+light+novel"
+      }
+    ],
+    "isbn": null,
+    "synopsis": "Eiri is due to star as the leading man in two dramas. On the surface, life looks great: now a heartthrob A-list actor and living a satisfying, honeyed life with his genius (and busy) photographer boyfriend, Shoui. But beneath that is a simmering anxiety and the overwhelming pressure not to fail. To add fuel to the fire, his new costar is none other than Togawa Jin, the younger, problematic actor who was forced to lie low after an assault incident two years prior. From the very first day they meet, Togawa makes no effort to hide his hostility toward Eiri, openingly glaring and trying to pick fights.\n\nThe dramatic industry-based love story returns with more twists and turns in volume 2!",
+    "cover": "/covers/mirror-mirror-on-the-wall-vol-2-ba5878.jpg",
+    "coverHash": "b2b4589414f18e25afec889322682695"
+  },
+  {
+    "date": "Feb 04",
+    "month": "February",
+    "year": 2027,
+    "title": "Miss Medic's Diary at War",
+    "link": "https://j-novel.club/series/miss-medic-s-diary-at-war#volume-4",
+    "volume": "4",
+    "publisher": "J-Novel Club",
+    "format": "🖥️",
+    "vendors": [
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/0Q8QE97CE0M0/miss-medics-diary-at-war"
+      },
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=Miss+Medic%27s+Diary+at+War+volume+4+light+novel"
+      }
+    ],
+    "isbn": null,
+    "synopsis": "As Cedre Weber learns more about Tory Noelle, he stumbles upon some dangerous state secrets. One night, his life is threatened by an assassin who intends to silence him, claiming that he has to die because of the country’s savior: Bern Varou. However, underneath her hood, he discovers that the assassin looks exactly like Tory Noelle! Not only that, she even seems to know him. Could this cold-blooded killer really be Combat Medic Tory Noelle? What is he to her? And what kind of man really is Bern Varou? When the assassin learns that Tory wrote about Bern Varou in her diary, she spares Cedre for now. The two learn about how the Austinese Army was preparing for its decisive battle with Sabat, Tory’s assignment under a proper health department of experienced combat medics, and the true wickedness of the man named Bern Varou.",
+    "cover": "/covers/miss-medics-diary-at-war-vol-4-63cacd.jpg",
+    "coverHash": "7effc6649987773b0f8b1d065d8c405a"
   },
   {
     "date": "Feb 07",
@@ -8577,6 +9022,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=A+Flower+in+Raven+Clothes+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855441208"
       }
     ]
   },
@@ -8599,6 +9048,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=A+Misanthrope+Teaches+a+Class+for+Demi-Humans+volume+4+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855427912"
       }
     ]
   },
@@ -8623,6 +9076,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Associate+Professor+Akira+Takatsuki%27s+Conjecture+volume+8+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855410235"
       }
     ]
   },
@@ -8647,6 +9104,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=%27Cause+I%27m+Freedom%21+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855437072"
       }
     ]
   },
@@ -8671,6 +9132,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Chitose+Is+in+the+Ramune+Bottle+volume+9+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855447323"
       }
     ]
   },
@@ -8719,6 +9184,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Liar%2C+Liar+volume+9+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781975370756"
       }
     ]
   },
@@ -8739,6 +9208,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Lord+of+Mysteries+volume+5+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855442014"
       }
     ]
   },
@@ -8761,6 +9234,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Demon+Sword+Master+of+Excalibur+Academy+volume+14+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855407471"
       }
     ]
   },
@@ -8785,6 +9262,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Irregular+at+Magic+High+School+volume+28+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855409826"
       }
     ]
   },
@@ -8807,6 +9288,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Witch%27s+Conviction%2C+The+Beast%27s+Redemption+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855430141"
       }
     ]
   },
@@ -8831,6 +9316,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Wandering+Witch%3A+The+Journey+of+Elaina+volume+18+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781975368777"
       }
     ]
   },
@@ -8851,6 +9340,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Watching+the+Angel+Sleep%2C+Drowning+in+Bed+Together+volume+1+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798855438970"
       }
     ]
   },
@@ -8915,7 +9408,7 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null,
+    "isbn": "9798905684579",
     "synopsis": "DIGITAL EXCLUSIVE!\n\nOne man reborn into a light novel wants to avoid his bad ending…but can he change from a villainous commander to a big brother type?! A hilarious isekai light novel and manga about avoiding ruin by being a better man!\n\nJustin, a knight commander infamous for his arrogance and insolence, suddenly regains memories of his previous life as a college student who spent years taking care of his seven younger brothers. With that clarity comes a grim realization: If he continues down the villainous path laid out for him, both he and his entire order are headed straight for execution. Determined to avoid that fate, he sets out to turn both himself and his troublemaking knights around.\n\nUsing the same brotherly instincts that once kept his siblings in line, he tackles everything from his subordinates’ bad habits to the politics of high society. Before long, the man once reviled for his attitude is being praised as a reformed leader…and even a hero.",
     "cover": "/covers/i-reincarnated-as-the-villain-commander-vol-1-1d7b76.jpg",
     "coverHash": "755f3d9b7b34e76d8560e4aadabe09bd",
@@ -8923,6 +9416,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=I+Reincarnated+as+the+%E2%80%9CVillain%E2%80%9D+Commander+of+an+Order+of+Knights+volume+1+light+novel"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/3S7YCWVDNDHG/i-reincarnated-as-the-villain-commander-of-an-order-of-knights-vol-1"
       }
     ]
   },
@@ -9064,7 +9561,7 @@
     "volume": "1",
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
-    "isbn": null,
+    "isbn": "9798905684791",
     "synopsis": "DIGITAL EXCLUSIVE!\n\nWhen one man is reborn into a video game, he finds himself at the side of the terrifying Demon Queen in this isekai tale! Can he prove he’s a reliable right-hand man, or will his new life be cut short?\n\nRei is reborn into the demon faction of a video game, bound to serve Fiona the Demon Queen—only to arrive just as her army is completely wiped out, leaving him the sole surviving subordinate. Fortunately, he gains a unique Dungeon Master skill that lets him build lethal traps, reshape dungeons, and even resurrect the legendary Four Generals. Eager to prove himself, Rei sets out to restore a ruined labyrinth.\n\nYet his efforts quickly spiral out of control, turning the labyrinth into a chaotic, broken disaster that unleashes an unstoppable demon army. With catastrophe looming once again, Rei is abruptly promoted from soldier to Fiona’s right-hand man. Now, alongside the formidable Demon Queen, he must prove he has what it takes to stop the very forces he unwittingly set loose.",
     "cover": "/covers/record-of-a-reincarnated-chancellor-i-vol-1-acae4c.jpg",
     "coverHash": "7def9c668da1762b8e2d337adfe8afeb",
@@ -9072,6 +9569,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=Record+of+a+Reincarnated+Chancellor%3A+I+Was+Summoned+by+a+Hopeless+Demon+Lord+to+Rebuild+Her+Army+volume+1+light+novel"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/volume/2SJ7WT09CY00/record-of-a-reincarnated-chancellor-i-was-summoned-by-a-hopeless-demon-lord-to-rebuild-her-army-vol-1"
       }
     ]
   },
@@ -9162,9 +9663,13 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=The+Frontier+Lord+Begins+with+Zero+Subjects+volume+15+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9781718331600"
       }
     ],
-    "isbn": null,
+    "isbn": "9781718331600",
     "synopsis": "The snow is beginning to melt and spring is on its way to Baarbadal. The young new dogkin pups and baby baars are dashing around while the village prepares to open its borders to the public. It isn’t long before Dias and the people of Iluk are preparing to host their first pilgrims to their temple, led by the inimitable elephantkin and Eldan’s mother, Neha!\n\nBut that’s not all the village has to contend with: In recording the falconkin’s past, Aymer gets in touch with secrets of the world heretofore unknown. Meanwhile, Iluk has to fight off a dragon attack of unprecedented scale. And then there’s a new resident with a mysterious past...and every reason to keep it that way!",
     "cover": "/covers/the-frontier-lord-begins-with-zero-vol-15-d639b4.jpg",
     "coverHash": "e38cb66a2daa806fd8406cd9d31f669f"
@@ -9227,7 +9732,7 @@
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
     "isbn": "9798898636555",
-    "synopsis": null,
+    "synopsis": "VAN OVERBOARD!\n\nDiplomacy with Fiesta continues as Van journeys to meet the other country’s envoy, accompanied by his newly disgraced older brother Sesto. After being allowed to study a Fiestan sailing ship in more detail, Van succeeds in building a prototype of his own! But their maiden voyage quickly turns fraught as a giant sea-monster emerges from the waves to attack the vessel, sending Van, Arte, Till and Panamera overboard. They’re going to have to put every ounce of strength and ingenuity they have to the test if they want to survive to make it back ashore!",
     "vendors": [
       {
         "name": "Amazon",
@@ -9237,7 +9742,9 @@
         "name": "BookWalker",
         "url": "https://bookwalker.com/series/08HFWCY1CHDG/easygoing-territory-defense-by-the-optimistic-lord-production-magic-turns-a-nameless-village-into-the-strongest-fortified-city"
       }
-    ]
+    ],
+    "cover": "/covers/easygoing-territory-defense-by-the-optimistic-vol-9-631031.jpg",
+    "coverHash": "1e8847125418d6b2fcf5c5f6b10435ed"
   },
   {
     "date": "Mar 04",
@@ -9258,7 +9765,7 @@
         "url": "https://www.amazon.com/s?k=Knight%27s+%26+Magic+volume+11+light+novel"
       }
     ],
-    "isbn": null,
+    "isbn": "9781718388734",
     "synopsis": "The situation on the flying continent takes a sudden turn as Eleven Flags almost succeeds in taking the massive etherite chunk at its center. But just before they could, something mysterious and incredibly dangerous interrupts them!\n\nNow, the chunk has been replaced with a pillar of light, and the land is constantly shaking and rumbling. Does this spell doom for the flying continent, or will the people present be able to band together in time to solve this new disaster? In fact, with a certain troublesome survivor still in play, could such a thing even be possible?\n\nWell, Ernie’s definitely not one to take things lying down and certainly not one to let a mystery go unsolved. Fortunately, with backup from his knight order on the way, he may finally get to the bottom of everything!",
     "cover": "/covers/knights-magic-vol-11-0510c3.jpg",
     "coverHash": "d5f765fc7c58545da2ee47470d5fef41"
@@ -9283,7 +9790,7 @@
       }
     ],
     "isbn": null,
-    "synopsis": null
+    "synopsis": "DIGITAL EXCLUSIVE!"
   },
   {
     "date": "Mar 04",
@@ -9836,7 +10343,7 @@
         "url": "https://www.amazon.com/s?k=Let+This+Grieving+Soul+Retire+volume+12+light+novel"
       }
     ],
-    "isbn": null,
+    "isbn": "9781718392748",
     "synopsis": "Krai seems to be doing well for once. He’s made his way into Princess Alisha’s royal guard and has met with Princess Nora, putting him on track for completing his quest. Or at least his share of the work—he’s still leaving some for Kaiser and Saya.\n\nWith some breathing room at last, Krai sets out to do what he came to Cordo for in the first place: sightseeing. But how much leisure can be found in a city on the brink of a royal succession battle? Each royal sibling has a plan, but no plan survives contact with the Thousand Tricks. And if his presence weren’t bad enough, Krai’s hardly the only wild card in the deck this time around.",
     "cover": "/covers/let-this-grieving-soul-retire-vol-12-091b8b.jpg",
     "coverHash": "9074628819a546ab00bf8c517671e55c"
@@ -9923,7 +10430,7 @@
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
     "isbn": "9798898638948",
-    "synopsis": null,
+    "synopsis": "FIA MEETS THE CAPTAINS…AS A SAINT!\n\nIt’s time for the second round of the head saint selection, and Fia’s next task requires her to interview three captains. Faced with Desmond, who seems determined not to cooperate; Kurtis, who’s more than happy to help; and an easygoing Clarissa, just what kind of plan will Fia hatch? And that’s not all Fia’s up to these days. Fia decides to start teaching the other saints how to make potions, and they’re eager to learn. But then she decides to invite Saint Rose to join them! Is Fia just looking for trouble, or what?",
     "vendors": [
       {
         "name": "Amazon",
@@ -9937,7 +10444,9 @@
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9798898638948"
       }
-    ]
+    ],
+    "cover": "/covers/a-tale-of-the-secret-saint-vol-12-3ec196.jpg",
+    "coverHash": "74100bfa7258d5822accba293eeaae87"
   },
   {
     "date": "Mar 23",
@@ -9949,7 +10458,7 @@
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
     "isbn": "9798898639112",
-    "synopsis": null,
+    "synopsis": "“IT WAS ME WHO DECIDED TO EXPEL YOU, Y’KNOW.”\n\nThe third-year students’ Uninhabited Island Survival Game Special Exam has come to an end—but that doesn’t mean they can drop their guard just yet, because the next exam, the “Token Collection Special Exam,” is right around the corner. Students will work in mixed-class groups to collect tokens through challenges that test both their academic and physical abilities, with expulsion on the line for the student who runs out of tokens first or ends up with the fewest tokens at the end of the exam. But when one student finds a way to use the rules to their advantage, even the best of strategies falls apart, and it’s up to every student to find a way to survive…",
     "vendors": [
       {
         "name": "Amazon",
@@ -9963,7 +10472,9 @@
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9798898639112"
       }
-    ]
+    ],
+    "cover": "/covers/classroom-of-the-elite-year-3-vol-4-03c3a4.jpg",
+    "coverHash": "4a39cfcee8c86abcc97e3ce141abfa5a"
   },
   {
     "date": "Mar 23",
@@ -10019,7 +10530,7 @@
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️📖",
     "isbn": "9798902090731",
-    "synopsis": null,
+    "synopsis": "BEWARE THE ENEMY OF WOMEN\n\nNukumizu discovers the perks of being crushed on, the girls assemble to capture a tawny blur, Yanami feasts on ramen, Kaju celebrates her birthday, and a pajama party goes wrong. All this and so much more in this collection of original, never before seen short stories that will lead straight into Volume 9!",
     "vendors": [
       {
         "name": "Amazon",
@@ -10033,7 +10544,9 @@
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9798902090731"
       }
-    ]
+    ],
+    "cover": "/covers/too-many-losing-heroines-vol-8.5-09a64d.jpg",
+    "coverHash": "88f78da5e0175608a392c71885662f1e"
   },
   {
     "date": "Mar 25",
@@ -10511,32 +11024,6 @@
     "date": "May 18",
     "month": "May",
     "year": 2027,
-    "title": "7th Time Loop: The Villainess Enjoys a Carefree Life Married to Her Worst Enemy!",
-    "link": "https://sevenseasentertainment.com/books/7th-time-loop-the-villainess-enjoys-a-carefree-life-married-to-her-worst-enemy-light-novel-vol-7/",
-    "volume": "7",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "9798893732764",
-    "synopsis": null,
-    "vendors": [
-      {
-        "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=7th+Time+Loop%3A+The+Villainess+Enjoys+a+Carefree+Life+Married+to+Her+Worst+Enemy%21+volume+7+light+novel"
-      },
-      {
-        "name": "BookWalker",
-        "url": "https://bookwalker.com/series/0QEWZG2F31QG/7th-time-loop-the-villainess-enjoys-a-carefree-life-married-to-her-worst-enemy"
-      },
-      {
-        "name": "Barnes & Noble",
-        "url": "https://www.barnesandnoble.com/s/9798893732764"
-      }
-    ]
-  },
-  {
-    "date": "May 18",
-    "month": "May",
-    "year": 2027,
     "title": "Gear × Magic: Reincarnated as an Engineer, I'll Save the Villainous Princess",
     "link": "https://sevenseasentertainment.com/books/gear-x-magic-reincarnated-as-an-engineer-ill-save-the-villainous-princess-light-novel-vol-2/",
     "volume": "2",
@@ -10648,6 +11135,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=I+Reincarnated+as+the+%E2%80%9CVillain%E2%80%9D+Commander+of+an+Order+of+Knights+volume+2+light+novel"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/0WV2SVR49QF0/i-reincarnated-as-the-villain-commander-of-an-order-of-knights"
       }
     ]
   },
@@ -10785,6 +11276,10 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9798902095323"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/3ZTP9E9GX5SG/im-in-love-with-the-villainess-come-on-and-notice-me-already"
       }
     ]
   },
@@ -10846,32 +11341,6 @@
     "date": "Jun 01",
     "month": "June",
     "year": 2027,
-    "title": "The Saint's Magic Power is Omnipotent",
-    "link": "https://sevenseasentertainment.com/books/the-saints-magic-power-is-omnipotent-light-novel-vol-10/",
-    "volume": "10",
-    "publisher": "Seven Seas Entertainment",
-    "format": "🖥️📖",
-    "isbn": "9798888438114",
-    "synopsis": null,
-    "vendors": [
-      {
-        "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=The+Saint%27s+Magic+Power+is+Omnipotent+volume+10+light+novel"
-      },
-      {
-        "name": "Barnes & Noble",
-        "url": "https://www.barnesandnoble.com/s/9798888438114"
-      },
-      {
-        "name": "BookWalker",
-        "url": "https://bookwalker.com/series/0SFFXRN39YFG/the-saints-magic-power-is-omnipotent"
-      }
-    ]
-  },
-  {
-    "date": "Jun 01",
-    "month": "June",
-    "year": 2027,
     "title": "Witch and Mercenary",
     "link": "https://sevenseasentertainment.com/books/witch-and-mercenary-light-novel-vol-8/",
     "volume": "8",
@@ -10911,6 +11380,10 @@
       {
         "name": "Amazon",
         "url": "https://www.amazon.com/s?k=In+Another+World+with+My+Cat%3A+A+Software+Engineer+Uses+Code+to+Master+Magic+and+Build+a+Territory+volume+2+light+novel"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/1WGS9WK8E6RG/in-another-world-with-my-cat-a-software-engineer-uses-code-to-master-magic-and-build-a-territory"
       }
     ]
   },
@@ -11002,7 +11475,7 @@
     "publisher": "Seven Seas Entertainment",
     "format": "🖥️",
     "isbn": null,
-    "synopsis": null,
+    "synopsis": "DIGITAL EXCLUSIVE!\n\nWhen an ordinary man’s beloved pet cat is suddenly gifted with unbelievable abilities and made gigantic, their humdrum life levels up in this cat-tastic fantasy light novel— manga also from Seven Seas!\n\nTetsuya, a corporate drone in an exploitative workplace, knows that he can always find peace with his beloved house cat, Tama. But one day, Tetsuya comes home to find Tama has grown gigantic! And instead of a peaceful night, Tama takes him on an adventure to defeat the boss of a nearby dungeon! From racing around at high speeds with Tetsuya on his back to granting buffs through purring, it seems that Tama has awakened some extraordinary powers—and Tetsuya decides to livestream this new, exciting life! It’s not long before the pair save a beautiful young streamer, making their dungeon-clearing streams go viral. Now, all eyes are on Tetsuya and his giant cat Tama! What will they get up to next?",
     "vendors": [
       {
         "name": "Amazon",
@@ -11325,6 +11798,32 @@
     ]
   },
   {
+    "date": "Jul 20",
+    "month": "July",
+    "year": 2027,
+    "title": "7th Time Loop: The Villainess Enjoys a Carefree Life Married to Her Worst Enemy!",
+    "link": "https://sevenseasentertainment.com/books/7th-time-loop-the-villainess-enjoys-a-carefree-life-married-to-her-worst-enemy-light-novel-vol-7/",
+    "volume": "7",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "9798893732764",
+    "synopsis": null,
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=7th+Time+Loop%3A+The+Villainess+Enjoys+a+Carefree+Life+Married+to+Her+Worst+Enemy%21+volume+7+light+novel"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/0QEWZG2F31QG/7th-time-loop-the-villainess-enjoys-a-carefree-life-married-to-her-worst-enemy"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798893732764"
+      }
+    ]
+  },
+  {
     "date": "Dec 28",
     "month": "December",
     "year": 2027,
@@ -11347,6 +11846,32 @@
       {
         "name": "Barnes & Noble",
         "url": "https://www.barnesandnoble.com/s/9798888431351"
+      }
+    ]
+  },
+  {
+    "date": "Dec 28",
+    "month": "December",
+    "year": 2027,
+    "title": "The Saint's Magic Power is Omnipotent",
+    "link": "https://sevenseasentertainment.com/books/the-saints-magic-power-is-omnipotent-light-novel-vol-10/",
+    "volume": "10",
+    "publisher": "Seven Seas Entertainment",
+    "format": "🖥️📖",
+    "isbn": "9798888438114",
+    "synopsis": null,
+    "vendors": [
+      {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=The+Saint%27s+Magic+Power+is+Omnipotent+volume+10+light+novel"
+      },
+      {
+        "name": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/s/9798888438114"
+      },
+      {
+        "name": "BookWalker",
+        "url": "https://bookwalker.com/series/0SFFXRN39YFG/the-saints-magic-power-is-omnipotent"
       }
     ]
   }
